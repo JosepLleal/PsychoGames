@@ -23,9 +23,9 @@ TODO: Write credits
 TODO: Write license
 
 
-| Name          | Responsability|
-| ------------- |:-------------:|
-| Josep Lleal   | Management    |
-| Joan Barduena | Art/Design    |
-| Marc Garcia   | Code          |
-| Víctor Chen   | QA            |
+| Name | Responsability |
+| --- | --- |
+| Josep Lleal | Management |
+| Joan Barduena | Art/Design |
+| Marc Garcia | Code |
+| Víctor Chen | QA |
