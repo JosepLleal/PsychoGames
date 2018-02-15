@@ -1,6 +1,5 @@
 # PsychoGames
 
-The aim of this project is to test and copy an arcade side-scroll shooter. The game we are developing is X-Multiply.
 [![X-Multiply Gameplay](http://img1.game-oldies.com/sites/default/files/packshots/coin-op-arcade/xmultiplm72.png)](https://www.youtube.com/watch?v=GcoOZxjrLdk)
 ## Installation
 TODO: Describe the installation process
