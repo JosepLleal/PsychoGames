@@ -1,6 +1,9 @@
 # PsychoGames
 
-[![X-Multiply Gameplay](http://img1.game-oldies.com/sites/default/files/packshots/coin-op-arcade/xmultiplm72.png)](https://www.youtube.com/watch?v=GcoOZxjrLdk)
+<a href="https://www.youtube.com/watch?v=GcoOZxjrLdk" target="_blank"><img src="http://img1.game-oldies.com/sites/default/files/packshots/coin-op-arcade/xmultiplm72.png" 
+alt="IMAGE ALT TEXT HERE" width="850" height="1200" border="10" /></a>
+
+
 ## Installation
 TODO: Describe the installation process
 ## Usage
