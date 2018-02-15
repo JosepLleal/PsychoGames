@@ -21,3 +21,11 @@ TODO: Write history
 TODO: Write credits
 ## License
 TODO: Write license
+
+
+| Name          | Responsability|
+| ------------- |:-------------:|
+| Josep Lleal   | Management    |
+| Joan Barduena | Art/Design    |
+| Marc Garcia   | Code          |
+| Víctor Chen   | QA            |
