@@ -4,7 +4,7 @@
 alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 
 
-| Name | Responsability |
+| Name | Responsibility |
 | --- | --- |
 | Josep Lleal | Management |
 | Joan Barduena | Art/Design |
