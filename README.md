@@ -21,3 +21,9 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 ##### Code: Marc Garcia		[Mrc's GitHub Link](https://github.com/marcgreig)
 ##### QA: Victor Chen		[Victor's GitHub Link](https://github.com/Scarzard)
 
+
+
+Members | Responsibilities | Github Links
+------------ | -------------
+Josep Lleal | Management | [Josep's GitHub Link](https://github.com/JosepLleal)
+Content in the first column | Content in the second column
