@@ -8,6 +8,9 @@ The game centers around an unusual alien invasion against a colony planet in the
 from IPython.display import HTML
 HTML('<iframe width="560" height="315" src="hhttps://www.youtube.com/watch?v=858fnH8y--k&t=119s" frameborder="0" allowfullscreen></iframe>')
 
+from IPython.lib.display import YouTubeVideo
+YouTubeVideo('hhttps://www.youtube.com/watch?v=858fnH8y--k&t=119s')
+
 # PsychoGames Members:
 
 Josep Lleal
