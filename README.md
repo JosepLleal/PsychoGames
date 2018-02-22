@@ -5,7 +5,7 @@ The game itself is a side-scroller like R-Type, albeit with a short vertical-scr
 ## Plot:
 The game centers around an unusual alien invasion against a colony planet in the year 2249—the aliens themselves are microscopic creatures that invade, infect, and kill the colonists. Scientists have deployed the microscopic fighter X-002 into the body of the hapless woman whose body has been invaded by the alien queen.
 
-embed_url("https://www.youtube.com/watch?v=858fnH8y--k&t=119s")
+[![Watch the video](https://www.youtube.com/watch?v=858fnH8y--k&t=119s](http://youtu.be/vt5fpE0bzSY)
 
 # PsychoGames Members:
 
@@ -26,7 +26,3 @@ Víctor Chen
    - [Victor's GitHub Link](https://github.com/Scarzard)
    
    
-# install.packages("devtools")
-devtools::install_github("ijlyttle/vembedr")
-library("htmltools")
-library("vembedr")
