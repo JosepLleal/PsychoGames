@@ -26,3 +26,7 @@ Víctor Chen
    - [Victor's GitHub Link](https://github.com/Scarzard)
    
    
+# install.packages("devtools")
+devtools::install_github("ijlyttle/vembedr")
+library("htmltools")
+library("vembedr")
