@@ -15,8 +15,8 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 
 ## Members:
 #### Responsibilities:
-Management: Josep Lleal
-Art/Design: Joan Barduena
-Code: Marc Garcia
-QA: Victor Chen
+##### Management: Josep Lleal
+##### Art/Design: Joan Barduena
+##### Code: Marc Garcia
+##### QA: Victor Chen
 
