@@ -1,7 +1,7 @@
 ﻿# XMuliply
 
 It is a side-scrolling shooter game developed by Irem and released in 1989 for Sega Saturn and Playstation.
-XMultiply has 7 stages each one with a different boss.
+X-Multiply has 7 stages each one with a different boss.
 
 ## Plot:
 Microscopic aliens invade a colony planet in the year 2249, infesting humans with themselves. 
@@ -15,8 +15,8 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 
 ## Members:
 #### Responsibilities:
-##### Management: Josep Lleal
-##### Art/Design: Joan Barduena
-##### Code: Marc Garcia
-##### QA: Victor Chen
+##### Management: Josep Lleal	[Josep's GitHub Link](https://github.com/JosepLleal)
+##### Art/Design: Joan Barduena	[Joan's GitHub Link](https://github.com/JoanBarduena)
+##### Code: Marc Garcia		[Mrc's GitHub Link](https://github.com/marcgreig)
+##### QA: Victor Chen		[Victor's GitHub Link](https://github.com/Scarzard)
 
