@@ -20,4 +20,4 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 ##### Art/Design: Joan Barduena	[Joan's GitHub Link](https://github.com/JoanBarduena)
 ##### Code: Marc Garcia		[Mrc's GitHub Link](https://github.com/marcgreig)
 ##### QA: Victor Chen		[Victor's GitHub Link](https://github.com/Scarzard)
-=======
+
