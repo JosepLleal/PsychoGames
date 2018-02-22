@@ -1,4 +1,4 @@
-﻿# XMuliply
+﻿# X-Muliply
 
 It is a side-scrolling shooter game developed by Irem and released in 1989 for Sega Saturn and Playstation.
 XMultiply has 7 stages each one with a different boss.
