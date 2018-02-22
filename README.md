@@ -23,7 +23,3 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 
 
 
-Members | Responsibilities | Github Links
------------- | -------------
-Josep Lleal | Management | [Josep's GitHub Link](https://github.com/JosepLleal)
-Content in the first column | Content in the second column
