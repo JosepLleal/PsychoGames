@@ -21,10 +21,3 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 ##### Code: Marc Garcia		[Mrc's GitHub Link](https://github.com/marcgreig)
 ##### QA: Victor Chen		[Victor's GitHub Link](https://github.com/Scarzard)
 =======
-## Members responsibilities:
-#### Management: Josep Lleal
-#### Art/Design: Joan Barduena
-#### Code: Marc Garcia
-#### QA: Victor Chen
->>>>>>> 9456c91cc542e469f5602fc26a5f52beb437f37d
-
