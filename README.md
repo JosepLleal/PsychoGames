@@ -13,14 +13,6 @@ construct the X-002, a microscopic fighter ship.
 <a href="https://www.youtube.com/watch?v=GcoOZxjrLdk" target="_blank"><img src="http://img1.game-oldies.com/sites/default/files/packshots/coin-op-arcade/xmultiplm72.png" 
 alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 
-
-## Responsibilities:
-
-##### Management: Josep Lleal	[Josep's GitHub Link](https://github.com/JosepLleal)
-##### Art/Design: Joan Barduena	[Joan's GitHub Link](https://github.com/JoanBarduena)
-##### Code: Marc Garcia		[Mrc's GitHub Link](https://github.com/marcgreig)
-##### QA: Victor Chen		[Victor's GitHub Link](https://github.com/Scarzard)
-
 # PsychoGames Members:
 
 Josep Lleal
