@@ -26,12 +26,17 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 Josep Lleal
    - Role: Management
    - [Josep's GitHub Link](https://github.com/JosepLleal)
+   
 Joan Barduena
    - Role: Art/Design
    - [Joan's GitHub Link](https://github.com/JoanBarduena)
+   
 Marc Garcia
    - Role: Code
    - [Marc's GitHub Link](https://github.com/marcgreig)
+   
 Víctor Chen
    - Role: QA
    - [Victor's GitHub Link](https://github.com/Scarzard)
+   
+   
