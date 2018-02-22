@@ -5,7 +5,7 @@ The game itself is a side-scroller like R-Type, albeit with a short vertical-scr
 ## Plot:
 The game centers around an unusual alien invasion against a colony planet in the year 2249—the aliens themselves are microscopic creatures that invade, infect, and kill the colonists. Scientists have deployed the microscopic fighter X-002 into the body of the hapless woman whose body has been invaded by the alien queen.
 
-<video src="https://www.youtube.com/watch?v=858fnH8y--k&t=119s" width="1080" height="720" controls preload></video>
+<video src="https://www.youtube.com/watch?v=858fnH8y--k&t=119s" width="720" height="480" controls preload></video>
 
 # PsychoGames Members:
 
