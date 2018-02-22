@@ -21,5 +21,8 @@ alt="IMAGE ALT TEXT HERE" width="425" height="600" border="10" /></a>
 ##### Code: Marc Garcia		[Mrc's GitHub Link](https://github.com/marcgreig)
 ##### QA: Victor Chen		[Victor's GitHub Link](https://github.com/Scarzard)
 
+# PsychoGames Members:
 
-
+1. Josep Lleal
+   - Role: Management
+     - [Josep's GitHub Link](https://github.com/JosepLleal)
