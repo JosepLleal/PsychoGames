@@ -1,9 +1,10 @@
 ﻿# X-Multiply
-
-XMultiply is a side-scrolling shooter published by Irem, and similar in style to their earlier R-Type. In 1998, the game was released with Image Fight as a one-disc doublebill on PlayStation and Sega Saturn. Instead of the Force pod, however, the main power-up apparatus takes the form of two flexible tentacles.
+It is a side-scrolling shooter game, similar in style to R-Type, developed by Irem and releasedin 1989 and later in 1998 for Sega Saturn and Playstation. X-Multiply has 7 stages each one with a different boss.
 
 ## Plot:
-The game centers around an unusual alien invasion against a colony planet in the year 2249-the aliens themselves are microscopic creatures that invade, infect, and kill the colonists. Scientists have deployed the microscopic fighter X-002 into the body of the hapless woman whose body has been invaded by the alien queen.
+Microscopic aliens invade a colony planet in the year 2249, infesting humans with themselves. 
+To combat the alien queen which is currently residing in a human female, a group of scientists 
+construct the X-002, a microscopic fighter ship.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/GcoOZxjrLdk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
