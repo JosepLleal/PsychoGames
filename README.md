@@ -10,8 +10,6 @@ The game centers around an unusual alien invasion against a colony planet in the
 
 # PsychoGames Members:
 
-![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team Foto")
-
 Josep Lleal
    - Role: Management
    - [Josep's GitHub Link](https://github.com/JosepLleal)
@@ -29,3 +27,4 @@ Víctor Chen
    - [Victor's GitHub Link](https://github.com/Scarzard)
    
    
+![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team Foto")
