@@ -1,9 +1,9 @@
 ﻿# X-Multiply
 
-The game itself is a side-scroller like R-Type, albeit with a short vertical-scrolling area towards the end of the sixth level. Instead of the Force pod, however, the main power-up apparatus takes the form of two flexible tentacles. The tentacles are invulnerable to all enemy attacks, and can be positioned with careful maneuvering of the X-002.
+XMultiply (エックスマルチプライ) is a side-scrolling shooter published by Irem, and similar in style to their earlier R-Type. In 1998, the game was released with Image Fight as a one-disc doublebill on PlayStation and Sega Saturn. Instead of the Force pod, however, the main power-up apparatus takes the form of two flexible tentacles. The tentacles are invulnerable to all enemy attacks, and can be positioned with careful maneuvering of the X-002. Konami's Xexex is based on a fusion of this weaponry with the Force system of R-Type. In the PlayStation 2 game R-Type Final, the ship "Cross The Rubicon" uses the "Flexible Force", a Force based on XMultiply with roughly the same attacks.
 
 ## Plot:
-The game centers around an unusual alien invasion against a colony planet in the year 2249—the aliens themselves are microscopic creatures that invade, infect, and kill the colonists. Scientists have deployed the microscopic fighter X-002 into the body of the hapless woman whose body has been invaded by the alien queen.
+The game centers around an unusual alien invasion against a colony planet in the year 2249-the aliens themselves are microscopic creatures that invade, infect, and kill the colonists. Scientists have deployed the microscopic fighter X-002 into the body of the hapless woman whose body has been invaded by the alien queen.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/GcoOZxjrLdk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
