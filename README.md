@@ -27,4 +27,4 @@ Víctor Chen
    - [Victor's GitHub Link](https://github.com/Scarzard)
    
    
-![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team Foto")
+![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team photo")
