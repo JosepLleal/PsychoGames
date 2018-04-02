@@ -45,7 +45,7 @@ update_status ModuleBackground::Update()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(graphics, 0, 0, &background, 0.75f); // backround
-	App->render->Blit(tilemap, 0, 0, &ground, 0.75f); //tilemap
+	App->render->Blit(tilemap, 0, 0, &ground, 0.85f); //tilemap
 
 	//App->render->Blit(graphics, 560, 8, &(flag.GetCurrentFrame()), 0.75f); // flag animation
 
