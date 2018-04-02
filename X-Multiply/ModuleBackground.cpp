@@ -43,8 +43,8 @@ bool ModuleBackground::Start()
 // Update: draw background
 update_status ModuleBackground::Update()
 {
-	float speed_graphics = 2; 
-	float speed_tilemap = 2; 
+	int speed_graphics = 4; 
+	int speed_tilemap = 5; 
 
 	if (background_w < 4961) {
 		background_w -= speed_graphics; 
@@ -55,7 +55,7 @@ update_status ModuleBackground::Update()
 
 	// Draw everything --------------------------------------
 	App->render->Blit(graphics, (background_w)/3.5, 0, &background, 0.75f); // backround
-	App->render->Blit(tilemap, (tilemap_w)/3.5, 0, &ground, 0.85f); //tilemap
+	App->render->Blit(tilemap, (tilemap_w)/3.5, 0, &ground, 0.75f); //tilemap
 
 	//App->render->Blit(graphics, 560, 8, &(flag.GetCurrentFrame()), 0.75f); // flag animation
 
