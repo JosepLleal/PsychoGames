@@ -19,11 +19,12 @@ ModulePlayer::ModulePlayer()
 	// go upward animation 
 	upward.PushBack({52, 0, 38, 16});
 	upward.PushBack({4, 0, 38, 16});
+	upward.PushBack({ 4, 0, 38, 10 }); 
 	upward.speed = 0.06f;
 
 	downward.PushBack({ 148, 0, 38, 16 });
 	downward.PushBack({ 196, 0, 38, 16 });
-	downward.speed = 00.6f;
+	downward.speed = 0.06f;
 }
 
 ModulePlayer::~ModulePlayer()
