@@ -30,9 +30,6 @@ bool ModuleCredits::Start()
 	LOG("Loading credit scene");
 
 	graphics = App->textures->Load("image/credits.png");
-
-	App->player->Enable();
-
 	return true;
 }
 
@@ -40,7 +37,6 @@ bool ModuleCredits::Start()
 bool ModuleCredits::CleanUp()
 {
 	LOG("Unloading credit scene");
-	App->player->Disable();
 	App->textures->Unload(graphics);
 	return true;
 }
