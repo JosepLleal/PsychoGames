@@ -67,7 +67,8 @@ update_status ModuleLevel1::Update()
 	// Draw everything --------------------------------------
 	App->render->Blit(graphics, (background_w) / 3.5, 0, &background, 0.75f); // backround
 	App->render->Blit(tilemap1, (tilemap_w) / 3.5, 0, &ground, 0.75f); //tilemap
-	// TODO 2: make so pressing SPACE the HONDA stage is loaded
+	
+
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->fade->FadeToBlack(this, App->lvl2, 1);

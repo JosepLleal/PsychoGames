@@ -52,7 +52,6 @@ update_status ModuleCredits::Update()
 	// Draw everything --------------------------------------
 	App->render->Blit(graphics, (credit_w) / 3.5, 0, &credit, 0.75f); // background
 
-																	   // TODO 2: make so pressing SPACE the HONDA stage is loaded
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->fade->FadeToBlack(this, App->menu, 1);

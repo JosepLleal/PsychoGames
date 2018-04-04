@@ -37,7 +37,6 @@ update_status ModuleFadeToBlack::Update()
 		{
 			if(now >= total_time)
 			{
-				// TODO 3: enable / disable the modules received when FadeToBlacks() gets called
 				fade_out->Disable();
 				fade_in->Enable();
 				fade_out = nullptr;
