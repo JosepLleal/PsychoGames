@@ -14,7 +14,7 @@ ModuleLevel1::ModuleLevel1()
 {
 	// tilemap
 	ground.x = 0;
-	ground.y = 0;
+	ground.y = 1;
 	ground.w = 4961;
 	ground.h = 513;
 
@@ -48,6 +48,7 @@ bool ModuleLevel1::CleanUp()
 	LOG("Unloading level 1 scene");
 	App->player->Disable();
 	App->textures->Unload(graphics);
+	App->textures->Unload(tilemap1);
 	return true;
 }
 
@@ -74,7 +75,6 @@ update_status ModuleLevel1::Update()
 		App->fade->FadeToBlack(this, App->lvl2, 1);
 		App->player->position.x = 100;
 		App->player->position.y = 30;
-
 	}
 	return UPDATE_CONTINUE;
 }

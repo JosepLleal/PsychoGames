@@ -42,7 +42,7 @@ bool ModuleLevel2::CleanUp()
 {
 	LOG("Unloading level 2 scene");
 	App->player->Disable();
-	App->textures->Unload(graphics);
+	App->textures->Unload(tilemap);
 	return true;
 }
 
