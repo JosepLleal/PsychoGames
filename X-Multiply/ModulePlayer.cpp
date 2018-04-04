@@ -13,13 +13,13 @@ ModulePlayer::ModulePlayer()
 	position.y = 30;
 
 	// idle animation (arcade sprite sheet)
-	idle.PushBack({100, 0, 38, 16});
+	idle.PushBack({ 100, 0, 38, 16 });
 	idle.speed = 0.2f;
 
 	// go upward animation 
-	upward.PushBack({52, 0, 38, 16});
-	upward.PushBack({4, 0, 38, 16});
-	upward.PushBack({ 4, 0, 38, 10 }); 
+	upward.PushBack({ 52, 0, 38, 16 });
+	upward.PushBack({ 4, 0, 38, 16 });
+	upward.PushBack({ 4, 0, 38, 10 });
 	upward.speed = 0.06f;
 
 	downward.PushBack({ 148, 0, 38, 16 });
@@ -35,7 +35,7 @@ bool ModulePlayer::Start()
 {
 	LOG("Loading player textures");
 	bool ret = true;
-	graphics = App->textures->Load("Main_Character_Effects.png"); // arcade version
+	graphics = App->textures->Load("image/Main_Character_Effects.png"); // arcade version
 	return ret;
 }
 
@@ -46,7 +46,7 @@ update_status ModulePlayer::Update()
 
 	int speed = 3;
 
-	if(App->input->keyboard[SDL_SCANCODE_D] == 1)
+	if (App->input->keyboard[SDL_SCANCODE_D] == 1)
 	{
 		position.x += speed;
 	}

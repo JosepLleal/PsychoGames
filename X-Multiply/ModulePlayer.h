@@ -23,8 +23,6 @@ public:
 	Animation idle;
 	Animation upward;
 	Animation downward;
-	Animation upwardreturn;
-	Animation downwardreturn;
 	iPoint position;
 
 };
