@@ -31,7 +31,7 @@ ModuleLevel1::~ModuleLevel1()
 // Load assets
 bool ModuleLevel1::Start()
 {
-	LOG("Loading ken scene");
+	LOG("Loading level 1 scene");
 	
 	graphics = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
@@ -45,7 +45,7 @@ bool ModuleLevel1::Start()
 // UnLoad assets
 bool ModuleLevel1::CleanUp()
 {
-	LOG("Unloading ken scene");
+	LOG("Unloading level 1 scene");
 	App->player->Disable();
 	App->textures->Unload(graphics);
 	return true;

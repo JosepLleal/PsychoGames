@@ -6,6 +6,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleInput.h"
 #include "ModuleLevel1.h"
+#include "ModuleCredits.h"
 #include "ModuleMenu.h"
 
 
@@ -27,7 +28,7 @@ ModuleMenu::~ModuleMenu()
 // Load assets
 bool ModuleMenu::Start()
 {
-	LOG("Loading background assets");
+	LOG("Loading menu scene");
 	bool ret = true;
 	graphics = App->textures->Load("image/main_menu.png");
 
@@ -39,7 +40,7 @@ bool ModuleMenu::Start()
 bool ModuleMenu::CleanUp()
 {
 	
-	LOG("Unloading honda stage");
+	LOG("Unloading menu scene");
 	App->textures->Unload(graphics);
 	return true;
 }
@@ -52,7 +53,7 @@ update_status ModuleMenu::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-		App->fade->FadeToBlack(this, App->lvl1);
+		App->fade->FadeToBlack(this, App->lvl1, 1);
 
 	}
 

@@ -8,6 +8,7 @@
 #include "ModuleInput.h"
 #include "ModuleLevel1.h"
 #include "ModuleMenu.h"
+#include "ModuleCredits.h"
 
 
 
@@ -28,7 +29,7 @@ ModuleLevel2::~ModuleLevel2()
 // Load assets
 bool ModuleLevel2::Start()
 {
-	LOG("Loading background assets");
+	LOG("Loading level 2 scene");
 	bool ret = true;
 	tilemap = App->textures->Load("image/LV2_Tilemap.png");
 
@@ -39,7 +40,7 @@ bool ModuleLevel2::Start()
 // Load assets
 bool ModuleLevel2::CleanUp()
 {
-	LOG("Unloading honda stage");
+	LOG("Unloading level 2 scene");
 	App->player->Disable();
 	App->textures->Unload(graphics);
 	return true;
@@ -52,7 +53,7 @@ update_status ModuleLevel2::Update()
 	App->render->Blit(tilemap, (tilemap_w) / 3.5, 0, &ground, 0.75f); //tilemap
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
-		App->fade->FadeToBlack(this, App->menu);
+		App->fade->FadeToBlack(this, App->credit, 1);
 
 	return UPDATE_CONTINUE;
 }

@@ -8,6 +8,7 @@
 #include "ModuleLevel1.h"
 #include "ModuleLevel2.h"
 #include "ModulePlayer.h"
+#include "ModuleCredits.h"
 #include "ModuleFadeToBlack.h"
 
 Application::Application()
@@ -19,9 +20,11 @@ Application::Application()
 	modules[4] = audio = new ModuleAudio(); 
 	modules[5] = lvl1 = new ModuleLevel1();
 	modules[6] = lvl2 = new ModuleLevel2();
-	modules[7] = player = new ModulePlayer();
-	modules[8] = fade = new ModuleFadeToBlack();
-	modules[9] = menu = new ModuleMenu();
+	modules[7] = credit = new ModuleCredits();
+	modules[8] = player = new ModulePlayer();
+	modules[9] = fade = new ModuleFadeToBlack();
+	modules[10] = menu = new ModuleMenu();
+	
 }	
 
 Application::~Application()
