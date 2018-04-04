@@ -9,7 +9,6 @@
 #include "ModuleLevel2.h"
 
 
-// Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
 ModuleLevel1::ModuleLevel1()
 {
@@ -19,7 +18,7 @@ ModuleLevel1::ModuleLevel1()
 	ground.w = 4961;
 	ground.h = 513;
 
-	// Background / sky
+	// Background 
 	background.x = 0;
 	background.y = 0;
 	background.w = 4961;
@@ -37,7 +36,7 @@ bool ModuleLevel1::Start()
 	graphics = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
 
-	// TODO 1: Enable (and properly disable) the player module
+	
 	App->player->Enable();
 
 	return true;
@@ -55,11 +54,11 @@ bool ModuleLevel1::CleanUp()
 // Update: draw background
 update_status ModuleLevel1::Update()
 {
-	int speed_graphics = 4;
+	int speed_backround = 4;
 	int speed_tilemap = 5;
 
 	if (background_w < 4961) {
-		background_w -= speed_graphics;
+		background_w -= speed_backround;
 	}
 	if (tilemap_w < 4961) {
 		tilemap_w -= speed_tilemap;

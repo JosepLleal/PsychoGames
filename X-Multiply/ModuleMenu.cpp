@@ -1,6 +1,5 @@
 #include "Globals.h"
 #include "Application.h"
-#include "ModuleLevel2.h"
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
@@ -11,48 +10,51 @@
 
 
 
-ModuleLevel2::ModuleLevel2()
+ModuleMenu::ModuleMenu()
 {
-	// tilemap
-	ground.x = 0;
-	ground.y = 0;
-	ground.w = 1323;
-	ground.h = 513;
+	// Background 
+	background.x = 0;
+	background.y = 0;
+	background.w = 384;
+	background.h = 224;
 
 
 }
 
-ModuleLevel2::~ModuleLevel2()
+ModuleMenu::~ModuleMenu()
 {}
 
 // Load assets
-bool ModuleLevel2::Start()
+bool ModuleMenu::Start()
 {
 	LOG("Loading background assets");
 	bool ret = true;
-	tilemap = App->textures->Load("image/LV2_Tilemap.png");
+	graphics = App->textures->Load("image/main_menu.png");
 
-	App->player->Enable();
+	
 	return ret;
 }
 
 // Load assets
-bool ModuleLevel2::CleanUp()
+bool ModuleMenu::CleanUp()
 {
+	
 	LOG("Unloading honda stage");
-	App->player->Disable();
 	App->textures->Unload(graphics);
 	return true;
 }
 
 // Update: draw background
-update_status ModuleLevel2::Update()
+update_status ModuleMenu::Update()
 {
 	// Draw everything --------------------------------------	
-	App->render->Blit(tilemap, (tilemap_w) / 3.5, 0, &ground, 0.75f); //tilemap
+	App->render->Blit(graphics, (background_w) / 3.5, 0, &background, 0); // backround
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
-		App->fade->FadeToBlack(this, App->menu);
+	{
+		App->fade->FadeToBlack(this, App->lvl1);
+
+	}
 
 	return UPDATE_CONTINUE;
 }

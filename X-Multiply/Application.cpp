@@ -3,6 +3,7 @@
 #include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
+#include "ModuleMenu.h"
 #include "ModuleLevel1.h"
 #include "ModuleLevel2.h"
 #include "ModulePlayer.h"
@@ -18,6 +19,7 @@ Application::Application()
 	modules[5] = lvl2 = new ModuleLevel2();
 	modules[6] = player = new ModulePlayer();
 	modules[7] = fade = new ModuleFadeToBlack();
+	modules[8] = menu = new ModuleMenu();
 }	
 
 Application::~Application()

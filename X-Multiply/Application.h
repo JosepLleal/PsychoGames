@@ -3,12 +3,13 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 8
+#define NUM_MODULES 9
 
 class ModuleWindow;
 class ModuleInput;
 class ModuleTextures;
 class ModuleRender;
+class ModuleMenu;
 class ModuleLevel1;
 class ModuleLevel2;
 class ModulePlayer;
@@ -24,6 +25,7 @@ public:
 	ModuleRender* render;
 	ModuleInput* input;
 	ModuleTextures* textures;
+	ModuleMenu* menu;
 	ModuleLevel1* lvl1;
 	ModuleLevel2* lvl2;
 	ModulePlayer* player;
