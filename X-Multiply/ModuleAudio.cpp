@@ -56,6 +56,7 @@ bool ModuleAudio::MusicPlay(const char* path, float fade_time)
 		Mix_FadeOutMusic((int)(fade_time*1000.0f));
 	}
 
+	Mix_VolumeMusic(40);
 	music = Mix_LoadMUS(path);
 
 	if (music == NULL) 
@@ -113,6 +114,7 @@ bool ModuleAudio::ChunkPlay(uint last)
 
 	if (FX[last] != nullptr)
 	{
+		Mix_VolumeChunk(FX[last], 128);
 		Mix_PlayChannelTimed(-1, FX[last], 0, 500);
 		LOG("Playing fx"); 
 		ret = true;

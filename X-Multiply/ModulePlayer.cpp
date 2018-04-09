@@ -72,6 +72,11 @@ update_status ModulePlayer::Update()
 	{
 		position.x -= speed;
 	}
+	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
+	{
+		App->particles->AddParticle(App->particles->shot, position.x + 27, position.y + 8);
+		App->audio->ChunkPlay(shot);
+	}
 	
 
 	// Limits -------------------------------------
@@ -98,11 +103,7 @@ update_status ModulePlayer::Update()
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
-	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
-	{
-		App->particles->AddParticle(App->particles->shot, position.x + 27, position.y + 8);
-		App->audio->ChunkPlay(shot);
-	}
+	
 	
 	return UPDATE_CONTINUE;
 }
