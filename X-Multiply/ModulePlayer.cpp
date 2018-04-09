@@ -38,6 +38,7 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 	bool ret = true;
 	graphics = App->textures->Load("image/Main_Character_Effects.png"); // arcade version
+	shot = App->audio->LoadFX("Sound/xmultipl-071.wav");
 	return ret;
 }
 
@@ -72,7 +73,7 @@ update_status ModulePlayer::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_Q] == 1)
 	{
-		App->audio->ChunkPlay("Sound/xmultipl-071.wav"); 
+		App->audio->ChunkPlay(shot); 
 	}
 
 	// Limits -------------------------------------

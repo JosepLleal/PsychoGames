@@ -76,39 +76,48 @@ bool ModuleAudio::MusicPlay(const char* path, float fade_time)
 	return ret;
 }
 
-bool ModuleAudio::ChunkPlay(const char* path)
+uint ModuleAudio::LoadFX(const char* path)
 {
-	bool ret = true;
+	int ret = LastFx;
+	Mix_Chunk* fx = Mix_LoadWAV(path);
 
-	FX = Mix_LoadWAV(path);
-
-	if (FX == NULL)
+	if (fx == nullptr)
 	{
-		LOG("Cannot load Fx %s. Error %s", path, SDL_GetError());
-		ret = false;
+		LOG("Cannot load wav %s. Error: %s", path, SDL_GetError());
 	}
 	else
 	{
-		if (Mix_PlayChannel(-1, FX, repeat))
-		{
-			LOG("Cannot play in Fx %s. Error: %s", path, SDL_GetError());
-			ret = false;
-		}
+		FX[LastFx] = fx;
+		ret = LastFx++;
 	}
-	LOG("Playing %s", path); 
-	return ret; 
+	return ret;
 }
 
-bool ModuleAudio::UnloadFX(uint id)
+bool ModuleAudio::UnloadFX(uint last)
 {
-	bool ret = false; 
+	bool ret = false;
 
-	if (FX != nullptr)
+	if (FX[last] != nullptr)
 	{
-		Mix_FreeChunk(FX); 
-		FX = nullptr; 
-		ret = true; 
+		Mix_FreeChunk(FX[last]);
+		FX[last] = nullptr;
+		ret = true;
 	}
-	
-	return ret; 
+
+	return ret;
+}
+
+bool ModuleAudio::ChunkPlay(uint last)
+{
+	bool ret = false;
+
+	if (FX[last] != nullptr)
+	{
+		Mix_PlayChannel(-1, FX[last], 0);
+		LOG("Playing fx");
+		ret = true;
+	}
+
+
+	return ret;
 }

@@ -4,9 +4,11 @@
 #include "Module.h"
 #include "Globals.h"
 
+#define Max 30
 
 typedef struct _Mix_Music Mix_Music;
 struct Mix_Chunk; 
+
 
 class ModuleAudio : public Module
 {
@@ -19,14 +21,16 @@ public:
 	bool CleanUp();
 
 	bool MusicPlay(const char * path, float fade_time);
-	bool ChunkPlay(const char* path);
+	bool ChunkPlay(uint last);
 
-	bool UnloadFX(uint id); 
+	uint LoadFX(const char* path);
+	bool UnloadFX(uint last); 
 
 public:
 
 	Mix_Music * music = nullptr;
-	Mix_Chunk * FX = nullptr;
+	Mix_Chunk * FX[Max];
+	uint LastFx = 1;
 
 };
 

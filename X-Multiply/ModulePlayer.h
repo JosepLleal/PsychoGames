@@ -25,6 +25,8 @@ public:
 	Animation downward;
 	iPoint position;
 
+	uint shot;
+
 };
 
 #endif
