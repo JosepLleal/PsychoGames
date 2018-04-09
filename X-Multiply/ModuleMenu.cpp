@@ -55,6 +55,12 @@ update_status ModuleMenu::Update()
 	{
 		App->fade->FadeToBlack(this, App->lvl1, 1);
 
+		App->player->position.x = 100;
+		App->player->position.y = 30;
+
+		App->lvl1->background_w = 0;
+		App->lvl1->tilemap_w = 0;
+
 	}
 
 	return UPDATE_CONTINUE;
