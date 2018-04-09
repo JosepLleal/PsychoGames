@@ -4,6 +4,7 @@
 #include "ModuleInput.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
+#include "ModuleAudio.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -68,6 +69,10 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_A] == 1)
 	{
 		position.x -= speed;
+	}
+	if (App->input->keyboard[SDL_SCANCODE_Q] == 1)
+	{
+		App->audio->ChunkPlay("Sound/xmultipl-071.wav"); 
 	}
 
 	// Limits -------------------------------------

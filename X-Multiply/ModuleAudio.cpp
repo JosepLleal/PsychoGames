@@ -75,3 +75,40 @@ bool ModuleAudio::MusicPlay(const char* path, float fade_time)
 	LOG("Playing %s", path);
 	return ret;
 }
+
+bool ModuleAudio::ChunkPlay(const char* path)
+{
+	bool ret = true;
+
+	FX = Mix_LoadWAV(path);
+
+	if (FX == NULL)
+	{
+		LOG("Cannot load Fx %s. Error %s", path, SDL_GetError());
+		ret = false;
+	}
+	else
+	{
+		if (Mix_PlayChannel(-1, FX, repeat))
+		{
+			LOG("Cannot play in Fx %s. Error: %s", path, SDL_GetError());
+			ret = false;
+		}
+	}
+	LOG("Playing %s", path); 
+	return ret; 
+}
+
+bool ModuleAudio::UnloadFX(uint id)
+{
+	bool ret = false; 
+
+	if (FX != nullptr)
+	{
+		Mix_FreeChunk(FX); 
+		FX = nullptr; 
+		ret = true; 
+	}
+	
+	return ret; 
+}

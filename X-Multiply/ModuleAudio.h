@@ -6,8 +6,7 @@
 
 
 typedef struct _Mix_Music Mix_Music;
-
-
+struct Mix_Chunk; 
 
 class ModuleAudio : public Module
 {
@@ -20,11 +19,14 @@ public:
 	bool CleanUp();
 
 	bool MusicPlay(const char * path, float fade_time);
+	bool ChunkPlay(const char* path);
+
+	bool UnloadFX(uint id); 
 
 public:
 
 	Mix_Music * music = nullptr;
-
+	Mix_Chunk * FX = nullptr;
 
 };
 
