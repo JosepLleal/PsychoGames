@@ -7,6 +7,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleInput.h"
 #include "ModuleLevel2.h"
+#include "ModuleAudio.h"
 
 
 
@@ -36,6 +37,7 @@ bool ModuleLevel1::Start()
 	graphics = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
 
+	App->audio->MusicPlay("Sound/04_Into_the_Human_Body_Stage_1_.ogg", 0.5f);
 	
 	App->player->Enable();
 

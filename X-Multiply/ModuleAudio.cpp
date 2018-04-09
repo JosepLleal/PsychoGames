@@ -7,9 +7,9 @@
 
 #pragma comment (lib, "SDL_mixer/libx86/SDL2_mixer.lib")
 
-#define MUSIC 50
 
-ModuleAudio::ModuleAudio() : Module() {}
+
+ModuleAudio::ModuleAudio(){}
 
 ModuleAudio::~ModuleAudio() {}
 
@@ -34,73 +34,6 @@ bool ModuleAudio::Init()
 	return ret;
 }
 
-bool ModuleAudio::Start()	//load the start music
-{
-	// Music
-	LoadMusic(music, "Sound/01_X-Multiply_Title_.ogg");
-
-	return true;
-}
-
-update_status ModuleAudio::Update()
-{
-
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1)	
-	{
-		currentScreen++;
-
-		musicRunning = false;
-
-	}
-
-	if (currentScreen == StageStatus::MAIN_MENU && musicRunning == false)
-	{
-
-		music = Mix_LoadMUS("Sound/01_X-Multiply_Title_.ogg");
-		Mix_FadeInMusic(music, 1, 1000);
-		Mix_VolumeMusic(MUSIC);
-		
-		musicRunning = true; 
-
-	}
-
-	else if (currentScreen == StageStatus::STAGE_1 && musicRunning == false)
-	{
-
-		music = Mix_LoadMUS("Sound/04_Into_the_Human_Body_Stage_1_.ogg");
-		Mix_FadeInMusic(music, 1, 1000);
-		Mix_VolumeMusic(MUSIC);
-
-		musicRunning = true;
-	}
-
-	else if (currentScreen == StageStatus::STAGE_2 && musicRunning == false)
-	{
-
-		music = Mix_LoadMUS("Sound/07_Babe_Good-Lookin_Stage_2_.ogg");
-		Mix_FadeInMusic(music, 1, 1000);
-		Mix_VolumeMusic(MUSIC);
-
-		musicRunning = true;
-	}
-
-	else if (currentScreen == StageStatus::END_MENU && musicRunning == false)
-	{
-
-		music = Mix_LoadMUS("Sound/15_Body_Scratchers_Name_Entry_.ogg");
-		Mix_FadeInMusic(music, 1, 1000);
-		Mix_VolumeMusic(MUSIC);
-
-		musicRunning = true; 
-	}
-	 
-	else 
-	{
-		currentScreen = StageStatus::MAIN_MENU;
-	}
-
-	return update_status::UPDATE_CONTINUE;
-}
 
 bool ModuleAudio::CleanUp()
 {
@@ -114,21 +47,31 @@ bool ModuleAudio::CleanUp()
 	return true;
 }
 
-void ModuleAudio::LoadMusic(Mix_Music* music, char* audioPath)
+bool ModuleAudio::MusicPlay(const char* path, float fade_time)
 {
 	bool ret = true;
 
-	music = Mix_LoadMUS(audioPath);
-
-	if (music == nullptr)
+	if (music != NULL) 
 	{
-		LOG("Couldn't load music: %s", SDL_GetError());
+		Mix_FadeOutMusic((int)(fade_time*1000.0f));
+	}
+
+	music = Mix_LoadMUS(path);
+
+	if (music == NULL) 
+	{
+		LOG("Cannot load music %s. Error: %s", path, SDL_GetError());
 		ret = false;
 	}
-
 	else
 	{
-		Mix_FadeInMusic(music, 1, 1000);
-		Mix_VolumeMusic(MUSIC);
+		if (Mix_PlayMusic(music, -1) < 0)
+		{
+			LOG("Cannot play in music %s. Error: %s", path, SDL_GetError());
+			ret = false;
+		}
 	}
+
+	LOG("Playing %s", path);
+	return ret;
 }

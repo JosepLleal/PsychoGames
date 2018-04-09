@@ -9,6 +9,7 @@
 #include "ModuleLevel1.h"
 #include "ModuleMenu.h"
 #include "ModuleCredits.h"
+#include "ModuleAudio.h"
 
 
 
@@ -32,7 +33,7 @@ bool ModuleLevel2::Start()
 	LOG("Loading level 2 scene");
 	bool ret = true;
 	tilemap = App->textures->Load("image/LV2_Tilemap.png");
-
+	App->audio->MusicPlay("Sound/07_Babe_Good-Lookin_Stage_2_.ogg", 0.5f);
 	App->player->Enable();
 	return ret;
 }

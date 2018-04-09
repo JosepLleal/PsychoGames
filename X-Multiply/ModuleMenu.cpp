@@ -8,6 +8,7 @@
 #include "ModuleLevel1.h"
 #include "ModuleCredits.h"
 #include "ModuleMenu.h"
+#include "ModuleAudio.h"
 
 
 
@@ -17,7 +18,7 @@ ModuleMenu::ModuleMenu()
 	background.x = 0;
 	background.y = 0;
 	background.w = 384;
-	background.h = 224;
+	background.h = 288;
 
 
 }
@@ -31,6 +32,7 @@ bool ModuleMenu::Start()
 	LOG("Loading menu scene");
 	bool ret = true;
 	graphics = App->textures->Load("image/main_menu.png");
+	App->audio->MusicPlay("Sound/01_X-Multiply_Title_.ogg", 1.5f);
 
 	
 	return ret;
@@ -42,6 +44,7 @@ bool ModuleMenu::CleanUp()
 	
 	LOG("Unloading menu scene");
 	App->textures->Unload(graphics);
+
 	return true;
 }
 
