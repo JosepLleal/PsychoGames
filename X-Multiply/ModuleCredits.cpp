@@ -46,7 +46,7 @@ update_status ModuleCredits::Update()
 {
 
 	// Draw everything --------------------------------------
-	App->render->Blit(graphics, (credit_w) / 3.5, 0, &credit, 0.75f); // background
+	App->render->Blit(graphics, (credit_w) / 3.5, 0, &credit, 0); // background
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
