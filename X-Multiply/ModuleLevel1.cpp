@@ -34,7 +34,7 @@ bool ModuleLevel1::Start()
 {
 	LOG("Loading level 1 scene");
 	
-	graphics = App->textures->Load("image/background completed.png");
+	backround = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
 
 	App->audio->MusicPlay("Sound/04_Into_the_Human_Body_Stage_1_.ogg", 0.5f);
@@ -49,7 +49,7 @@ bool ModuleLevel1::CleanUp()
 {
 	LOG("Unloading level 1 scene");
 	App->player->Disable();
-	App->textures->Unload(graphics);
+	App->textures->Unload(backround);
 	App->textures->Unload(tilemap1);
 	return true;
 }
@@ -68,7 +68,7 @@ update_status ModuleLevel1::Update()
 	}
 
 	// Draw everything --------------------------------------
-	App->render->Blit(graphics, (background_w) / 3.5, 0, &background, 0.75f); // backround
+	App->render->Blit(backround, (background_w) / 3.5, 0, &background, 0.75f); // backround
 	App->render->Blit(tilemap1, (tilemap_w) / 3.5, 0, &ground, 0.75f); //tilemap
 	
 

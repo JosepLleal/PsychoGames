@@ -20,6 +20,7 @@ public:
 public:
 	
 	SDL_Texture* graphics = nullptr;
+	SDL_Texture* backround = nullptr;
 	SDL_Texture* tilemap1 = nullptr;
 	SDL_Rect ground;
 	SDL_Rect foreground;

@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "ModuleAudio.h"
+#include "ModuleParticles.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -37,8 +38,8 @@ bool ModulePlayer::Start()
 {
 	LOG("Loading player textures");
 	bool ret = true;
-	graphics = App->textures->Load("image/Main_Character_Effects.png"); // arcade version
-	shot = App->audio->LoadFX("Sound/xmultipl-071.wav");
+	graphics = App->textures->Load("Image/Main_Character_Effects.png"); // arcade version
+	shot = App->audio->LoadFX("Sound/xmultipl-122.wav");
 	return ret;
 }
 
@@ -49,44 +50,59 @@ update_status ModulePlayer::Update()
 
 	int speed = 3;
 
-	if (App->input->keyboard[SDL_SCANCODE_D] == 1)
+	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x += speed;
 	}
-	if (App->input->keyboard[SDL_SCANCODE_W] == 1)
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
 	{
 		position.y -= speed;
 		current_animation = &upward;
 		downward.Reset();
 		
 	}
-	if (App->input->keyboard[SDL_SCANCODE_S] == 1)
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
 	{
 		position.y += speed;
 		current_animation = &downward;
 		upward.Reset();
 		
 	}
-	if (App->input->keyboard[SDL_SCANCODE_A] == 1)
+	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x -= speed;
 	}
-	if (App->input->keyboard[SDL_SCANCODE_Q] == 1)
-	{
-		App->audio->ChunkPlay(shot); 
-	}
+	
 
 	// Limits -------------------------------------
-	if (position.x <= 0) position.x = 0;
-	else if (position.x >= SCREEN_WIDTH - 35) position.x = SCREEN_WIDTH - 35;
-	if (position.y <= 12) position.y = 12;
-	else if (position.y >= SCREEN_HEIGHT ) position.y = SCREEN_HEIGHT ;
+	if (position.x <= 0)
+	{
+		position.x = 0;
+	}
+	else if (position.x >= SCREEN_WIDTH - 35)
+	{
+		position.x = SCREEN_WIDTH - 35;
+	}
+
+	if (position.y <= 12)
+	{
+		position.y = 12;
+	}
+	else if (position.y >= SCREEN_HEIGHT)
+	{
+		position.y = SCREEN_HEIGHT;
+	}
 
 
 	// Draw everything --------------------------------------
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
-	App->render->Blit(graphics, position.x, position.y - r.h, &r);
+	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
+	{
+		App->particles->AddParticle(App->particles->shot, position.x + 27, position.y + 8);
+		App->audio->ChunkPlay(shot);
+	}
 	
 	return UPDATE_CONTINUE;
 }
