@@ -113,8 +113,8 @@ bool ModuleAudio::ChunkPlay(uint last)
 
 	if (FX[last] != nullptr)
 	{
-		Mix_PlayChannel(-1, FX[last], 0);
-		LOG("Playing fx");
+		Mix_PlayChannelTimed(-1, FX[last], -1, 700);
+		LOG("Playing fx"); 
 		ret = true;
 	}
 
