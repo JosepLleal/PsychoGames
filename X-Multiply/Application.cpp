@@ -15,19 +15,21 @@
 
 Application::Application()
 {
-	modules[0] = window = new ModuleWindow();
-	modules[1] = render = new ModuleRender();
-	modules[2] = input = new ModuleInput();
-	modules[3] = textures = new ModuleTextures();
-	modules[4] = audio = new ModuleAudio();
-	modules[5] = menu = new ModuleMenu();
-	modules[6] = lvl1 = new ModuleLevel1();
-	modules[7] = lvl2 = new ModuleLevel2();
-	modules[8] = credit = new ModuleCredits();
-	modules[9] = player = new ModulePlayer();
-	modules[10] = particles = new ModuleParticles();
-	modules[11] = collision = new ModuleCollision();
-	modules[12] = fade = new ModuleFadeToBlack();
+	int i = 0;
+
+	modules[i++] = window = new ModuleWindow();
+	modules[i++] = render = new ModuleRender();
+	modules[i++] = input = new ModuleInput();
+	modules[i++] = textures = new ModuleTextures();
+	modules[i++] = audio = new ModuleAudio();
+	modules[i++] = menu = new ModuleMenu();
+	modules[i++] = lvl1 = new ModuleLevel1();
+	modules[i++] = lvl2 = new ModuleLevel2();
+	modules[i++] = credit = new ModuleCredits();
+	modules[i++] = player = new ModulePlayer();
+	modules[i++] = particles = new ModuleParticles();
+	modules[i++] = collision = new ModuleCollision();
+	modules[i++] = fade = new ModuleFadeToBlack();
 	
 	
 }	
