@@ -3,11 +3,10 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 12
+#define NUM_MODULES 13
 
 class Module;
 class ModuleWindow;
-
 class ModuleRender;
 class ModuleInput;
 class ModuleTextures; 
@@ -17,6 +16,7 @@ class ModuleMenu;
 class ModuleLevel1;
 class ModuleLevel2;
 class ModuleCredits;
+class ModuleCollision;
 class ModuleParticles;
 class ModuleFadeToBlack;
 
@@ -35,6 +35,7 @@ public:
 	ModuleLevel1* lvl1;
 	ModuleLevel2* lvl2;
 	ModuleCredits* credit;
+	ModuleCollision* collision;
 	ModuleParticles* particles;
 	ModulePlayer* player;
 	ModuleFadeToBlack* fade;

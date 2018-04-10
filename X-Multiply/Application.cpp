@@ -7,6 +7,7 @@
 #include "ModuleMenu.h"
 #include "ModuleLevel1.h"
 #include "ModuleLevel2.h"
+#include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "ModuleCredits.h"
 #include "ModuleParticles.h"
@@ -23,9 +24,10 @@ Application::Application()
 	modules[6] = lvl1 = new ModuleLevel1();
 	modules[7] = lvl2 = new ModuleLevel2();
 	modules[8] = credit = new ModuleCredits();
-	modules[9] = particles = new ModuleParticles();
-	modules[10] = player = new ModulePlayer();
-	modules[11] = fade = new ModuleFadeToBlack();
+	modules[9] = player = new ModulePlayer();
+	modules[10] = particles = new ModuleParticles();
+	modules[11] = collision = new ModuleCollision();
+	modules[12] = fade = new ModuleFadeToBlack();
 	
 	
 }	
