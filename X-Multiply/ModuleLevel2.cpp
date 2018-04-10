@@ -35,6 +35,10 @@ bool ModuleLevel2::Start()
 	tilemap = App->textures->Load("image/LV2_Tilemap.png");
 	App->audio->MusicPlay("Sound/07_Babe_Good-Lookin_Stage_2_.ogg", 0.5f);
 	App->player->Enable();
+
+	App->render->camera.x = 0;
+	App->render->camera.y = 0;
+
 	return ret;
 }
 

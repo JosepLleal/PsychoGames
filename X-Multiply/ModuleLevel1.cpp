@@ -40,6 +40,9 @@ bool ModuleLevel1::Start()
 	App->audio->MusicPlay("Sound/04_Into_the_Human_Body_Stage_1_.ogg", 0.5f);
 	
 	App->player->Enable();
+	
+	App->render->camera.x = 0;
+	App->render->camera.y = 0;
 
 	return true;
 }
