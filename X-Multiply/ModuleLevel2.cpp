@@ -48,11 +48,23 @@ bool ModuleLevel2::Start()
 	App->collision->AddCollider({ 298, 222, 390, 13 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 330, 165, 200, 7 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 306, 172, 225, 7 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 819, 186, 124, 174 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 943, 190, 25, 174 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 968, 196, 25, 172 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 993, 212, 25, 170 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1018, 245, 25, 130 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 427, 164, 127, 191 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 665, 254, 357, 94 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1037, 275, 156, 78 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 554, 235, 102, 111 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 407, 242, 33, 50 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 815, 182, 128, 72 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 943, 194, 76, 60 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1022, 250, 15, 100 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 850, 348, 197, 26 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 656, 253, 9, 92 }, COLLIDER_WALL);
+
+	//ear 
+	App->collision->AddCollider({ 350, 150, 51, 19 }, COLLIDER_WALL);
+
+	//wing
+	App->collision->AddCollider({ 554, 176, 104, 61 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 656, 201, 44, 53 }, COLLIDER_WALL);
 
 	return ret;
 }
@@ -132,16 +144,16 @@ update_status ModuleLevel2::Update()
 		App->render->camera.x += 1;
 	}
 
-	if (App->render->camera.x < -2025 && App->render->camera.x > -2028)
+	if (App->render->camera.x < -2050 && App->render->camera.x > -2053)
 	{
 		App->render->camera.y -= 1;
 		App->render->camera.x += scrollSpeed;
 		if (App->render->camera.y < -300) {
-			App->render->camera.x = -2024;
+			App->render->camera.x = -2049;
 		}
 	}
 
-	if (App->render->camera.x > -2025 && App->render->camera.x < 0 && App->render->camera.y < -300)
+	if (App->render->camera.x > -2050 && App->render->camera.x < 0 && App->render->camera.y < -300)
 	{
 		App->render->camera.x += 4; 
 		App->player->position.x -= 2; 
