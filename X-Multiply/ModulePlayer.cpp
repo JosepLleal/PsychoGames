@@ -116,6 +116,11 @@ update_status ModulePlayer::Update()
 	return UPDATE_CONTINUE;
 }
 
+bool ModulePlayer::CleanUp()
+{
+	return false;
+}
+
 void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 {
 	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL)
