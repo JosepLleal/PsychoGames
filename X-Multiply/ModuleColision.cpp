@@ -106,7 +106,7 @@ void ModuleCollision::DebugDraw()
 		debug = !debug;
 
 	if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
-		playerHitbox = debug;
+		
 
 	if (debug == false)
 		return;

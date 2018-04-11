@@ -54,6 +54,84 @@ bool ModuleLevel2::CleanUp()
 // Update: draw background
 update_status ModuleLevel2::Update()
 {
+
+	int scrollSpeed = 2;
+
+	App->player->position.x += 1; 
+	App->render->camera.x -= scrollSpeed;
+
+	if (App->render->camera.x < -100 && App->render->camera.x > -200 && App->render->camera.y > -400)
+	{
+		App->render->camera.y -= 1;
+	} 
+
+	if (App->render->camera.x < -300 && App->render->camera.x > -400 && App->render->camera.y > -400)
+	{
+		App->render->camera.y += 1;
+	}
+
+	if (App->render->camera.x < -450 && App->render->camera.x > -460 && App->render->camera.y > -400)
+	{
+		App->render->camera.y -= 1;
+	}
+
+	if (App->render->camera.x < -480 && App->render->camera.x > -490 && App->render->camera.y > -400)
+	{
+		App->render->camera.y -= 1;
+	}
+
+	if (App->render->camera.x < -510 && App->render->camera.x > -520 && App->render->camera.y > -400 )
+	{
+		App->render->camera.y -= 1;
+	}
+
+	if (App->render->camera.x < -900 && App->render->camera.x > -1100 && App->render->camera.y > -400)
+	{
+		App->render->camera.y -= scrollSpeed;
+	}
+
+	if (App->render->camera.x < -1200 && App->render->camera.x > -1300)
+	{
+		App->render->camera.y += 1;
+	}
+
+	if (App->render->camera.x < -1301 && App->render->camera.x > -1320)
+	{
+		App->render->camera.y += 1;
+		App->render->camera.x += 1;
+	}
+
+	if (App->render->camera.x < -2000 && App->render->camera.x > -2200)
+	{
+		App->render->camera.y -= 1;
+	}
+
+	if (App->render->camera.x < -2400 && App->render->camera.x > -2600)
+	{
+		App->render->camera.y -= 1;
+		App->render->camera.x += 1;
+	}
+
+	if (App->render->camera.x < -2900 && App->render->camera.x > -2903)
+	{
+		App->render->camera.y -= 1;
+		App->render->camera.x += scrollSpeed;
+		if (App->render->camera.y < -400) {
+			App->render->camera.x = -2899;
+		}
+	}
+
+	if (App->render->camera.x > -2900 && App->render->camera.x < 0 && App->render->camera.y < -400)
+	{
+		App->render->camera.x += 4; 
+		App->player->position.x -= 2; 
+	}
+
+	if (App->render->camera.x < -1200 && App->render->camera.x > -1300 && App->render->camera.y < -400)
+	{
+		App->render->camera.y += 1;
+	}
+
 	// Draw everything --------------------------------------	
 	App->render->Blit(tilemap, (tilemap_w) / 3.5, 0, &ground, 0.75f); //tilemap
 
