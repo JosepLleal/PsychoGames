@@ -174,10 +174,10 @@ Collider* ModuleCollision::AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module
 
 bool Collider::CheckCollision(const SDL_Rect& r) const
 {
-	// TODO 0: Return true if there is an overlap
-
-	// between argument "r" and property "rect"
-	if (r.x + r.w<rect.x || rect.x + rect.w>r.x || r.y + r.h<rect.y || rect.y + rect.h>r.y) return false;
-
+	
+	if (!(rect.x > r.x + r.w || r.x > rect.x + rect.w || rect.y > r.y + r.h || r.y > rect.y + rect.h))
+	{
+		return true;
+	}
 	return false;
 }

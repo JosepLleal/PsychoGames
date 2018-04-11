@@ -34,6 +34,8 @@ bool ModuleMenu::Start()
 	graphics = App->textures->Load("image/main_menu.png");
 	App->audio->MusicPlay("Sound/01_X-Multiply_Title_.ogg", 1.5f);
 
+	App->player->CleanUp();
+
 	
 	return ret;
 }

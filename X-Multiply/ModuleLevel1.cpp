@@ -11,10 +11,6 @@
 #include "ModuleFadeToBlack.h"
 
 
-
-
-
-
 ModuleLevel1::ModuleLevel1()
 {
 	// tilemap
@@ -59,8 +55,10 @@ bool ModuleLevel1::CleanUp()
 {
 	LOG("Unloading level 1 scene");
 	App->player->Disable();
+	App->collision->Disable();
 	App->textures->Unload(backround);
 	App->textures->Unload(tilemap1);
+	
 	return true;
 }
 
@@ -83,8 +81,8 @@ update_status ModuleLevel1::Update()
 	App->render->camera.x -= scrollSpeed;
 
 	// Draw everything --------------------------------------
-	App->render->Blit(backround,0, 0, &background, 0.75f); // backround
-	App->render->Blit(tilemap1,0, 0, &ground, 1.0f); //tilemap
+	App->render->Blit(backround, 0, 0, &background, 0.75f); // backround
+	App->render->Blit(tilemap1, 0, 0, &ground, 1.0f); //tilemap
 	
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
@@ -95,3 +93,4 @@ update_status ModuleLevel1::Update()
 	}
 	return UPDATE_CONTINUE;
 }
+
