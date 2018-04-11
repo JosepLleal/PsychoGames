@@ -34,6 +34,7 @@ bool ModuleLevel2::Start()
 	bool ret = true;
 	tilemap = App->textures->Load("image/LV2_Tilemap.png");
 	App->audio->MusicPlay("Sound/07_Babe_Good-Lookin_Stage_2_.ogg", 0.5f);
+
 	App->player->Enable();
 
 	App->render->camera.x = 0;
@@ -49,9 +50,9 @@ bool ModuleLevel2::Start()
 	App->collision->AddCollider({ 306, 172, 225, 7 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 819, 186, 124, 174 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 943, 190, 25, 174 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 968, 196, 25, 174 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 993, 212, 25, 174 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1018, 245, 25, 174 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 968, 196, 25, 172 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 993, 212, 25, 170 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1018, 245, 25, 130 }, COLLIDER_WALL);
 
 	return ret;
 }

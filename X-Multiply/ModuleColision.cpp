@@ -1,7 +1,6 @@
 #include "Application.h"
 #include "ModuleInput.h"
 #include "ModuleRender.h"
-#include "ModulePlayer.h"
 #include "ModuleCollision.h"
 
 ModuleCollision::ModuleCollision()
@@ -38,6 +37,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_ENEMY] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER_SHOT] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_ENEMY_SHOT] = false;
+
 }
 
 // Destructor
@@ -103,9 +103,11 @@ update_status ModuleCollision::Update()
 void ModuleCollision::DebugDraw()
 {
 	if (App->input->keyboard[SDL_SCANCODE_F1] == KEY_DOWN)
+	{
 		debug = !debug;
+	}
 
-	if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
+	//if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
 		
 
 	if (debug == false)
