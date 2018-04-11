@@ -8,6 +8,7 @@
 #include "ModulePlayer.h"
 #include "ModuleMenu.h"
 #include "ModuleLevel1.h"
+#include "ModuleLevel2.h"
 #include "ModuleParticles.h"
 #include "ModuleFadeToBlack.h"
 
@@ -131,7 +132,8 @@ void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL)
 	{
 		App->player->Disable();
-		App->lvl1->Disable();
 		App->fade->FadeToBlack(this, App->menu, 1);
+		App->lvl1->Disable();
+		App->lvl2->Disable();
 	}
 }

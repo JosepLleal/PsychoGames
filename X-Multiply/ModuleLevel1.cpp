@@ -56,13 +56,13 @@ bool ModuleLevel1::Start()
 	
 
 	//BOTTOM WALLS. FIRST WALLS = UPPER
-	App->collision->AddCollider({ 0, 213, 2875, 12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 0, 213, 2867, 12 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 405, 183, 63, 30 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 495, 188, 104, 25 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1024, 201, 70, 12 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1263, 188, 104, 25 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1423, 128, 138, 84 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2009, 128, 213, 84 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1423, 129, 138, 84 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2009, 129, 213, 84 }, COLLIDER_WALL);
 	
 
 

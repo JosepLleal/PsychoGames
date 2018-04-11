@@ -35,7 +35,6 @@ bool ModuleMenu::Start()
 	App->audio->MusicPlay("Sound/01_X-Multiply_Title_.ogg", 1.5f);
 
 	App->player->CleanUp();
-
 	
 	return ret;
 }
