@@ -44,8 +44,15 @@ bool ModuleLevel1::Start()
 	App->collision->Enable();
 
 	//WALLS
-	App->collision->AddCollider({0, 213, 2875, 12}, COLLIDER_WALL);
-	App->collision->AddCollider({495, 0, 2040, 12}, COLLIDER_WALL);
+	App->collision->AddCollider({ 0, 213, 2875, 12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 495, 0, 2040, 12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 405, 183, 63, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 640, 12, 70, 12 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 495, 188, 104, 25 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1024, 201, 70, 12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1423, 12, 138, 84 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1423, 128, 138, 84 }, COLLIDER_WALL);
 
 	return true;
 }
@@ -79,6 +86,14 @@ update_status ModuleLevel1::Update()
 
 	App->player->position.x += 1;
 	App->render->camera.x -= scrollSpeed;
+
+	//Camera Diagonal Scroll. UNFINISHED.
+
+	/*if (App->render->camera.x > 3040) 
+	{
+		App->render->camera.x -= scrollSpeed;
+		App->render->camera.y -= scrollSpeed;
+	}*/
 
 	// Draw everything --------------------------------------
 	App->render->Blit(backround, 0, 0, &background, 0.75f); // backround

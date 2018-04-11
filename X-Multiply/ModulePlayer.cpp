@@ -132,6 +132,6 @@ void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 	{
 		App->player->Disable();
 		App->lvl1->Disable();
-		App->fade->FadeToBlack(this, App->menu, 0);
+		App->fade->FadeToBlack(this, App->menu, 1);
 	}
 }
