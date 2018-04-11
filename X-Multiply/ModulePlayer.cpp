@@ -54,7 +54,7 @@ update_status ModulePlayer::Update()
 {
 	Animation* current_animation = &idle;
 
-	int speed = 3;
+	int speed = 1;
 
 	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
@@ -76,7 +76,7 @@ update_status ModulePlayer::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
-		position.x -= speed;
+		position.x -= (speed * 2);
 	}
 	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
 	{
@@ -118,7 +118,10 @@ update_status ModulePlayer::Update()
 
 bool ModulePlayer::CleanUp()
 {
-	return false;
+	LOG("Unloading player assets:");
+	App->collision->Disable();
+
+	return true;
 }
 
 void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)

@@ -77,10 +77,10 @@ update_status ModuleLevel1::Update()
 		tilemap_w -= speed_tilemap;
 	}*/
 
-	int scroll = 5;
+	int scrollSpeed = 2;
 
 	App->player->position.x += 1;
-	App->render->camera.x -= scroll;
+	App->render->camera.x -= scrollSpeed;
 
 	// Draw everything --------------------------------------
 	App->render->Blit(backround,0, 0, &background, 0.75f); // backround
