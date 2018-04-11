@@ -118,7 +118,7 @@
     <ClCompile Include="ModuleParticles.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\SDL7_Handout\ModuleCollision.cpp">
+    <ClCompile Include="ModuleColision.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>
