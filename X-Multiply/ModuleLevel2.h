@@ -23,7 +23,7 @@ public:
 	SDL_Texture* tilemap = nullptr;
 	SDL_Rect ground;
 	SDL_Rect background;
-	
+
 	int background_w = 0;
 	int tilemap_w = 0;
 };
