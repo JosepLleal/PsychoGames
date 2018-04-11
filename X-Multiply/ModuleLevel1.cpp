@@ -2,12 +2,16 @@
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
-#include "ModuleLevel1.h"
-#include "ModulePlayer.h"
-#include "ModuleFadeToBlack.h"
-#include "ModuleInput.h"
-#include "ModuleLevel2.h"
+#include "ModuleCollision.h"
 #include "ModuleAudio.h"
+#include "ModuleInput.h"
+#include "ModulePlayer.h"
+#include "ModuleLevel1.h"
+#include "ModuleLevel2.h"
+#include "ModuleFadeToBlack.h"
+
+
+
 
 
 
@@ -36,13 +40,16 @@ bool ModuleLevel1::Start()
 	
 	backround = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
-
 	App->audio->MusicPlay("Sound/04_Into_the_Human_Body_Stage_1_.ogg", 0.5f);
-	
-	App->player->Enable();
-	
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
+	
+	App->player->Enable();
+	App->collision->Enable();
+
+	//WALLS
+	App->collision->AddCollider({0, 213, 2875, 12}, COLLIDER_WALL);
+	App->collision->AddCollider({495, 0, 2040, 12}, COLLIDER_WALL);
 
 	return true;
 }
@@ -70,15 +77,14 @@ update_status ModuleLevel1::Update()
 		tilemap_w -= speed_tilemap;
 	}*/
 
-	// Move camera forward -----------------------------
-	int scroll_speed = 1;
+	int scroll = 5;
 
 	App->player->position.x += 1;
-	App->render->camera.x -= 3;
+	App->render->camera.x -= scroll;
 
 	// Draw everything --------------------------------------
-	App->render->Blit(backround, (background_w) / 3.5, 0, &background, 0.75f); // backround
-	App->render->Blit(tilemap1, (tilemap_w) / 3.5, 0, &ground, 0.75f); //tilemap
+	App->render->Blit(backround,0, 0, &background, 0.75f); // backround
+	App->render->Blit(tilemap1,0, 0, &ground, 1.0f); //tilemap
 	
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
