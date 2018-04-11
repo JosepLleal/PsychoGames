@@ -79,24 +79,24 @@ update_status ModulePlayer::Update()
 	}
 	
 
-	// Limits -------------------------------------
-	if (position.x <= 0)
-	{
-		position.x = 0;
-	}
-	else if (position.x >= SCREEN_WIDTH - 35)
-	{
-		position.x = SCREEN_WIDTH - 35;
-	}
+	//// Limits -------------------------------------
+	//if (position.x <= 0)
+	//{
+	//	position.x = 0;
+	//}
+	//else if (position.x >= SCREEN_WIDTH - 35)
+	//{
+	//	position.x = SCREEN_WIDTH - 35;
+	//}
 
-	if (position.y <= 12)
-	{
-		position.y = 12;
-	}
-	else if (position.y >= SCREEN_HEIGHT)
-	{
-		position.y = SCREEN_HEIGHT;
-	}
+	//if (position.y <= 12)
+	//{
+	//	position.y = 12;
+	//}
+	//else if (position.y >= SCREEN_HEIGHT)
+	//{
+	//	position.y = SCREEN_HEIGHT;
+	//}
 
 
 	// Draw everything --------------------------------------

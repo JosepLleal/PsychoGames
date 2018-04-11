@@ -60,7 +60,7 @@ bool ModuleLevel1::CleanUp()
 // Update: draw background
 update_status ModuleLevel1::Update()
 {
-	int speed_backround = 4;
+	/*int speed_backround = 4;
 	int speed_tilemap = 5;
 
 	if (background_w < 4961) {
@@ -68,7 +68,13 @@ update_status ModuleLevel1::Update()
 	}
 	if (tilemap_w < 4961) {
 		tilemap_w -= speed_tilemap;
-	}
+	}*/
+
+	// Move camera forward -----------------------------
+	int scroll_speed = 1;
+
+	App->player->position.x += 1;
+	App->render->camera.x -= 3;
 
 	// Draw everything --------------------------------------
 	App->render->Blit(backround, (background_w) / 3.5, 0, &background, 0.75f); // backround
