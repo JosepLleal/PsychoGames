@@ -17,6 +17,9 @@ public:
 	bool Start();
 	update_status Update();
 
+
+	void OnCollision(Collider*, Collider*) override;
+
 public:
 
 	SDL_Texture* graphics = nullptr;
@@ -24,6 +27,7 @@ public:
 	Animation upward;
 	Animation downward;
 	iPoint position;
+	struct Collider* playerHitBox;
 
 	uint shot;
 

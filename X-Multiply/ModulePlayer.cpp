@@ -3,9 +3,12 @@
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
 #include "ModuleRender.h"
+#include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "ModuleAudio.h"
 #include "ModuleParticles.h"
+#include "ModuleFadeToBlack.h"
+#include "ModuleMenu.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -40,6 +43,9 @@ bool ModulePlayer::Start()
 	bool ret = true;
 	graphics = App->textures->Load("Image/Main_Character_Effects.png"); // arcade version
 	shot = App->audio->LoadFX("Sound/xmultipl-122.wav");
+	playerHitBox = App->collision->AddCollider({ position.x, position.y, 37, 16 }, COLLIDER_PLAYER, this);
+
+
 	return ret;
 }
 
@@ -77,6 +83,8 @@ update_status ModulePlayer::Update()
 		App->particles->AddParticle(App->particles->shot, position.x + 27, position.y + 8);
 		App->audio->ChunkPlay(shot);
 	}
+
+	playerHitBox->SetPos(position.x, position.y);
 	
 
 	//// Limits -------------------------------------
@@ -106,4 +114,13 @@ update_status ModulePlayer::Update()
 	
 	
 	return UPDATE_CONTINUE;
+}
+
+void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
+{
+	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL)
+	{
+		App->player->Disable();
+		App->fade->FadeToBlack(this, App->menu, 2);
+	}
 }
