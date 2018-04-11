@@ -48,11 +48,17 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 495, 0, 2040, 12 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 405, 183, 63, 30 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 640, 12, 70, 12 }, COLLIDER_WALL);
-
+	App->collision->AddCollider({ 1665, 12, 70, 12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1153, 12, 70, 12 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 495, 188, 104, 25 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1024, 201, 70, 12 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1423, 12, 138, 84 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1423, 128, 138, 84 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1005, 12, 104, 25 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 761, 12, 57, 29 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1263, 188, 104, 25 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2009, 12, 213, 84 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2009, 128, 213, 84 }, COLLIDER_WALL);
 
 	return true;
 }
