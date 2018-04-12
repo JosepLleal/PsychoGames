@@ -22,6 +22,11 @@ ModuleLevel2::ModuleLevel2()
 	ground.w = 1323;
 	ground.h = 513;
 
+	//background 
+	background.x = 0; 
+	background.y = 0; 
+	background.w = 1500; 
+	background.h = 600; 
 }
 
 ModuleLevel2::~ModuleLevel2()
@@ -33,6 +38,7 @@ bool ModuleLevel2::Start()
 	LOG("Loading level 2 scene");
 	bool ret = true;
 	tilemap = App->textures->Load("image/LV2_Tilemap.png");
+	graphics = App->textures->Load("image/LV2_Background.png"); 
 	App->audio->MusicPlay("Sound/07_Babe_Good-Lookin_Stage_2_.ogg", 0.5f);
 
 	App->player->Enable();
@@ -76,6 +82,7 @@ bool ModuleLevel2::CleanUp()
 
 	App->player->Disable();
 	App->textures->Unload(tilemap);
+	App->textures->Unload(graphics);
 	App->collision->Disable();
 	App->lvl2->Disable();
 
@@ -144,16 +151,21 @@ update_status ModuleLevel2::Update()
 		App->render->camera.x += 1;
 	}
 
-	if (App->render->camera.x < -2050 && App->render->camera.x > -2053)
+	if (App->render->camera.x < -2200 && App->render->camera.x > -2203)
 	{
 		App->render->camera.y -= 1;
 		App->render->camera.x += scrollSpeed;
 		if (App->render->camera.y < -300) {
-			App->render->camera.x = -2049;
+			App->render->camera.x = -2199;
 		}
 	}
 
-	if (App->render->camera.x > -2050 && App->render->camera.x < 0 && App->render->camera.y < -300)
+	if (App->render->camera.x < -2000 && App->render->camera.x > -1800)
+	{
+		App->render->camera.y += 1; 
+	}
+
+	if (App->render->camera.x > -2200 && App->render->camera.x < 0 && App->render->camera.y < -300)
 	{
 		App->render->camera.x += 4; 
 		App->player->position.x -= 2; 
@@ -165,8 +177,9 @@ update_status ModuleLevel2::Update()
 	}
 
 	// Draw everything --------------------------------------	
+	App->render->Blit(graphics, 0, 0, &background, 1);
 	App->render->Blit(tilemap, (tilemap_w) / 3.5, 0, &ground, 1); //tilemap
-
+	
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 		App->fade->FadeToBlack(this, App->credit, 1);
 

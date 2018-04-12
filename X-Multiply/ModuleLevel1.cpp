@@ -116,6 +116,11 @@ update_status ModuleLevel1::Update()
 	App->player->position.x += 1;
 	App->render->camera.x -= scrollSpeed;
 
+	if(App->render->camera.x < -6100 && App->render->camera.x > -7000) 
+	{
+		App->render->camera.y -= 1; 
+	}
+
 	//Camera Diagonal Scroll. UNFINISHED.
 
 	/*if (App->render->camera.x > 3040) 
