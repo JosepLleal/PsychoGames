@@ -42,11 +42,11 @@ void Enemy_Shrimp::Move()
 	}
 
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
-	position.x -= 1;
+	position.x -= 0.1f;
 
-	if (position.x % 50 == 0)
+	if (position.x % 80 == 0)
 	{
-		App->particles->AddParticle(App->particles->enemy_shot, position.x + 28, position.y + 6, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->enemy_shot, position.x + 15, position.y + 15, COLLIDER_ENEMY_SHOT);
 	}
 
 	

@@ -88,7 +88,7 @@ bool ModuleLevel1::Start()
 	//Shrimp --- 
 	
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 500, 30);
-	//App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 350, 40);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 30);
 	//App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 700, 50);
 	
 
