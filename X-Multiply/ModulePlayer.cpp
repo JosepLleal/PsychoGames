@@ -129,7 +129,7 @@ bool ModulePlayer::CleanUp()
 
 void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 {
-	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL)
+	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL || coll_1->type == COLLIDER_ENEMY || coll_2->type == COLLIDER_ENEMY)
 	{
 		App->player->Disable();
 		App->fade->FadeToBlack(this, App->menu, 1);

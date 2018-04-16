@@ -27,7 +27,6 @@ public:
 
 	Module* modules[NUM_MODULES];
 	ModuleWindow* window;
-
 	ModuleRender* render;
 	ModuleInput* input;
 	ModuleTextures* textures;

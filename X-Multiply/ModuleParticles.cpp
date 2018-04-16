@@ -28,7 +28,7 @@ bool ModuleParticles::Start()
 	shot.anim.speed = 0.1f;
 	shot.anim.loop = false;
 	shot.speed.x = 7;
-	shot.life = 2000;
+	shot.life = 950;
 
 	// TODO 2: Create the template for a new particle "laser"
 

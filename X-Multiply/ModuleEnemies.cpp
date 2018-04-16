@@ -4,6 +4,7 @@
 #include "ModuleEnemies.h"
 #include "ModuleParticles.h"
 #include "ModuleTextures.h"
+#include "ModulePlayer.h"
 #include "Enemy.h"
 
 
@@ -35,12 +36,13 @@ update_status ModuleEnemies::PreUpdate()
 	{
 		if (queue[i].type != ENEMY_TYPES::NO_TYPE)
 		{
-			if (queue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN)
+			if (1)
 			{
 				SpawnEnemy(queue[i]);
 				queue[i].type = ENEMY_TYPES::NO_TYPE;
 				LOG("Spawning enemy at %d", queue[i].x * SCREEN_SIZE);
 			}
+			
 		}
 	}
 

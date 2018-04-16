@@ -11,6 +11,7 @@
 #include "ModuleCredits.h"
 #include "ModuleAudio.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
 
 
 
@@ -42,6 +43,7 @@ bool ModuleLevel2::Start()
 	App->audio->MusicPlay("Sound/07_Babe_Good-Lookin_Stage_2_.ogg", 0.5f);
 
 	App->player->Enable();
+	App->particles->Enable();
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -85,6 +87,7 @@ bool ModuleLevel2::CleanUp()
 	App->textures->Unload(graphics);
 	App->collision->Disable();
 	App->lvl2->Disable();
+	App->particles->Disable();
 
 	return true; 
 }
