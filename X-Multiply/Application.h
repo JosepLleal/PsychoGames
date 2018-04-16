@@ -17,6 +17,7 @@ class ModuleLevel1;
 class ModuleLevel2;
 class ModuleCredits;
 class ModuleCollision;
+class ModuleEnemies;
 class ModuleParticles;
 class ModuleFadeToBlack;
 
@@ -37,6 +38,7 @@ public:
 	ModuleCredits* credit;
 	ModuleCollision* collision;
 	ModuleParticles* particles;
+	ModuleEnemies* enemies;
 	ModulePlayer* player;
 	ModuleFadeToBlack* fade;
 

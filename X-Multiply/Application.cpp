@@ -12,6 +12,7 @@
 #include "ModuleCredits.h"
 #include "ModuleParticles.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleEnemies.h"
 
 Application::Application()
 {
@@ -26,6 +27,7 @@ Application::Application()
 	modules[i++] = lvl1 = new ModuleLevel1();
 	modules[i++] = lvl2 = new ModuleLevel2();
 	modules[i++] = credit = new ModuleCredits();
+	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = player = new ModulePlayer();
 	modules[i++] = particles = new ModuleParticles();
 	modules[i++] = collision = new ModuleCollision();
