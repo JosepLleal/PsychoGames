@@ -46,12 +46,14 @@ bool Application::Init()
 {
 	bool ret = true;
 
-	// Player will be enabled on the first update of a new scene
+	//-----------------------
 	player->Disable();
-	// Disable the map that you do not start with
+	collision->Disable();
+	enemies->Disable();
 	lvl1->Disable();
 	lvl2->Disable();
 	credit->Disable();
+	//-----------------------
 
 	for(int i = 0; i < NUM_MODULES && ret == true; ++i)
 		ret = modules[i]->Init();
@@ -82,8 +84,8 @@ bool Application::CleanUp()
 {
 	bool ret = true;
 
-	for(int i = NUM_MODULES - 1; i >= 0 && ret == true; --i)
-		ret = modules[i]->CleanUp();
+	for (int i = NUM_MODULES - 1; i >= 0 && ret == true; --i)
+		ret = modules[i]->IsEnabled() ? modules[i]->CleanUp() : true;
 
 	return ret;
 }

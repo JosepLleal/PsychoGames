@@ -84,10 +84,10 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 3552, 461, 131, 53 }, COLLIDER_WALL);
 	
 	//Shrimp --- 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 625, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 640, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 665, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 625, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 640, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 665, 30);
 
 	return true;
 }

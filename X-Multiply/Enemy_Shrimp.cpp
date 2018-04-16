@@ -1,7 +1,7 @@
 #include "Application.h"
 #include "Enemy_Shrimp.h"
 #include "ModuleCollision.h"
-#include "ModuleRender.h"
+
 
 Enemy_Shrimp::Enemy_Shrimp(int x, int y) : Enemy(x, y)
 {
