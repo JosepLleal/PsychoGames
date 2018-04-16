@@ -5,7 +5,7 @@
 #include "ModuleParticles.h"
 #include "ModuleTextures.h"
 #include "Enemy.h"
-#include "Enemy_RedBird.h"
+#include "Enemy_Shrimp.h"
 
 #define SPAWN_MARGIN 50
 
@@ -23,7 +23,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 	// Create a prototype for each enemy available so we can copy them around
-	sprites = App->textures->Load("rtype/enemies.png");
+	shrimp = App->textures->Load("image/LV1_Shrimp.png");
 
 	return true;
 }
@@ -54,7 +54,7 @@ update_status ModuleEnemies::Update()
 		if (enemies[i] != nullptr) enemies[i]->Move();
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
-		if (enemies[i] != nullptr) enemies[i]->Draw(sprites);
+		if (enemies[i] != nullptr) enemies[i]->Draw(shrimp);
 
 	return UPDATE_CONTINUE;
 }
@@ -83,7 +83,7 @@ bool ModuleEnemies::CleanUp()
 {
 	LOG("Freeing all enemies");
 
-	App->textures->Unload(sprites);
+	App->textures->Unload(shrimp);
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
@@ -126,8 +126,8 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 	{
 		switch (info.type)
 		{
-		case ENEMY_TYPES::REDBIRD:
-			enemies[i] = new Enemy_RedBird(info.x, info.y);
+		case ENEMY_TYPES::SHRIMP:
+			enemies[i] = new Enemy_Shrimp(info.x, info.y);
 			break;
 		}
 	}

@@ -2,7 +2,7 @@
 #define __ModuleEnemies_H__
 
 #include "Module.h"
-#include "Enemy_RedBird.h"
+#include "Enemy_Shrimp.h"
 
 #define MAX_ENEMIES 100
 
@@ -15,7 +15,7 @@
 enum ENEMY_TYPES
 {
 	NO_TYPE,
-	REDBIRD,
+	SHRIMP,
 };
 
 class Enemy;
@@ -50,7 +50,7 @@ private:
 
 	EnemyInfo queue[MAX_ENEMIES];
 	Enemy* enemies[MAX_ENEMIES];
-	SDL_Texture* sprites;
+	SDL_Texture* shrimp;
 };
 
 #endif // __ModuleEnemies_H__

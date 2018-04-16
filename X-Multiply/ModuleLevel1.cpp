@@ -9,6 +9,7 @@
 #include "ModuleLevel1.h"
 #include "ModuleLevel2.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleEnemies.h"
 
 
 ModuleLevel1::ModuleLevel1()
@@ -41,6 +42,7 @@ bool ModuleLevel1::Start()
 	App->render->camera.y = 0;
 	
 	App->player->Enable();
+	App->enemies->Enable(); 
 	App->collision->Enable();
 
 	//TOP WALLS. FIRST WALLS = UPPER
@@ -81,7 +83,11 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 3378, 427, 177, 64 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3552, 461, 131, 53 }, COLLIDER_WALL);
 	
-
+	//Shrimp --- 
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 625, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 640, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 665, 80);
 
 	return true;
 }
@@ -91,6 +97,7 @@ bool ModuleLevel1::CleanUp()
 {
 	LOG("Unloading level 1 scene");
 	App->player->Disable();
+	App->enemies->Disable(); 
 	App->collision->Disable();
 	App->textures->Unload(backround);
 	App->textures->Unload(tilemap1);
