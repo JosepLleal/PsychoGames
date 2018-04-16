@@ -37,7 +37,7 @@ update_status ModuleEnemies::PreUpdate()
 		if (queue[i].type != ENEMY_TYPES::NO_TYPE)
 		{
 			if (1)
-			{
+			{ 
 				SpawnEnemy(queue[i]);
 				queue[i].type = ENEMY_TYPES::NO_TYPE;
 				LOG("Spawning enemy at %d", queue[i].x * SCREEN_SIZE);
@@ -54,6 +54,7 @@ update_status ModuleEnemies::Update()
 {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 		if (enemies[i] != nullptr) enemies[i]->Move();
+
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 		if (enemies[i] != nullptr) enemies[i]->Draw(shrimp);

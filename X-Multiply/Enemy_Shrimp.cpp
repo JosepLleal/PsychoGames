@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "Enemy_Shrimp.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
 
 
 Enemy_Shrimp::Enemy_Shrimp(int x, int y) : Enemy(x, y)
@@ -42,4 +43,11 @@ void Enemy_Shrimp::Move()
 
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;
+
+	if (position.x % 50 == 0)
+	{
+		App->particles->AddParticle(App->particles->enemy_shot, position.x + 28, position.y + 6, COLLIDER_ENEMY_SHOT);
+	}
+
+	
 }

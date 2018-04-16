@@ -84,6 +84,7 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->shot, position.x + 28, position.y +6, COLLIDER_PLAYER_SHOT);
+		
 		App->audio->ChunkPlay(shot);
 	}
 
@@ -129,10 +130,10 @@ bool ModulePlayer::CleanUp()
 
 void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 {
-	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL || coll_1->type == COLLIDER_ENEMY || coll_2->type == COLLIDER_ENEMY)
+	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL || coll_1->type == COLLIDER_ENEMY || coll_2->type == COLLIDER_ENEMY || coll_1->type == COLLIDER_ENEMY_SHOT || coll_2->type == COLLIDER_ENEMY_SHOT)
 	{
 		App->player->Disable();
-		App->fade->FadeToBlack(this, App->menu, 1);
+		App->fade->FadeToBlack(this, App->menu, 0.5f);
 		App->lvl1->Disable();
 		App->lvl2->Disable();
 	}

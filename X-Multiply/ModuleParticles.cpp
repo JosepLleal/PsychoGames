@@ -20,17 +20,30 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	graphics = App->textures->Load("image/Main_Character_Effects.png");
+	player_shot = App->textures->Load("image/Main_Character_Effects.png");
+	shot_enemy = App->textures->Load("image/shots1.png");
+
+
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
 
+	//shot player
 	shot.anim.PushBack({64, 38, 16, 5 });
 	shot.anim.speed = 0.1f;
 	shot.anim.loop = false;
 	shot.speed.x = 7;
 	shot.life = 950;
 
-	// TODO 2: Create the template for a new particle "laser"
+	//shot enemy
+	enemy_shot.anim.PushBack({ 2, 1, 10, 10});
+	enemy_shot.anim.PushBack({ 19, 1, 10, 10 });
+	enemy_shot.anim.PushBack({ 2, 16, 10, 10 });
+	enemy_shot.anim.PushBack({ 19, 16, 10, 10 });
+	enemy_shot.anim.speed = 0.1f;
+	enemy_shot.anim.loop = true;
+	enemy_shot.speed.x = -3;
+	enemy_shot.speed.y = 1;
+	enemy_shot.life = 4000;
 
 	return true;
 }
@@ -39,7 +52,8 @@ bool ModuleParticles::Start()
 bool ModuleParticles::CleanUp()
 {
 	LOG("Unloading particles");
-	App->textures->Unload(graphics);
+	App->textures->Unload(player_shot);
+	App->textures->Unload(shot_enemy);
 
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -70,7 +84,10 @@ update_status ModuleParticles::Update()
 		}
 		else if (SDL_GetTicks() >= p->born)
 		{
-			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
+			App->render->Blit(player_shot, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
+
+			App->render->Blit(shot_enemy, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
+
 			if (p->fx_played == false)
 			{
 				p->fx_played = true;

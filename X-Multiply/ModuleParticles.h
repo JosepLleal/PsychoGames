@@ -44,13 +44,15 @@ public:
 
 private:
 
-	SDL_Texture * graphics = nullptr;
+	SDL_Texture * player_shot = nullptr;
+	SDL_Texture * shot_enemy = nullptr;
 	Particle* active[MAX_ACTIVE_PARTICLES];
 	uint last_particle = 0;
 
 public:
 
 	Particle shot;
+	Particle enemy_shot;
 	Particle explosion;
 	
 };
