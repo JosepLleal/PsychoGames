@@ -57,7 +57,10 @@ update_status ModuleEnemies::Update()
 
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
-		if (enemies[i] != nullptr) enemies[i]->Draw(shrimp);
+		if (enemies[i] != nullptr)
+		{
+			enemies[i]->Draw(shrimp);
+		}
 
 	return UPDATE_CONTINUE;
 }
@@ -140,7 +143,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
-		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && (c2->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER_SHOT))
 		{
 			enemies[i]->OnCollision(c2);
 			delete enemies[i];

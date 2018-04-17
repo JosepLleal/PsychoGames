@@ -48,6 +48,10 @@ bool ModuleLevel2::Start()
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
+	//PLayer Initial Position
+	App->player->position.x = 100;
+	App->player->position.y = 30;
+
 	App->collision->Enable(); 
 
 	//MonsterCollision

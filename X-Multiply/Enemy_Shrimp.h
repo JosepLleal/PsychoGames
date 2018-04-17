@@ -14,6 +14,7 @@ private:
 public:
 
 	Enemy_Shrimp(int x, int y);
+	iPoint original_position;
 
 	// Enemy Hitbox
 	int Width;

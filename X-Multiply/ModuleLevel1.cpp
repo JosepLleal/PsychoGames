@@ -39,13 +39,17 @@ bool ModuleLevel1::Start()
 	backround = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
 	App->audio->MusicPlay("Sound/04_Into_the_Human_Body_Stage_1_.ogg", 0.5f);
-	App->render->camera.x = 0;
-	App->render->camera.y = 0;
+    //App->render->camera.x = 0;
+	//App->render->camera.y = 0;
 	
 	App->player->Enable();
 	App->particles->Enable();
 	App->enemies->Enable(); 
 	App->collision->Enable();
+
+	//Player Initial position
+	App->player->position.x = 100;
+	App->player->position.y = 30;
 
 	//TOP WALLS. FIRST WALLS = UPPER
 	
@@ -88,7 +92,7 @@ bool ModuleLevel1::Start()
 	//Shrimp --- 
 	
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 500, 30);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 50);
 	//App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 700, 50);
 	
 
@@ -148,8 +152,7 @@ update_status ModuleLevel1::Update()
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->fade->FadeToBlack(this, App->lvl2, 1);
-		App->player->position.x = 100;
-		App->player->position.y = 30;
+		
 	}
 	return UPDATE_CONTINUE;
 }

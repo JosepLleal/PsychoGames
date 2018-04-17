@@ -4,6 +4,7 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModuleParticles.h"
+#include "ModuleCollision.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -20,12 +21,9 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	player_shot = App->textures->Load("image/Main_Character_Effects.png");
-	shot_enemy = App->textures->Load("image/shots1.png");
+	sprites = App->textures->Load("image/particles.png");
 
-
-	explosion.anim.loop = false;
-	explosion.anim.speed = 0.3f;
+	
 
 	//shot player
 	shot.anim.PushBack({64, 38, 16, 5 });
@@ -35,15 +33,30 @@ bool ModuleParticles::Start()
 	shot.life = 950;
 
 	//shot enemy
-	enemy_shot.anim.PushBack({ 2, 1, 10, 10});
-	enemy_shot.anim.PushBack({ 19, 1, 10, 10 });
-	enemy_shot.anim.PushBack({ 2, 16, 10, 10 });
-	enemy_shot.anim.PushBack({ 19, 16, 10, 10 });
+	enemy_shot.anim.PushBack({ 253, 9, 10, 10});
+	enemy_shot.anim.PushBack({ 271, 10, 10, 10 });
+	enemy_shot.anim.PushBack({ 254, 25, 10, 10 });
+	enemy_shot.anim.PushBack({ 271, 25, 10, 10 });
 	enemy_shot.anim.speed = 0.1f;
 	enemy_shot.anim.loop = true;
 	enemy_shot.speed.x = -2;
 	enemy_shot.speed.y = 1;
 	enemy_shot.life = 4000;
+
+	// Enemy explosion when dying
+	explosion_enemy.anim.PushBack({ 17, 244, 30, 29});
+	explosion_enemy.anim.PushBack({ 50, 247, 29, 25 });
+	explosion_enemy.anim.PushBack({ 79, 240, 48, 36 });
+	explosion_enemy.anim.PushBack({ 131, 242, 41, 31 });
+	explosion_enemy.anim.PushBack({ 177, 241, 45, 34 });
+	explosion_enemy.anim.PushBack({ 21, 287, 42, 39 });
+	explosion_enemy.anim.PushBack({ 69, 286, 40, 38 });
+	explosion_enemy.anim.PushBack({ 116, 287, 39, 37 });
+	explosion_enemy.anim.PushBack({ 163, 286, 43, 43 });
+	explosion_enemy.anim.speed = 0.5f;
+	explosion_enemy.anim.loop = false;
+
+
 
 	return true;
 }
@@ -52,8 +65,8 @@ bool ModuleParticles::Start()
 bool ModuleParticles::CleanUp()
 {
 	LOG("Unloading particles");
-	App->textures->Unload(player_shot);
-	App->textures->Unload(shot_enemy);
+	App->textures->Unload(sprites);
+
 
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -67,7 +80,7 @@ bool ModuleParticles::CleanUp()
 	return true;
 }
 
-// Update: draw background
+
 update_status ModuleParticles::Update()
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
@@ -84,9 +97,7 @@ update_status ModuleParticles::Update()
 		}
 		else if (SDL_GetTicks() >= p->born)
 		{
-			App->render->Blit(player_shot, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
-
-			App->render->Blit(shot_enemy, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
+			App->render->Blit(sprites, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
 
 			if (p->fx_played == false)
 			{
@@ -124,6 +135,11 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
+			if (c2->type == COLLIDER_ENEMY)
+			{
+				AddParticle(explosion_enemy, active[i]->position.x, active[i]->position.y);
+				AddParticle(explosion_enemy, active[i]->position.x, active[i]->position.y, COLLIDER_NONE, 200);
+			}
 			delete active[i];
 			active[i] = nullptr;
 			break;
