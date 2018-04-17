@@ -53,7 +53,7 @@ bool ModuleParticles::Start()
 	explosion_enemy.anim.PushBack({ 69, 286, 40, 38 });
 	explosion_enemy.anim.PushBack({ 116, 287, 39, 37 });
 	explosion_enemy.anim.PushBack({ 163, 286, 43, 43 });
-	explosion_enemy.anim.speed = 0.5f;
+	explosion_enemy.anim.speed = 0.33f;
 	explosion_enemy.anim.loop = false;
 
 
@@ -138,7 +138,6 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 			if (c2->type == COLLIDER_ENEMY)
 			{
 				AddParticle(explosion_enemy, active[i]->position.x, active[i]->position.y);
-				AddParticle(explosion_enemy, active[i]->position.x, active[i]->position.y, COLLIDER_NONE, 200);
 			}
 			delete active[i];
 			active[i] = nullptr;
