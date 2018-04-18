@@ -39,7 +39,7 @@ bool ModuleLevel1::Start()
 	backround = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
 	App->audio->MusicPlay("Sound/04_Into_the_Human_Body_Stage_1_.ogg", 0.5f);
-    //App->render->camera.x = 0;
+    //App->render->camera.x = 5000;
 	//App->render->camera.y = 0;
 	
 	App->player->Enable();
@@ -131,9 +131,12 @@ update_status ModuleLevel1::Update()
 	App->player->position.x += 1;
 	App->render->camera.x -= scrollSpeed;
 
-	if(App->render->camera.x < -6100 && App->render->camera.x > -7000) 
+	if (App->render->camera.x < -5300 && App->render->camera.x > -6835)
 	{
-		App->render->camera.y -= 1; 
+		if (App->render->camera.x % 3 == 0)
+		{
+			App->render->camera.y -= 2;
+		}
 	}
 
 	//Camera Diagonal Scroll. UNFINISHED.
