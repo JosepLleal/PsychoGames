@@ -11,7 +11,6 @@ struct Step
 	fPoint speed;
 	Animation* animation = nullptr;
 };
-
 class Path
 {
 public:

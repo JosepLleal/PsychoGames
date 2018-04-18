@@ -5,14 +5,20 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Containers">
+      <UniqueIdentifier>{78a7f487-1d77-4fdc-9f51-f067eccd6239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stages">
+      <UniqueIdentifier>{06a24ea7-e989-4f84-8336-d5c2587146d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies">
+      <UniqueIdentifier>{258a5567-8b3d-46b9-b693-04956a64cccc}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Modules">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Containers">
-      <UniqueIdentifier>{78a7f487-1d77-4fdc-9f51-f067eccd6239}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\Enemies">
+    <Filter Include="Enemies\Enemies">
       <UniqueIdentifier>{dabe9d04-b0a7-413e-83db-3f9cfb6aad06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -53,21 +59,6 @@
     <ClInclude Include="ModuleFadeToBlack.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleLevel1.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleLevel2.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleMenu.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleAudio.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleCredits.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleParticles.h">
       <Filter>Modules</Filter>
     </ClInclude>
@@ -77,14 +68,29 @@
     <ClInclude Include="ModuleEnemies.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Modules\Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="Path.h">
       <Filter>Containers</Filter>
     </ClInclude>
     <ClInclude Include="Enemy_Shrimp.h">
-      <Filter>Modules\Enemies</Filter>
+      <Filter>Enemies\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleCredits.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleLevel1.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleLevel2.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleMenu.h">
+      <Filter>Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleAudio.h">
+      <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -115,19 +121,7 @@
     <ClCompile Include="ModuleFadeToBlack.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleLevel1.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleLevel2.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleMenu.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleAudio.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleCredits.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="ModuleParticles.cpp">
@@ -136,14 +130,26 @@
     <ClCompile Include="ModuleColision.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Modules\Enemies</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy_Shrimp.cpp">
-      <Filter>Modules\Enemies</Filter>
+      <Filter>Enemies\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="ModuleEnemies.cpp">
       <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleCredits.cpp">
+      <Filter>Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleLevel1.cpp">
+      <Filter>Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleLevel2.cpp">
+      <Filter>Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleMenu.cpp">
+      <Filter>Stages</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
