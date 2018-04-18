@@ -62,8 +62,7 @@ update_status ModuleMenu::Update()
 		App->player->position.x = 100;
 		App->player->position.y = 30;
 
-		App->lvl1->background_w = 0;
-		App->lvl1->tilemap_w = 0;
+	
 
 	}
 

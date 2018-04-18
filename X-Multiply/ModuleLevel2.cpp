@@ -104,83 +104,83 @@ update_status ModuleLevel2::Update()
 
 	
 	App->player->position.x += 1; 
-	App->render->camera.x -= scrollSpeed;
+	App->render->camera.x += scrollSpeed;
 
-	if (App->render->camera.x < -75 && App->render->camera.x > -150 && App->render->camera.y > -300)
-	{
-		App->render->camera.y -= 1;
-	} 
-
-	if (App->render->camera.x < -225 && App->render->camera.x > -300 && App->render->camera.y > -300)
+	if (App->render->camera.x > 75 && App->render->camera.x < 150 && App->render->camera.y < 300)
 	{
 		App->render->camera.y += 1;
 	}
 
-	if (App->render->camera.x < -337 && App->render->camera.x > -345 && App->render->camera.y > -300)
+	if (App->render->camera.x > 225 && App->render->camera.x < 300 && App->render->camera.y < 300)
 	{
 		App->render->camera.y -= 1;
 	}
 
-	if (App->render->camera.x < -360 && App->render->camera.x > -367 && App->render->camera.y > -300)
-	{
-		App->render->camera.y -= 1;
-	}
-
-	if (App->render->camera.x < -382 && App->render->camera.x > -390 && App->render->camera.y > -300)
-	{
-		App->render->camera.y -= 1;
-	}
-
-	if (App->render->camera.x < -675 && App->render->camera.x > -825 && App->render->camera.y > -300)
-	{
-		App->render->camera.y -= scrollSpeed;
-	}
-
-	if (App->render->camera.x < -900 && App->render->camera.x > -975)
+	if (App->render->camera.x > 337 && App->render->camera.x < 345 && App->render->camera.y < 300)
 	{
 		App->render->camera.y += 1;
 	}
 
-	if (App->render->camera.x < -976 && App->render->camera.x > -990)
+	if (App->render->camera.x > 360 && App->render->camera.x < 367 && App->render->camera.y < 300)
 	{
 		App->render->camera.y += 1;
-		App->render->camera.x += 1;
 	}
 
-	if (App->render->camera.x < -1500 && App->render->camera.x > -1650)
+	if (App->render->camera.x > 382 && App->render->camera.x < 390 && App->render->camera.y < 300)
+	{
+		App->render->camera.y += 1;
+	}
+
+	if (App->render->camera.x > 675 && App->render->camera.x < 825 && App->render->camera.y < 300)
+	{
+		App->render->camera.y += scrollSpeed;
+	}
+
+	if (App->render->camera.x > 900 && App->render->camera.x < 975)
 	{
 		App->render->camera.y -= 1;
 	}
 
-	if (App->render->camera.x < -1800 && App->render->camera.x > -1950)
+	if (App->render->camera.x > 976 && App->render->camera.x < 990)
 	{
 		App->render->camera.y -= 1;
-		App->render->camera.x += 1;
+		App->render->camera.x -= 1;
 	}
 
-	if (App->render->camera.x < -2200 && App->render->camera.x > -2203)
+	if (App->render->camera.x > 1500 && App->render->camera.x < 1650)
 	{
-		App->render->camera.y -= 1;
-		App->render->camera.x += scrollSpeed;
-		if (App->render->camera.y < -300) {
-			App->render->camera.x = -2199;
+		App->render->camera.y += 1;
+	}
+
+	if (App->render->camera.x > 1800 && App->render->camera.x < 1950)
+	{
+		App->render->camera.y += 1;
+		App->render->camera.x -= 1;
+	}
+
+	if (App->render->camera.x > 2200 && App->render->camera.x < 2203)
+	{
+		App->render->camera.y += 1;
+		App->render->camera.x -= scrollSpeed;
+		if (App->render->camera.y > 300) {
+			App->render->camera.x = 2199;
 		}
 	}
 
-	if (App->render->camera.x < -2000 && App->render->camera.x > -1800)
+	if (App->render->camera.x > 2000 && App->render->camera.x < 1800)
 	{
-		App->render->camera.y += 1; 
+		App->render->camera.y -= 1;
 	}
 
-	if (App->render->camera.x > -2200 && App->render->camera.x < 0 && App->render->camera.y < -300)
+	if (App->render->camera.x < 2200 && App->render->camera.x > 0 && App->render->camera.y > 300)
 	{
-		App->render->camera.x += 4; 
-		App->player->position.x -= 2; 
+		App->render->camera.x -= 4;
+		App->player->position.x += 2;
 	}
 
-	if (App->render->camera.x < -900 && App->render->camera.x > -975 && App->render->camera.y < -300)
+	if (App->render->camera.x > 900 && App->render->camera.x < 975 && App->render->camera.y > 300)
 	{
-		App->render->camera.y += 1;
+		App->render->camera.y -= 1;
 	}
 
 	// Draw everything --------------------------------------	
