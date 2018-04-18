@@ -13,6 +13,7 @@
 #include "ModuleParticles.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
+#include "ModuleFonts.h"
 
 Application::Application()
 {
@@ -23,6 +24,7 @@ Application::Application()
 	modules[i++] = input = new ModuleInput();
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = audio = new ModuleAudio();
+	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = menu = new ModuleMenu();
 	modules[i++] = lvl1 = new ModuleLevel1();
 	modules[i++] = lvl2 = new ModuleLevel2();

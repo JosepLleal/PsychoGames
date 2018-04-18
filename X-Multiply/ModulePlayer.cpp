@@ -11,6 +11,9 @@
 #include "ModuleLevel2.h"
 #include "ModuleParticles.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleFonts.h"
+
+#include<stdio.h>
 
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
@@ -46,6 +49,8 @@ bool ModulePlayer::Start()
 	bool ret = true;
 	graphics = App->textures->Load("Image/Main_Character_Effects.png"); // arcade version
 	shot = App->audio->LoadFX("Sound/xmultipl-122.wav");
+	font_score = App->fonts->Load("image/xmultiply_redyellowfont.png", "0123456789@.-=<>()|&*/""!?abcdefghijklmnopqrstuvwxyz", 2);
+
 	playerHitBox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
 
 
@@ -110,11 +115,16 @@ update_status ModulePlayer::Update()
 	//	position.y = SCREEN_HEIGHT;
 	//}
 
+	// Draw UI (score) --------------------------------------
+	sprintf_s(score_text, 10, "%7d", score);
+
+	// TODO 3: Blit the text of the score in at the bottom of the screen
+	App->fonts->BlitText(10, 245, font_score, score_text);
 
 	// Draw everything --------------------------------------
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
 	
 	
 	return UPDATE_CONTINUE;

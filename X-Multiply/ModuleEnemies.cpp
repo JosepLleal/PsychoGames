@@ -145,6 +145,8 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && (c2->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER_SHOT))
 		{
+			App->player->score += 100;
+
 			enemies[i]->OnCollision(c2);
 			delete enemies[i];
 			enemies[i] = nullptr;
