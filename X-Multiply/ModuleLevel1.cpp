@@ -188,7 +188,7 @@ update_status ModuleLevel1::Update()
 	// Draw everything --------------------------------------
 	App->render->Blit(backround, 0, 0, &background, 0.75f, true); // backround
 	App->render->Blit(tilemap1, 0, 0, &ground, 1.0f, true); //tilemap
-	App->render->Blit(hud, 0, 224, NULL, 0.0f, false); // hud
+	App->render->Blit(hud, 0, 225, NULL, 0.0f, false); // hud
 	
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])

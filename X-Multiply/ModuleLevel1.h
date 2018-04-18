@@ -27,11 +27,6 @@ public:
 	SDL_Rect foreground;
 	SDL_Rect background;
 	
-	int background_w = 0;
-	int tilemap_w = 0;
-
-	float foreground_pos;
-	bool forward;
 };
 
 #endif // __MODULESCENEKEN_H__
