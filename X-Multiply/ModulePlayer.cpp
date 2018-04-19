@@ -122,11 +122,11 @@ update_status ModulePlayer::Update()
 	{
 		godmode = !godmode;
 
-		if (godmode = true)
+		if (godmode == true)
 		{
 			LOG("GodMode on");
 			playerHitBox->to_delete = true;
-			//playerHitBox = nullptr;  //Sin comentar no funciona
+			playerHitBox = nullptr;  
 		}
 		else if (godmode == false)
 		{
