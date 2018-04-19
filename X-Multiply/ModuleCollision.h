@@ -37,7 +37,7 @@ struct Collider
 		rect.y = y;
 	}
 
-	bool CheckCollision(const SDL_Rect& r, bool god) const;
+	bool CheckCollision(const SDL_Rect& r) const;
 };
 
 class ModuleCollision : public Module
@@ -54,12 +54,14 @@ public:
 	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* callback = nullptr);
 	void DebugDraw();
 
+	bool godmode = false;
+
 private:
 
 	Collider* colliders[MAX_COLLIDERS];
 	bool matrix[COLLIDER_MAX][COLLIDER_MAX];
 	bool debug = false;
-	bool godmode = false;
+	
 	SDL_Rect screen; 
 };
 

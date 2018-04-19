@@ -58,6 +58,7 @@ public:
 	Particle shot;
 	Particle enemy_shot;
 	Particle explosion_enemy;
+	Particle player_death;
 
 	uint explosion_enemy_sound;
 	

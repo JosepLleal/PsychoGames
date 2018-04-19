@@ -77,7 +77,7 @@ update_status ModuleCollision::PreUpdate()
 
 			c2 = colliders[k];
 
-			if (c1->CheckCollision(c2->rect, godmode) == true)
+			if (c1->CheckCollision(c2->rect) == true)
 			{
 				if (matrix[c1->type][c2->type] && c1->callback)
 					c1->callback->OnCollision(c1, c2);
@@ -170,7 +170,7 @@ Collider* ModuleCollision::AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module
 		if (colliders[i] == nullptr)
 		{
 			ret = colliders[i] = new Collider(rect, type, callback);
-			break;
+			break; 
 		}
 	}
 
@@ -181,9 +181,8 @@ Collider* ModuleCollision::AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module
 
 
 
-bool Collider::CheckCollision(const SDL_Rect& r, bool god) const
+bool Collider::CheckCollision(const SDL_Rect& r) const
 {
-	if (god == true) { return false; }
 	
 	if (!(rect.x > r.x + r.w || r.x > rect.x + rect.w || rect.y > r.y + r.h || r.y > rect.y + rect.h))
 	{

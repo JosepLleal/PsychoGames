@@ -56,6 +56,18 @@ bool ModuleParticles::Start()
 	explosion_enemy.anim.speed = 0.33f;
 	explosion_enemy.anim.loop = false;
 
+	//Player death explosion
+	
+	player_death.anim.PushBack({ 112, 144, 16, 16 });
+	player_death.anim.PushBack({ 96, 144, 16, 16 });
+	player_death.anim.PushBack({ 80, 144, 16, 16 });
+	player_death.anim.PushBack({ 64, 144, 16, 16 });
+	player_death.anim.PushBack({ 48, 144, 16, 16 });
+	player_death.anim.PushBack({ 32, 144, 16, 16 });
+	player_death.anim.PushBack({ 16, 144, 16, 16 });
+	player_death.anim.PushBack({ 0, 144, 16, 16 });
+	player_death.anim.speed = 5.0f;
+	player_death.anim.loop = false;
 
 
 	return true;
@@ -138,6 +150,10 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 			if (c2->type == COLLIDER_ENEMY)
 			{
 				AddParticle(explosion_enemy, active[i]->position.x, active[i]->position.y);
+			}
+			if (c1->type == COLLIDER_PLAYER)
+			{
+				AddParticle(player_death, active[i]->position.x, active[i]->position.y);
 			}
 			delete active[i];
 			active[i] = nullptr;

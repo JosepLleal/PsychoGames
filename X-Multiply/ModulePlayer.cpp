@@ -62,7 +62,7 @@ update_status ModulePlayer::Update()
 {
 	Animation* current_animation = &idle;
 
-	int speed = 1;
+	int speed = 2;
 
 	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
@@ -84,7 +84,7 @@ update_status ModulePlayer::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
-		position.x -= (speed * 2);
+		position.x -= speed*2;
 	}
 	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
 	{
@@ -94,13 +94,13 @@ update_status ModulePlayer::Update()
 	}
 
 	playerHitBox->SetPos(position.x, position.y);
-	
 
+	
 	//// Limits -------------------------------------
-	//if (position.x <= 0)
-	//{
-	//	position.x = 0;
-	//}
+	/*if (position.x <= App->render->camera.x)
+	{
+		position.x = App->render->camera.x;
+	}*/
 	//else if (position.x >= SCREEN_WIDTH - 35)
 	//{
 	//	position.x = SCREEN_WIDTH - 35;
@@ -119,7 +119,7 @@ update_status ModulePlayer::Update()
 	sprintf_s(score_text, 10, "%7d", score);
 
     //Blit the text of the score in at the bottom of the screen
-	App->fonts->BlitText(10, 245, font_score, score_text);
+	App->fonts->BlitText(10, 265, font_score, score_text);
 
 	// Draw everything --------------------------------------
 	SDL_Rect r = current_animation->GetCurrentFrame();
@@ -143,8 +143,8 @@ void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL || coll_1->type == COLLIDER_ENEMY || coll_2->type == COLLIDER_ENEMY || coll_1->type == COLLIDER_ENEMY_SHOT || coll_2->type == COLLIDER_ENEMY_SHOT)
 	{
 		App->player->Disable();
-		App->fade->FadeToBlack(this, App->menu, 0.5f);
-		App->lvl1->Disable();
-		App->lvl2->Disable();
+		App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
+		App->fade->FadeToBlack(this, App->menu);
+
 	}
 }

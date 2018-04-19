@@ -19,13 +19,13 @@ ModuleLevel1::ModuleLevel1()
 	ground.x = 0;
 	ground.y = 1;
 	ground.w = 4961;
-	ground.h = 513;
+	ground.h = 587;
 
 	// Background 
 	background.x = 0;
 	background.y = 0;
 	background.w = 4961;
-	background.h = 512;
+	background.h = 587;
 }
 
 ModuleLevel1::~ModuleLevel1()
@@ -38,7 +38,7 @@ bool ModuleLevel1::Start()
 	
 	backround = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
-	hud = App->textures->Load("image/xmultiply_hud2.png");
+	hud = App->textures->Load("image/xmultiply_hud.png");
 
 	App->audio->MusicPlay("Sound/04_Into_the_Human_Body_Stage_1_.ogg", 0.5f);
     App->render->camera.x = 0;
@@ -188,7 +188,7 @@ update_status ModuleLevel1::Update()
 	// Draw everything --------------------------------------
 	App->render->Blit(backround, 0, 0, &background, 0.75f, true); // backround
 	App->render->Blit(tilemap1, 0, 0, &ground, 1.0f, true); //tilemap
-	App->render->Blit(hud, 0, 225, NULL, 0.0f, false); // hud
+	App->render->Blit(hud, 0, 257, NULL, 0.0f, false); // hud
 	
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
