@@ -25,6 +25,7 @@ bool ModuleEnemies::Start()
 {
 	// Create a prototype for each enemy available so we can copy them around
 	shrimp = App->textures->Load("image/LV1_Shrimp.png");
+	anemone = App->textures->Load("image/LV1_Anemone.png");
 
 	return true;
 }
@@ -90,6 +91,7 @@ bool ModuleEnemies::CleanUp()
 	LOG("Freeing all enemies");
 
 	App->textures->Unload(shrimp);
+	App->textures->Unload(anemone);
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
@@ -134,6 +136,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::SHRIMP:
 			enemies[i] = new Enemy_Shrimp(info.x, info.y);
+			break;
+		case ENEMY_TYPES::ANEMONE:
+			enemies[i] = new Enemy_Anemone(info.x, info.y);
 			break;
 		}
 	}
