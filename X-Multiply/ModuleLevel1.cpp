@@ -53,50 +53,77 @@ bool ModuleLevel1::Start()
 	App->player->position.x = 100;
 	App->player->position.y = 30;
 
-	//TOP WALLS. FIRST WALLS = UPPER
+	//TOP LARGER WALL
+	App->collision->AddCollider({ 495, 0, 2000, 14 }, COLLIDER_WALL); //square of all the top wall 
 
-	App->collision->AddCollider({ 495, 0, 2100, 12 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 640, 12, 70, 12 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 761, 12, 57, 29 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1005, 12, 104, 25 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1153, 12, 70, 12 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1665, 12, 70, 12 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2427, 12, 64, 29 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2917, 0, 122, 42 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3039, 41, 417, 32 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3145, 73, 408, 56 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3291, 128, 452, 32 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3397, 161, 414, 53 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3650, 215, 150, 50 }, COLLIDER_WALL);
+	//BOTTOM LARGER WALL
+	App->collision->AddCollider({ 0, 242, 2549, 15 }, COLLIDER_WALL);
+
+	//TOP OBSTACLES
+	App->collision->AddCollider({ 640, 14, 70, 14 }, COLLIDER_WALL); //1st 
+
+	App->collision->AddCollider({ 761, 14, 57, 16 }, COLLIDER_WALL); //2nd 1
+	App->collision->AddCollider({ 770, 30, 30, 16 }, COLLIDER_WALL); //2nd 2
+
+	App->collision->AddCollider({ 1010, 14, 75, 27 }, COLLIDER_WALL); //3rd 1
+	App->collision->AddCollider({ 1085, 14, 20, 15 }, COLLIDER_WALL); //3rd 2
+
+	App->collision->AddCollider({ 1153, 14, 70, 14 }, COLLIDER_WALL); //4th 
+
+	App->collision->AddCollider({ 1665, 14, 70, 16 }, COLLIDER_WALL); //After first entrance top
+
+	App->collision->AddCollider({ 2425, 14, 57, 16 }, COLLIDER_WALL); //After biggest entrance 1 top
+	App->collision->AddCollider({ 2430, 30, 30, 16 }, COLLIDER_WALL); //After biggest entrance 2 top
 
 
-	//BOTTOM WALLS. FIRST WALLS = UPPER
-	App->collision->AddCollider({ 0, 213, 2549, 12 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 405, 183, 63, 30 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 495, 188, 104, 25 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1024, 201, 70, 12 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1263, 188, 104, 25 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2549, 188, 318, 36 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2657, 224, 225, 133 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1788, 183, 63, 30 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 2917, 0, 122, 43 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3039, 43, 417, 33 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3145, 75, 408, 57 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3291, 130, 452, 33 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3397, 163, 414, 54 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3650, 217, 150, 51 }, COLLIDER_WALL);
+
+	//BOTTOM OBSTACLES
+	App->collision->AddCollider({ 414, 210, 30, 16 }, COLLIDER_WALL); //1st 1
+	App->collision->AddCollider({ 408, 226, 57, 16 }, COLLIDER_WALL); //1st 2
+
+	App->collision->AddCollider({ 495, 215, 104, 27 }, COLLIDER_WALL); //2nd
+
+	App->collision->AddCollider({ 1024, 230, 70, 12 }, COLLIDER_WALL); //3rd
+
+	App->collision->AddCollider({ 1263, 215, 104, 27 }, COLLIDER_WALL); //4th
+
+	App->collision->AddCollider({ 1790, 210, 30, 16 }, COLLIDER_WALL); //After first entrance 1 bottom 
+	App->collision->AddCollider({ 1784, 226, 57, 16 }, COLLIDER_WALL); //After first entrance 2 bottom
+
+	App->collision->AddCollider({ 2549, 217, 318, 36 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 2657, 253, 225, 133 }, COLLIDER_WALL);
 
 	// ----------------------------------------------------------------
 
 	//First Entrance TOP
-	App->collision->AddCollider({ 1430, 12, 120, 48 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1460, 60, 90, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1430, 14, 120, 48 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1455, 62, 90, 50 }, COLLIDER_WALL);
 
 	//First Entrance BOTTOM 
-	App->collision->AddCollider({ 1430, 165, 120, 48 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 1460, 129, 90, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1430, 196, 120, 46 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1455, 148, 90, 48 }, COLLIDER_WALL);
 
 	//Second Entrance TOP (biggest one)
-	App->collision->AddCollider({ 2009, 12, 190, 48 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2009, 60, 140, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2009, 14, 190, 48 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2040, 62, 150, 15 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2015, 77, 130, 34 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2199, 14, 20, 35 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2219, 14, 50, 8 }, COLLIDER_WALL); //smallest square 
 
 	//Second Entrance BOTTOM (biggest one)
-	App->collision->AddCollider({ 2009, 129, 140, 36 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2009, 165, 190, 48 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2015, 147, 130, 32 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2040, 179, 150, 15 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2009, 194, 190, 48 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2199, 207, 20, 35 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2219, 234, 50, 8 }, COLLIDER_WALL); //smallest square
 
 	//Before Scroll
 	App->collision->AddCollider({ 2710, 165, 53, 23 }, COLLIDER_WALL);
@@ -132,7 +159,6 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 500, 30);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 50);
 	//App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 700, 50);
-	
 
 	return true;
 }
