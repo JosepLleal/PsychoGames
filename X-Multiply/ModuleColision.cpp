@@ -95,10 +95,7 @@ update_status ModuleCollision::PreUpdate()
 update_status ModuleCollision::Update()
 {
 	DebugDraw();
-	if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
-	{
-		godmode = !godmode;
-	}
+	
 
 	return UPDATE_CONTINUE;
 }

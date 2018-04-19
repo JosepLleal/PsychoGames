@@ -54,7 +54,6 @@ public:
 	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* callback = nullptr);
 	void DebugDraw();
 
-	bool godmode = false;
 
 private:
 

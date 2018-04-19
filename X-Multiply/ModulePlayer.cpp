@@ -54,6 +54,7 @@ bool ModulePlayer::Start()
 	playerHitBox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
 
 	destroyed = false;
+	godmode = false;
 
 	return ret;
 }
@@ -94,7 +95,7 @@ update_status ModulePlayer::Update()
 		App->audio->ChunkPlay(shot);
 	}
 
-	playerHitBox->SetPos(position.x, position.y);
+	
 
 	
 	//// Limits -------------------------------------
@@ -116,6 +117,30 @@ update_status ModulePlayer::Update()
 	//	position.y = SCREEN_HEIGHT;
 	//}
 
+	//GOD MODE FUNCTION ---------------------------------------------------------------------------------------------------
+	if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
+	{
+		godmode = !godmode;
+
+		if (godmode = true)
+		{
+			LOG("GodMode on");
+			playerHitBox->to_delete = true;
+			//playerHitBox = nullptr;  //Sin comentar no funciona
+		}
+		else if (godmode == false)
+		{
+			LOG("GodMode off");
+			playerHitBox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
+		}
+	}
+
+
+	//-----------------------------------------------------------------------------------------------------------------------
+
+	if (godmode == false)
+		playerHitBox->SetPos(position.x, position.y);
+
 	// Draw UI (score) --------------------------------------
 	sprintf_s(score_text, 10, "%7d", score);
 
@@ -125,6 +150,7 @@ update_status ModulePlayer::Update()
 	// Draw everything --------------------------------------
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
+	//If its not destroyed print 
 	if(destroyed == false)
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
 	
@@ -140,8 +166,8 @@ bool ModulePlayer::CleanUp()
 	App->fonts->UnLoad(font_score);
 	
 
-	if (playerHitBox)
-		playerHitBox->to_delete = true;
+	/*if (playerHitBox)
+		playerHitBox->to_delete = true;*/
 
 	return true;
 }
@@ -152,7 +178,6 @@ void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 	{
 		App->player->Disable();
 		App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
-		//App->lvl1->Disable();
 		App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->menu);
 		
 		destroyed = true;
