@@ -141,10 +141,12 @@ bool ModuleLevel1::Start()
 bool ModuleLevel1::CleanUp()
 {
 	LOG("Unloading level 1 scene");
+
 	App->player->Disable();
-	App->enemies->Disable(); 
+	App->enemies->Disable();
 	App->particles->Disable();
 	App->collision->Disable();
+
 	App->textures->Unload(backround);
 	App->textures->Unload(tilemap1);
 	
@@ -193,7 +195,7 @@ update_status ModuleLevel1::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-		App->fade->FadeToBlack(this, App->lvl2, 1);
+		App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl2, 1);
 		
 	}
 	return UPDATE_CONTINUE;

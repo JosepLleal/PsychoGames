@@ -32,6 +32,7 @@ public:
 	Animation downward;
 	iPoint position;
 	uint shot;
+	bool destroyed = false;
 
 	struct Collider* playerHitBox;
 };

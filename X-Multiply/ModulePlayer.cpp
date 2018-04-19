@@ -53,6 +53,7 @@ bool ModulePlayer::Start()
 
 	playerHitBox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
 
+	destroyed = false;
 
 	return ret;
 }
@@ -124,7 +125,8 @@ update_status ModulePlayer::Update()
 	// Draw everything --------------------------------------
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
+	if(destroyed == false)
+		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
 	
 	
 	return UPDATE_CONTINUE;
@@ -133,7 +135,13 @@ update_status ModulePlayer::Update()
 bool ModulePlayer::CleanUp()
 {
 	LOG("Unloading player assets:");
-	App->collision->Disable();
+
+	App->textures->Unload(graphics);
+	App->fonts->UnLoad(font_score);
+	
+
+	if (playerHitBox)
+		playerHitBox->to_delete = true;
 
 	return true;
 }
@@ -144,7 +152,9 @@ void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 	{
 		App->player->Disable();
 		App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
-		App->fade->FadeToBlack(this, App->menu);
-
+		//App->lvl1->Disable();
+		App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->menu);
+		
+		destroyed = true;
 	}
 }
