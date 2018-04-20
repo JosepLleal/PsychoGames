@@ -45,7 +45,6 @@ bool ModuleLevel1::Start()
 	App->render->camera.y = 0;
 	
 	App->player->Enable();
-	App->lvl1->Enable();
 	App->particles->Enable();
 	App->enemies->Enable(); 
 	App->collision->Enable();

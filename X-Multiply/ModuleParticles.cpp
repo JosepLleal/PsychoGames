@@ -23,8 +23,6 @@ bool ModuleParticles::Start()
 	LOG("Loading particles");
 	sprites = App->textures->Load("image/particles.png");
 
-	
-
 	//shot player
 	shot.anim.PushBack({64, 38, 16, 5 });
 	shot.anim.speed = 0.1f;
@@ -146,15 +144,12 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 	{
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
-		{
-			if (c2->type == COLLIDER_ENEMY)
-			{
-				AddParticle(explosion_enemy, active[i]->position.x, active[i]->position.y);
-			}
+		{ 
 			delete active[i];
 			active[i] = nullptr;
 			break;
 		}
+		
 	}
 }
 

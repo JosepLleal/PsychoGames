@@ -95,28 +95,6 @@ update_status ModulePlayer::Update()
 		App->audio->ChunkPlay(shot);
 	}
 
-	
-
-	
-	//// Limits -------------------------------------
-	/*if (position.x <= App->render->camera.x)
-	{
-		position.x = App->render->camera.x;
-	}*/
-	//else if (position.x >= SCREEN_WIDTH - 35)
-	//{
-	//	position.x = SCREEN_WIDTH - 35;
-	//}
-
-	//if (position.y <= 12)
-	//{
-	//	position.y = 12;
-	//}
-	//else if (position.y >= SCREEN_HEIGHT)
-	//{
-	//	position.y = SCREEN_HEIGHT;
-	//}
-
 	//GOD MODE FUNCTION ---------------------------------------------------------------------------------------------------
 	if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
 	{
@@ -164,7 +142,6 @@ bool ModulePlayer::CleanUp()
 
 	App->textures->Unload(graphics);
 	App->fonts->UnLoad(font_score);
-	
 
 	/*if (playerHitBox)
 		playerHitBox->to_delete = true;*/

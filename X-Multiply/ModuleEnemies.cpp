@@ -100,6 +100,7 @@ bool ModuleEnemies::CleanUp()
 			delete enemies[i];
 			enemies[i] = nullptr;
 		}
+		queue[i].type = NO_TYPE;
 	}
 
 	return true;
@@ -150,6 +151,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && (c2->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER_SHOT))
 		{
+			App->particles->AddParticle(App->particles->explosion_enemy, enemies[i]->position.x, enemies[i]->position.y);
 			App->player->score += 100;
 
 			enemies[i]->OnCollision(c2);
