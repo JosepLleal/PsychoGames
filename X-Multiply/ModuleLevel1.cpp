@@ -107,15 +107,17 @@ bool ModuleLevel1::Start()
 	//First Entrance TOP
 	App->collision->AddCollider({ 1430, 14, 120, 48 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1455, 62, 90, 50 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1545, 62, 15, 20}, COLLIDER_WALL);
 
 	//First Entrance BOTTOM 
 	App->collision->AddCollider({ 1430, 196, 120, 46 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1455, 148, 90, 48 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1545, 176, 15, 20 }, COLLIDER_WALL);
 
 	//Second Entrance TOP (biggest one)
 	App->collision->AddCollider({ 2009, 14, 190, 48 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2040, 62, 150, 15 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2015, 77, 130, 34 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2015, 77, 130, 32 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2199, 14, 20, 35 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2219, 14, 50, 8 }, COLLIDER_WALL); //smallest square 
 
