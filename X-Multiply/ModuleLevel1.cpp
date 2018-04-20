@@ -45,6 +45,7 @@ bool ModuleLevel1::Start()
 	App->render->camera.y = 0;
 	
 	App->player->Enable();
+	App->lvl1->Enable();
 	App->particles->Enable();
 	App->enemies->Enable(); 
 	App->collision->Enable();
@@ -161,7 +162,7 @@ bool ModuleLevel1::Start()
 	//App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 700, 50);
 
 	return true;
-}
+}  
 
 // UnLoad assets
 bool ModuleLevel1::CleanUp()
@@ -175,6 +176,7 @@ bool ModuleLevel1::CleanUp()
 
 	App->textures->Unload(backround);
 	App->textures->Unload(tilemap1);
+	App->textures->Unload(hud);
 	
 	return true;
 }

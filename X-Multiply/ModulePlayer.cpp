@@ -174,7 +174,8 @@ bool ModulePlayer::CleanUp()
 
 void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
 {
-	if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL || coll_1->type == COLLIDER_ENEMY || coll_2->type == COLLIDER_ENEMY || coll_1->type == COLLIDER_ENEMY_SHOT || coll_2->type == COLLIDER_ENEMY_SHOT)
+	//if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL || coll_2->type == COLLIDER_ENEMY || coll_1->type == COLLIDER_ENEMY_SHOT || coll_2->type == COLLIDER_ENEMY_SHOT)
+	if(coll_1 == playerHitBox && destroyed == false && App->fade->IsFading() == false)
 	{
 		App->player->Disable();
 		App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);

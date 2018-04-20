@@ -66,7 +66,7 @@ bool ModuleParticles::Start()
 	player_death.anim.PushBack({ 32, 144, 16, 16 });
 	player_death.anim.PushBack({ 16, 144, 16, 16 });
 	player_death.anim.PushBack({ 0, 144, 16, 16 });
-	player_death.anim.speed = 5.0f;
+	player_death.anim.speed = 0.05f;
 	player_death.anim.loop = false;
 
 
@@ -107,7 +107,7 @@ update_status ModuleParticles::Update()
 			delete p;
 			active[i] = nullptr;
 		}
-		else if (SDL_GetTicks() >= p->born)
+		else if ((int)SDL_GetTicks() >= (int)p->born ) 
 		{
 			App->render->Blit(sprites, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
 

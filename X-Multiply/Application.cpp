@@ -51,6 +51,7 @@ bool Application::Init()
 	//-----------------------
 	player->Disable();
 	collision->Disable();
+	particles->Disable();
 	enemies->Disable();
 	lvl1->Disable();
 	lvl2->Disable();
