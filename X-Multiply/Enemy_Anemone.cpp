@@ -25,12 +25,12 @@ Enemy_Anemone::Enemy_Anemone(int x, int y) : Enemy(x, y)
 
 void Enemy_Anemone::Move()
 {
-	if ( App->render->camera.x % 400 == 0)
+	if ( App->render->camera.x % 420 == 0)
 	{
-		App->particles->AddParticle(App->particles->anemona_shot1, original_pos.x + 24, original_pos.y + 10, COLLIDER_ENEMY_SHOT);
-		App->particles->AddParticle(App->particles->anemona_shot2, original_pos.x + 24, original_pos.y + 10, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->anemona_shot1, original_pos.x + 24, original_pos.y + 25, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->anemona_shot2, original_pos.x + 24, original_pos.y + 15, COLLIDER_ENEMY_SHOT);
 		App->particles->AddParticle(App->particles->anemona_shot3, original_pos.x + 24, original_pos.y + 10, COLLIDER_ENEMY_SHOT);
-		App->particles->AddParticle(App->particles->anemona_shot4, original_pos.x + 24, original_pos.y + 10, COLLIDER_ENEMY_SHOT);
-		App->particles->AddParticle(App->particles->anemona_shot5, original_pos.x + 24, original_pos.y + 10, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->anemona_shot4, original_pos.x + 24, original_pos.y + 20, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->anemona_shot5, original_pos.x + 24, original_pos.y + 25, COLLIDER_ENEMY_SHOT);
 	}
 }
