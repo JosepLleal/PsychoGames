@@ -2,41 +2,33 @@
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
-#include "ModuleAudio.h"
+#include "ModuleParticles.h"
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
-#include "ModulePlayer.h"
-#include "ModuleMenu.h"
-#include "ModuleLevel1.h"
-#include "ModuleLevel2.h"
-#include "ModuleParticles.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleFonts.h"
+#include "ModulePlayer.h"
+#include "ModuleAudio.h"
 
 #include<stdio.h>
 
 
-// Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
-
 ModulePlayer::ModulePlayer()
 {
-	position.x = 100;
-	position.y = 30;
-
-	// idle animation (arcade sprite sheet)
+	// idle animation (just the ship)
 	idle.PushBack({ 100, 0, 38, 16 });
-	idle.speed = 0.2f;
 
 	// go upward animation 
 	upward.PushBack({ 52, 0, 38, 16 });
 	upward.PushBack({ 4, 0, 38, 16 });
 	upward.loop = false;
-	upward.speed = 0.06f;
+	upward.speed = 0.1f;
 
+	// Move down
 	downward.PushBack({ 148, 0, 38, 16 });
 	downward.PushBack({ 196, 0, 38, 16 });
 	downward.loop = false;
-	downward.speed = 0.06f;
+	downward.speed = 0.1f;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -45,54 +37,115 @@ ModulePlayer::~ModulePlayer()
 // Load assets
 bool ModulePlayer::Start()
 {
-	LOG("Loading player textures");
-	bool ret = true;
-	graphics = App->textures->Load("Image/Main_Character_Effects.png"); // arcade version
-	shot = App->audio->LoadFX("Sound/xmultipl-122.wav");
-	font_score = App->fonts->Load("image/xmultiply_redyellowfont.png", "0123456789@.-=<>()|&*/""!?abcdefghijklmnopqrstuvwxyz", 2);
+	LOG("Loading player");
 
-	playerHitBox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
+	graphics = App->textures->Load("Image/Main_Character_Effects.png");
+
+	shot = App->audio->LoadFX("Sound/xmultipl-122.wav"); //Loading FX of shot
+	death = App->audio->LoadFX("Sound/xmultipl-044.wav"); //Loading FX when player dies
 
 	destroyed = false;
 	godmode = false;
 
-	return ret;
+	position.x = 150;
+	position.y = 120;
+	score = 0;
+
+	playerHitbox = App->collision->AddCollider({position.x, position.y, 32, 16}, COLLIDER_PLAYER, this);
+
+	// Still have to load XMULTIPLY FONT
+	font_score = App->fonts->Load("fonts/rtype_font3.png", "! @,_./0123456789$;<&?abcdefghijklmnopqrstuvwxyz", 2);
+
+
+	return true;
+}
+
+// Unload assets
+bool ModulePlayer::CleanUp()
+{
+	LOG("Unloading player");
+
+	App->textures->Unload(graphics);
+	App->fonts->UnLoad(font_score);
+
+	//Unloading FX
+	App->audio->UnloadFX(shot);
+	App->audio->UnloadFX(death);
+
+	/*if(playerHitbox)
+		playerHitbox->to_delete = true;*/
+
+	return true;
 }
 
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	Animation* current_animation = &idle;
+	position.x += 1; // Automatic movement
 
-	int speed = 2;
+	int speed = 1;
 
-	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
+	{
+		position.x -= speed * 2;
+	}
+
+	if(App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x += speed;
 	}
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
-	{
-		position.y -= speed;
-		current_animation = &upward;
-		downward.Reset();
-		
-	}
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
+
+	if(App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
 	{
 		position.y += speed;
-		current_animation = &downward;
-		upward.Reset();
-		
+		if(current_animation != &downward)
+		{
+			downward.Reset();
+			current_animation = &downward;
+		}
 	}
-	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
+
+	if(App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
 	{
-		position.x -= speed*2;
+		position.y -= speed;
+		if(current_animation != &upward)
+		{
+			upward.Reset();
+			current_animation = &upward;
+		}
 	}
-	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
+
+	if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->shot, position.x + 28, position.y +6, COLLIDER_PLAYER_SHOT);
-		
+		App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
 		App->audio->ChunkPlay(shot);
+		
+	}
+
+	if(App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_IDLE
+	   && App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_IDLE)
+		current_animation = &idle;
+
+	// Camera Limits
+	//X Limits:
+	if (position.x <= abs(App->render->camera.x) / SCREEN_SIZE)
+	{
+		position.x = 1 + (abs(App->render->camera.x) / SCREEN_SIZE);
+	}
+	else if (position.x >= ((abs(App->render->camera.x) / SCREEN_SIZE + SCREEN_WIDTH - 38)))
+	{
+		position.x = -1 + ((abs(App->render->camera.x) / SCREEN_SIZE + SCREEN_WIDTH - 38));
+	}
+
+	//Y Limits:
+
+	if (position.y <= abs(App->render->camera.y) / SCREEN_SIZE)
+	{
+		position.y = 1 + abs(App->render->camera.y) / SCREEN_SIZE;
+	}
+	else if (position.y >= (abs(App->render->camera.y) / SCREEN_SIZE) + SCREEN_HEIGHT - 45) 
+	{
+		position.y = -1 + (abs(App->render->camera.y) / SCREEN_SIZE) + SCREEN_HEIGHT - 45;
 	}
 
 	//GOD MODE FUNCTION ---------------------------------------------------------------------------------------------------
@@ -103,61 +156,44 @@ update_status ModulePlayer::Update()
 		if (godmode == true)
 		{
 			LOG("GodMode on");
-			playerHitBox->to_delete = true;
-			playerHitBox = nullptr;  
+			playerHitbox->to_delete = true;
+			playerHitbox = nullptr;
 		}
 		else if (godmode == false)
 		{
 			LOG("GodMode off");
-			playerHitBox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
+			playerHitbox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
 		}
 	}
 
-
 	//-----------------------------------------------------------------------------------------------------------------------
 
-	if (godmode == false)
-		playerHitBox->SetPos(position.x, position.y);
+	if(godmode == false)
+		playerHitbox->SetPos(position.x, position.y);
 
-	// Draw UI (score) --------------------------------------
-	sprintf_s(score_text, 10, "%7d", score);
 
-    //Blit the text of the score in at the bottom of the screen
-	App->fonts->BlitText(10, 265, font_score, score_text);
-
-	// Draw everything --------------------------------------
-	SDL_Rect r = current_animation->GetCurrentFrame();
-
-	//If its not destroyed print 
 	if(destroyed == false)
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
 	
-	
+	// Draw UI (score) --------------------------------------
+	sprintf_s(score_text, 10, "%7d", score);
+
+	// TODO 3: Blit the text of the score in at the bottom of the screen
+	App->fonts->BlitText(10, 10, font_score, "X-Multiply");
+
 	return UPDATE_CONTINUE;
 }
 
-bool ModulePlayer::CleanUp()
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	LOG("Unloading player assets:");
-
-	App->textures->Unload(graphics);
-	App->fonts->UnLoad(font_score);
-
-	/*if (playerHitBox)
-		playerHitBox->to_delete = true;*/
-
-	return true;
-}
-
-void ModulePlayer::OnCollision(Collider* coll_1, Collider* coll_2)
-{
-	//if (coll_1->type == COLLIDER_WALL || coll_2->type == COLLIDER_WALL || coll_2->type == COLLIDER_ENEMY || coll_1->type == COLLIDER_ENEMY_SHOT || coll_2->type == COLLIDER_ENEMY_SHOT)
-	if(coll_1 == playerHitBox && destroyed == false && App->fade->IsFading() == false)
+	if(c1 == playerHitbox && destroyed == false && App->fade->IsFading() == false)
 	{
-		App->player->Disable();
 		App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
-		App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->menu);
+		App->audio->ChunkPlay(death);
+		playerHitbox->to_delete = true;
+		App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->menu, 2.0f);
 		
+
 		destroyed = true;
 	}
 }

@@ -2,8 +2,6 @@
 #define __MODULELEVEL1_H__
 
 #include "Module.h"
-#include "Animation.h"
-#include "Globals.h"
 
 struct SDL_Texture;
 
@@ -19,14 +17,12 @@ public:
 
 public:
 	
-	SDL_Texture* graphics = nullptr;
-	SDL_Texture* backround = nullptr;
-	SDL_Texture* tilemap1 = nullptr;
+	SDL_Texture* background = nullptr;
 	SDL_Texture* hud = nullptr;
-	SDL_Rect ground;
-	SDL_Rect foreground;
-	SDL_Rect background;
-	
+	SDL_Texture* tilemap1 = nullptr;
+
+	SDL_Rect background_parallax;
+	SDL_Rect ground_parallax;
 };
 
-#endif // __MODULESCENEKEN_H__
+#endif // __MODULESCENESPACE_H__

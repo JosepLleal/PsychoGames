@@ -3,22 +3,19 @@
 #include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
-#include "ModuleAudio.h"
-#include "ModuleMenu.h"
 #include "ModuleLevel1.h"
-#include "ModuleLevel2.h"
+#include "ModuleMenu.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
-#include "ModuleCredits.h"
-#include "ModuleParticles.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModuleFonts.h"
+#include "ModuleAudio.h"
 
 Application::Application()
 {
 	int i = 0;
-
 	modules[i++] = window = new ModuleWindow();
 	modules[i++] = render = new ModuleRender();
 	modules[i++] = input = new ModuleInput();
@@ -27,15 +24,11 @@ Application::Application()
 	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = menu = new ModuleMenu();
 	modules[i++] = lvl1 = new ModuleLevel1();
-	modules[i++] = lvl2 = new ModuleLevel2();
-	modules[i++] = credit = new ModuleCredits();
 	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = player = new ModulePlayer();
 	modules[i++] = particles = new ModuleParticles();
 	modules[i++] = collision = new ModuleCollision();
 	modules[i++] = fade = new ModuleFadeToBlack();
-	
-	
 }	
 
 Application::~Application()
@@ -48,15 +41,12 @@ bool Application::Init()
 {
 	bool ret = true;
 
-	//-----------------------
+	// Desactivate modules here ----
+	lvl1->Disable();
 	player->Disable();
 	collision->Disable();
-	particles->Disable();
 	enemies->Disable();
-	lvl1->Disable();
-	lvl2->Disable();
-	credit->Disable();
-	//-----------------------
+	// ----------------------------
 
 	for(int i = 0; i < NUM_MODULES && ret == true; ++i)
 		ret = modules[i]->Init();
@@ -87,7 +77,7 @@ bool Application::CleanUp()
 {
 	bool ret = true;
 
-	for (int i = NUM_MODULES - 1; i >= 0 && ret == true; --i)
+	for(int i = NUM_MODULES - 1; i >= 0 && ret == true; --i)
 		ret = modules[i]->IsEnabled() ? modules[i]->CleanUp() : true;
 
 	return ret;

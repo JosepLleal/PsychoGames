@@ -2,8 +2,6 @@
 #define __MODULEMENU_H__
 
 #include "Module.h"
-#include "Animation.h"
-#include "Globals.h"
 
 struct SDL_Texture;
 
@@ -18,11 +16,9 @@ public:
 	bool CleanUp();
 
 public:
-
-	SDL_Texture * graphics = nullptr;
-	SDL_Rect background;
-
-	int background_w = 0;
+	
+	SDL_Texture* background = nullptr;
+	uint fx = 0;
 };
 
-#endif 
+#endif // __MODULESCENEINTRO_H__

@@ -12,11 +12,19 @@ public:
 	SDL_Rect frames[MAX_FRAMES];
 
 private:
-	float current_frame;
+	float current_frame = 0.0f;
 	int last_frame = 0;
 	int loops = 0;
 
 public:
+
+	Animation()
+	{}
+
+	Animation(const Animation& anim) : loop(anim.loop), speed(anim.speed), last_frame(anim.last_frame)
+	{
+		SDL_memcpy(&frames, anim.frames, sizeof(frames));
+	}
 
 	void PushBack(const SDL_Rect& rect)
 	{
@@ -26,7 +34,7 @@ public:
 	SDL_Rect& GetCurrentFrame()
 	{
 		current_frame += speed;
-		if (current_frame >= last_frame)
+		if(current_frame >= last_frame)
 		{
 			current_frame = (loop) ? 0.0f : last_frame - 1;
 			loops++;
@@ -42,7 +50,8 @@ public:
 
 	void Reset()
 	{
-		current_frame = 0;
+		loops = 0;
+		current_frame = 0.0f;
 	}
 };
 

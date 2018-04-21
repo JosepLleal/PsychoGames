@@ -15,7 +15,7 @@ Enemy_Shrimp::Enemy_Shrimp(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 65, 17, Width, Height });
 	fly.PushBack({ 72, 72, Width, Height });
 	fly.PushBack({ 22, 20, Width, Height });
-	
+
 
 	fly.speed = 0.2f;
 
@@ -51,5 +51,5 @@ void Enemy_Shrimp::Move()
 		App->particles->AddParticle(App->particles->enemy_shot, position.x + 15, position.y + 15, COLLIDER_ENEMY_SHOT);
 	}
 
-	
+
 }

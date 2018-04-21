@@ -3,7 +3,7 @@
 
 #include "Module.h"
 #include "Enemy_Shrimp.h"
-#include "Enemy_Anemone.h"
+#include "ModuleTextures.h"
 
 #define MAX_ENEMIES 100
 
@@ -11,7 +11,7 @@ enum ENEMY_TYPES
 {
 	NO_TYPE,
 	SHRIMP,
-	ANEMONE,
+	
 };
 
 class Enemy;
@@ -46,8 +46,10 @@ private:
 
 	EnemyInfo queue[MAX_ENEMIES];
 	Enemy* enemies[MAX_ENEMIES];
-	SDL_Texture* shrimp;
-	SDL_Texture* anemone;
+
+	SDL_Texture* sprites;
+
+	uint enemy_death; //FX when enemy dies
 };
 
 #endif // __ModuleEnemies_H__

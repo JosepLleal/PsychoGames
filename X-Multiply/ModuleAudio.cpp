@@ -9,7 +9,7 @@
 
 
 
-ModuleAudio::ModuleAudio(){}
+ModuleAudio::ModuleAudio() {}
 
 ModuleAudio::~ModuleAudio() {}
 
@@ -51,7 +51,7 @@ bool ModuleAudio::MusicPlay(const char* path, float fade_time)
 {
 	bool ret = true;
 
-	if (music != NULL) 
+	if (music != NULL)
 	{
 		Mix_FadeOutMusic((int)(fade_time*1000.0f));
 	}
@@ -59,7 +59,7 @@ bool ModuleAudio::MusicPlay(const char* path, float fade_time)
 	Mix_VolumeMusic(40);
 	music = Mix_LoadMUS(path);
 
-	if (music == NULL) 
+	if (music == NULL)
 	{
 		LOG("Cannot load music %s. Error: %s", path, SDL_GetError());
 		ret = false;
@@ -116,7 +116,7 @@ bool ModuleAudio::ChunkPlay(uint last)
 	{
 		Mix_VolumeChunk(FX[last], 128);
 		Mix_PlayChannelTimed(-1, FX[last], 0, 500);
-		LOG("Playing fx"); 
+		LOG("Playing fx");
 		ret = true;
 	}
 

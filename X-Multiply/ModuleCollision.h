@@ -1,7 +1,7 @@
 #ifndef __ModuleCollision_H__
 #define __ModuleCollision_H__
 
-#define MAX_COLLIDERS 100
+#define MAX_COLLIDERS 200
 
 #include "Module.h"
 
@@ -23,7 +23,6 @@ struct Collider
 	bool to_delete = false;
 	COLLIDER_TYPE type;
 	Module* callback = nullptr;
-	
 
 	Collider(SDL_Rect rectangle, COLLIDER_TYPE type, Module* callback = nullptr) :
 		rect(rectangle),
@@ -47,21 +46,19 @@ public:
 	ModuleCollision();
 	~ModuleCollision();
 
-	update_status PreUpdate() override;
-	update_status Update() override;
-	bool CleanUp() override;
+	update_status PreUpdate();
+	update_status Update();
+	//update_status PostUpdate();
+	bool CleanUp();
 
 	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* callback = nullptr);
 	void DebugDraw();
-
 
 private:
 
 	Collider* colliders[MAX_COLLIDERS];
 	bool matrix[COLLIDER_MAX][COLLIDER_MAX];
 	bool debug = false;
-	
-	SDL_Rect screen; 
 };
 
 #endif // __ModuleCollision_H__

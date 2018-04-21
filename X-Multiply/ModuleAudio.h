@@ -7,7 +7,7 @@
 #define Max 30
 
 typedef struct _Mix_Music Mix_Music;
-struct Mix_Chunk; 
+struct Mix_Chunk;
 
 
 class ModuleAudio : public Module
@@ -24,7 +24,7 @@ public:
 	bool ChunkPlay(uint last);
 
 	uint LoadFX(const char* path);
-	bool UnloadFX(uint last); 
+	bool UnloadFX(uint last);
 
 public:
 
