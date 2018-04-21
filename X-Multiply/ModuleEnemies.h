@@ -6,7 +6,7 @@
 #include "Enemy_Anemone.h"
 #include "ModuleTextures.h"
 
-#define MAX_ENEMIES 100
+#define MAX_ENEMIES 200
 
 enum ENEMY_TYPES
 {

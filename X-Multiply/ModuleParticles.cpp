@@ -46,6 +46,12 @@ ModuleParticles::ModuleParticles()
 	player_death.anim.speed = 0.5f;
 	player_death.anim.loop = false;
 
+	shot_impact.anim.PushBack({ 132, 34, 12, 12 });
+	shot_impact.anim.PushBack({ 147, 34, 12, 12 });
+	shot_impact.anim.PushBack({ 163, 34, 12, 12 });
+	shot_impact.anim.speed = 0.3f;
+	shot_impact.anim.loop = false;
+
 	shot.anim.PushBack({ 64, 38, 16, 5 });
 	shot.anim.speed = 0.1f;
 	shot.speed.x = 7;
@@ -133,6 +139,11 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 
 void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 {
+	if (c1->type == COLLIDER_PLAYER_SHOT||COLLIDER_WALL && c2->type == COLLIDER_WALL||COLLIDER_PLAYER_SHOT)
+	{
+		App->particles->AddParticle(App->particles->shot_impact, 0, 0, COLLIDER_NONE);
+	}
+
 	for(uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
 		// Always destroy particles that collide

@@ -51,6 +51,7 @@ private:
 public:
 	//player particles
 	Particle shot;
+	Particle shot_impact;
 	Particle player_death;
 
 	//enemy particles
