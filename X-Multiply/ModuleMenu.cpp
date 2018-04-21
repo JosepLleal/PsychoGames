@@ -8,7 +8,6 @@
 #include "ModuleAudio.h"
 #include "ModulePLayer.h"
 
-// Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
 ModuleMenu::ModuleMenu()
 {}
