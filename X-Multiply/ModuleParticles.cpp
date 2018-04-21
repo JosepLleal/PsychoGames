@@ -115,6 +115,61 @@ ModuleParticles::ModuleParticles()
 	anemona_shot5.speed.x = 3;
 	anemona_shot5.speed.y = -1;
 	anemona_shot5.life = 4000;
+
+	//anemona upsidedown 1
+	anemona_shotud1.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shotud1.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shotud1.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shotud1.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shotud1.anim.loop = true;
+	anemona_shotud1.anim.speed = 0.3f;
+	anemona_shotud1.speed.x = -3;
+	anemona_shotud1.speed.y = 1;
+	anemona_shotud1.life = 4000;
+
+	//anemona upsidedown 2
+	anemona_shotud2.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shotud2.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shotud2.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shotud2.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shotud2.anim.loop = true;
+	anemona_shotud2.anim.speed = 0.3f;
+	anemona_shotud2.speed.x = -2;
+	anemona_shotud2.speed.y = 2;
+	anemona_shotud2.life = 4000;
+
+	//anemona upsidedown 3
+	anemona_shotud3.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shotud3.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shotud3.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shotud3.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shotud3.anim.loop = true;
+	anemona_shotud3.anim.speed = 0.3f;
+	anemona_shotud3.speed.x = 0;
+	anemona_shotud3.speed.y = 2;
+	anemona_shotud3.life = 4000;
+
+	//anemona upsidedown 4
+	anemona_shotud4.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shotud4.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shotud4.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shotud4.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shotud4.anim.loop = true;
+	anemona_shotud4.anim.speed = 0.3f;
+	anemona_shotud4.speed.x = 2;
+	anemona_shotud4.speed.y = 2;
+	anemona_shotud4.life = 4000;
+
+	//anemona upsidedown 5
+	anemona_shotud5.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shotud5.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shotud5.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shotud5.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shotud5.anim.loop = true;
+	anemona_shotud5.anim.speed = 0.3f;
+	anemona_shotud5.speed.x = 3;
+	anemona_shotud5.speed.y = 1;
+	anemona_shotud5.life = 4000;
 }
 
 ModuleParticles::~ModuleParticles()

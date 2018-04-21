@@ -250,6 +250,8 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2390, 205);
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2461, 205);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 495, 15); 
+
 	return true;
 }
 
