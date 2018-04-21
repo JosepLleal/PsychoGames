@@ -203,6 +203,9 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 4353, 503, 27, 16 }, COLLIDER_WALL); //3rd obstacle 1
 	App->collision->AddCollider({ 4345, 519, 57, 18 }, COLLIDER_WALL); //3rd obstacle 2
 
+	App->collision->AddCollider({ 4870, 519, 65, 18 }, COLLIDER_WALL); //Before Boss 1 
+	App->collision->AddCollider({ 4800, 525, 30, 12 }, COLLIDER_WALL); //Before Boss 2
+
 	//--------- After Scroll ENTRANCE TOP --------- 
 	App->collision->AddCollider({ 4623, 305, 13, 13 }, COLLIDER_WALL); //small square 1
 	App->collision->AddCollider({ 4617, 357, 15, 15 }, COLLIDER_WALL); //small square 2
