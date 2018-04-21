@@ -45,6 +45,9 @@ bool ModuleLevel1::Start()
 	App->collision->Enable();
 	App->enemies->Enable();
 
+	App->render->camera.x = 0;
+	App->render->camera.y = 0;
+
 	//--------- TOP LARGER WALL --------- 
 	App->collision->AddCollider({ 495, 0, 2025, 14 }, COLLIDER_WALL); //square of all the top wall 
 
@@ -199,6 +202,9 @@ bool ModuleLevel1::Start()
 
 	App->collision->AddCollider({ 4353, 503, 27, 16 }, COLLIDER_WALL); //3rd obstacle 1
 	App->collision->AddCollider({ 4345, 519, 57, 18 }, COLLIDER_WALL); //3rd obstacle 2
+
+	App->collision->AddCollider({ 4870, 519, 65, 18 }, COLLIDER_WALL); //Before Boss 1 
+	App->collision->AddCollider({ 4800, 525, 30, 12 }, COLLIDER_WALL); //Before Boss 2
 
 	//--------- After Scroll ENTRANCE TOP --------- 
 	App->collision->AddCollider({ 4623, 305, 13, 13 }, COLLIDER_WALL); //small square 1
