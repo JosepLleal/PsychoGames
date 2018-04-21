@@ -271,6 +271,7 @@ update_status ModuleLevel1::Update()
 	if (App->render->camera.x < 9150)
 	{
 		App->render->camera.x += 1 * SCREEN_SIZE;
+		App->player->position.x += 1; 
 	}
 
 	if (App->render->camera.x > 5300 && App->render->camera.x < 7064)

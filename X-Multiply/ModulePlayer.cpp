@@ -82,7 +82,7 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	position.x += 1; // Automatic movement
+	//position.x += 1; // Automatic movement
 
 	if(App->player->lives>=0)
 	{
@@ -96,12 +96,12 @@ update_status ModulePlayer::Update()
 
 		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
 		{
-			position.x += speed;
+			position.x += speed * 2;
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
 		{
-			position.y += speed;
+			position.y += speed * 2;
 			if (current_animation != &downward)
 			{
 				downward.Reset();
@@ -111,7 +111,7 @@ update_status ModulePlayer::Update()
 
 		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
 		{
-			position.y -= speed;
+			position.y -= speed * 2;
 			if (current_animation != &upward)
 			{
 				upward.Reset();
