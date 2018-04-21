@@ -13,6 +13,7 @@ enum ENEMY_TYPES
 	NO_TYPE,
 	SHRIMP,
 	ANEMONE,
+	BALL,
 	
 };
 

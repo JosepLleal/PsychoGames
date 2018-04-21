@@ -6,7 +6,7 @@
 #include "ModuleTextures.h"
 #include "Enemy.h"
 #include "Enemy_Shrimp.h"
-#include "Enemy_BrownShip.h"
+#include "Enemy_Ball.h"
 #include "Enemy_Anemone.h"
 #include "ModuleAudio.h"
 
@@ -137,8 +137,12 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 
 			case ENEMY_TYPES::ANEMONE:
-				enemies[i] = new Enemy_Anemone(info.x, info.y);
-				break;
+			enemies[i] = new Enemy_Anemone(info.x, info.y);
+			break;
+
+			case ENEMY_TYPES::BALL:
+			enemies[i] = new Enemy_Anemone(info.x, info.y);
+			break;
 		}
 	}
 }

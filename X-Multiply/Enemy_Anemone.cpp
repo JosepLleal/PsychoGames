@@ -20,4 +20,5 @@ Enemy_Anemone::Enemy_Anemone(int x, int y) : Enemy(x, y)
 
 	original_pos.x = x;
 	original_pos.y = y;
+
 }

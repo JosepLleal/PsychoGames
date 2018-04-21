@@ -230,13 +230,13 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 750, 120);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 775, 120);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 790, 120);
+	*/
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 830, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 850, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 870, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 890, 100);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::BROWNSHIP, 830, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::BROWNSHIP, 850, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::BROWNSHIP, 870, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::BROWNSHIP, 890, 100);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::MECH, 900, 195);*/
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 518, 175);
 	
 	return true;
 }
