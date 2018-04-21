@@ -207,7 +207,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		}
 		if (App->player->lives == 0)
 		{
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->menu, 2.0f);
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 2.0f);
 			
 		}
 		
