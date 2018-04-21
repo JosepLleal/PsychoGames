@@ -18,6 +18,7 @@ public:
 	int Width;
 	int Height;
 
+	void Move();
 };
 
 #endif // __ENEMY_ANEMONE_H__

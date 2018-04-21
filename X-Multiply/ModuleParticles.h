@@ -58,6 +58,11 @@ public:
 	//enemy particles
 	Particle enemy_shot;
 	Particle explosion_enemy;
+	Particle anemona_shot1; 
+	Particle anemona_shot2;
+	Particle anemona_shot3;
+	Particle anemona_shot4;
+	Particle anemona_shot5;
 };
 
 #endif // __MODULEPARTICLES_H__

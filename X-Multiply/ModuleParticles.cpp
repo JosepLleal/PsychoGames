@@ -60,6 +60,61 @@ ModuleParticles::ModuleParticles()
 	shot.anim.speed = 0.1f;
 	shot.speed.x = 7;
 	shot.life = 950;
+
+	//anemona shot 1 
+	anemona_shot1.anim.PushBack({ 253, 9, 10, 10 }); 
+	anemona_shot1.anim.PushBack({ 271, 10, 10, 10 }); 
+	anemona_shot1.anim.PushBack({ 254, 25, 10, 10 }); 
+	anemona_shot1.anim.PushBack({ 271, 25, 10, 10 }); 
+	anemona_shot1.anim.loop = true; 
+	anemona_shot1.anim.speed = 0.3f; 
+	anemona_shot1.speed.x = -2;
+	anemona_shot1.speed.y = -1; 
+	anemona_shot1.life = 4000; 
+
+	//anemona shot 2
+	anemona_shot2.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shot2.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shot2.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shot2.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shot2.anim.loop = true;
+	anemona_shot2.anim.speed = 0.3f;
+	anemona_shot2.speed.x = -1;
+	anemona_shot2.speed.y = -1;
+	anemona_shot2.life = 4000;
+
+	//anemona shot 3
+	anemona_shot3.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shot3.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shot3.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shot3.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shot3.anim.loop = true;
+	anemona_shot3.anim.speed = 0.3f;
+	anemona_shot3.speed.x = 0;
+	anemona_shot3.speed.y = -1;
+	anemona_shot3.life = 4000;
+
+	//anemona shot 4 
+	anemona_shot4.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shot4.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shot4.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shot4.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shot4.anim.loop = true;
+	anemona_shot4.anim.speed = 0.3f;
+	anemona_shot4.speed.x = 1;
+	anemona_shot4.speed.y = -1;
+	anemona_shot4.life = 4000;
+
+	//anemona shot 5
+	anemona_shot5.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shot5.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shot5.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shot5.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shot5.anim.loop = true;
+	anemona_shot5.anim.speed = 0.3f;
+	anemona_shot5.speed.x = 2;
+	anemona_shot5.speed.y = -1;
+	anemona_shot5.life = 4000;
 }
 
 ModuleParticles::~ModuleParticles()
