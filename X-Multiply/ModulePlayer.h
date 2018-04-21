@@ -35,6 +35,8 @@ public:
 	uint shot; //fx shot sound
 	uint death; //fx when player dies
 
+	int lives = 2; //Lives of Player
+
 	bool godmode = false;
 	bool destroyed = false;
 };

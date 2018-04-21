@@ -46,7 +46,7 @@ bool ModulePlayer::Start()
 
 	destroyed = false;
 	godmode = false;
-
+	
 	position.x = 150;
 	position.y = 120;
 	score = 0;
@@ -72,6 +72,7 @@ bool ModulePlayer::CleanUp()
 	App->audio->UnloadFX(shot);
 	App->audio->UnloadFX(death);
 
+
 	/*if(playerHitbox)
 		playerHitbox->to_delete = true;*/
 
@@ -83,94 +84,99 @@ update_status ModulePlayer::Update()
 {
 	position.x += 1; // Automatic movement
 
-	int speed = 1;
-
-	if(App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
+	if(App->player->lives>=0)
 	{
-		position.x -= speed * 2;
-	}
 
-	if(App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
-	{
-		position.x += speed;
-	}
+		int speed = 1;
 
-	if(App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
-	{
-		position.y += speed;
-		if(current_animation != &downward)
+		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
 		{
-			downward.Reset();
-			current_animation = &downward;
+			position.x -= speed * 2;
 		}
-	}
 
-	if(App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
-	{
-		position.y -= speed;
-		if(current_animation != &upward)
+		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
 		{
-			upward.Reset();
-			current_animation = &upward;
+			position.x += speed;
 		}
-	}
 
-	if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
-	{
-		App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
-		App->audio->ChunkPlay(shot);
-		
-	}
+		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
+		{
+			position.y += speed;
+			if (current_animation != &downward)
+			{
+				downward.Reset();
+				current_animation = &downward;
+			}
+		}
 
-	if(App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_IDLE
-	   && App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_IDLE)
-		current_animation = &idle;
+		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
+		{
+			position.y -= speed;
+			if (current_animation != &upward)
+			{
+				upward.Reset();
+				current_animation = &upward;
+			}
+		}
 
-	// Camera Limits
-	//X Limits:
-	if (position.x <= abs(App->render->camera.x) / SCREEN_SIZE)
-	{
-		position.x = 1 + (abs(App->render->camera.x) / SCREEN_SIZE);
-	}
-	else if (position.x >= ((abs(App->render->camera.x) / SCREEN_SIZE + SCREEN_WIDTH - 38)))
-	{
-		position.x = -1 + ((abs(App->render->camera.x) / SCREEN_SIZE + SCREEN_WIDTH - 38));
-	}
+		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+		{
+			App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
+			App->audio->ChunkPlay(shot);
 
-	//Y Limits:
+		}
 
-	if (position.y <= abs(App->render->camera.y) / SCREEN_SIZE)
-	{
-		position.y = 1 + abs(App->render->camera.y) / SCREEN_SIZE;
-	}
-	else if (position.y >= (abs(App->render->camera.y) / SCREEN_SIZE) + SCREEN_HEIGHT - 45) 
-	{
-		position.y = -1 + (abs(App->render->camera.y) / SCREEN_SIZE) + SCREEN_HEIGHT - 45;
+		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_IDLE
+			&& App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_IDLE)
+			current_animation = &idle;
+
+		// Camera Limits
+		//X Limits:
+		if (position.x <= abs(App->render->camera.x) / SCREEN_SIZE)
+		{
+			position.x = 1 + (abs(App->render->camera.x) / SCREEN_SIZE);
+		}
+		else if (position.x >= ((abs(App->render->camera.x) / SCREEN_SIZE + SCREEN_WIDTH - 38)))
+		{
+			position.x = -1 + ((abs(App->render->camera.x) / SCREEN_SIZE + SCREEN_WIDTH - 38));
+		}
+
+		//Y Limits:
+
+		if (position.y <= abs(App->render->camera.y) / SCREEN_SIZE)
+		{
+			position.y = 1 + abs(App->render->camera.y) / SCREEN_SIZE;
+		}
+		else if (position.y >= (abs(App->render->camera.y) / SCREEN_SIZE) + SCREEN_HEIGHT - 45)
+		{
+			position.y = -1 + (abs(App->render->camera.y) / SCREEN_SIZE) + SCREEN_HEIGHT - 45;
+		}
 	}
 
 	//GOD MODE FUNCTION ---------------------------------------------------------------------------------------------------
-	if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
+	if (App->player->lives >= 0)
 	{
-		godmode = !godmode;
+		if (App->input->keyboard[SDL_SCANCODE_F5] == KEY_DOWN)
+		{
+			godmode = !godmode;
 
-		if (godmode == true)
-		{
-			LOG("GodMode on");
-			playerHitbox->to_delete = true;
-			playerHitbox = nullptr;
+			if (godmode == true)
+			{
+				LOG("GodMode on");
+				playerHitbox->to_delete = true;
+				playerHitbox = nullptr;
+			}
+			else if (godmode == false)
+			{
+				LOG("GodMode off");
+				playerHitbox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
+			}
 		}
-		else if (godmode == false)
-		{
-			LOG("GodMode off");
-			playerHitbox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
-		}
+		if (godmode == false)
+			playerHitbox->SetPos(position.x, position.y);
 	}
 
 	//-----------------------------------------------------------------------------------------------------------------------
-
-	if(godmode == false)
-		playerHitbox->SetPos(position.x, position.y);
-
 
 	if(destroyed == false)
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
@@ -181,6 +187,9 @@ update_status ModulePlayer::Update()
 	// TODO 3: Blit the text of the score in at the bottom of the screen
 	App->fonts->BlitText(10, 10, font_score, "X-Multiply");
 
+	
+
+
 	return UPDATE_CONTINUE;
 }
 
@@ -190,10 +199,21 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	{
 		App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
 		App->audio->ChunkPlay(death);
-		playerHitbox->to_delete = true;
-		App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->menu, 2.0f);
+		if (App->player->lives > 0)
+		{
+			LOG("Lives -1");
+			App->player->lives -= 1;
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1);
+		}
+		if (App->player->lives == 0)
+		{
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->menu, 2.0f);
+			
+		}
 		
-
+		playerHitbox->to_delete = true;
 		destroyed = true;
+		App->render->camera.x = 0;
+		App->render->camera.y = 0;
 	}
 }
