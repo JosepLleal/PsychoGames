@@ -6,8 +6,10 @@
 #include "ModuleTextures.h"
 #include "ModulePlayer.h"
 #include "PowerUp.h"
-//add powerup.h's
 
+//add powerup.h's
+#include "PowerUp_Enemy.h"
+#include "PowerUp_SpeedUp.h"
 
 #include "ModuleAudio.h"
 
@@ -25,10 +27,10 @@ ModulePowerUp::~ModulePowerUp()
 bool ModulePowerUp::Start()
 {
 	//enemies sprites
-	sprites = App->textures->Load("image/LVL1enemies.png");
+	sprites = App->textures->Load("image/PowerUps.png");
 
 	//Loading FX
-	powerup_pickup = App->audio->LoadFX("Sound/xmultipl-100.wav");
+	powerup_killed = App->audio->LoadFX("sound/xmultipl-055.wav");
 
 	return true;
 }
@@ -87,7 +89,7 @@ bool ModulePowerUp::CleanUp()
 	LOG("Freeing all enemies");
 
 	App->textures->Unload(sprites);
-	App->audio->UnloadFX(powerup_pickup);
+	App->audio->UnloadFX(powerup_killed);
 
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
@@ -123,17 +125,21 @@ bool ModulePowerUp::AddPowerUp(POWERUP_TYPES type, int x, int y)
 
 void ModulePowerUp::SpawnPowerUp(const PowerUpInfo& info)
 {
-	// find room for the new enemy
+	
 	uint i = 0;
 	for (; powerup[i] != nullptr && i < MAX_POWERUPS; ++i);
 	if (i != MAX_POWERUPS)
 	{
-		//switch (info.type)
-		//{
-		///*case POWERUP::XXXXXXXXXXXXXXXXXXXX:
-		//	powerup[i] = new PowerUp_XXXXXXX(info.x, info.y);
-		//	break;*/
-		//}
+		switch (info.type)
+		{
+		case POWERUP_TYPES::POWERUP_ENEMY:
+			powerup[i] = new PowerUp_Enemy(info.x, info.y);
+			break;
+
+		case POWERUP_TYPES::SPEED_UP:
+			powerup[i] = new PowerUp_SpeedUp(info.x, info.y);
+			break;
+		}
 	}
 }
 
@@ -144,6 +150,7 @@ void ModulePowerUp::OnCollision(Collider* c1, Collider* c2)
 		if (powerup[i] != nullptr && powerup[i]->GetCollider() == c1)
 		{
 			powerup[i]->OnCollision(c2);
+			App->particles->AddParticle(App->particles->shot_impact, powerup[i]->position.x, powerup[i]->position.y);
 
 			delete powerup[i];
 			powerup[i] = nullptr;

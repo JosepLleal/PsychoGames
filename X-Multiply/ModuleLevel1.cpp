@@ -6,6 +6,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+#include "ModulePowerUp.h"
 #include "ModuleLevel1.h"
 #include "ModuleAudio.h"
 
@@ -44,6 +45,7 @@ bool ModuleLevel1::Start()
 	App->particles->Enable();
 	App->collision->Enable();
 	App->enemies->Enable();
+	App->powerup->Enable();
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -251,6 +253,10 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2461, 205);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 495, 15); 
+
+	//PowerUps
+	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 1500, 120);
+	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 1500, 140);
 
 	return true;
 }

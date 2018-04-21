@@ -49,7 +49,7 @@ bool ModulePlayer::Start()
 	
 	position.x = 150;
 	position.y = 120;
-	score = 0;
+	
 
 	playerHitbox = App->collision->AddCollider({ position.x, position.y, 7, 6 }, COLLIDER_PLAYER, this);
 
@@ -173,7 +173,7 @@ update_status ModulePlayer::Update()
 			else if (godmode == false)
 			{
 				LOG("GodMode off");
-				playerHitbox = App->collision->AddCollider({ position.x, position.y, 36, 16 }, COLLIDER_PLAYER, this);
+				playerHitbox = App->collision->AddCollider({ position.x, position.y, 7, 6 }, COLLIDER_PLAYER, this);
 			}
 		}
 		if (godmode == false)

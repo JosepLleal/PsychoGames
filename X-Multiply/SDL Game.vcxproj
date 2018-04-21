@@ -99,6 +99,8 @@
     <ClInclude Include="p2Point.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="PowerUp.h" />
+    <ClInclude Include="PowerUp_Enemy.h" />
+    <ClInclude Include="PowerUp_SpeedUp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
@@ -126,6 +128,8 @@
     <ClCompile Include="ModuleTextures.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="PowerUp.cpp" />
+    <ClCompile Include="PowerUp_Enemy.cpp" />
+    <ClCompile Include="PowerUp_SpeedUp.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

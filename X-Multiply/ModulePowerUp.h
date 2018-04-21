@@ -4,11 +4,13 @@
 #include "Module.h"
 #include "ModuleTextures.h"
 
-#define MAX_POWERUPS 20
+#define MAX_POWERUPS 50
 
 enum POWERUP_TYPES
 {
 	NONE,
+	POWERUP_ENEMY,
+	SPEED_UP,
 };
 
 class PowerUp;
@@ -35,6 +37,8 @@ public:
 
 	bool AddPowerUp(POWERUP_TYPES type, int x, int y);
 
+	uint powerup_killed;
+
 private:
 
 	void SpawnPowerUp(const PowerUpInfo& info);
@@ -46,7 +50,7 @@ private:
 
 	SDL_Texture* sprites;
 
-	uint powerup_pickup; //FX when enemy dies
+	 //FX when powerup enemy is killed
 };
 
 #endif // __ModuleEnemies_H__

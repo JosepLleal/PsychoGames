@@ -253,11 +253,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 
 void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 {
-	/*if (c1->type == COLLIDER_PLAYER_SHOT && c2->type == COLLIDER_WALL)
-	{
-		App->particles->AddParticle(App->particles->shot_impact, position.x, position.y, COLLIDER_NONE);
-	}*/
-
+	
 	for(uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
 		

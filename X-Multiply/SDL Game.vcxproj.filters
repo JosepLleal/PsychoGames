@@ -107,6 +107,12 @@
     <ClInclude Include="PowerUp.h">
       <Filter>Modules\PowerUp</Filter>
     </ClInclude>
+    <ClInclude Include="PowerUp_Enemy.h">
+      <Filter>Modules\PowerUp</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUp_SpeedUp.h">
+      <Filter>Modules\PowerUp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -182,6 +188,12 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="PowerUp.cpp">
+      <Filter>Modules\PowerUp</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerUp_Enemy.cpp">
+      <Filter>Modules\PowerUp</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerUp_SpeedUp.cpp">
       <Filter>Modules\PowerUp</Filter>
     </ClCompile>
   </ItemGroup>
