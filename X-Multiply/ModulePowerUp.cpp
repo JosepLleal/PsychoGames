@@ -11,7 +11,7 @@
 
 #include "ModuleAudio.h"
 
-#define SPAWN_MARGIN 100
+#define SPAWN_MARGIN 50
 
 ModulePowerUp::ModulePowerUp()
 {

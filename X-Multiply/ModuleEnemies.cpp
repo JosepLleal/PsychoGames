@@ -12,7 +12,7 @@
 #include "Enemy_Anemone.h"
 #include "ModuleAudio.h"
 
-#define SPAWN_MARGIN 100
+#define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies()
 {
