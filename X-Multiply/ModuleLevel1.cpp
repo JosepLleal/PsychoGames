@@ -48,7 +48,7 @@ bool ModuleLevel1::Start()
 	//--------- TOP LARGER WALL --------- 
 	App->collision->AddCollider({ 495, 0, 2025, 14 }, COLLIDER_WALL); //square of all the top wall 
 
-																	  //--------- BOTTOM LARGER WALL --------- 
+	//--------- BOTTOM LARGER WALL --------- 
 	App->collision->AddCollider({ 0, 242, 2549, 15 }, COLLIDER_WALL);
 
 	//--------- TOP OBSTACLES --------- 
@@ -67,7 +67,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 2425, 14, 57, 16 }, COLLIDER_WALL); //After biggest entrance 1 top
 	App->collision->AddCollider({ 2430, 30, 30, 18 }, COLLIDER_WALL); //After biggest entrance 2 top
 
-																	  //--------- BOTTOM OBSTACLES --------- 
+	//--------- BOTTOM OBSTACLES --------- 
 	App->collision->AddCollider({ 414, 210, 30, 16 }, COLLIDER_WALL); //1st 1
 	App->collision->AddCollider({ 408, 226, 57, 16 }, COLLIDER_WALL); //1st 2
 
@@ -83,7 +83,7 @@ bool ModuleLevel1::Start()
 
 	App->collision->AddCollider({ 2548, 219, 318, 38 }, COLLIDER_WALL); //Just before scroll
 
-																		//-------- First Entrance TOP --------- 
+	//-------- First Entrance TOP --------- 
 	App->collision->AddCollider({ 1551, 14, 13, 13 }, COLLIDER_WALL); //small square 1
 	App->collision->AddCollider({ 1545, 63, 15, 15 }, COLLIDER_WALL); //small square 2
 	App->collision->AddCollider({ 1423, 14, 128, 27 }, COLLIDER_WALL); //top square 
@@ -93,7 +93,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 1460, 86, 85, 15 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1475, 101, 65, 8 }, COLLIDER_WALL); //bottom square 
 
-																	  //--------- First Entrance BOTTOM --------- 
+	//--------- First Entrance BOTTOM --------- 
 	App->collision->AddCollider({ 1475, 147, 65, 8 }, COLLIDER_WALL); //top square 
 	App->collision->AddCollider({ 1460, 155, 85, 15 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1455, 170, 90, 15 }, COLLIDER_WALL);
@@ -103,7 +103,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 1551, 228, 13, 13 }, COLLIDER_WALL); //small square 1
 	App->collision->AddCollider({ 1545, 176, 15, 15 }, COLLIDER_WALL); //small square 2
 
-																	   //--------- Second Entrance TOP (biggest one) --------- 
+	//--------- Second Entrance TOP (biggest one) --------- 
 	App->collision->AddCollider({ 2009, 14, 190, 28 }, COLLIDER_WALL); //top square 
 	App->collision->AddCollider({ 2025, 42, 175, 15 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2040, 57, 140, 15 }, COLLIDER_WALL);
@@ -114,7 +114,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 2199, 14, 13, 35 }, COLLIDER_WALL); //smalles square 1
 	App->collision->AddCollider({ 2212, 14, 57, 8 }, COLLIDER_WALL); //smallest square 2
 
-																	 //--------- Second Entrance BOTTOM (biggest one) --------- 
+	//--------- Second Entrance BOTTOM (biggest one) --------- 
 	App->collision->AddCollider({ 2129, 147, 10, 17 }, COLLIDER_WALL); // top square
 	App->collision->AddCollider({ 2009, 147, 87, 17 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2015, 164, 135, 10 }, COLLIDER_WALL);
@@ -125,7 +125,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 2199, 207, 13, 35 }, COLLIDER_WALL); //smallest square 1 
 	App->collision->AddCollider({ 2212, 234, 57, 8 }, COLLIDER_WALL); //smallest square 2
 
-																	  //--------- TOP SCROLL --------- 
+	//--------- TOP SCROLL --------- 
 	App->collision->AddCollider({ 2917, 0, 122, 43 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2997, 43, 48, 12 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3045, 43, 200, 33 }, COLLIDER_WALL);
@@ -189,7 +189,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 4340, 305, 75, 30 }, COLLIDER_WALL); //2nd obstacle 1 
 	App->collision->AddCollider({ 4415, 305, 20, 15 }, COLLIDER_WALL); //2nd obstacle 2
 
-																	   //--------- After Scroll BOTTOM --------- 
+	//--------- After Scroll BOTTOM --------- 
 	App->collision->AddCollider({ 3675, 537, 1300, 13 }, COLLIDER_WALL); //square of all bottom 
 
 	App->collision->AddCollider({ 3955, 510, 75, 27 }, COLLIDER_WALL); //1st obstacle 1 
@@ -200,7 +200,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 4353, 503, 27, 16 }, COLLIDER_WALL); //3rd obstacle 1
 	App->collision->AddCollider({ 4345, 519, 57, 18 }, COLLIDER_WALL); //3rd obstacle 2
 
-																	   //--------- After Scroll ENTRANCE TOP --------- 
+	//--------- After Scroll ENTRANCE TOP --------- 
 	App->collision->AddCollider({ 4623, 305, 13, 13 }, COLLIDER_WALL); //small square 1
 	App->collision->AddCollider({ 4617, 357, 15, 15 }, COLLIDER_WALL); //small square 2
 	App->collision->AddCollider({ 4495, 305, 128, 31 }, COLLIDER_WALL); //top square 
@@ -210,7 +210,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 4532, 381, 85, 15 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 4547, 396, 65, 8 }, COLLIDER_WALL); //bottom square 
 
-																	  //--------- After Scroll ENTRANCE BOTTOM --------- 
+	//--------- After Scroll ENTRANCE BOTTOM --------- 
 	App->collision->AddCollider({ 4542, 440, 65, 8 }, COLLIDER_WALL); //top square 
 	App->collision->AddCollider({ 4532, 448, 85, 15 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 4527, 463, 90, 15 }, COLLIDER_WALL);
@@ -220,7 +220,7 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 4623, 521, 13, 13 }, COLLIDER_WALL); //small square 1
 	App->collision->AddCollider({ 4617, 469, 15, 15 }, COLLIDER_WALL); //small square 2
 
-																	   // Enemies ---
+	// Enemies ---
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 625, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 640, 80);
