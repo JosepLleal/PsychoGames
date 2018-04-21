@@ -2,6 +2,7 @@
 #include "Enemy.h"
 #include "ModuleCollision.h"
 #include "ModuleRender.h"
+#include "ModuleParticles.h"
 
 Enemy::Enemy(int x, int y) : position(x, y), collider(nullptr)
 {}
@@ -24,3 +25,10 @@ void Enemy::Draw(SDL_Texture* sprites)
 
 	App->render->Blit(sprites, position.x, position.y, &(animation->GetCurrentFrame()));
 }
+
+void Enemy::OnCollision(Collider* collider)
+{
+	
+}
+
+

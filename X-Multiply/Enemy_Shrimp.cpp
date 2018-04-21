@@ -2,6 +2,7 @@
 #include "Enemy_Shrimp.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "ModulePlayer.h"
 
 
 Enemy_Shrimp::Enemy_Shrimp(int x, int y) : Enemy(x, y)
@@ -49,4 +50,14 @@ void Enemy_Shrimp::Move()
 	}
 
 
+}
+
+
+void Enemy_Shrimp::OnCollision(Collider* collider)
+{
+	if (collider->type == COLLIDER_PLAYER_SHOT)
+	{
+		App->player->score += 200;
+		App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
+	}
 }

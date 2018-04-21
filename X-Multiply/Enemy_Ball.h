@@ -19,6 +19,7 @@ public:
 	int Height;
 
 	void Move();
+	void Enemy_Ball::OnCollision(Collider* collider);
 };
 
 #endif // __ENEMY_BALL_H__

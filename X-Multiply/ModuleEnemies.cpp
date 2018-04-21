@@ -154,11 +154,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if(enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
-			App->particles->AddParticle(App->particles->explosion_enemy, enemies[i]->position.x, enemies[i]->position.y);
+			enemies[i]->OnCollision(c2);
+			//App->particles->AddParticle(App->particles->explosion_enemy, enemies[i]->position.x, enemies[i]->position.y);
 			App->particles->AddParticle(App->particles->shot_impact, enemies[i]->position.x, enemies[i]->position.y);
 			App->audio->ChunkPlay(enemy_death);
-
-			App->player->score += 100;
 
 			delete enemies[i];
 			enemies[i] = nullptr;

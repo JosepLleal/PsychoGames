@@ -21,6 +21,9 @@ public:
 	int Height;
 
 	void Move();
+	void Enemy_Shrimp::OnCollision(Collider* collider);
+	
+
 };
 
 #endif // __ENEMY_EXAMPLE_H__

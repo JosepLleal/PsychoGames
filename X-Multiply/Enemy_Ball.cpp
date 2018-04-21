@@ -2,6 +2,8 @@
 #include "Enemy_Ball.h"
 #include "ModuleCollision.h"
 #include "Globals.h"
+#include "ModuleParticles.h"
+#include "ModulePlayer.h"
 
 Enemy_Ball::Enemy_Ball(int x, int y) : Enemy(x, y)
 {
@@ -27,4 +29,13 @@ Enemy_Ball::Enemy_Ball(int x, int y) : Enemy(x, y)
 void Enemy_Ball::Move()
 {
 	position = original_pos + path.GetCurrentSpeed();
+}
+
+void Enemy_Ball::OnCollision(Collider* collider)
+{
+	if (collider->type == COLLIDER_PLAYER_SHOT)
+	{
+		App->player->score += 100;
+		App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
+	}
 }

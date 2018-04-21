@@ -19,6 +19,7 @@ public:
 	int Height;
 
 	void Move();
+	void Enemy_Anemone::OnCollision(Collider* collider);
 };
 
 #endif // __ENEMY_ANEMONE_H__
