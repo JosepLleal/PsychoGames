@@ -51,7 +51,7 @@ bool ModulePlayer::Start()
 	position.y = 120;
 	score = 0;
 
-	playerHitbox = App->collision->AddCollider({position.x, position.y, 32, 16}, COLLIDER_PLAYER, this);
+	playerHitbox = App->collision->AddCollider({position.x , position.y, 32, 16}, COLLIDER_PLAYER, this);
 
 	// Still have to load XMULTIPLY FONT
 	font_score = App->fonts->Load("fonts/rtype_font3.png", "! @,_./0123456789$;<&?abcdefghijklmnopqrstuvwxyz", 2);
@@ -213,7 +213,5 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		
 		playerHitbox->to_delete = true;
 		destroyed = true;
-		App->render->camera.x = 0;
-		App->render->camera.y = 0;
 	}
 }

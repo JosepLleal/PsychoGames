@@ -11,12 +11,12 @@ Enemy_Ball::Enemy_Ball(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 0 , 110, Width, Height});
 	fly.PushBack({ 31 , 110, Width, Height });
 	fly.PushBack({ 62 , 110, Width, Height });
-	fly.speed = 0.2f;
+	fly.speed = 0.03f;
 	animation = &fly;
 
-	/*path.PushBack({-1.0f, -0.5f}, 100);
+	path.PushBack({-1.0f, -0.5f}, 100);
 	path.PushBack({-1.0f, 0.5f}, 80);
-	path.PushBack({-1.0f, 1.0f}, 80);*/
+	path.PushBack({-1.0f, 1.0f}, 80);
 
 	collider = App->collision->AddCollider({0, 0, Width, Height }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 

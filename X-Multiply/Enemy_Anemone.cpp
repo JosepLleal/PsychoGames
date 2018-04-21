@@ -10,9 +10,9 @@ Enemy_Anemone::Enemy_Anemone(int x, int y) : Enemy(x, y)
 	Width = 56;
 	Height = 43;
 
-	static_movement.PushBack({ 0, 162, Width, Height });
-	static_movement.PushBack({ 56, 162, Width, Height });
-	static_movement.PushBack({ 112, 162, Width, Height });
+	static_movement.PushBack({ 0, 162, 48, Height });
+	static_movement.PushBack({ 61, 162, 48, Height });
+	static_movement.PushBack({ 121, 162, 48, Height });
 	static_movement.speed = 0.05f;
 	animation = &static_movement;
 
@@ -20,5 +20,4 @@ Enemy_Anemone::Enemy_Anemone(int x, int y) : Enemy(x, y)
 
 	original_pos.x = x;
 	original_pos.y = y;
-
 }
