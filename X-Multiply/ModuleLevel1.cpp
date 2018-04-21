@@ -45,6 +45,9 @@ bool ModuleLevel1::Start()
 	App->collision->Enable();
 	App->enemies->Enable();
 
+	App->render->camera.x = 0;
+	App->render->camera.y = 0;
+
 	//--------- TOP LARGER WALL --------- 
 	App->collision->AddCollider({ 495, 0, 2025, 14 }, COLLIDER_WALL); //square of all the top wall 
 

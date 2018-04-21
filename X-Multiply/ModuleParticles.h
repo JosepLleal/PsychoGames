@@ -47,6 +47,7 @@ private:
 
 	SDL_Texture* graphics = nullptr;
 	Particle* active[MAX_ACTIVE_PARTICLES];
+	iPoint position;
 
 public:
 	//player particles
