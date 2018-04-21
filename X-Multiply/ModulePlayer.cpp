@@ -53,8 +53,8 @@ bool ModulePlayer::Start()
 
 	playerHitbox = App->collision->AddCollider({ position.x, position.y, 7, 6 }, COLLIDER_PLAYER, this);
 
-	// Still have to load XMULTIPLY FONT
-	font_score = App->fonts->Load("fonts/rtype_font3.png", "! @,_./0123456789$;<&?abcdefghijklmnopqrstuvwxyz", 2);
+	// X-Multiply font
+	font_score = App->fonts->Load("image/fonts_xmultiply2.png", "0123456789ם.-=יט()ףעבת`´!?abcdefghijklmnopqrstuvwxyz", 2);
 
 
 	return true;
@@ -71,10 +71,6 @@ bool ModulePlayer::CleanUp()
 	//Unloading FX
 	App->audio->UnloadFX(shot);
 	App->audio->UnloadFX(death);
-
-
-	/*if(playerHitbox)
-		playerHitbox->to_delete = true;*/
 
 	return true;
 }
@@ -185,9 +181,10 @@ update_status ModulePlayer::Update()
 	sprintf_s(score_text, 10, "%7d", score);
 
 	// TODO 3: Blit the text of the score in at the bottom of the screen
-	App->fonts->BlitText(10, 10, font_score, "X-Multiply");
-
-	
+	App->fonts->BlitText(70, 273, font_score, score_text);
+	App->fonts->BlitText(35, 273, font_score, "1");
+	App->fonts->BlitText(43, 273, font_score, "up");
+	App->fonts->BlitText(145, 273, font_score, "top");
 
 
 	return UPDATE_CONTINUE;

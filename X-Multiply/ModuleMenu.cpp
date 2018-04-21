@@ -25,6 +25,7 @@ bool  ModuleMenu::Start()
 
 	App->render->camera.x = App->render->camera.y = 0;
 	App->player->lives = 2;
+	App->player->score = 0;
 	
 	return true;
 }
