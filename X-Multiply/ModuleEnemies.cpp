@@ -143,7 +143,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 
 			case ENEMY_TYPES::ANEMONEUD:
-				enemies[i] = new Enemy_Anemone(info.x, info.y);
+				enemies[i] = new Enemy_AnemoneUD(info.x, info.y);
 				break;
 
 			case ENEMY_TYPES::BALL:
