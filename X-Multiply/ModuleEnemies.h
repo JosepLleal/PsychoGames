@@ -3,6 +3,7 @@
 
 #include "Module.h"
 #include "Enemy_Shrimp.h"
+#include "Enemy_Anemone.h"
 #include "ModuleTextures.h"
 
 #define MAX_ENEMIES 100
@@ -11,6 +12,7 @@ enum ENEMY_TYPES
 {
 	NO_TYPE,
 	SHRIMP,
+	ANEMONE,
 	
 };
 

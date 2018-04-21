@@ -7,7 +7,7 @@
 #include "Enemy.h"
 #include "Enemy_Shrimp.h"
 #include "Enemy_BrownShip.h"
-#include "Enemy_Mech.h"
+#include "Enemy_Anemone.h"
 #include "ModuleAudio.h"
 
 #define SPAWN_MARGIN 50
@@ -26,7 +26,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 	//enemies sprites
-	sprites = App->textures->Load("image/LV1_Shrimp.png");
+	sprites = App->textures->Load("image/LVL1enemies.png");
 
 	//Loading FX
 	enemy_death = App->audio->LoadFX("Sound/xmultipl-100.wav");
@@ -135,6 +135,10 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			case ENEMY_TYPES::SHRIMP:
 			enemies[i] = new Enemy_Shrimp(info.x,info.y);
 			break;
+
+			case ENEMY_TYPES::ANEMONE:
+				enemies[i] = new Enemy_Anemone(info.x, info.y);
+				break;
 		}
 	}
 }

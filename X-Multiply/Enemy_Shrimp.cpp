@@ -9,13 +9,10 @@ Enemy_Shrimp::Enemy_Shrimp(int x, int y) : Enemy(x, y)
 	Width = 45;
 	Height = 34;
 
-	fly.PushBack({ 72, 72, Width, Height });
-	fly.PushBack({ 16, 71, Width, Height });
-	fly.PushBack({ 72, 72, Width, Height });
-	fly.PushBack({ 65, 17, Width, Height });
-	fly.PushBack({ 72, 72, Width, Height });
-	fly.PushBack({ 22, 20, Width, Height });
-
+	fly.PushBack({ 0, 0, Width, Height });
+	fly.PushBack({ 45, 0, Width, Height });
+	fly.PushBack({ 0, 54, Width, Height });
+	fly.PushBack({ 45, 54, Width, Height });
 
 	fly.speed = 0.2f;
 
