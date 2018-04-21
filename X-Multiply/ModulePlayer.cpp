@@ -170,6 +170,14 @@ update_status ModulePlayer::Update()
 		}
 		if (godmode == false)
 			playerHitbox->SetPos(position.x + 9, position.y + 5);
+
+		if (App->input->keyboard[SDL_SCANCODE_F3] == KEY_STATE::KEY_DOWN && App->fade->IsFading() == false)
+		{
+			App->audio->ChunkPlay(death);
+			App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
+			App->player->Disable();
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over);
+		}
 	}
 
 	//-----------------------------------------------------------------------------------------------------------------------
