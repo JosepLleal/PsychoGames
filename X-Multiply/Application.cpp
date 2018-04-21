@@ -14,6 +14,7 @@
 #include "ModuleAudio.h"
 #include "ModuleGameOver.h"
 #include "ModuleStageCleared.h"
+#include "ModulePowerUp.h"
 
 Application::Application()
 {
@@ -30,6 +31,7 @@ Application::Application()
 	modules[i++] = stage_cleared = new ModuleStageCleared();
 	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = player = new ModulePlayer();
+	modules[i++] = powerup = new ModulePowerUp();
 	modules[i++] = particles = new ModuleParticles();
 	modules[i++] = collision = new ModuleCollision();
 	modules[i++] = fade = new ModuleFadeToBlack();

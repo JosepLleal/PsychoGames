@@ -4,6 +4,7 @@
 #include "Module.h"
 #include "Enemy_Shrimp.h"
 #include "Enemy_Anemone.h"
+#include "Enemy_Ball.h"
 #include "Enemy_anemoneUD.h"
 #include "ModuleTextures.h"
 
