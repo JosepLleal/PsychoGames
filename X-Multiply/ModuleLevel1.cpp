@@ -243,6 +243,12 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 890, 100);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 518, 175);
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 863, 205); 
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 1294, 175);
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2265, 205);
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2301, 205);
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2390, 205);
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2461, 205);
 
 	return true;
 }
