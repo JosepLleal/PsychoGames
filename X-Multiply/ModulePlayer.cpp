@@ -147,6 +147,14 @@ update_status ModulePlayer::Update()
 		{
 			position.y = -1 + (abs(App->render->camera.y) / SCREEN_SIZE) + SCREEN_HEIGHT - 45;
 		}
+
+		//If end level go to STAGE CLEARED
+		if (App->render->camera.x == 9150)
+		{
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->stage_cleared);
+		}
+
+
 	}
 
 	//GOD MODE FUNCTION ---------------------------------------------------------------------------------------------------
@@ -185,7 +193,7 @@ update_status ModulePlayer::Update()
 	if(destroyed == false)
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
 	
-	// Draw UI (score) --------------------------------------
+	// Draw UI (score) -------------------------------------------------
 	sprintf_s(score_text, 10, "%7d", score);
 
 	// TODO 3: Blit the text of the score in at the bottom of the screen
@@ -193,6 +201,7 @@ update_status ModulePlayer::Update()
 	App->fonts->BlitText(35, 273, font_score, "1");
 	App->fonts->BlitText(43, 273, font_score, "up");
 	App->fonts->BlitText(145, 273, font_score, "top");
+	//------------------------------------------------------------------
 
 
 	return UPDATE_CONTINUE;

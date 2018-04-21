@@ -91,6 +91,7 @@
     <ClInclude Include="ModuleRender.h" />
     <ClInclude Include="ModuleMenu.h" />
     <ClInclude Include="ModuleLevel1.h" />
+    <ClInclude Include="ModuleStageCleared.h" />
     <ClInclude Include="ModuleTextures.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="p2Point.h" />
@@ -116,6 +117,7 @@
     <ClCompile Include="ModuleRender.cpp" />
     <ClCompile Include="ModuleMenu.cpp" />
     <ClCompile Include="ModuleLevel1.cpp" />
+    <ClCompile Include="ModuleStageCleared.cpp" />
     <ClCompile Include="ModuleTextures.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
   </ItemGroup>

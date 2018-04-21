@@ -13,6 +13,7 @@
 #include "ModuleFonts.h"
 #include "ModuleAudio.h"
 #include "ModuleGameOver.h"
+#include "ModuleStageCleared.h"
 
 Application::Application()
 {
@@ -26,6 +27,7 @@ Application::Application()
 	modules[i++] = menu = new ModuleMenu();
 	modules[i++] = lvl1 = new ModuleLevel1();
 	modules[i++] = game_over = new ModuleGameOver();
+	modules[i++] = stage_cleared = new ModuleStageCleared();
 	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = player = new ModulePlayer();
 	modules[i++] = particles = new ModuleParticles();
@@ -43,9 +45,10 @@ bool Application::Init()
 {
 	bool ret = true;
 
-	// Desactivate modules here ----
+	// Desactivate modules here unless Menu ----
 	lvl1->Disable();
 	game_over->Disable();
+	stage_cleared->Disable();
 	player->Disable();
 	collision->Disable();
 	enemies->Disable();
