@@ -33,7 +33,7 @@ ModuleLevel1::~ModuleLevel1()
 bool ModuleLevel1::Start()
 {
 	LOG("Loading space scene");
-	
+
 	background = App->textures->Load("image/background completed.png");
 	tilemap1 = App->textures->Load("image/LV1_TilemapCompleted.png");
 	hud = App->textures->Load("image/xmultiply_hud.png");
@@ -45,9 +45,6 @@ bool ModuleLevel1::Start()
 	App->collision->Enable();
 	App->enemies->Enable();
 
-	App->render->camera.x = 0;
-	App->render->camera.y = 0;
-	
 	//--------- TOP LARGER WALL --------- 
 	App->collision->AddCollider({ 495, 0, 2025, 14 }, COLLIDER_WALL); //square of all the top wall 
 
@@ -223,12 +220,12 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 4623, 521, 13, 13 }, COLLIDER_WALL); //small square 1
 	App->collision->AddCollider({ 4617, 469, 15, 15 }, COLLIDER_WALL); //small square 2
 
-	// Enemies ---
+																	   // Enemies ---
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 625, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 640, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 665, 80);
-	
+
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 735, 120);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 750, 120);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 775, 120);
@@ -240,7 +237,7 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 890, 100);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 518, 175);
-	
+
 	return true;
 }
 
@@ -249,7 +246,7 @@ bool ModuleLevel1::CleanUp()
 {
 	LOG("Unloading space scene");
 
- 	App->textures->Unload(background);
+	App->textures->Unload(background);
 	App->textures->Unload(tilemap1);
 	App->textures->Unload(hud);
 
@@ -265,12 +262,23 @@ bool ModuleLevel1::CleanUp()
 update_status ModuleLevel1::Update()
 {
 	// Move camera forward -----------------------------
-	App->render->camera.x += 1 * SCREEN_SIZE;
+	if (App->render->camera.x < 9150)
+	{
+		App->render->camera.x += 1 * SCREEN_SIZE;
+	}
+
+	if (App->render->camera.x > 5300 && App->render->camera.x < 7064)
+	{
+		if (App->render->camera.x % 3 == 0)
+		{
+			App->render->camera.y += 1 * SCREEN_SIZE;
+		}
+	}
 
 	// Draw everything --------------------------------------
 	App->render->Blit(background, 0, 0, &background_parallax, 0.75f, true); // backround
 	App->render->Blit(tilemap1, 0, 0, &ground_parallax, 1.0f, true);
 	App->render->Blit(hud, 0, 257, NULL, 0.0f, false);
-	
+
 	return UPDATE_CONTINUE;
 }
