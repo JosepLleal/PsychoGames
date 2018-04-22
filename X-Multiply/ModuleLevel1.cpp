@@ -252,11 +252,14 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2390, 205);
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 2461, 205);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 495, 15); 
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 1309, 11); 
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 3125, 95);
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 3509, 240);
+	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 3649, 280);
 
 	//PowerUps
+	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 1500, 133);
 	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 1500, 120);
-	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 1500, 140);
 
 	return true;
 }
