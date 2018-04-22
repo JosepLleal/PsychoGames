@@ -8,11 +8,18 @@ construct the X-002, a microscopic fighter ship.
 
 
 ## Controls:
+
+#### Main functionalities:
+
 Arrows: Move Player (Up, Down, Right or Left)
 
-WASD Keys: Move Camera ('W' up, 'S' down, 'D' right and 'A' left)
+Space: Shoot (With both the spaceship and the tentacles). Can be held to shoot without spamming the key.
 
-Space: Shoot (With both the spaceship and the tentacles)
+ESC: Close Game (Finish the execution of the program, similar to Alt+F4)
+
+#### Debugging functionalities:
+
+WASD Keys: Move Camera ('W' up, 'S' down, 'D' right and 'A' left)
 
 F1: Show/Hide Colliders (Also called hitbox, colours depen on the type of the collider)
 
@@ -22,11 +29,13 @@ F3: Instantly Lose (Suicide and Game Over, back to main screen)
 
 F5: Enable/Disable God Mode (While in God Mode your collider will be disabled so you can't die)
 
-ESC: Close Game (Finish the execution of the program, similar to Alt+F4)
+F6: Enable/Disable speed power-up
 
-##Changelist:
+F7: Enable/Diable bomb power-up
+
+## Changelist:
 v0.1
-To move the space ship use w, a, s, and d keys.
+To move the space ship use W, A, S, D keys.
 
 Use Esc to close window.
 
