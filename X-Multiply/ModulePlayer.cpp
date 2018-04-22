@@ -185,6 +185,16 @@ update_status ModulePlayer::Update()
 		{
 			App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
 			App->audio->ChunkPlay(shot);
+		}
+
+
+		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_REPEAT && destroyed == false)
+		{
+			if (App->render->camera.x % 40 == 0)
+			{
+				App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
+				App->audio->ChunkPlay(shot);
+			}
 
 		}
 
