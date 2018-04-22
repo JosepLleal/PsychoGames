@@ -22,6 +22,7 @@ public:
 public:
 
 	SDL_Texture* graphics;
+	SDL_Texture* live; 
 	int font_score = -1;
 	char score_text[10];
 	uint score = 0;

@@ -56,6 +56,7 @@ bool ModulePlayer::Start()
 	LOG("Loading player");
 
 	graphics = App->textures->Load("Image/Main_Character_Effects.png");
+	live = App->textures->Load("Image/Lives.png"); 
 
 	shot = App->audio->LoadFX("Sound/xmultipl-122.wav"); //Loading FX of shot
 	death = App->audio->LoadFX("Sound/xmultipl-044.wav"); //Loading FX when player dies
@@ -83,6 +84,7 @@ bool ModulePlayer::CleanUp()
 	LOG("Unloading player");
 
 	App->textures->Unload(graphics);
+	App->textures->Unload(live);
 	App->fonts->UnLoad(font_score);
 
 	//Unloading FX
@@ -249,7 +251,23 @@ update_status ModulePlayer::Update()
 	App->fonts->BlitText(43, 273, font_score, "up");
 	App->fonts->BlitText(145, 273, font_score, "top");
 	//------------------------------------------------------------------
-
+	
+	// ------- LIVES -------
+	if (lives == 2)
+	{
+		App->render->Blit(live, 63, 257, NULL, 0.0f, false);
+		App->render->Blit(live, 70, 257, NULL, 0.0f, false);
+		App->render->Blit(live, 77, 257, NULL, 0.0f, false);
+	}
+	if (lives == 1)
+	{
+		App->render->Blit(live, 63, 257, NULL, 0.0f, false);
+		App->render->Blit(live, 70, 257, NULL, 0.0f, false);
+	}
+	if (lives == 0) 
+	{
+		App->render->Blit(live, 63, 257, NULL, 0.0f, false);
+	}
 
 	return UPDATE_CONTINUE;
 }
