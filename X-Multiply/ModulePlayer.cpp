@@ -184,7 +184,12 @@ update_status ModulePlayer::Update()
 			App->audio->ChunkPlay(death);
 			App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
 			App->player->Disable();
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over);
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 5.0f);
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_STATE::KEY_DOWN && App->fade->IsFading() == false)
+		{
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->stage_cleared, 1.0f);
 		}
 	}
 
@@ -217,11 +222,11 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		{
 			LOG("Lives -1");
 			App->player->lives -= 1;
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1);
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1, 5.0f);
 		}
 		if (App->player->lives == 0)
 		{
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 2.0f);
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 5.0f);
 			
 		}
 		

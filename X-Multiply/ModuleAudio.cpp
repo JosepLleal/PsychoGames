@@ -66,7 +66,7 @@ bool ModuleAudio::MusicPlay(const char* path, float fade_time)
 	}
 	else
 	{
-		if (Mix_PlayMusic(music, -1) < 0)
+		if (Mix_PlayMusic(music, 0) < 0)
 		{
 			LOG("Cannot play in music %s. Error: %s", path, SDL_GetError());
 			ret = false;
@@ -115,7 +115,7 @@ bool ModuleAudio::ChunkPlay(uint last)
 	if (FX[last] != nullptr)
 	{
 		Mix_VolumeChunk(FX[last], 128);
-		Mix_PlayChannelTimed(-1, FX[last], 0, 500);
+		Mix_PlayChannelTimed(-1, FX[last], 0, 3000);
 		LOG("Playing fx");
 		ret = true;
 	}
