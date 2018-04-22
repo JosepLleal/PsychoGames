@@ -5,22 +5,20 @@
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
 
-Enemy_Ball::Enemy_Ball(int x, int y) : Enemy(x, y)
+Enemy_Ball::Enemy_Ball(int x, int y, bool up) : Enemy(x, y)
 {
 	Width = 24;
 	Height = 27;
 
-	fly.PushBack({ 0 , 110, Width, Height});
-	fly.PushBack({ 31 , 110, Width, Height });
-	fly.PushBack({ 62 , 110, Width, Height });
-	fly.speed = 0.03f;
+	fly.PushBack({ 0 , 110, Width, Height });
+	fly.PushBack({ 32 , 110, Width, Height });
+	fly.PushBack({ 64 , 110, Width, Height });
+	fly.speed = 0.01f;
 	animation = &fly;
 
-	path.PushBack({-1.0f, -0.5f}, 100);
-	path.PushBack({-1.0f, 0.5f}, 80);
-	path.PushBack({-1.0f, 1.0f}, 80);
+	this->up = up;
 
-	collider = App->collision->AddCollider({0, 0, Width, Height }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, Width, Height }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;
 	original_pos.y = y;
@@ -28,7 +26,24 @@ Enemy_Ball::Enemy_Ball(int x, int y) : Enemy(x, y)
 
 void Enemy_Ball::Move()
 {
-	position = original_pos + path.GetCurrentSpeed();
+	angle += 0.08f;
+
+	if (original_pos.x - 157 == position.x) {
+		ret = true;
+	}
+	
+	if (up)
+		position.y = original_pos.y + sinf(angle) * 1.9f * 20;
+	else
+		position.y = original_pos.y + sinf(-angle) * 1.9f * 20;
+
+	if (ret == false) {
+		position.x -= 0.7f;
+	}
+	else {
+		position.x += 3.7f;
+	}
+
 }
 
 void Enemy_Ball::OnCollision(Collider* collider)

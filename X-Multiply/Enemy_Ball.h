@@ -10,13 +10,16 @@ private:
 	Path path;
 	iPoint original_pos;
 	Animation fly;
+	bool ret = false;
+	bool up;
 
 public:
 
-	class Enemy_Ball(int x, int y);
+	class Enemy_Ball(int x, int y, bool up);
 
 	int Width;
 	int Height;
+	float angle = 0.0f;
 
 	void Move();
 	void Enemy_Ball::OnCollision(Collider* collider);

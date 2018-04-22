@@ -105,7 +105,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
+bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool up)
 {
 	bool ret = false;
 
@@ -116,6 +116,7 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
 			queue[i].type = type;
 			queue[i].x = x;
 			queue[i].y = y;
+			queue[i].up = up;
 			ret = true;
 			break;
 		}
@@ -147,7 +148,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 				break;
 
 			case ENEMY_TYPES::BALL:
-			enemies[i] = new Enemy_Ball(info.x, info.y);
+			enemies[i] = new Enemy_Ball(info.x, info.y, info.up);
 			break;
 		}
 	}
