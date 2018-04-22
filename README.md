@@ -9,19 +9,19 @@ construct the X-002, a microscopic fighter ship.
 <iframe width="640" height="360" src="https://www.youtube.com/embed/GcoOZxjrLdk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Controls:
-Arrows: Move Player
+Arrows: Move Player (Up, Down, Right or Left)
 
-Space: Shoot
+Space: Shoot (With both the spaceship and the tentacles)
 
-F1: Show/Hide Colliders
+F1: Show/Hide Colliders (Also called hitbox, colours depen on the type of the collider)
 
-F2: Instantly Win
+F2: Instantly Win (Go directly to the Stage Clear screen)
 
-F3: Instantly Lose
+F3: Instantly Lose (Suicide and Game Over, back to main screen)
 
-F5: Enable/Disable God Mode
+F5: Enable/Disable God Mode (While in God Mode your collider will be disabled so you can't die)
 
-ESC: Close Game
+ESC: Close Game (Finish the execution of the program, similar to Alt+F4)
 
 
 # PsychoGames Members:
