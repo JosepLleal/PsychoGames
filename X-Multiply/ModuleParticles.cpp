@@ -13,19 +13,6 @@ ModuleParticles::ModuleParticles()
 {
 	for(uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 		active[i] = nullptr;
-
-	
-}
-
-ModuleParticles::~ModuleParticles()
-{}
-
-// Load assets
-bool ModuleParticles::Start()
-{
-	LOG("Loading particles");
-	graphics = App->textures->Load("image/particles.png");
-
 	explosion_enemy.anim.PushBack({ 17, 244, 30, 29 });
 	explosion_enemy.anim.PushBack({ 50, 247, 29, 25 });
 	explosion_enemy.anim.PushBack({ 79, 240, 48, 36 });
@@ -191,7 +178,20 @@ bool ModuleParticles::Start()
 	anemona_shotud5.anim.speed = 0.3f;
 	anemona_shotud5.speed.x = 3;
 	anemona_shotud5.speed.y = 1;
-	anemona_shotud5.life = 4000;	
+	anemona_shotud5.life = 4000;
+	
+}
+
+ModuleParticles::~ModuleParticles()
+{}
+
+// Load assets
+bool ModuleParticles::Start()
+{
+	LOG("Loading particles");
+	graphics = App->textures->Load("image/particles.png");
+
+	
 
 	return true;
 }
