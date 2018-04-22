@@ -261,7 +261,7 @@ update_status ModulePlayer::Update()
 
 	//-----------------------------------------------------------------------------------------------------------------------
 
-	if(destroyed == false)
+	if(destroyed == false && current_animation!=nullptr )
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), true);
 	
 	// Draw UI (score) -------------------------------------------------
