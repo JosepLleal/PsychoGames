@@ -113,6 +113,9 @@
     <ClInclude Include="PowerUp_SpeedUp.h">
       <Filter>Modules\PowerUp</Filter>
     </ClInclude>
+    <ClInclude Include="PowerUpBomb.h">
+      <Filter>Modules\PowerUp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -194,6 +197,9 @@
       <Filter>Modules\PowerUp</Filter>
     </ClCompile>
     <ClCompile Include="PowerUp_SpeedUp.cpp">
+      <Filter>Modules\PowerUp</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerUpBomb.cpp">
       <Filter>Modules\PowerUp</Filter>
     </ClCompile>
   </ItemGroup>

@@ -17,8 +17,6 @@ public:
 
 	void Move();
 	void PowerUp_SpeedUp::OnCollision(Collider* collider);
-
-
 };
 
 #endif 

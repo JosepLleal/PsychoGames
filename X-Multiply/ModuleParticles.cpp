@@ -35,7 +35,16 @@ ModuleParticles::ModuleParticles()
 	enemy_shot.speed.y = 1;
 	enemy_shot.life = 4000;
 
-	player_death.anim.PushBack({ 112, 144, 16, 16 });
+	player_death.anim.PushBack({ 220, 50, 40, 42 });
+	player_death.anim.PushBack({ 268, 50, 40, 42 });
+	player_death.anim.PushBack({ 316, 144, 40, 42 });
+	player_death.anim.PushBack({ 364, 144, 40, 42 });
+	player_death.anim.PushBack({ 412, 144, 40, 42 });
+	player_death.anim.speed = 0.2f;
+	player_death.anim.loop = false;
+	
+	//SMALL BLUE EXPLOSION COORDINATES
+	/*player_death.anim.PushBack({ 112, 144, 16, 16 });
 	player_death.anim.PushBack({ 96, 144, 16, 16 });
 	player_death.anim.PushBack({ 80, 144, 16, 16 });
 	player_death.anim.PushBack({ 64, 144, 16, 16 });
@@ -44,7 +53,7 @@ ModuleParticles::ModuleParticles()
 	player_death.anim.PushBack({ 16, 144, 16, 16 });
 	player_death.anim.PushBack({ 0, 144, 16, 16 });
 	player_death.anim.speed = 0.5f;
-	player_death.anim.loop = false;
+	player_death.anim.loop = false;*/
 
 	shot_impact.anim.PushBack({ 82, 34, 12, 12 });
 	shot_impact.anim.PushBack({ 102, 37, 8, 9 });
