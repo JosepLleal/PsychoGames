@@ -8,6 +8,15 @@ construct the X-002, a microscopic fighter ship.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/GcoOZxjrLdk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+## Controls:
+Arrows: Move Player
+Space: Shoot
+F1: Show/Hide Colliders
+F2: Instantly Win
+F3: Instantly Lose
+F5: Enable/Disable God Mode
+ESC: Close Game
+
 
 # PsychoGames Members:
 
