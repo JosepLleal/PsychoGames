@@ -115,7 +115,10 @@ update_status ModulePlayer::Update()
 
 	if(App->player->lives>=0)
 	{
-
+		if (App->input->keyboard[SDL_SCANCODE_F6] == KEY_STATE::KEY_REPEAT)
+		{
+			Speedup = true;
+		}
 		float speed = 0;
 		//PowerUp SpeedUp -----------------------------------
 		if (Speedup == true) {
@@ -127,11 +130,20 @@ update_status ModulePlayer::Update()
 		}
 		//---------------------------------------------------
 
+		if (App->input->keyboard[SDL_SCANCODE_F7] == KEY_STATE::KEY_REPEAT)
+		{
+			Bomb = true;
+		}
 		//PowerUp Bomb ---------------------------------------------------------------------------------------------------
+		if (App->render->camera.x % 250 == 0) cooldown = true;
 		if (Bomb == true)
 		{
-			if (App->render->camera.x % 250 == 0 && destroyed == false)
+			if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && destroyed == false && cooldown == true)
+			{
 				App->particles->AddParticle(App->particles->bomb, position.x + 28, position.y + 3, COLLIDER_BOMB);
+				cooldown = false;
+				
+			}
 		}
 		//----------------------------------------------------------------------------------------------------------------
 

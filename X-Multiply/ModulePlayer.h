@@ -45,6 +45,8 @@ public:
 	bool godmode = false;
 	bool destroyed = false;
 
+	bool cooldown = true;
+
 	//PowerUps---------
 	bool Speedup = false;
 	bool speedup_anim = false;
