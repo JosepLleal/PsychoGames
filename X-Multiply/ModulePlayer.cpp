@@ -264,6 +264,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		{
 			LOG("Lives -1");
 			App->player->lives -= 1;
+			
 			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1, 5.0f);
 		}
 		if (App->player->lives == 0)
@@ -271,7 +272,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 5.0f);
 			
 		}
-		
+		speedup_anim = false;
 		playerHitbox->to_delete = true;
 		destroyed = true;
 	}
