@@ -47,6 +47,8 @@ public:
 	//PowerUps---------
 	bool Speedup = false;
 	bool speedup_anim = false;
+
+	bool Bomb = false;
 };
 
 #endif

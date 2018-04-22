@@ -54,6 +54,7 @@ public:
 	Particle shot;
 	Particle shot_impact;
 	Particle player_death;
+	Particle bomb;
 
 	//enemy particles
 	Particle enemy_shot;

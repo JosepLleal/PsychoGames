@@ -7,17 +7,11 @@
 
 PowerUp_Bomb::PowerUp_Bomb(int x, int y) : PowerUp(x, y)
 {
-	bomb.PushBack({ 235, 106, 15, 15 });
-	bomb.PushBack({ 253, 106, 15, 15 });
-	bomb.PushBack({ 267, 106, 15, 15 });
-	bomb.PushBack({ 286, 106, 15, 15 });
-	bomb.PushBack({ 302, 106, 15, 15 });
-	bomb.speed = 0.1f;
-	bomb.loop = false;
+	box_b.PushBack({163, 133, 24, 15});
+	box_b.speed = 0.0f;
+	animation = &box_b;
 
-	bomb.speed = 0.5f;
-
-	animation = &bomb;
+	collider = App->collision->AddCollider({ 0, 0, 24, 14 }, COLLIDER_TYPE::COLLIDER_POWERUP, (Module*)App->powerup);
 
 	original_y = y;
 }
