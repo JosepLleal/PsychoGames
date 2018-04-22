@@ -10,11 +10,17 @@ construct the X-002, a microscopic fighter ship.
 
 ## Controls:
 Arrows: Move Player
+
 Space: Shoot
+
 F1: Show/Hide Colliders
+
 F2: Instantly Win
+
 F3: Instantly Lose
+
 F5: Enable/Disable God Mode
+
 ESC: Close Game
 
 
