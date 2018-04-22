@@ -32,6 +32,7 @@ bool ModulePowerUp::Start()
 	//Loading FX
 	powerup_killed = App->audio->LoadFX("sound/xmultipl-055.wav");
 	SpeedUp = App->audio->LoadFX("sound/xmultipl-050.wav");
+	Bomb = App->audio->LoadFX("sound/xmultipl-048.wav");
 
 	return true;
 }
@@ -92,6 +93,7 @@ bool ModulePowerUp::CleanUp()
 	App->textures->Unload(sprites);
 	App->audio->UnloadFX(powerup_killed);
 	App->audio->UnloadFX(SpeedUp);
+	App->audio->UnloadFX(Bomb);
 
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
