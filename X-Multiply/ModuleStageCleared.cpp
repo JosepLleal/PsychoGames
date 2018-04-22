@@ -7,8 +7,10 @@
 #include "ModuleMenu.h"
 #include "ModuleStageCleared.h"
 #include "ModuleAudio.h"
-#include "ModulePLayer.h"
+#include "ModulePlayer.h"
+#include "ModuleFonts.h"
 
+#include <stdio.h>
 
 ModuleStageCleared::ModuleStageCleared()
 {}
@@ -26,6 +28,8 @@ bool  ModuleStageCleared::Start()
 
 	App->render->camera.x = App->render->camera.y = 0;
 
+	fontscore = App->fonts->Load("Image/fonts.png", "0123456789ם.-=יט()ףעבת`´!?abcdefghijklmnopqrstuvwxyz", 2);
+
 	return true;
 }
 
@@ -35,6 +39,7 @@ bool  ModuleStageCleared::CleanUp()
 	LOG("Unloading space scene");
 
 	App->textures->Unload(background);
+	//App->fonts->UnLoad(fontscore);
 
 	return true;
 }
@@ -48,6 +53,13 @@ update_status  ModuleStageCleared::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->menu);
 	}
+
+	// Draw UI (score) -------------------------------------------------
+	score1 = App->player->score; 
+
+	sprintf_s(score_text, 10, "%7d", score1);
+	App->fonts->BlitText(160, 225, fontscore, score_text);
+	App->fonts->BlitText(100, 225, fontscore, "score");
 
 	return UPDATE_CONTINUE;
 }

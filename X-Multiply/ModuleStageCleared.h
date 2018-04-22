@@ -15,6 +15,10 @@ public:
 	update_status Update();
 	bool CleanUp();
 
+	int fontscore = -1; 
+	uint score1 = 0;
+	char score_text[10];
+
 public:
 
 	SDL_Texture * background = nullptr;
