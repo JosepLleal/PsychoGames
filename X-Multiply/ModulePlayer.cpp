@@ -131,7 +131,7 @@ update_status ModulePlayer::Update()
 		if (Bomb == true)
 		{
 			if (App->render->camera.x % 250 == 0 && destroyed == false)
-				App->particles->AddParticle(App->particles->bomb, position.x + 28, position.y + 3, COLLIDER_PLAYER_SHOT);
+				App->particles->AddParticle(App->particles->bomb, position.x + 28, position.y + 3, COLLIDER_BOMB);
 		}
 		//----------------------------------------------------------------------------------------------------------------
 

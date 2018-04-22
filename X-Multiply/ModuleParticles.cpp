@@ -70,6 +70,12 @@ ModuleParticles::ModuleParticles()
 	shot.speed.x = 7;
 	shot.life = 950;
 
+	bomb_explosion.anim.PushBack({ 47, 173, 30, 28 });
+	bomb_explosion.anim.PushBack({ 80, 173, 30, 28 });
+	bomb_explosion.anim.PushBack({ 112, 173, 30, 28 });
+	bomb_explosion.anim.speed = 0.3f;
+	bomb_explosion.anim.loop = false;
+
 	bomb.anim.PushBack({ 235, 106, 15, 15 });
 	bomb.anim.PushBack({ 253, 106, 15, 15 });
 	bomb.anim.PushBack({ 267, 106, 15, 15 });
@@ -286,6 +292,9 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		{
 			if(c2->type == COLLIDER_WALL)
 				AddParticle(shot_impact, active[i]->position.x, active[i]->position.y, COLLIDER_NONE);
+
+			if(c1->type == COLLIDER_BOMB)
+				AddParticle(bomb_explosion, active[i]->position.x, active[i]->position.y, COLLIDER_NONE);
 
 			delete active[i];
 			active[i] = nullptr;
