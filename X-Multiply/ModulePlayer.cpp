@@ -64,6 +64,7 @@ bool ModulePlayer::Start()
 	destroyed = false;
 	godmode = false;
 	speedup_anim = false;
+	Bomb = false;
 	
 	position.x = 150;
 	position.y = 120;
@@ -116,7 +117,7 @@ update_status ModulePlayer::Update()
 	{
 
 		float speed = 0;
-
+		//PowerUp SpeedUp -----------------------------------
 		if (Speedup == true) {
 			speed = 3.0f;
 		}
@@ -124,6 +125,15 @@ update_status ModulePlayer::Update()
 		{
 			speed = 2.0f;
 		}
+		//---------------------------------------------------
+
+		//PowerUp Bomb ---------------------------------------------------------------------------------------------------
+		if (Bomb == true)
+		{
+			if (App->render->camera.x % 250 == 0 && destroyed == false)
+				App->particles->AddParticle(App->particles->bomb, position.x + 28, position.y + 3, COLLIDER_PLAYER_SHOT);
+		}
+		//----------------------------------------------------------------------------------------------------------------
 
 		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
 		{

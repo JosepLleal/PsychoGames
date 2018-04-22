@@ -76,7 +76,10 @@ ModuleParticles::ModuleParticles()
 	bomb.anim.PushBack({ 286, 106, 15, 15 });
 	bomb.anim.PushBack({ 302, 106, 15, 15 });
 	bomb.anim.loop = false;
-	bomb.speed.x = 1;
+	bomb.anim.speed = 0.1f;
+	bomb.speed.x = 4;
+	bomb.speed.y = 3;
+	bomb.life = 4000;
 
 	//anemona shot 1 
 	anemona_shot1.anim.PushBack({ 253, 9, 10, 10 });

@@ -7,7 +7,7 @@
 
 PowerUp_Bomb::PowerUp_Bomb(int x, int y) : PowerUp(x, y)
 {
-	box_b.PushBack({163, 133, 24, 15});
+	box_b.PushBack({ 229, 116, 21, 16 });
 	box_b.speed = 0.0f;
 	animation = &box_b;
 

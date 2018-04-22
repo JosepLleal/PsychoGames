@@ -275,6 +275,10 @@ bool ModuleLevel1::Start()
 	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 400, 133);
 	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 400, 120);
 
+	//Bomb
+	App->powerup->AddPowerUp(POWERUP_TYPES::BOMB, 1000, 133);
+	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 1000, 120);
+
 	return true;
 }
 
