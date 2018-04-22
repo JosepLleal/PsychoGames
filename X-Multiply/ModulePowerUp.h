@@ -11,6 +11,7 @@ enum POWERUP_TYPES
 	NONE,
 	POWERUP_ENEMY,
 	SPEED_UP,
+	BOMB,
 };
 
 class PowerUp;
@@ -39,6 +40,7 @@ public:
 
 	uint powerup_killed;
 	uint SpeedUp;
+	uint Bomb;
 
 private:
 
@@ -54,4 +56,4 @@ private:
 	 //FX when powerup enemy is killed
 };
 
-#endif // __ModuleEnemies_H__
+#endif // __MODULEPOWERUP_H__

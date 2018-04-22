@@ -8,7 +8,7 @@ class PowerUp_Bomb : public PowerUp
 private:
 
 	int original_y = 0;
-	Animation fly;
+	Animation bomb;
 
 public:
 

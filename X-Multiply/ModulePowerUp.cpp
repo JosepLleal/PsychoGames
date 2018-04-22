@@ -10,7 +10,7 @@
 //add powerup.h's
 #include "PowerUp_Enemy.h"
 #include "PowerUp_SpeedUp.h"
-
+#include "PowerUp_Bomb.h"
 #include "ModuleAudio.h"
 
 #define SPAWN_MARGIN 50
@@ -140,6 +140,9 @@ void ModulePowerUp::SpawnPowerUp(const PowerUpInfo& info)
 
 		case POWERUP_TYPES::SPEED_UP:
 			powerup[i] = new PowerUp_SpeedUp(info.x, info.y);
+			break;
+		case POWERUP_TYPES::BOMB:
+			powerup[i] = new PowerUp_Bomb(info.x, info.y);
 			break;
 		}
 	}
