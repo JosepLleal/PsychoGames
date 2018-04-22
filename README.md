@@ -74,6 +74,15 @@ Enemy added.
 
 HUD and score table implemented.
 
+- v0.5
+
+Win/lose condition
+3 types of enemies (all over the map)
+2 types of power-ups 
+Map scroll and colliders
+Camera limits
+Debug functionalities
+
 
 # PsychoGames Members:
 
