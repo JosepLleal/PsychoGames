@@ -29,3 +29,5 @@ Víctor Chen
    
    
 ![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team photo")
+
+Licensed under the [MIT License](LICENSE)
