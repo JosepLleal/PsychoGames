@@ -57,7 +57,6 @@ update_status  ModuleStageCleared::Update()
 	}
 
 	// Draw UI (score) ------------------------------------------------
-
 	sprintf_s(score_text, 10, "%7d", score1);
 	App->fonts->BlitText(160, 225, fontscore, score_text);
 	App->fonts->BlitText(100, 225, fontscore, "score");

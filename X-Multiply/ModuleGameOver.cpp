@@ -7,8 +7,10 @@
 #include "ModuleMenu.h"
 #include "ModuleGameOver.h"
 #include "ModuleAudio.h"
-#include "ModulePLayer.h"
+#include "ModulePlayer.h"
+#include "ModuleFonts.h"
 
+#include <stdio.h>
 
 ModuleGameOver::ModuleGameOver()
 {}
@@ -25,6 +27,10 @@ bool  ModuleGameOver::Start()
 	App->audio->MusicPlay("Sound/16_Game_Over.ogg", 1.5f);
 
 	App->render->camera.x = App->render->camera.y = 0;
+
+	font_score = App->fonts->Load("Image/fonts.png", "0123456789ם.-=יט()ףעבת`´!?abcdefghijklmnopqrstuvwxyz", 2);
+
+	score +=  + App->player->score;
 	
 	return true;
 }
@@ -48,6 +54,11 @@ update_status  ModuleGameOver::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->menu);
 	}
+
+	// Draw UI (score) ------------------------------------------------
+	sprintf_s(score_text, 10, "%7d", score);
+	App->fonts->BlitText(140, 180, font_score, score_text);
+	App->fonts->BlitText(100, 150, font_score, "total score");
 
 	return UPDATE_CONTINUE;
 }

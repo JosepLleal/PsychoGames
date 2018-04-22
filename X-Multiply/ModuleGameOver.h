@@ -16,6 +16,9 @@ public:
 	bool CleanUp();
 
 public:
+	int font_score = -1;
+	char score_text[10];
+	uint score = 0;
 
 	SDL_Texture * background = nullptr;
 	uint fx = 0;
