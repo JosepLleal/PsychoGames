@@ -35,16 +35,19 @@ F7: Enable/Diable bomb power-up
 
 ## Changelist:
 - v0.1
+
 To move the space ship use W, A, S, D keys.
 
 Use Esc to close window.
 
 - v0.2
+
 Arrow keys to move camera.
 
 Space to fade between stages.
 
 - v0.3
+
 Now the Spaceship shoots.
 
 Music in all levels.
@@ -54,6 +57,7 @@ FX added.
 Shoot with Q.
 
 - v0.4
+
 Collision Added (If the spaceship colides the game is restarted)
 
 GodMode Added (If its activated the spaceship cant be destroyed)
@@ -63,9 +67,11 @@ F1 to hide or unhide HitBoxes.
 F5 to enable or unable GodMode.
 
 - v0.4.5
+
 Enemy added.
 
 - v0.4.5.1
+
 HUD and score table implemented.
 
 
