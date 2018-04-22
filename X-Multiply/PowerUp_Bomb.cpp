@@ -3,6 +3,8 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
+#include "ModulePowerUp.h"
+#include "ModuleAudio.h"
 
 
 PowerUp_Bomb::PowerUp_Bomb(int x, int y) : PowerUp(x, y)
@@ -27,5 +29,6 @@ void PowerUp_Bomb::OnCollision(Collider* collider)
 	if (collider->type == COLLIDER_PLAYER)
 	{
 		App->player->Bomb = true;
+		App->audio->ChunkPlay(App->powerup->Bomb);
 	}
 }

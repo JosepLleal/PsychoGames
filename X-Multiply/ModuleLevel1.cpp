@@ -232,31 +232,48 @@ bool ModuleLevel1::Start()
 	App->collision->AddCollider({ 4617, 469, 15, 15 }, COLLIDER_WALL); //small square 2
 
 	// Enemies ---
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 80, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 625, 80, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 640, 80, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 665, 80, false);
+	
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 450, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 465, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 480, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 495, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 510, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 525, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 540, 60, false);
+	//bottom
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 450, 60, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 465, 60, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 480, 60, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 495, 60, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 510, 60, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 525, 60, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 540, 60, true);
 
-	/*App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 735, 120);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 750, 120);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 775, 120);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 790, 120);
-	*/
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 830, 100, true);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 840, 100, true);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 850, 100, true);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 860, 100, true);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 870, 100, true);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 880, 100, true);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 890, 100, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 600, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 615, 80, false);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 830, 100, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 840, 100, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 850, 100, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 860, 100, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 870, 100, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 880, 100, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 890, 100, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 720, 80, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 720, 120, false);
+	
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 770, 90, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 785, 90, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 800, 90, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 815, 90, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 830, 90, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 845, 90, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 860, 90, false);
+	
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 770, 90, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 785, 90, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 800, 90, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 815, 90, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 830, 90, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 845, 90, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BALL, 860, 90, true);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 1160, 50, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 1200, 60, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 1200, 100, false);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 518, 175, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONE, 863, 205, false);
@@ -271,9 +288,34 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 3509, 240, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 3649, 280, false);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3240, 170, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3240, 210, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3260, 220, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3260, 250, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3300, 150, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3400, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3460, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3460, 330, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3480, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3500, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3500, 330, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3520, 330, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3540, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3540, 330, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3560, 230, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3560, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3580, 230, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3580, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3600, 230, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3600, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3600, 310, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3620, 230, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3620, 270, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHRIMP, 3620, 310, false);
+
 	//PowerUps
-	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 400, 133);
-	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 400, 120);
+	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 750, 100);
+	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 750, 87);
 
 	//Bomb
 	App->powerup->AddPowerUp(POWERUP_TYPES::BOMB, 1000, 133);
