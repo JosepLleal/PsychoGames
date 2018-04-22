@@ -32,6 +32,19 @@ ModulePlayer::ModulePlayer()
 	downward.PushBack({ 196, 0, 38, 16 });
 	downward.loop = false;
 	downward.speed = 0.1f;
+
+	//SpeedUp PowerUp
+	speedboost.PushBack({ 11,167,42,14 });
+	speedboost.PushBack({ 58,166,42,14 });
+	speedboost.PushBack({ 102,168,42,14 });
+	speedboost.PushBack({ 58,166,42,14 });
+	speedboost.PushBack({ 102,168,42,14 });
+	speedboost.PushBack({ 58,166,42,14 });
+	speedboost.PushBack({ 102,168,42,14 });
+	speedboost.PushBack({ 58,166,42,14 });
+	speedboost.PushBack({ 102,168,42,14 });
+	speedboost.loop = true;
+	speedboost.speed = 0.2f;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -49,6 +62,7 @@ bool ModulePlayer::Start()
 
 	destroyed = false;
 	godmode = false;
+	speedup_anim = false;
 	
 	position.x = 150;
 	position.y = 120;
@@ -83,12 +97,25 @@ update_status ModulePlayer::Update()
 {
 	//position.x += 1; // Automatic movement
 
+	if (speedup_anim == true) {
+		if (counter <70) {
+			App->render->Blit(graphics, position.x - 40, position.y + 2, &(speedboost.GetCurrentFrame()));
+			counter++;
+		}
+		else
+		{
+			counter = 0;
+			speedup_anim = false;
+		}
+		
+	}
+
 	if(App->player->lives>=0)
 	{
 
 		float speed = 0;
 
-		if (SpeedUp == true) {
+		if (Speedup == true) {
 			speed = 3.0f;
 		}
 		else
@@ -99,16 +126,19 @@ update_status ModulePlayer::Update()
 		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
 		{
 			position.x -= speed;
+			
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
 		{
 			position.x += speed;
+			
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y += speed;
+			
 			if (current_animation != &downward)
 			{
 				downward.Reset();
@@ -119,6 +149,7 @@ update_status ModulePlayer::Update()
 		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
+			
 			if (current_animation != &upward)
 			{
 				upward.Reset();
@@ -233,6 +264,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		{
 			LOG("Lives -1");
 			App->player->lives -= 1;
+			
 			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1, 5.0f);
 		}
 		if (App->player->lives == 0)
@@ -240,7 +272,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 5.0f);
 			
 		}
-		
+		speedup_anim = false;
 		playerHitbox->to_delete = true;
 		destroyed = true;
 	}
