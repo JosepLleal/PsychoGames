@@ -23,6 +23,8 @@ public:
 
 	SDL_Rect background_parallax;
 	SDL_Rect ground_parallax;
+
+	Collider* HUDhitbox; 
 };
 
 #endif // __MODULESCENESPACE_H__

@@ -50,6 +50,9 @@ bool ModuleLevel1::Start()
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
+	//HUD hitbox
+	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
+
 	//--------- TOP LARGER WALL --------- 
 	App->collision->AddCollider({ 495, 0, 2025, 14 }, COLLIDER_WALL); //square of all the top wall 
 
@@ -299,6 +302,8 @@ update_status ModuleLevel1::Update()
 			App->render->camera.y += 1 * SCREEN_SIZE;
 		}
 	}
+
+	HUDhitbox->SetPos((App->render->camera.x)/2 , App->render->camera.y + 257);
 
 	// Draw everything --------------------------------------
 	App->render->Blit(background, 0, 0, &background_parallax, 0.75f, true); // backround
