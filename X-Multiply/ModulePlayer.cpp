@@ -257,18 +257,14 @@ update_status ModulePlayer::Update()
 	{
 		App->render->Blit(live, 63, 257, NULL, 0.0f, false);
 		App->render->Blit(live, 70, 257, NULL, 0.0f, false);
-		App->render->Blit(live, 77, 257, NULL, 0.0f, false);
+	
 	}
 	if (lives == 1)
 	{
 		App->render->Blit(live, 63, 257, NULL, 0.0f, false);
-		App->render->Blit(live, 70, 257, NULL, 0.0f, false);
+		
 	}
-	if (lives == 0) 
-	{
-		App->render->Blit(live, 63, 257, NULL, 0.0f, false);
-	}
-
+	
 	return UPDATE_CONTINUE;
 }
 
@@ -283,7 +279,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			LOG("Lives -1");
 			App->player->lives -= 1;
 			
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1, 5.0f);
+			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1, 3.0f);
 		}
 		if (App->player->lives == 0)
 		{
