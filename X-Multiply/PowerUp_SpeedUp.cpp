@@ -33,6 +33,8 @@ void PowerUp_SpeedUp::Move()
 
 void PowerUp_SpeedUp::OnCollision(Collider* collider)
 {
-	App->player->SpeedUp = true;
+	App->player->Speedup = true;
+	App->player->speedup_anim = true;
 	App->audio->ChunkPlay(App->powerup->SpeedUp);
+	
 }

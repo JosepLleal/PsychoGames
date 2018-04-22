@@ -258,8 +258,8 @@ bool ModuleLevel1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::ANEMONEUD, 3649, 280);
 
 	//PowerUps
-	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 1500, 133);
-	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 1500, 120);
+	App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 400, 133);
+	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 400, 120);
 
 	return true;
 }

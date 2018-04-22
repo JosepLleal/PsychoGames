@@ -25,10 +25,14 @@ public:
 	int font_score = -1;
 	char score_text[10];
 	uint score = 0;
+	int counter = 0;
+
 	Animation* current_animation = nullptr;
 	Animation idle;
 	Animation upward;
 	Animation downward;
+	Animation speedboost;
+
 	iPoint position;
 	Collider* playerHitbox;
 
@@ -41,7 +45,8 @@ public:
 	bool destroyed = false;
 
 	//PowerUps---------
-	bool SpeedUp = false;
+	bool Speedup = false;
+	bool speedup_anim = false;
 };
 
 #endif

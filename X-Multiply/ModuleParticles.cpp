@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "ModuleInput.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -12,6 +13,18 @@ ModuleParticles::ModuleParticles()
 {
 	for(uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 		active[i] = nullptr;
+
+	
+}
+
+ModuleParticles::~ModuleParticles()
+{}
+
+// Load assets
+bool ModuleParticles::Start()
+{
+	LOG("Loading particles");
+	graphics = App->textures->Load("image/particles.png");
 
 	explosion_enemy.anim.PushBack({ 17, 244, 30, 29 });
 	explosion_enemy.anim.PushBack({ 50, 247, 29, 25 });
@@ -42,7 +55,7 @@ ModuleParticles::ModuleParticles()
 	player_death.anim.PushBack({ 412, 144, 40, 42 });
 	player_death.anim.speed = 0.2f;
 	player_death.anim.loop = false;
-	
+
 	//SMALL BLUE EXPLOSION COORDINATES
 	/*player_death.anim.PushBack({ 112, 144, 16, 16 });
 	player_death.anim.PushBack({ 96, 144, 16, 16 });
@@ -71,15 +84,15 @@ ModuleParticles::ModuleParticles()
 	shot.life = 950;
 
 	//anemona shot 1 
-	anemona_shot1.anim.PushBack({ 253, 9, 10, 10 }); 
-	anemona_shot1.anim.PushBack({ 271, 10, 10, 10 }); 
-	anemona_shot1.anim.PushBack({ 254, 25, 10, 10 }); 
-	anemona_shot1.anim.PushBack({ 271, 25, 10, 10 }); 
-	anemona_shot1.anim.loop = true; 
-	anemona_shot1.anim.speed = 0.3f; 
+	anemona_shot1.anim.PushBack({ 253, 9, 10, 10 });
+	anemona_shot1.anim.PushBack({ 271, 10, 10, 10 });
+	anemona_shot1.anim.PushBack({ 254, 25, 10, 10 });
+	anemona_shot1.anim.PushBack({ 271, 25, 10, 10 });
+	anemona_shot1.anim.loop = true;
+	anemona_shot1.anim.speed = 0.3f;
 	anemona_shot1.speed.x = -3;
-	anemona_shot1.speed.y = -1; 
-	anemona_shot1.life = 4000; 
+	anemona_shot1.speed.y = -1;
+	anemona_shot1.life = 4000;
 
 	//anemona shot 2
 	anemona_shot2.anim.PushBack({ 253, 9, 10, 10 });
@@ -178,17 +191,7 @@ ModuleParticles::ModuleParticles()
 	anemona_shotud5.anim.speed = 0.3f;
 	anemona_shotud5.speed.x = 3;
 	anemona_shotud5.speed.y = 1;
-	anemona_shotud5.life = 4000;
-}
-
-ModuleParticles::~ModuleParticles()
-{}
-
-// Load assets
-bool ModuleParticles::Start()
-{
-	LOG("Loading particles");
-	graphics = App->textures->Load("image/particles.png");
+	anemona_shotud5.life = 4000;	
 
 	return true;
 }
@@ -236,7 +239,9 @@ update_status ModuleParticles::Update()
 				p->fx_played = true;
 				// play the audio SFX
 			}
+
 		}
+		
 	}
 
 	return UPDATE_CONTINUE;
