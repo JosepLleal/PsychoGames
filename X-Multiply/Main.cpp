@@ -25,8 +25,18 @@ int main(int argc, char* argv[])
 	int main_return = EXIT_FAILURE;
 	main_states state = MAIN_CREATION;
 
-	while (state != MAIN_EXIT)
+	SDL_Event event;
+	bool isRunning = true;
+
+	while (state != MAIN_EXIT && isRunning == true)
 	{
+		while (SDL_PollEvent(&event))
+		{
+			if (event.type == SDL_QUIT)
+			{
+				isRunning = false;
+			}
+		}
 		switch (state)
 		{
 			case MAIN_CREATION:
