@@ -13,7 +13,7 @@ construct the X-002, a microscopic fighter ship.
 
 Arrows: Move Player (Up, Down, Right or Left)
 
-Space: Shoot (With both the spaceship and the tentacles). Can be held to shoot without spamming the key.
+Space: Shoot. Can be held down to shoot without spamming the key.
 
 ESC: Close Game (Finish the execution of the program, similar to Alt+F4)
 
@@ -34,17 +34,17 @@ F6: Enable/Disable speed power-up
 F7: Enable/Diable bomb power-up
 
 ## Changelist:
-v0.1
+- v0.1
 To move the space ship use W, A, S, D keys.
 
 Use Esc to close window.
 
-v0.2
+- v0.2
 Arrow keys to move camera.
 
 Space to fade between stages.
 
-v0.3
+- v0.3
 Now the Spaceship shoots.
 
 Music in all levels.
@@ -53,7 +53,7 @@ FX added.
 
 Shoot with Q.
 
-v0.4
+- v0.4
 Collision Added (If the spaceship colides the game is restarted)
 
 GodMode Added (If its activated the spaceship cant be destroyed)
@@ -62,10 +62,10 @@ F1 to hide or unhide HitBoxes.
 
 F5 to enable or unable GodMode.
 
-v0.4.5
+- v0.4.5
 Enemy added.
 
-v0.4.5.1
+- v0.4.5.1
 HUD and score table implemented.
 
 
