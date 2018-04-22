@@ -38,6 +38,7 @@ public:
 	bool AddPowerUp(POWERUP_TYPES type, int x, int y);
 
 	uint powerup_killed;
+	uint SpeedUp;
 
 private:
 

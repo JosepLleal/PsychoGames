@@ -39,6 +39,9 @@ public:
 
 	bool godmode = false;
 	bool destroyed = false;
+
+	//PowerUps---------
+	bool SpeedUp = false;
 };
 
 #endif

@@ -15,6 +15,7 @@ public:
 	PowerUp_SpeedUp(int x, int y);
 	iPoint original_position;
 
+
 	void Move();
 	void PowerUp_SpeedUp::OnCollision(Collider* collider);
 };

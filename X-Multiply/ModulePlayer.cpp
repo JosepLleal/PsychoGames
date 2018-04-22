@@ -10,6 +10,9 @@
 #include "ModulePlayer.h"
 #include "ModuleAudio.h"
 
+//include POWERUPS---------
+#include "PowerUp_SpeedUp.h"
+//--------------------------
 #include<stdio.h>
 
 
@@ -83,21 +86,29 @@ update_status ModulePlayer::Update()
 	if(App->player->lives>=0)
 	{
 
-		int speed = 1;
+		float speed = 0;
+
+		if (SpeedUp == true) {
+			speed = 3.0f;
+		}
+		else
+		{
+			speed = 2.0f;
+		}
 
 		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
 		{
-			position.x -= speed * 2;
+			position.x -= speed;
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
 		{
-			position.x += speed * 2;
+			position.x += speed;
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
 		{
-			position.y += speed * 2;
+			position.y += speed;
 			if (current_animation != &downward)
 			{
 				downward.Reset();
@@ -107,7 +118,7 @@ update_status ModulePlayer::Update()
 
 		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
 		{
-			position.y -= speed * 2;
+			position.y -= speed;
 			if (current_animation != &upward)
 			{
 				upward.Reset();

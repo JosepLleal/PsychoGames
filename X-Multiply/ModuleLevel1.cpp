@@ -277,6 +277,7 @@ bool ModuleLevel1::CleanUp()
 	App->collision->Disable();
 	App->particles->Disable();
 	App->player->Disable();
+	App->powerup->Disable();
 
 	return true;
 }
