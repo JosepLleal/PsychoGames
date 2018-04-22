@@ -6,10 +6,11 @@ Microscopic aliens invade a colony planet in the year 2249, infesting humans wit
 To combat the alien queen which is currently residing in a human female, a group of scientists 
 construct the X-002, a microscopic fighter ship.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/GcoOZxjrLdk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Controls:
 Arrows: Move Player (Up, Down, Right or Left)
+
+WASD Keys: Move Camera ('W' up, 'S' down, 'D' right and 'A' left)
 
 Space: Shoot (With both the spaceship and the tentacles)
 
