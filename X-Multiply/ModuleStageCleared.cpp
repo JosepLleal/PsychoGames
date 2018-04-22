@@ -30,6 +30,8 @@ bool  ModuleStageCleared::Start()
 
 	fontscore = App->fonts->Load("Image/fonts.png", "0123456789ם.-=יט()ףעבת`´!?abcdefghijklmnopqrstuvwxyz", 2);
 
+	score1 += 10000 + App->player->score; 
+
 	return true;
 }
 
@@ -54,8 +56,7 @@ update_status  ModuleStageCleared::Update()
 		App->fade->FadeToBlack(this, (Module*)App->menu);
 	}
 
-	// Draw UI (score) -------------------------------------------------
-	score1 = App->player->score; 
+	// Draw UI (score) ------------------------------------------------
 
 	sprintf_s(score_text, 10, "%7d", score1);
 	App->fonts->BlitText(160, 225, fontscore, score_text);

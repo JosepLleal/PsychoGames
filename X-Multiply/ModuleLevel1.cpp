@@ -47,8 +47,8 @@ bool ModuleLevel1::Start()
 	App->enemies->Enable();
 	App->powerup->Enable();
 
-	App->render->camera.x = 6000;
-	App->render->camera.y = 400;
+	App->render->camera.x = 0;
+	App->render->camera.y = 0;
 
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
