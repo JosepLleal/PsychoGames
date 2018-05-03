@@ -1,20 +1,17 @@
 PSYCHO GAMES ROADMAP
 ________________________________________________________________________________________
 
-- 0.6: New level implemented with scroll (tilemap and background).
-
-- 0.6.1: Map Collider_Walls.
-
-- 0.6.2: Map Red_balls/diamonds and droplets
+- 0.6: Controller movement implementation.
+- 0.6.1: Remove level 1 completely. New level implemented with scroll (tilemap and background). 
+- 0.6.2: Map Collider_Walls.
+- 0.6.3: Map Red_balls/diamonds and droplets
 
 - 0.7: Enemies (movement, animations, SFX, shooting).
 
 - 0.8: Implement current power-ups and improve them.
-
 - 0.8.1: Tentacles.
 
 - 0.9: Boss. 
-
 - 0.9.1: Boss death animations.
 
 - 1.0: Final fixes and release.
