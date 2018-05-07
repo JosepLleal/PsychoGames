@@ -2,10 +2,6 @@
 #define __ModuleEnemies_H__
 
 #include "Module.h"
-#include "Enemy_Shrimp.h"
-#include "Enemy_Anemone.h"
-#include "Enemy_Ball.h"
-#include "Enemy_anemoneUD.h"
 #include "ModuleTextures.h"
 
 #define MAX_ENEMIES 200
@@ -13,10 +9,7 @@
 enum ENEMY_TYPES
 {
 	NO_TYPE,
-	SHRIMP,
-	ANEMONE,
-	ANEMONEUD, 
-	BALL,
+	
 	
 };
 

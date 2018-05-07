@@ -6,10 +6,6 @@
 #include "ModuleTextures.h"
 #include "ModulePlayer.h"
 #include "Enemy.h"
-#include "Enemy_Shrimp.h"
-#include "Enemy_anemoneUD.h"
-#include "Enemy_Ball.h"
-#include "Enemy_Anemone.h"
 #include "ModuleAudio.h"
 
 #define SPAWN_MARGIN 50
@@ -135,21 +131,10 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 	{
 		switch(info.type)
 		{
-			case ENEMY_TYPES::SHRIMP:
+			/*case ENEMY_TYPES::SHRIMP:
 			enemies[i] = new Enemy_Shrimp(info.x,info.y);
-			break;
+			break;*/
 
-			case ENEMY_TYPES::ANEMONE:
-			enemies[i] = new Enemy_Anemone(info.x, info.y);
-			break;
-
-			case ENEMY_TYPES::ANEMONEUD:
-				enemies[i] = new Enemy_AnemoneUD(info.x, info.y);
-				break;
-
-			case ENEMY_TYPES::BALL:
-			enemies[i] = new Enemy_Ball(info.x, info.y, info.up);
-			break;
 		}
 	}
 }
