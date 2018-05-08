@@ -48,6 +48,22 @@ bool ModuleLevel5::Start()
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
+	//-----------------------------------------//
+	//				COLLIDER_WALL			   //
+	//-----------------------------------------//
+
+	//TOP ALL LEVEL 
+	App->collision->AddCollider({ 241, 0, 48, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 340, 0, 2690, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3080, 0, 1550, 24 }, COLLIDER_WALL);
+
+	//BOTTOM ALL LEVEL 
+	App->collision->AddCollider({ 200, 238, 2201, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2417, 238, 280, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2721, 238, 112, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2881, 238, 112, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3080, 232, 1550, 24 }, COLLIDER_WALL);
+
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
 
@@ -90,7 +106,7 @@ update_status ModuleLevel5::Update()
 		App->player->position.x += 1; 
 	}
 
-	HUDhitbox->SetPos((App->render->camera.x)/2 , App->render->camera.y + 257);
+	HUDhitbox->SetPos((App->render->camera.x)/1 , App->render->camera.y + 257);
 
 	// Draw everything --------------------------------------
 	App->render->Blit(background, 0, 0, &background_parallax, 0.75f, true); // backround
