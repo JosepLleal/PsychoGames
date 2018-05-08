@@ -3,7 +3,7 @@
 #include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
-#include "ModuleLevel1.h"
+#include "ModuleLevel5.h"
 #include "ModuleMenu.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
@@ -26,7 +26,7 @@ Application::Application()
 	modules[i++] = audio = new ModuleAudio();
 	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = menu = new ModuleMenu();
-	modules[i++] = lvl1 = new ModuleLevel1();
+	modules[i++] = lvl5 = new ModuleLevel5();
 	modules[i++] = game_over = new ModuleGameOver();
 	modules[i++] = stage_cleared = new ModuleStageCleared();
 	modules[i++] = enemies = new ModuleEnemies();
@@ -48,7 +48,7 @@ bool Application::Init()
 	bool ret = true;
 
 	// Desactivate modules here unless Menu ----
-	lvl1->Disable();
+	lvl5->Disable();
 	game_over->Disable();
 	stage_cleared->Disable();
 	player->Disable();

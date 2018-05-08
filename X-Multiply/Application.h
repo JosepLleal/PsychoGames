@@ -11,7 +11,7 @@ class ModuleTextures;
 class ModuleRender;
 class ModuleParticles;
 class ModuleAudio;
-class ModuleLevel1;
+class ModuleLevel5;
 class ModuleMenu;
 class ModuleGameOver;
 class ModuleStageCleared;
@@ -32,7 +32,7 @@ public:
 	ModuleRender* render;
 	ModuleInput* input;
 	ModuleTextures* textures;
-	ModuleLevel1* lvl1;
+	ModuleLevel5* lvl5;
 	ModuleMenu* menu;
 	ModuleGameOver* game_over;
 	ModuleStageCleared* stage_cleared;

@@ -1,15 +1,15 @@
-#ifndef __MODULELEVEL1_H__
-#define __MODULELEVEL1_H__
+#ifndef __MODULELEVEL5_H__
+#define __MODULELEVEL5_H__
 
 #include "Module.h"
 
 struct SDL_Texture;
 
-class ModuleLevel1 : public Module
+class ModuleLevel5 : public Module
 {
 public:
-	ModuleLevel1();
-	~ModuleLevel1();
+	ModuleLevel5();
+	~ModuleLevel5();
 
 	bool Start();
 	update_status Update();

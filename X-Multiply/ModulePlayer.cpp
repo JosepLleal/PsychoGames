@@ -227,7 +227,7 @@ update_status ModulePlayer::Update()
 		//If end level go to STAGE CLEARED
 		if (App->render->camera.x == 9150)
 		{
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->stage_cleared);
+			App->fade->FadeToBlack((Module*)App->lvl5, (Module*)App->stage_cleared);
 		}
 
 
@@ -260,12 +260,12 @@ update_status ModulePlayer::Update()
 			App->audio->ChunkPlay(death);
 			App->particles->AddParticle(App->particles->player_death, position.x, position.y, COLLIDER_NONE);
 			App->player->Disable();
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 5.0f);
+			App->fade->FadeToBlack((Module*)App->lvl5, (Module*)App->game_over, 5.0f);
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_STATE::KEY_DOWN && App->fade->IsFading() == false)
 		{
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->stage_cleared, 1.0f);
+			App->fade->FadeToBlack((Module*)App->lvl5, (Module*)App->stage_cleared, 1.0f);
 		}
 	}
 
@@ -311,11 +311,11 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			LOG("Lives -1");
 			App->player->lives -= 1;
 			
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->lvl1, 3.0f);
+			App->fade->FadeToBlack((Module*)App->lvl5, (Module*)App->lvl5, 3.0f);
 		}
 		if (App->player->lives == 0)
 		{
-			App->fade->FadeToBlack((Module*)App->lvl1, (Module*)App->game_over, 5.0f);
+			App->fade->FadeToBlack((Module*)App->lvl5, (Module*)App->game_over, 5.0f);
 			
 		}
 		speedup_anim = false;

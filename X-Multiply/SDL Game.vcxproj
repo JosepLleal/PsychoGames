@@ -89,7 +89,7 @@
     <ClInclude Include="ModulePowerUp.h" />
     <ClInclude Include="ModuleRender.h" />
     <ClInclude Include="ModuleMenu.h" />
-    <ClInclude Include="ModuleLevel1.h" />
+    <ClInclude Include="ModuleLevel5.h" />
     <ClInclude Include="ModuleStageCleared.h" />
     <ClInclude Include="ModuleTextures.h" />
     <ClInclude Include="ModuleWindow.h" />
@@ -117,7 +117,7 @@
     <ClCompile Include="ModulePowerUp.cpp" />
     <ClCompile Include="ModuleRender.cpp" />
     <ClCompile Include="ModuleMenu.cpp" />
-    <ClCompile Include="ModuleLevel1.cpp" />
+    <ClCompile Include="ModuleLevel5.cpp" />
     <ClCompile Include="ModuleStageCleared.cpp" />
     <ClCompile Include="ModuleTextures.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />

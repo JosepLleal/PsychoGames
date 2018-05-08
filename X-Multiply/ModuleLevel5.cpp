@@ -7,10 +7,10 @@
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModulePowerUp.h"
-#include "ModuleLevel1.h"
+#include "ModuleLevel5.h"
 #include "ModuleAudio.h"
 
-ModuleLevel1::ModuleLevel1()
+ModuleLevel5::ModuleLevel5()
 {
 	// tilemap
 	ground_parallax.x = 0;
@@ -25,11 +25,11 @@ ModuleLevel1::ModuleLevel1()
 	background_parallax.h = 256;
 }
 
-ModuleLevel1::~ModuleLevel1()
+ModuleLevel5::~ModuleLevel5()
 {}
 
 // Load assets
-bool ModuleLevel1::Start()
+bool ModuleLevel5::Start()
 {
 	LOG("Loading space scene");
 
@@ -63,7 +63,7 @@ bool ModuleLevel1::Start()
 }
 
 // UnLoad assets
-bool ModuleLevel1::CleanUp()
+bool ModuleLevel5::CleanUp()
 {
 	LOG("Unloading space scene");
 
@@ -81,7 +81,7 @@ bool ModuleLevel1::CleanUp()
 }
 
 // Update: draw background
-update_status ModuleLevel1::Update()
+update_status ModuleLevel5::Update()
 {
 	// Move camera forward -----------------------------
 	if (App->render->camera.x < 4219)
