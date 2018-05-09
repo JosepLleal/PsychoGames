@@ -42,7 +42,7 @@ public:
 
 	SDL_GameController *gamepad = NULL;
 	SDL_Joystick* joy1;
-	int x_move, y_move;
+	Sint16 x_move, y_move;
 
 	bool controller_state[MAX_BUTTONS];
 	KEY_STATE controller[MAX_BUTTONS];
