@@ -147,22 +147,24 @@ update_status ModulePlayer::Update()
 		}
 		//----------------------------------------------------------------------------------------------------------------
 
-		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
+		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT || App->input->controller[LEFT] == KEY_STATE::KEY_REPEAT)
 		{
 			position.x -= speed;
 			
 		}
+		
 
-		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
+		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT || App->input->controller[RIGHT] == KEY_STATE::KEY_REPEAT)
 		{
 			position.x += speed;
 			
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
+		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT || App->input->controller[DOWN] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y += speed;
 			
+
 			if (current_animation != &downward)
 			{
 				downward.Reset();
@@ -170,25 +172,25 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
+		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT || App->input->controller[UP] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
 			
 			if (current_animation != &upward)
 			{
 				upward.Reset();
-				current_animation = &upward;
+				current_animation = &upward;	
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && destroyed == false)
+		if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->controller[BUTTON_A] == KEY_STATE::KEY_DOWN) && destroyed == false)
 		{
 			App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
 			App->audio->ChunkPlay(shot);
 		}
 
 
-		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_REPEAT && destroyed == false)
+		if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_REPEAT || App->input->controller[BUTTON_A] == KEY_STATE::KEY_REPEAT) && destroyed == false)
 		{
 			if (App->render->camera.x % 40 == 0)
 			{
@@ -198,8 +200,9 @@ update_status ModulePlayer::Update()
 
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_IDLE
-			&& App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_IDLE)
+		if (/*(App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_IDLE
+			&& App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_IDLE) || */(App->input->controller[DOWN] == KEY_STATE::KEY_IDLE
+				&& App->input->controller[UP] == KEY_STATE::KEY_IDLE))
 			current_animation = &idle;
 
 		// Camera Limits

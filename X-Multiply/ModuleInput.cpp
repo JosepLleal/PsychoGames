@@ -27,6 +27,24 @@ bool ModuleInput::Init()
 		ret = false;
 	}
 
+	if (SDL_Init(SDL_INIT_GAMECONTROLLER) < 0)
+	{
+		LOG("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
+		ret = false;
+	}
+
+	for (int i = 0; i < SDL_NumJoysticks(); ++i) {
+		if (SDL_IsGameController(i)) {
+			gamepad = SDL_GameControllerOpen(i);
+			if (gamepad) {
+				break;
+			}
+			else {
+				LOG("Could not open gamecontroller");
+			}
+		}
+	}
+
 	return ret;
 }
 
@@ -55,8 +73,32 @@ update_status ModuleInput::PreUpdate()
 		}
 	}
 
+	controller_state[UP] = SDL_GameControllerGetButton(gamepad, SDL_CONTROLLER_BUTTON_DPAD_UP);
+	controller_state[DOWN] = SDL_GameControllerGetButton(gamepad, SDL_CONTROLLER_BUTTON_DPAD_DOWN);
+	controller_state[LEFT] = SDL_GameControllerGetButton(gamepad, SDL_CONTROLLER_BUTTON_DPAD_LEFT);
+	controller_state[RIGHT] = SDL_GameControllerGetButton(gamepad, SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
+	controller_state[BUTTON_A] = SDL_GameControllerGetButton(gamepad, SDL_CONTROLLER_BUTTON_A);
+
+	for (int i = 0; i < MAX_BUTTONS; ++i)
+	{
+		if (controller_state[i] == 1) {
+			if (controller[i] == KEY_IDLE)
+				controller[i] = KEY_DOWN;
+			else
+				controller[i] = KEY_REPEAT;
+		}
+		else
+		{
+			if (controller[i] == KEY_REPEAT || controller[i] == KEY_DOWN)
+				controller[i] = KEY_UP;
+			else
+				controller[i] = KEY_IDLE;
+		}
+	}
+
 	if(keyboard[SDL_SCANCODE_ESCAPE])
 		return update_status::UPDATE_STOP;
+
 
 	return update_status::UPDATE_CONTINUE;
 }
@@ -64,7 +106,11 @@ update_status ModuleInput::PreUpdate()
 // Called before quitting
 bool ModuleInput::CleanUp()
 {
+	SDL_GameControllerClose(gamepad);
+	gamepad = NULL;
+
 	LOG("Quitting SDL input event subsystem");
 	SDL_QuitSubSystem(SDL_INIT_EVENTS);
 	return true;
+
 }

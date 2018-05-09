@@ -50,7 +50,7 @@ update_status  ModuleGameOver::Update()
 {
 	App->render->Blit(background, (SCREEN_WIDTH/2)-80, (SCREEN_HEIGHT/2)-30, NULL);
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN && App->fade->IsFading() == false)
+	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN || App->input->controller[BUTTON_A] == KEY_DOWN) && App->fade->IsFading() == false)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->menu);
 	}
