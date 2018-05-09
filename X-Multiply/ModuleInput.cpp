@@ -33,7 +33,14 @@ bool ModuleInput::Init()
 		ret = false;
 	}
 
-	for (int i = 0; i < SDL_NumJoysticks(); ++i) {
+	if (SDL_Init(SDL_INIT_JOYSTICK) < 0)
+	{
+		LOG("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
+		ret = false;
+	}
+
+	for (int i = 0; i < SDL_NumJoysticks(); ++i) 
+	{
 		if (SDL_IsGameController(i)) {
 			gamepad = SDL_GameControllerOpen(i);
 			if (gamepad) {
@@ -44,6 +51,14 @@ bool ModuleInput::Init()
 			}
 		}
 	}
+
+	if (SDL_NumJoysticks() > 0) 
+	{
+		// Open joystick
+		joy1 = SDL_JoystickOpen(0);
+	}
+
+	
 
 	return ret;
 }
@@ -96,6 +111,9 @@ update_status ModuleInput::PreUpdate()
 		}
 	}
 
+	x_move = SDL_JoystickGetAxis(joy1, 0);
+	y_move = SDL_JoystickGetAxis(joy1, 1);
+
 	if(keyboard[SDL_SCANCODE_ESCAPE])
 		return update_status::UPDATE_STOP;
 
@@ -108,6 +126,11 @@ bool ModuleInput::CleanUp()
 {
 	SDL_GameControllerClose(gamepad);
 	gamepad = NULL;
+
+	// Close if opened
+	if (SDL_JoystickGetAttached(joy1)) {
+		SDL_JoystickClose(joy1);
+	}
 
 	LOG("Quitting SDL input event subsystem");
 	SDL_QuitSubSystem(SDL_INIT_EVENTS);
