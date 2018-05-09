@@ -57,12 +57,58 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 340, 0, 2690, 18 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3080, 0, 1550, 24 }, COLLIDER_WALL);
 
+	//TOP COLUMNS 
+	App->collision->AddCollider({ 257, 18, 15, 72}, COLLIDER_WALL);
+	App->collision->AddCollider({ 353, 18, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 545, 18, 14, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 898, 18, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1009, 18, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1073, 18, 16, 92 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1105, 18, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1153, 18, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1185, 18, 16, 92 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1329, 18, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1569, 18, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1601, 18, 16, 92 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1761, 18, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1905, 18, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2402, 18, 15, 72 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2498, 18, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2577, 18, 15, 92 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2610, 18, 15, 55 }, COLLIDER_WALL);
+	
+	//TOP SQUARES 
+	App->collision->AddCollider({ 1977, 18, 80, 45 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2147, 18, 110, 18 }, COLLIDER_WALL);
+
 	//BOTTOM ALL LEVEL 
 	App->collision->AddCollider({ 200, 238, 2201, 18 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2417, 238, 280, 18 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2721, 238, 112, 18 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2881, 238, 112, 18 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3080, 232, 1550, 24 }, COLLIDER_WALL);
+
+	//BOTTOM COLUMNS
+	App->collision->AddCollider({ 209, 183, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 369, 183, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 450, 202, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 640, 166, 15, 72 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 802, 202, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 930, 202, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1266, 166, 15, 72 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1409, 183, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1681, 202, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1841, 202, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1920, 183, 15, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2033, 146, 15, 92 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2081, 202, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2143, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
+	App->collision->AddCollider({ 2158, 183, 19, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2177, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
+	App->collision->AddCollider({ 2192, 163, 18, 75 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2210, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
+	App->collision->AddCollider({ 2225, 153, 15, 85 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2240, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
 
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
