@@ -36,6 +36,7 @@ bool ModuleLevel5::Start()
 	background = App->textures->Load("image/Tilemap/Backround_lvl5.png");
 	tilemap1 = App->textures->Load("image/Tilemap/LV5_Tilemap.png");
 	hud = App->textures->Load("image/xmultiply_hud.png");
+	diamond = App->textures->Load("image/LV5_diamond.png");
 
 	App->audio->MusicPlay("Sound/11_Bloody_Bloom_Stage_5_.ogg", 0.5f);
 
@@ -110,6 +111,7 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 2225, 153, 15, 85 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2240, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
 
+	App->collision->AddCollider({ 500, 50, 16, 80 }, COLLIDER_DIAMOND);
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
 

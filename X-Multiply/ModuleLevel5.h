@@ -20,6 +20,7 @@ public:
 	SDL_Texture* background = nullptr;
 	SDL_Texture* hud = nullptr;
 	SDL_Texture* tilemap1 = nullptr;
+	SDL_Texture* diamond = nullptr;
 
 	SDL_Rect background_parallax;
 	SDL_Rect ground_parallax;
