@@ -111,8 +111,31 @@ update_status ModuleInput::PreUpdate()
 		}
 	}
 
-	x_move = SDL_JoystickGetAxis(joy1, 0);
-	y_move = SDL_JoystickGetAxis(joy1, 1);
+	x_move = SDL_JoystickGetAxis(joy1, SDL_CONTROLLER_AXIS_LEFTX);
+	y_move = SDL_JoystickGetAxis(joy1, SDL_CONTROLLER_AXIS_LEFTY);
+
+	//Check Left Axis X & Y
+	if (x_move > 6400) {
+
+		App->input->keyboard[SDL_SCANCODE_RIGHT] = KEY_STATE::KEY_REPEAT;
+
+	}
+	else if (x_move<-DEATHZONE) {
+
+		App->input->keyboard[SDL_SCANCODE_LEFT] = KEY_STATE::KEY_REPEAT;
+
+	}
+
+	if (y_move < -DEATHZONE) {
+
+		App->input->keyboard[SDL_SCANCODE_UP] = KEY_STATE::KEY_REPEAT;
+
+	}
+	else if (y_move > DEATHZONE) {
+
+		App->input->keyboard[SDL_SCANCODE_DOWN] = KEY_STATE::KEY_REPEAT;
+
+	}
 
 	if(keyboard[SDL_SCANCODE_ESCAPE])
 		return update_status::UPDATE_STOP;

@@ -8,6 +8,7 @@
 
 #define MAX_KEYS 300
 #define MAX_BUTTONS 5
+#define DEATHZONE  6400
 
 enum KEY_STATE
 {

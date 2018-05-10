@@ -88,6 +88,8 @@ bool ModulePlayer::CleanUp()
 	App->textures->Unload(live);
 	App->fonts->UnLoad(font_score);
 
+	Speedup = false;
+
 	//Unloading FX
 	App->audio->UnloadFX(shot);
 	App->audio->UnloadFX(death);
@@ -147,20 +149,20 @@ update_status ModulePlayer::Update()
 		}
 		//----------------------------------------------------------------------------------------------------------------
 
-		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT || App->input->controller[LEFT] == KEY_STATE::KEY_REPEAT || App->input->x_move<0)
+		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT || App->input->controller[LEFT] == KEY_STATE::KEY_REPEAT )
 		{
 			position.x -= speed;
 			
 		}
 		
 
-		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT || App->input->controller[RIGHT] == KEY_STATE::KEY_REPEAT || App->input->x_move>0)
+		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT || App->input->controller[RIGHT] == KEY_STATE::KEY_REPEAT )
 		{
 			position.x += speed;
 			
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT || App->input->controller[DOWN] == KEY_STATE::KEY_REPEAT || App->input->y_move>0)
+		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT || App->input->controller[DOWN] == KEY_STATE::KEY_REPEAT )
 		{
 			position.y += speed;
 			
@@ -172,7 +174,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT || App->input->controller[UP] == KEY_STATE::KEY_REPEAT  || App->input->y_move<0)
+		if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT || App->input->controller[UP] == KEY_STATE::KEY_REPEAT  )
 		{
 			position.y -= speed;
 			
@@ -200,9 +202,7 @@ update_status ModulePlayer::Update()
 
 		}
 
-		if (/*(App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_IDLE
-			&& App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_IDLE) || */(App->input->controller[DOWN] == KEY_STATE::KEY_IDLE
-				&& App->input->controller[UP] == KEY_STATE::KEY_IDLE))
+		if ((App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_IDLE && App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_IDLE))
 			current_animation = &idle;
 
 		// Camera Limits
