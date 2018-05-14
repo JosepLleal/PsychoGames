@@ -6,12 +6,7 @@
 
 #define MAX_ENEMIES 200
 
-enum ENEMY_TYPES
-{
-	NO_TYPE,
-	REDBALL,
-	YELLOWBALL,
-};
+
 
 class Enemy;
 
@@ -36,7 +31,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 
-	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool up);
+	bool AddEnemy(ENEMY_TYPES type, int x, int y);
 
 private:
 

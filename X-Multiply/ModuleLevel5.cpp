@@ -129,11 +129,11 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 1464, 228, 80, 10 }, COLLIDER_WALL);
 
 	//Diamonds
-	App->collision->AddCollider({ 500, 50, 16, 80 }, COLLIDER_DIAMOND);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 500, 50);
 
 	//Enemies
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 500, 50, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 500, 100, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 500, 50 );
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 500, 100 );
 	 
 
 	//HUD hitbox

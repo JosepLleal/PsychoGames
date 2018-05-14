@@ -16,6 +16,7 @@ protected:
 
 public:
 	iPoint position;
+	ENEMY_TYPES type = ENEMY_TYPES::NO_TYPE;
 
 public:
 	Enemy(int x, int y);

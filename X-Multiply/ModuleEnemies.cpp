@@ -6,9 +6,11 @@
 #include "ModuleTextures.h"
 #include "ModulePlayer.h"
 #include "Enemy.h"
+#include "ModuleAudio.h"
+
 #include "Enemy_Red_Ball.h"
 #include "Enemy_YellowBall.h"
-#include "ModuleAudio.h"
+#include "Diamond_Wall.h"
 
 #define SPAWN_MARGIN 50
 
@@ -103,7 +105,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool up)
+bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
 {
 	bool ret = false;
 
@@ -114,7 +116,6 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool up)
 			queue[i].type = type;
 			queue[i].x = x;
 			queue[i].y = y;
-			queue[i].up = up;
 			ret = true;
 			break;
 		}
@@ -139,6 +140,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::YELLOWBALL:
 			enemies[i] = new Enemy_YellowBall(info.x, info.y);
 			break;
+		case ENEMY_TYPES::DIAMOND_WALL:
+			enemies[i] = new Diamond_Wall(info.x, info.y);
+			break;
 
 		}
 	}
@@ -151,13 +155,15 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		if(enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
 			enemies[i]->OnCollision(c2);
-			//App->particles->AddParticle(App->particles->explosion_enemy, enemies[i]->position.x, enemies[i]->position.y);
+				
 			App->particles->AddParticle(App->particles->shot_impact, enemies[i]->position.x, enemies[i]->position.y);
 			App->audio->ChunkPlay(enemy_death);
+
 
 			delete enemies[i];
 			enemies[i] = nullptr;
 			break;
+			
 		}
 	}
 }

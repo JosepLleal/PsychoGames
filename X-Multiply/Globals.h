@@ -19,6 +19,14 @@ enum update_status
 	UPDATE_ERROR
 };
 
+enum ENEMY_TYPES
+{
+	NO_TYPE,
+	REDBALL,
+	YELLOWBALL,
+	DIAMOND_WALL,
+};
+
 // Useful typedefs ---------
 typedef unsigned int uint;
 
