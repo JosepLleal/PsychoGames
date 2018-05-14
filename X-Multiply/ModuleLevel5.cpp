@@ -59,7 +59,7 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 3080, 0, 1550, 24 }, COLLIDER_WALL);
 
 	//TOP COLUMNS 
-	App->collision->AddCollider({ 257, 18, 15, 72}, COLLIDER_WALL);
+	App->collision->AddCollider({ 257, 18, 15, 72 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 353, 18, 15, 55 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 545, 18, 14, 55 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 898, 18, 15, 36 }, COLLIDER_WALL);
@@ -77,7 +77,7 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 2498, 18, 15, 36 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2577, 18, 15, 92 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2610, 18, 15, 55 }, COLLIDER_WALL);
-	
+
 	//TOP SQUARES 
 	App->collision->AddCollider({ 1977, 18, 80, 45 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2147, 18, 110, 18 }, COLLIDER_WALL);
@@ -111,7 +111,26 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 2225, 153, 15, 85 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2240, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
 
+	//BOTTOM FIXES
+	App->collision->AddCollider({ 224, 214, 15, 24 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 354, 226, 15, 12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 384, 214, 15, 24 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 502, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1424, 214, 15, 24 }, COLLIDER_WALL);
+
+	//BOTTOM BOXES 
+	App->collision->AddCollider({ 294, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1030, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1096, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1159, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1224, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1336, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1368, 228, 20, 10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1464, 228, 80, 10 }, COLLIDER_WALL);
+
+	//Diamonds
 	App->collision->AddCollider({ 500, 50, 16, 80 }, COLLIDER_DIAMOND);
+
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
 
