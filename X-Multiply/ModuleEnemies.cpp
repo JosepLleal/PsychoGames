@@ -6,8 +6,9 @@
 #include "ModuleTextures.h"
 #include "ModulePlayer.h"
 #include "Enemy.h"
-#include "ModuleAudio.h"
 #include "Enemy_Red_Ball.h"
+#include "Enemy_YellowBall.h"
+#include "ModuleAudio.h"
 
 #define SPAWN_MARGIN 50
 
@@ -102,7 +103,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
+bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool up)
 {
 	bool ret = false;
 
@@ -113,6 +114,7 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
 			queue[i].type = type;
 			queue[i].x = x;
 			queue[i].y = y;
+			queue[i].up = up;
 			ret = true;
 			break;
 		}
@@ -131,12 +133,13 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 	{
 		switch(info.type)
 		{
-			/*case ENEMY_TYPES::SHRIMP:
-			enemies[i] = new Enemy_Shrimp(info.x,info.y);
-			break;*/
-		case ENEMY_TYPES::ENEMY_RED_BALL:
-			enemies[i] = new Enemy_Red_Ball(info.x, info.y);
-			break; 
+		case ENEMY_TYPES::REDBALL:
+			enemies[i] = new Enemy_Red_Ball(info.x,info.y);
+			break;
+		case ENEMY_TYPES::YELLOWBALL:
+			enemies[i] = new Enemy_YellowBall(info.x, info.y);
+			break;
+
 		}
 	}
 }
