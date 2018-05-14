@@ -7,6 +7,7 @@
 #include "ModulePlayer.h"
 #include "Enemy.h"
 #include "ModuleAudio.h"
+#include "Enemy_Red_Ball.h"
 
 #define SPAWN_MARGIN 50
 
@@ -24,7 +25,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 	//enemies sprites
-	sprites = App->textures->Load("image/LVL1enemies.png");
+	sprites = App->textures->Load("image/lvl5_enemies.png");
 
 	//Loading FX
 	enemy_death = App->audio->LoadFX("Sound/xmultipl-100.wav");
@@ -101,7 +102,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool up)
+bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
 {
 	bool ret = false;
 
@@ -112,7 +113,6 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool up)
 			queue[i].type = type;
 			queue[i].x = x;
 			queue[i].y = y;
-			queue[i].up = up;
 			ret = true;
 			break;
 		}
@@ -134,7 +134,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			/*case ENEMY_TYPES::SHRIMP:
 			enemies[i] = new Enemy_Shrimp(info.x,info.y);
 			break;*/
-
+		case ENEMY_TYPES::ENEMY_RED_BALL:
+			enemies[i] = new Enemy_Red_Ball(info.x, info.y);
+			break; 
 		}
 	}
 }

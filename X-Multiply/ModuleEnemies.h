@@ -2,6 +2,7 @@
 #define __ModuleEnemies_H__
 
 #include "Module.h"
+#include "Enemy_Red_Ball.h"
 #include "ModuleTextures.h"
 
 #define MAX_ENEMIES 200
@@ -9,8 +10,7 @@
 enum ENEMY_TYPES
 {
 	NO_TYPE,
-	
-	
+	ENEMY_RED_BALL,
 };
 
 class Enemy;
@@ -36,7 +36,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 
-	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool up);
+	bool AddEnemy(ENEMY_TYPES type, int x, int y);
 
 private:
 
