@@ -6,8 +6,6 @@
 
 #define MAX_ENEMIES 200
 
-
-
 class Enemy;
 
 struct EnemyInfo

@@ -14,8 +14,8 @@ public:
 
 	iPoint original_position;
 	Enemy_Red_Ball(int x, int y);
-	int life = 5; 
-
+	unsigned short life = 5;
+	void Enemy_Red_Ball::OnCollision(Collider* collider);
 };
 
 #endif // __ENEMY_NEMONA_H__

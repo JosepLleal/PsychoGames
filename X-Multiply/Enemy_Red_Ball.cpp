@@ -12,7 +12,6 @@ Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
 
 	original_position.x = x;
 	original_position.y = y;
-	collider = App->collision->AddCollider({ 0, 0, 30, 30 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
 
 	if(life == 5)
 	{
@@ -20,15 +19,23 @@ Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
 		fly.PushBack({ 23, 112, 33, 32 });
 	}
 
-	if (life == 4)
+	else if (life == 4)
 	{
-		App->collision->AddCollider({ 0, 0, 28, 28 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
+		collider = App->collision->AddCollider({ 0, 0, 28, 28 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
 		fly.PushBack({ 56, 112, 33, 32 });
 	}
 
-	if (life == 3)
+	else if (life == 3)
 	{
-		App->collision->AddCollider({ 0, 0, 25, 25 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
+		collider = App->collision->AddCollider({ 0, 0, 25, 25 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
 		fly.PushBack({ 89, 144, 28, 26 });
+	}
+}
+
+void Enemy_Red_Ball::OnCollision(Collider* collider)
+{
+	if (collider->type == COLLIDER_PLAYER_SHOT)
+	{
+		life = life - 1; 
 	}
 }
