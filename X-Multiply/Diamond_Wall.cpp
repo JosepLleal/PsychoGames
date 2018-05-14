@@ -7,7 +7,7 @@
 
 Diamond_Wall::Diamond_Wall(int x, int y) : Enemy(x, y)
 {
-	Width = 18;
+	Width = 17;
 	Height = 80;
 
 	idle.PushBack({ 23, 15, Width, Height });
@@ -37,8 +37,5 @@ void Diamond_Wall::OnCollision(Collider* collider)
 	{
 		touching = true;
 	}
-	else
-	{
-		touching = false;
-	}
+	
 }

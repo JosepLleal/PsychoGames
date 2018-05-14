@@ -150,12 +150,19 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 
 void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
-	for(uint i = 0; i < MAX_ENEMIES; ++i)
+	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
-		if(enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c1->type == COLLIDER_DIAMOND)
 		{
 			enemies[i]->OnCollision(c2);
-				
+
+			//Add diamond FX
+
+		}
+		else if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
+		{
+			enemies[i]->OnCollision(c2);
+
 			App->particles->AddParticle(App->particles->shot_impact, enemies[i]->position.x, enemies[i]->position.y);
 			App->audio->ChunkPlay(enemy_death);
 
@@ -163,7 +170,8 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			delete enemies[i];
 			enemies[i] = nullptr;
 			break;
-			
+
 		}
+
 	}
 }
