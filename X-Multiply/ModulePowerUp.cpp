@@ -157,7 +157,6 @@ void ModulePowerUp::OnCollision(Collider* c1, Collider* c2)
 		if (powerup[i] != nullptr && powerup[i]->GetCollider() == c1)
 		{
 			powerup[i]->OnCollision(c2);
-			App->particles->AddParticle(App->particles->shot_impact, powerup[i]->position.x, powerup[i]->position.y);
 
 			delete powerup[i];
 			powerup[i] = nullptr;

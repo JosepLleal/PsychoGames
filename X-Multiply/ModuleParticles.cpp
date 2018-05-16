@@ -290,10 +290,10 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		
 		if(active[i] != nullptr && active[i]->collider == c1)
 		{
-			if(c2->type == COLLIDER_WALL)
+			if (c1->type == COLLIDER_PLAYER_SHOT)
 				AddParticle(shot_impact, active[i]->position.x, active[i]->position.y, COLLIDER_NONE);
 
-			if(c1->type == COLLIDER_BOMB)
+			if (c1->type == COLLIDER_BOMB)
 				AddParticle(bomb_explosion, active[i]->position.x, active[i]->position.y, COLLIDER_NONE);
 
 			delete active[i];
