@@ -21,5 +21,5 @@ public:
 	void Enemy_Red_Ball3::OnCollision(Collider* collider);
 };
 
-#endif // __ENEMY_NEMONA_H__
+#endif //__ENEMY_RED_BALL3_H__
 

@@ -21,4 +21,4 @@ public:
 	void Enemy_Red_Ball::OnCollision(Collider* collider);
 };
 
-#endif // __ENEMY_NEMONA_H__
+#endif // __ENEMY_RED_BALL_H__

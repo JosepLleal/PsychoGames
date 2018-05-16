@@ -9,6 +9,7 @@
 #include "ModuleAudio.h"
 
 #include "Enemy_Red_Ball.h"
+#include "Enemy_Red_Ball1.h"
 #include "Enemy_Red_Ball2.h"
 #include "Enemy_Red_Ball3.h"
 #include "Enemy_Red_Ball4.h"
@@ -141,6 +142,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::REDBALL:
 			enemies[i] = new Enemy_Red_Ball(info.x,info.y);
+			break;
+		case ENEMY_TYPES::REDBALL1:
+			enemies[i] = new Enemy_Red_Ball1(info.x, info.y);
 			break;
 		case ENEMY_TYPES::REDBALL2:
 			enemies[i] = new Enemy_Red_Ball2(info.x, info.y);

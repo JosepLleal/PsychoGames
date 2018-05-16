@@ -1,11 +1,11 @@
 #include "Application.h"
 #include "Globals.h"
-#include "Enemy_Red_Ball4.h"
+#include "Enemy_Red_Ball1.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "SDL/include/SDL_timer.h"
 
-Enemy_Red_Ball4::Enemy_Red_Ball4(int x, int y) : Enemy(x, y)
+Enemy_Red_Ball1::Enemy_Red_Ball1(int x, int y) : Enemy(x, y)
 {
 
 	animation = &one;
@@ -18,18 +18,18 @@ Enemy_Red_Ball4::Enemy_Red_Ball4(int x, int y) : Enemy(x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 32, 32 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
 
-	one.PushBack({ 24, 243, 32, 29 });
+	one.PushBack({ 24, 146, 32, 32 });
 
 
 }
 
-void Enemy_Red_Ball4::OnCollision(Collider* collider_)
+void Enemy_Red_Ball1::OnCollision(Collider* collider_)
 {
 
 	if (life == 5)
 	{
 		animation = &two;
-		two.PushBack({ 57, 246, 31, 22 });
+		two.PushBack({ 57, 148, 32, 28 });
 		two.speed = 0.0f;
 
 		position.x += 1;
@@ -42,7 +42,7 @@ void Enemy_Red_Ball4::OnCollision(Collider* collider_)
 	else if (life == 4)
 	{
 		animation = &three;
-		three.PushBack({ 92, 249, 26, 18 });
+		three.PushBack({ 30, 148, 28, 27 });
 		three.speed = 0.0f;
 
 		position.x += 3;
@@ -54,7 +54,7 @@ void Enemy_Red_Ball4::OnCollision(Collider* collider_)
 	else if (life == 3)
 	{
 		animation = &four;
-		four.PushBack({ 126, 251, 21, 13 });
+		four.PushBack({ 126, 152 ,21, 19 });
 		four.speed = 0.0f;
 
 		position.x += 3;
@@ -66,7 +66,7 @@ void Enemy_Red_Ball4::OnCollision(Collider* collider_)
 	else if (life == 2)
 	{
 		animation = &five;
-		five.PushBack({ 151, 251, 15, 13 });
+		five.PushBack({ 161, 155, 15, 13 });
 		five.speed = 0.0f;
 
 		position.x += 3;
