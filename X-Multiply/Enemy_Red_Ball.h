@@ -7,14 +7,17 @@ class Enemy_Red_Ball : public Enemy
 {
 private:
 	int original_y = 0;
-	Animation fly;
+	Animation one;
+	Animation two;
+	Animation three;
+	Animation four;
+	Animation five;
 
 
 public:
 
 	iPoint original_position;
 	Enemy_Red_Ball(int x, int y);
-	unsigned short life = 5;
 	void Enemy_Red_Ball::OnCollision(Collider* collider);
 };
 

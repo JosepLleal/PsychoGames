@@ -133,7 +133,7 @@ bool ModuleLevel5::Start()
 
 	//Enemies
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 500, 100 );
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 900, 100 );
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 400, 150 );
 	 
 
 	//HUD hitbox

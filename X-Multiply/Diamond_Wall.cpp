@@ -18,6 +18,8 @@ Diamond_Wall::Diamond_Wall(int x, int y) : Enemy(x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, Width, Height }, COLLIDER_TYPE::COLLIDER_DIAMOND, (Module*)App->enemies);
 
+	life = 5000;
+
 }
 
 void Diamond_Wall::Move()
@@ -33,7 +35,7 @@ void Diamond_Wall::Move()
 
 void Diamond_Wall::OnCollision(Collider* collider)
 {
-	if (collider->type == COLLIDER_WALL)
+	if (collider->type == COLLIDER_WALL || collider->type == COLLIDER_REDBALL)
 	{
 		touching = true;
 	}

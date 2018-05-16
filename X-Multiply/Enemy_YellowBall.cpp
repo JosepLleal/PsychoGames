@@ -7,10 +7,12 @@
 
 Enemy_YellowBall::Enemy_YellowBall(int x, int y) : Enemy(x, y)
 {
+	life = 1;
+
 	inflate.PushBack({ 34, 351, 29, 38 });
 	inflate.PushBack({ 66, 351, 29, 38 });
-	inflate.PushBack({ 102, 351, 29, 38 });
-	inflate.PushBack({ 134, 351, 29, 38 });
+	inflate.PushBack({ 101, 350, 29, 38 });
+	inflate.PushBack({ 133, 350, 29, 38 });
 	inflate.speed = 0.03f;
 	animation = &inflate;
 
@@ -22,7 +24,7 @@ Enemy_YellowBall::Enemy_YellowBall(int x, int y) : Enemy(x, y)
 
 void Enemy_YellowBall::Move()
 {
-	if (App->render->camera.x % 420 == 0)
+	if (App->render->camera.x % 125 == 0)
 	{
 		App->particles->AddParticle(App->particles->anemona_shot1, original_position.x + 24, original_position.y + 25, COLLIDER_ENEMY_SHOT);
 		App->particles->AddParticle(App->particles->anemona_shot2, original_position.x + 24, original_position.y + 15, COLLIDER_ENEMY_SHOT);
@@ -33,6 +35,6 @@ void Enemy_YellowBall::Move()
 }
 void Enemy_YellowBall::OnCollision(Collider* collider)
 {
-
+	App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
 }
 

@@ -18,6 +18,8 @@ public:
 	iPoint position;
 	ENEMY_TYPES type = ENEMY_TYPES::NO_TYPE;
 
+	uint life;
+
 public:
 	Enemy(int x, int y);
 	virtual ~Enemy();

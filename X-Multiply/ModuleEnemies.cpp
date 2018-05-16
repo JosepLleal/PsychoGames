@@ -152,24 +152,33 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
-		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c1->type == COLLIDER_DIAMOND)
+		//if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c1->type == COLLIDER_DIAMOND)
+		//{
+		//	enemies[i]->OnCollision(c2);
+
+		//	//Add diamond FX
+
+		//}
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
 			enemies[i]->OnCollision(c2);
-
-			//Add diamond FX
-
-		}
-		else if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
-		{
-			enemies[i]->OnCollision(c2);
-
 			App->particles->AddParticle(App->particles->shot_impact, enemies[i]->position.x, enemies[i]->position.y);
-			App->audio->ChunkPlay(enemy_death);
+			--(enemies[i]->life);
 
 
-			delete enemies[i];
-			enemies[i] = nullptr;
-			break;
+			if (enemies[i]->life <= 0) 
+			{
+
+				enemies[i]->OnCollision(c2);
+
+				App->particles->AddParticle(App->particles->shot_impact, enemies[i]->position.x, enemies[i]->position.y);
+				App->audio->ChunkPlay(enemy_death);
+
+
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			}
 
 		}
 

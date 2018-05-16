@@ -8,34 +8,65 @@
 Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
 {
 
-	animation = &fly; 
+	animation = &one; 
+	one.speed = 0.0f;
+
+	life = 4;
 
 	original_position.x = x;
 	original_position.y = y;
 
-	if(life == 5)
-	{
-		collider = App->collision->AddCollider({ 0, 0, 30, 30 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
-		fly.PushBack({ 23, 112, 33, 32 });
-	}
+	collider = App->collision->AddCollider({ 0, 0, 32, 32 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
 
-	else if (life == 4)
+	one.PushBack({ 23, 112, 32, 32 });
+	
+
+}
+
+void Enemy_Red_Ball::OnCollision(Collider* collider_)
+{
+
+	if (life == 4)
 	{
-		collider = App->collision->AddCollider({ 0, 0, 28, 28 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
-		fly.PushBack({ 56, 112, 33, 32 });
+		animation = &two;
+		two.PushBack({ 55, 113, 31, 31 });
+		two.speed = 0.0f;
+
+		collider->rect.h = 31;
+		collider->rect.w = 31;
 	}
 
 	else if (life == 3)
 	{
-		collider = App->collision->AddCollider({ 0, 0, 25, 25 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
-		fly.PushBack({ 89, 144, 28, 26 });
-	}
-}
+		animation = &three;
+		three.PushBack({ 90, 116, 26, 24 });
+		three.speed = 0.0f;
 
-void Enemy_Red_Ball::OnCollision(Collider* collider)
-{
-	if (collider->type == COLLIDER_PLAYER_SHOT)
-	{
-		life = life - 1; 
+		collider->rect.h = 24;
+		collider->rect.w = 26;
 	}
+	else if (life == 2)
+	{
+		animation = &four;
+		four.PushBack({ 125, 119, 21, 19 });
+		four.speed = 0.0f;
+
+		collider->rect.h = 19;
+		collider->rect.w = 21;
+	}
+	else if (life == 1)
+	{
+		animation = &five;
+		five.PushBack({ 160, 123, 15, 13 });
+		five.speed = 0.0f;
+
+		collider->rect.h = 13;
+		collider->rect.w = 15;
+	}
+
+	if (life <=0) 
+	{
+		App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
+	}
+	
 }
