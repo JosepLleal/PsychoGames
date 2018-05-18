@@ -13,7 +13,6 @@ Enemy_Red_Ball3::Enemy_Red_Ball3(int x, int y) : Enemy(x, y)
 
 	life = 5;
 
-	original_position.x = x;
 	original_position.y = y;
 
 	collider = App->collision->AddCollider({ 0, 0, 32, 32 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);

@@ -28,7 +28,7 @@ Enemy_YellowBall::Enemy_YellowBall(int x, int y) : Enemy(x, y)
 	inflate.speed = 0.1f;
 	animation = &inflate;
 
-	collider = App->collision->AddCollider({ 0, 0, 29, 38 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 29, 38 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_position.x = x;
 	original_position.y = y;

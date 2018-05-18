@@ -2,7 +2,6 @@
 #include "Diamond_Wall.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
-#include "ModulePlayer.h"
 
 
 Diamond_Wall::Diamond_Wall(int x, int y) : Enemy(x, y)
@@ -38,6 +37,10 @@ void Diamond_Wall::OnCollision(Collider* collider)
 	if (collider->type == COLLIDER_WALL || collider->type == COLLIDER_REDBALL)
 	{
 		touching = true;
+	}
+	else if (collider->type != COLLIDER_REDBALL && collider->type == COLLIDER_NONE)
+	{
+		touching = false;
 	}
 	
 }

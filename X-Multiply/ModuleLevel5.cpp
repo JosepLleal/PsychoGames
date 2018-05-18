@@ -128,16 +128,24 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 1368, 228, 20, 10 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1464, 228, 80, 10 }, COLLIDER_WALL);
 
+	//COllider for Diamond animation
+	App->collision->AddCollider({ 708, 90, 1, 30 }, COLLIDER_NONE);
+    App->collision->AddCollider({ 1102, 80, 1, 40 }, COLLIDER_NONE);
+
 	//Diamonds
-	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 800, 50);
-	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1090, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 700, 90);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1094, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1630, 18);
 	//Enemies
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 500, 100 );
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 400, 150 );
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 700, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 900, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1100, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 410, 150);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 600, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 673, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 673, 110);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 673, 220);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1075, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1300, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1500, 100);
 
@@ -149,8 +157,8 @@ bool ModuleLevel5::Start()
 	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 750, 87);
 
 	//Bomb
-	App->powerup->AddPowerUp(POWERUP_TYPES::BOMB, 1000, 133);
-	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 1000, 120);
+	App->powerup->AddPowerUp(POWERUP_TYPES::BOMB, 750, 123);
+	App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 750, 110);
 
 	return true;
 }

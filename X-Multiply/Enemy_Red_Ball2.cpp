@@ -13,13 +13,13 @@ Enemy_Red_Ball2::Enemy_Red_Ball2(int x, int y) : Enemy(x, y)
 
 	life = 5;
 
-	original_position.x = x;
-	original_position.y = y;
+	
 
 	collider = App->collision->AddCollider({ 0, 0, 32, 32 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
 
 	one.PushBack({ 24, 177, 32, 32 });
 
+	original_position.y = y;
 
 }
 
