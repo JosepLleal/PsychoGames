@@ -29,32 +29,32 @@ void Enemy_Red_Ball2::OnCollision(Collider* collider_)
 	if (life == 5)
 	{
 		animation = &two;
-		two.PushBack({ 57, 179, 31, 28 });
+		two.PushBack({ 56, 178, 31, 29 });
 		two.speed = 0.0f;
 
 		position.x += 1;
 		position.y += 1;
 
-		collider->rect.h = 31;
+		collider->rect.h = 29;
 		collider->rect.w = 31;
 	}
 
 	else if (life == 4)
 	{
 		animation = &three;
-		three.PushBack({ 92, 182, 24, 22 });
+		three.PushBack({ 91, 181, 24, 22 });
 		three.speed = 0.0f;
 
 		position.x += 3;
 		position.y += 4;
 
-		collider->rect.h = 24;
-		collider->rect.w = 26;
+		collider->rect.h = 22;
+		collider->rect.w = 24;
 	}
 	else if (life == 3)
 	{
 		animation = &four;
-		four.PushBack({ 126, 184, 21, 19 });
+		four.PushBack({ 125, 183, 21, 19 });
 		four.speed = 0.0f;
 
 		position.x += 3;
@@ -66,7 +66,7 @@ void Enemy_Red_Ball2::OnCollision(Collider* collider_)
 	else if (life == 2)
 	{
 		animation = &five;
-		five.PushBack({ 161, 187, 15, 13 });
+		five.PushBack({ 160, 123, 15, 13 });
 		five.speed = 0.0f;
 
 		position.x += 3;
@@ -75,7 +75,5 @@ void Enemy_Red_Ball2::OnCollision(Collider* collider_)
 		collider->rect.h = 13;
 		collider->rect.w = 15;
 	}
-
-	
 
 }
