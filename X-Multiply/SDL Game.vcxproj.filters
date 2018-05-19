@@ -134,6 +134,9 @@
     <ClInclude Include="Diamond_Wall2.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="Enemy_Drop.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -236,6 +239,9 @@
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Diamond_Wall2.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy_Drop.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
