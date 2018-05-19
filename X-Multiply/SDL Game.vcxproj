@@ -82,6 +82,7 @@
     <ClInclude Include="Enemy_Red_Ball4.h" />
     <ClInclude Include="Enemy_Red_Ball5.h" />
     <ClInclude Include="Enemy_YellowBall.h" />
+    <ClInclude Include="Enemy_YellowBall2.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="MemLeaks.h" />
     <ClInclude Include="Module.h" />
@@ -119,6 +120,7 @@
     <ClCompile Include="Enemy_Red_Ball4.cpp" />
     <ClCompile Include="Enemy_Red_Ball5.cpp" />
     <ClCompile Include="Enemy_YellowBall.cpp" />
+    <ClCompile Include="Enemy_YellowBall2.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />

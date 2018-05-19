@@ -68,6 +68,9 @@ bool ModulePlayer::Start()
 	
 	position.x = 150;
 	position.y = 120;
+
+	App->render->camera.x = 0;
+	App->render->camera.y = 0;
 	
 
 	playerHitbox = App->collision->AddCollider({ position.x, position.y, 7, 6 }, COLLIDER_PLAYER, this);

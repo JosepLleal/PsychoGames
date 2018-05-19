@@ -26,7 +26,7 @@ void Diamond_Wall::Move()
 
 	if (touching == false)
 	{
-		position.y += 1;
+		position.y += 2;
 	}
 
 }
@@ -34,11 +34,11 @@ void Diamond_Wall::Move()
 
 void Diamond_Wall::OnCollision(Collider* collider)
 {
-	if (collider->type == COLLIDER_WALL || collider->type == COLLIDER_REDBALL)
+	if (collider->type == COLLIDER_WALL || collider->type == COLLIDER_ENEMY)
 	{
 		touching = true;
 	}
-	else if (collider->type != COLLIDER_REDBALL && collider->type == COLLIDER_NONE)
+	else if (collider->type != COLLIDER_ENEMY && collider->type == COLLIDER_NONE)
 	{
 		touching = false;
 	}

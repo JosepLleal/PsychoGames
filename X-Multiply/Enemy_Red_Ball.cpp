@@ -15,7 +15,7 @@ Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
 
 	original_position.y = y;
 
-	collider = App->collision->AddCollider({ 0, 0, 32, 32 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 32, 32 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	one.PushBack({ 23, 112, 32, 32 });
 	

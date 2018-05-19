@@ -16,6 +16,7 @@
 #include "Enemy_Red_Ball5.h"
 
 #include "Enemy_YellowBall.h"
+#include "Enemy_YellowBall2.h"
 #include "Diamond_Wall.h"
 
 #define SPAWN_MARGIN 50
@@ -49,11 +50,23 @@ update_status ModuleEnemies::PreUpdate()
 	{
 		if (queue[i].type != ENEMY_TYPES::NO_TYPE)
 		{
-			if (queue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN)
+			if (queue[i].type == ENEMY_TYPES::REDBALL || queue[i].type == ENEMY_TYPES::REDBALL1 || queue[i].type == ENEMY_TYPES::REDBALL2 || queue[i].type == ENEMY_TYPES::REDBALL3 || queue[i].type == ENEMY_TYPES::REDBALL4 || queue[i].type == ENEMY_TYPES::REDBALL5)
 			{
-				SpawnEnemy(queue[i]);
-				queue[i].type = ENEMY_TYPES::NO_TYPE;
+				if (queue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) )
+				{
+					SpawnEnemy(queue[i]);
+					queue[i].type = ENEMY_TYPES::NO_TYPE;
+				}
 			}
+			else
+			{
+				if (queue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN)
+				{
+					SpawnEnemy(queue[i]);
+					queue[i].type = ENEMY_TYPES::NO_TYPE;
+				}
+			}
+			
 		}
 	}
 
@@ -160,6 +173,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::YELLOWBALL:
 			enemies[i] = new Enemy_YellowBall(info.x, info.y);
+			break;
+		case ENEMY_TYPES::YELLOWBALL2:
+			enemies[i] = new Enemy_YellowBall2(info.x, info.y);
 			break;
 		case ENEMY_TYPES::DIAMOND_WALL:
 			enemies[i] = new Diamond_Wall(info.x, info.y);

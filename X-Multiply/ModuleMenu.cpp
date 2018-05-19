@@ -47,7 +47,7 @@ update_status  ModuleMenu::Update()
 
 	if((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN || App->input->controller[BUTTON_A] == KEY_DOWN) && App->fade->IsFading() == false)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->lvl5);
+		App->fade->FadeToBlack(this, (Module*)App->lvl5, 0.8f);
 	}
 
 	return UPDATE_CONTINUE;
