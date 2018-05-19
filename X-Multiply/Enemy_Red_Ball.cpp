@@ -3,6 +3,8 @@
 #include "Enemy_Red_Ball.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "ModuleEnemies.h"
+#include "ModuleAudio.h"
 #include "SDL/include/SDL_timer.h"
 
 Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
@@ -24,6 +26,7 @@ Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
 
 void Enemy_Red_Ball::OnCollision(Collider* collider_)
 {
+	App->audio->ChunkPlay(App->enemies->redball);
 
 	if (life == 5)
 	{
@@ -74,7 +77,5 @@ void Enemy_Red_Ball::OnCollision(Collider* collider_)
 		collider->rect.h = 13;
 		collider->rect.w = 15;
 	}
-
-	
 	
 }

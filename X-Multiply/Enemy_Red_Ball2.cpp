@@ -4,6 +4,8 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "SDL/include/SDL_timer.h"
+#include "ModuleAudio.h"
+#include "ModuleEnemies.h"
 
 Enemy_Red_Ball2::Enemy_Red_Ball2(int x, int y) : Enemy(x, y)
 {
@@ -25,6 +27,7 @@ Enemy_Red_Ball2::Enemy_Red_Ball2(int x, int y) : Enemy(x, y)
 
 void Enemy_Red_Ball2::OnCollision(Collider* collider_)
 {
+	App->audio->ChunkPlay(App->enemies->redball);
 
 	if (life == 5)
 	{

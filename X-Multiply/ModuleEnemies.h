@@ -31,6 +31,8 @@ public:
 
 	bool AddEnemy(ENEMY_TYPES type, int x, int y);
 
+	uint redball; //FX
+
 private:
 
 	void SpawnEnemy(const EnemyInfo& info);
@@ -42,7 +44,7 @@ private:
 
 	SDL_Texture* sprites;
 
-	uint enemy_death; //FX when enemy dies
+	
 };
 
 #endif // __ModuleEnemies_H__

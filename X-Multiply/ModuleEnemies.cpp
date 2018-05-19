@@ -38,7 +38,7 @@ bool ModuleEnemies::Start()
 	sprites = App->textures->Load("image/lvl5_enemies.png");
 
 	//Loading FX
-	enemy_death = App->audio->LoadFX("Sound/xmultipl-100.wav");
+	redball = App->audio->LoadFX("Sound/xmultipl-100.wav");
 
 	return true;
 }
@@ -52,7 +52,7 @@ update_status ModuleEnemies::PreUpdate()
 		{
 			if (queue[i].type == ENEMY_TYPES::REDBALL || queue[i].type == ENEMY_TYPES::REDBALL1 || queue[i].type == ENEMY_TYPES::REDBALL2 || queue[i].type == ENEMY_TYPES::REDBALL3 || queue[i].type == ENEMY_TYPES::REDBALL4 || queue[i].type == ENEMY_TYPES::REDBALL5)
 			{
-				if (queue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) )
+				if (queue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + (SPAWN_MARGIN/2) + (SPAWN_MARGIN/4) )
 				{
 					SpawnEnemy(queue[i]);
 					queue[i].type = ENEMY_TYPES::NO_TYPE;
@@ -109,7 +109,7 @@ bool ModuleEnemies::CleanUp()
 	LOG("Freeing all enemies");
 
 	App->textures->Unload(sprites);
-	App->audio->UnloadFX(enemy_death);
+	App->audio->UnloadFX(redball);
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
@@ -202,12 +202,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 
 				enemies[i]->OnCollision(c2);
-				App->audio->ChunkPlay(enemy_death);
+				
 
 				delete enemies[i];
 				enemies[i] = nullptr;
 				break;
 			}
+			
 
 		}
 
