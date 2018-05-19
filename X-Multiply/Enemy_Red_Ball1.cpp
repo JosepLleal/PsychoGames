@@ -17,7 +17,7 @@ Enemy_Red_Ball1::Enemy_Red_Ball1(int x, int y) : Enemy(x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 32, 32 }, COLLIDER_TYPE::COLLIDER_REDBALL, (Module*)App->enemies);
 
-	one.PushBack({ 24, 146, 32, 32 });
+	one.PushBack({ 23, 144, 32, 32 });
 
 
 }
@@ -28,32 +28,32 @@ void Enemy_Red_Ball1::OnCollision(Collider* collider_)
 	if (life == 5)
 	{
 		animation = &two;
-		two.PushBack({ 57, 148, 32, 28 });
+		two.PushBack({ 56, 147, 31, 28 });
 		two.speed = 0.0f;
 
 		position.x += 1;
 		position.y += 1;
 
-		collider->rect.h = 31;
+		collider->rect.h = 28;
 		collider->rect.w = 31;
 	}
 
 	else if (life == 4)
 	{
 		animation = &three;
-		three.PushBack({ 30, 148, 28, 27 });
+		three.PushBack({ 90, 147, 28, 27 });
 		three.speed = 0.0f;
 
 		position.x += 3;
-		position.y += 4;
+		position.y += 3;
 
-		collider->rect.h = 24;
-		collider->rect.w = 26;
+		collider->rect.h = 27;
+		collider->rect.w = 28;
 	}
 	else if (life == 3)
 	{
 		animation = &four;
-		four.PushBack({ 126, 152 ,21, 19 });
+		four.PushBack({ 125, 151 ,21, 19 });
 		four.speed = 0.0f;
 
 		position.x += 3;
@@ -65,7 +65,7 @@ void Enemy_Red_Ball1::OnCollision(Collider* collider_)
 	else if (life == 2)
 	{
 		animation = &five;
-		five.PushBack({ 161, 155, 15, 13 });
+		five.PushBack({ 160, 154, 15, 13 });
 		five.speed = 0.0f;
 
 		position.x += 3;
