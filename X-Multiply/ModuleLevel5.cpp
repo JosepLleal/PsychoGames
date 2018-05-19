@@ -129,25 +129,13 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 1464, 228, 80, 10 }, COLLIDER_WALL);
 
 	//COllider for Diamond animation
-	/*App->collision->AddCollider({ 708, 90, 1, 30 }, COLLIDER_NONE);
-    App->collision->AddCollider({ 1102, 80, 1, 40 }, COLLIDER_NONE);*/
+	App->collision->AddCollider({ 708, 90, 1, 30 }, COLLIDER_NONE);
+    App->collision->AddCollider({ 1102, 80, 1, 40 }, COLLIDER_NONE);
 
 	//Diamonds
-	/*App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 700, 90);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 700, 90);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1094, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1630, 18);*/
-	//Enemies
-	/*App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 500, 100 );*/
-	/*App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 400, 150 );
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 410, 150);*/
-
-	/*App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 600, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 673, 70);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 673, 110);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 673, 220);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1075, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1300, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1500, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1630, 18);
 	
 	//GOOD POSITION
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 200);
@@ -161,13 +149,6 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 273, 198);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 337, 179 );
 	
-	*/
-
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 600, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 800, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1000, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1200, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1400, 100);
 
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
