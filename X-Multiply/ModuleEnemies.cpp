@@ -18,6 +18,7 @@
 #include "Enemy_YellowBall.h"
 #include "Enemy_YellowBall2.h"
 #include "Diamond_Wall.h"
+#include "Diamond_Wall2.h"
 
 #define SPAWN_MARGIN 50
 
@@ -179,6 +180,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::DIAMOND_WALL:
 			enemies[i] = new Diamond_Wall(info.x, info.y);
+			break;
+		case ENEMY_TYPES::DIAMOND_WALL2:
+			enemies[i] = new Diamond_Wall2(info.x, info.y);
 			break;
 
 		}

@@ -136,7 +136,7 @@ bool ModuleLevel5::Start()
 	/*App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 700, 90);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1094, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1630, 18);*/
-
+	
 	
 	//GOOD POSITION
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
