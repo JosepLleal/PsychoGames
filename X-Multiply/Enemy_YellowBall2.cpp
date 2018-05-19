@@ -3,6 +3,8 @@
 #include "ModuleCollision.h"
 #include "ModuleRender.h"
 #include "ModuleParticles.h"
+#include "ModuleAudio.h"
+#include "ModuleEnemies.h"
 #include "SDL/include/SDL_timer.h"
 
 Enemy_YellowBall2::Enemy_YellowBall2(int x, int y) : Enemy(x, y)
@@ -53,6 +55,7 @@ void Enemy_YellowBall2::Move()
 }
 void Enemy_YellowBall2::OnCollision(Collider* collider)
 {
+	App->audio->ChunkPlay(App->enemies->yellow_ball);
 	App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
 	shooting_counter = 0;
 }

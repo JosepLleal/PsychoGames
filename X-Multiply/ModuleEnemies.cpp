@@ -40,6 +40,7 @@ bool ModuleEnemies::Start()
 
 	//Loading FX
 	redball = App->audio->LoadFX("Sound/xmultipl-100.wav");
+	yellow_ball = App->audio->LoadFX("Sound/xmultipl-094.wav");
 
 	return true;
 }
@@ -111,6 +112,7 @@ bool ModuleEnemies::CleanUp()
 
 	App->textures->Unload(sprites);
 	App->audio->UnloadFX(redball);
+	App->audio->UnloadFX(yellow_ball);
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
