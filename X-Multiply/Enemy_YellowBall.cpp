@@ -41,8 +41,7 @@ void Enemy_YellowBall::Move()
 		App->particles->AddParticle(App->particles->anemona_shot1, original_position.x + 17, original_position.y + 15, COLLIDER_ENEMY_SHOT);
 		App->particles->AddParticle(App->particles->anemona_shot2, original_position.x + 17, original_position.y + 5, COLLIDER_ENEMY_SHOT);
 		App->particles->AddParticle(App->particles->anemona_shot3, original_position.x + 17, original_position.y + 0, COLLIDER_ENEMY_SHOT);
-		App->particles->AddParticle(App->particles->anemona_shot4, original_position.x + 17, original_position.y + 10, COLLIDER_ENEMY_SHOT);
-		App->particles->AddParticle(App->particles->anemona_shot5, original_position.x + 17, original_position.y + 15, COLLIDER_ENEMY_SHOT);
+		
 	}
 }
 void Enemy_YellowBall::OnCollision(Collider* collider)

@@ -76,9 +76,6 @@ void Enemy_Red_Ball2::OnCollision(Collider* collider_)
 		collider->rect.w = 15;
 	}
 
-	if (life <= 0)
-	{
-		App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
-	}
+	
 
 }

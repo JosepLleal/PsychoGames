@@ -147,7 +147,21 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 673, 220);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1075, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1300, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1500, 100);*/
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1500, 100);
+	
+	//GOOD POSITION
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 200);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 250, 68);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 235, 85);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 245, 103);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 270, 86);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 300, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 273, 198);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 337, 179 );
+	
+	*/
 
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 600, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 800, 100);
