@@ -8,7 +8,7 @@ class Enemy_YellowBall2 : public Enemy
 private:
 	int original_y = 0;
 	Animation inflate;
-
+	int shooting_counter = 0;
 
 public:
 
