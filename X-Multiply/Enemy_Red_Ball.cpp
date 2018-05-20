@@ -5,7 +5,6 @@
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModuleAudio.h"
-#include "SDL/include/SDL_timer.h"
 
 Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
 {

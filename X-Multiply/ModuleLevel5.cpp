@@ -137,9 +137,11 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1094, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1630, 18);*/
 	
+	//Drops
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 500, 20);
 	
 	//GOOD POSITION
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
+	/*App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 450, 30);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 510, 25);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 575, 202);
@@ -177,7 +179,7 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 700, 50);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 725, 60);
 		
-
+*/
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
 

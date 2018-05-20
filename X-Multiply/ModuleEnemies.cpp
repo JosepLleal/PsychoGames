@@ -15,6 +15,7 @@
 #include "Enemy_Red_Ball4.h"
 #include "Enemy_Red_Ball5.h"
 
+#include "Enemy_Drop.h"
 #include "Enemy_YellowBall.h"
 #include "Enemy_YellowBall2.h"
 #include "Diamond_Wall.h"
@@ -40,6 +41,7 @@ bool ModuleEnemies::Start()
 
 	//Loading FX
 	redball = App->audio->LoadFX("Sound/xmultipl-100.wav");
+	//drop = App->audio->LoadFX("Sound/")
 	yellow_ball = App->audio->LoadFX("Sound/xmultipl-094.wav");
 
 	return true;
@@ -111,6 +113,7 @@ bool ModuleEnemies::CleanUp()
 	LOG("Freeing all enemies");
 
 	App->textures->Unload(sprites);
+	//App->audio->UnloadFX(drop);
 	App->audio->UnloadFX(redball);
 	App->audio->UnloadFX(yellow_ball);
 
@@ -173,6 +176,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::REDBALL5:
 			enemies[i] = new Enemy_Red_Ball5(info.x, info.y);
+			break;
+		case ENEMY_TYPES::DROP: 
+			enemies[i] = new Enemy_Drop(info.x, info.y);
 			break;
 		case ENEMY_TYPES::YELLOWBALL:
 			enemies[i] = new Enemy_YellowBall(info.x, info.y);
