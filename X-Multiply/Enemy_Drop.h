@@ -9,6 +9,8 @@ private:
 	
 	int original_y = 0;
 	Animation drop; 
+	Animation drop2;
+	Animation drop3;
 	int counter = 0; 
 
 public:

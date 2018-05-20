@@ -9,7 +9,7 @@
 Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 {
 
-	life = 1000; 
+	life = 1; 
 
 	original_position.y = y;
 
@@ -28,30 +28,24 @@ Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 
 void Enemy_Drop::Move()
 {
-	/*counter++;
-	while (counter == 100)
+	counter++;
+	if (counter == 100)
 	{
-		drop.PushBack({ 295, 125, 11, 14 }); 
-		collider->rect.h = 14;
-		collider->rect.w = 11;
-		position.y += 1; 
-		if (position.y == 100) 
-		{ 
-			counter = 101; 
-			break; 
-		}
+		animation = &drop2;
+		drop2.PushBack({ 295, 125, 11, 14 });
+		
 	}
-	while (counter == 102)
+	else if (counter == 110)
 	{
-		drop.PushBack({ 310, 127, 13, 13 });
-		collider->rect.h = 13;
-		collider->rect.w = 13;
-		position.y += 1; 
-		if (collider->type == COLLIDER_WALL)
-		{
-			drop.PushBack({ 332, 131, 17, 9 }); 
-			drop.PushBack({ 359, 133, 25, 7 });
-		}
-	} */
+		animation = &drop3;
+		drop3.PushBack({ 310, 127, 13, 13 });
+		
+	}
+	if (counter >= 100)
+	{
+		position.y += counter / 45;
+	}
+	
+	
 }
 
