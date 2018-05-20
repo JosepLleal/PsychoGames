@@ -11,14 +11,17 @@ private:
 	Animation drop; 
 	Animation drop2;
 	Animation drop3;
+
+	Animation splash;
 	int counter = 0; 
+	int counter2 = 0;
 
 public:
 
 	iPoint original_position;
 	Enemy_Drop(int x, int y);
 	void Move();
-	//void Enemy_Drop::OnCollision(Collider* collider);
+	void Enemy_Drop::OnCollision(Collider* collider);
 };
 
 #endif // __ENEMY_DROP_H__
