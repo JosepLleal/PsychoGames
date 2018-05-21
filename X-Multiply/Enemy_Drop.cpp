@@ -28,17 +28,33 @@ Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 	splash.PushBack({ 332, 130, 17, 9 });
 	splash.PushBack({ 358, 130, 27, 11 });
 	splash.PushBack({200, 160, 29, 13 });
-	splash.speed = 0.5f;
+	splash.speed = 0.4f;
 	splash.loop = false;
+
+	splash2.PushBack({ 196, 192, 44, 21 });
+	splash2.PushBack({ 250, 179, 49, 35 });
+	splash2.PushBack({ 306, 190, 46, 24 });
+	splash2.PushBack({ 362, 194, 32, 20 });
+	splash2.PushBack({ 200, 221, 34, 40 });
+	splash2.PushBack({ 248, 241, 39, 19 });
+	splash2.PushBack({ 293, 242, 46, 17 });
+	splash2.PushBack({ 344, 244, 56, 15 });
+	splash2.PushBack({ 201, 277, 54, 13 });
+	//splash2.PushBack({ 258, 276, 35, 17 });
+	//splash2.PushBack({ 294, 277, 55, 23 });
+	splash2.speed = 0.1f;
+	splash2.loop = false;
+	
+
 }
 
 void Enemy_Drop::Move()
 {
 	if (animation == &drop || animation == &drop2 || animation == &drop3)
 	{
-		counter2 = 0;
-
 		counter++;
+		splash.Reset();
+		splash2.Reset();
 		if (counter == 100)
 		{
 			animation = &drop2;
@@ -58,13 +74,26 @@ void Enemy_Drop::Move()
 	}
 	else if(animation == &splash)
 	{
-		counter2++;
+
 		counter = 0;
 		position.y += 0;
 
-		if (counter2 == 20) 
+		if (splash.Finished() == true) 
 		{
 			animation = &drop;
+			drop.Reset();
+			position.y = original_position.y;
+		}
+	}
+	else if (animation == &splash2)
+	{
+		counter = 0;
+		position.y += 0;
+
+		if (splash2.Finished() == true)
+		{
+			animation = &drop;
+			drop.Reset();
 			position.y = original_position.y;
 		}
 	}
@@ -77,6 +106,10 @@ void Enemy_Drop::OnCollision(Collider* collider)
 	if (collider->type == COLLIDER_WALL)
 	{
 		animation = &splash;
+	}
+	else if (collider->type == COLLIDER_NONE)
+	{
+		animation = &splash2;
 	}
 }
 

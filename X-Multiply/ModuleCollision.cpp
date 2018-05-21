@@ -46,7 +46,6 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY][COLLIDER_BOMB] = true;
 	matrix[COLLIDER_ENEMY][COLLIDER_DIAMOND] = false;
 
-	matrix[COLLIDER_ENEMY][COLLIDER_NONE] = false;
 
 	//COLLIDER_PLAYER_SHOT CONDITIONS
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_WALL] = true;

@@ -46,7 +46,7 @@ bool ModuleLevel5::Start()
 	App->enemies->Enable();
 	App->powerup->Enable();
 
-	App->render->camera.x = 0;
+	App->render->camera.x = 3100; //3100
 	App->render->camera.y = 0;
 
 	//-----------------------------------------//
@@ -128,15 +128,18 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 1368, 228, 20, 10 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1464, 228, 80, 10 }, COLLIDER_WALL);
 
-	//COllider for Diamond animation
+	//COllider for Diamond and Drop animation
 	App->collision->AddCollider({ 708, 90, 1, 30 }, COLLIDER_NONE);
     App->collision->AddCollider({ 1102, 80, 1, 40 }, COLLIDER_NONE);
+
+	App->collision->AddCollider({ 3534, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
 
 	//Diamonds
 	/*App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 700, 90);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1094, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1630, 18);*/
-	
+
 	//Drops
 	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 500, 20);
 	
