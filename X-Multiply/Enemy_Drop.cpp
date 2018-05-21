@@ -12,6 +12,7 @@ Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 	life = 1000; 
 
 	original_position.y = y;
+	original_position.x = x;
 
 	collider = App->collision->AddCollider({ 0, 0, 13, 7 }, COLLIDER_TYPE::COLLIDER_DIAMOND, (Module*)App->enemies);
 
@@ -93,9 +94,11 @@ void Enemy_Drop::Move()
 
 		if (splash2.Finished() == true)
 		{
+			counter2 = 0;
 			animation = &drop;
 			drop.Reset();
 			position.y = original_position.y;
+			position.x = original_position.x;
 		}
 	}
 	
@@ -110,8 +113,14 @@ void Enemy_Drop::OnCollision(Collider* collider)
 	}
 	else if (collider->type == COLLIDER_NONE)
 	{
+		counter2++;
 		animation = &splash2;
-		//position.y += 1; 
+		if (counter == 0)
+		{
+			position.y -= 17;
+			position.x -= 17;
+		}
+		
 
 	}
 }
