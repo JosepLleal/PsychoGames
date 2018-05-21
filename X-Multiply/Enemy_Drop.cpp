@@ -31,15 +31,15 @@ Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 	splash.speed = 0.4f;
 	splash.loop = false;
 
-	splash2.PushBack({ 196, 192, 44, 21 });
-	splash2.PushBack({ 250, 179, 49, 35 });
-	splash2.PushBack({ 306, 190, 46, 24 });
-	splash2.PushBack({ 362, 194, 32, 20 });
-	splash2.PushBack({ 200, 221, 34, 40 });
-	splash2.PushBack({ 248, 241, 39, 19 });
-	splash2.PushBack({ 293, 242, 46, 17 });
-	splash2.PushBack({ 344, 244, 56, 15 });
-	splash2.PushBack({ 201, 277, 54, 13 });
+	splash2.PushBack({ 195, 175, 45, 38 });
+	splash2.PushBack({ 250, 175, 50, 38 });
+	splash2.PushBack({ 307, 175, 47, 38 });
+	splash2.PushBack({ 360, 175, 36, 38 });
+	splash2.PushBack({ 404, 175, 37, 38 });
+	splash2.PushBack({ 454, 175, 41, 38 });
+	splash2.PushBack({ 499, 175, 47, 38 });
+	splash2.PushBack({ 549, 175, 58, 38 });
+	splash2.PushBack({ 612, 175, 55, 38 });
 	//splash2.PushBack({ 258, 276, 35, 17 });
 	//splash2.PushBack({ 294, 277, 55, 23 });
 	splash2.speed = 0.1f;
@@ -90,6 +90,7 @@ void Enemy_Drop::Move()
 		counter = 0;
 		position.y += 0;
 
+
 		if (splash2.Finished() == true)
 		{
 			animation = &drop;
@@ -110,6 +111,8 @@ void Enemy_Drop::OnCollision(Collider* collider)
 	else if (collider->type == COLLIDER_NONE)
 	{
 		animation = &splash2;
+		//position.y += 1; 
+
 	}
 }
 

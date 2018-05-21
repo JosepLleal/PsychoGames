@@ -37,7 +37,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 	//enemies sprites
-	sprites = App->textures->Load("image/lvl5_enemies.png");
+	sprites = App->textures->Load("image/lvl5_enemies2.png");
 
 	//Loading FX
 	redball = App->audio->LoadFX("Sound/xmultipl-100.wav");
