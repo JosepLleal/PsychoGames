@@ -43,6 +43,7 @@ bool ModuleEnemies::Start()
 	redball = App->audio->LoadFX("Sound/xmultipl-100.wav");
 	//drop = App->audio->LoadFX("Sound/")
 	yellow_ball = App->audio->LoadFX("Sound/xmultipl-094.wav");
+	diamond_fall = App->audio->LoadFX("Sound/xmultipl-080.wav");
 
 	return true;
 }
@@ -116,6 +117,7 @@ bool ModuleEnemies::CleanUp()
 	//App->audio->UnloadFX(drop);
 	App->audio->UnloadFX(redball);
 	App->audio->UnloadFX(yellow_ball);
+	App->audio->UnloadFX(diamond_fall);
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{

@@ -34,6 +34,7 @@ public:
 	uint redball;
 	uint drop; 
 	uint yellow_ball;//FX
+	uint diamond_fall;
 
 private:
 

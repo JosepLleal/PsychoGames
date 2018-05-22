@@ -9,7 +9,7 @@
 
 Enemy_YellowBall2::Enemy_YellowBall2(int x, int y) : Enemy(x, y)
 {
-	life = 1;
+	life = 2;
 
 	inflate.PushBack({ 184, 400, 24, 30 });
 	inflate.PushBack({ 214, 400, 25, 35 });
@@ -55,8 +55,12 @@ void Enemy_YellowBall2::Move()
 }
 void Enemy_YellowBall2::OnCollision(Collider* collider)
 {
-	App->audio->ChunkPlay(App->enemies->yellow_ball);
-	App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
-	shooting_counter = 0;
+	if(life == 1)
+	{
+		App->audio->ChunkPlay(App->enemies->yellow_ball);
+		App->particles->AddParticle(App->particles->explosion_enemy, position.x, position.y);
+		shooting_counter = 0;
+	}
 }
+	
 

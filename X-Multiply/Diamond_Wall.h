@@ -11,6 +11,8 @@ private:
 	int original_y = 0;
 	Animation idle;
 
+	int counter = 0;
+
 public:
 
 	Diamond_Wall(int x, int y);

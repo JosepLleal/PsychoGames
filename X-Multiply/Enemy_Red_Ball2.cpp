@@ -6,7 +6,7 @@
 #include "SDL/include/SDL_timer.h"
 #include "ModuleAudio.h"
 #include "ModuleEnemies.h"
-
+#include "ModulePlayer.h"
 Enemy_Red_Ball2::Enemy_Red_Ball2(int x, int y) : Enemy(x, y)
 {
 
@@ -78,5 +78,10 @@ void Enemy_Red_Ball2::OnCollision(Collider* collider_)
 		collider->rect.h = 13;
 		collider->rect.w = 15;
 	}
+	else if (life == 1)
+	{
+		App->player->score += 100;
+	}
+
 
 }

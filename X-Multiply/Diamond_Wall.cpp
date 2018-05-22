@@ -2,6 +2,8 @@
 #include "Diamond_Wall.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "ModuleAudio.h"
+#include "ModuleEnemies.h"
 
 
 Diamond_Wall::Diamond_Wall(int x, int y) : Enemy(x, y)
@@ -13,7 +15,7 @@ Diamond_Wall::Diamond_Wall(int x, int y) : Enemy(x, y)
 
 	animation = &idle;
 
-	original_y = y;
+	original_position.y = y;
 
 	collider = App->collision->AddCollider({ 0, 0, Width, Height }, COLLIDER_TYPE::COLLIDER_DIAMOND, (Module*)App->enemies);
 

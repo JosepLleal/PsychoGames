@@ -66,7 +66,7 @@ bool ModulePlayer::Start()
 	speedup_anim = false;
 	Bomb = false;
 	
-	position.x = 150;
+	position.x = 100;
 	position.y = 120;
 
 	App->render->camera.x = 0;
