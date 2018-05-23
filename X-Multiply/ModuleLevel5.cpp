@@ -138,16 +138,27 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL2, 1095, 100);
 	App->collision->AddCollider({1100, 120, 2, 40}, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1647, 140);
+	App->collision->AddCollider({ 1652, 160, 2, 40 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
+	App->collision->AddCollider({ 1995, 160, 2, 40 }, COLLIDER_NONE);
+	/*App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
+	App->collision->AddCollider({ 11, 120, 2, 40 }, COLLIDER_NONE);*/
 
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2158, 40);
+	App->collision->AddCollider({ 2163, 60, 2, 40 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2192, 40);
+	App->collision->AddCollider({ 2197, 60, 2, 40 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2226, 40);
+	App->collision->AddCollider({ 2231, 60, 2, 40 }, COLLIDER_NONE);
 
 	//Drops
 	App->collision->AddCollider({ 3534, 230, 13, 1 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3214, 67);
+
+
+
 
 	
 	//GOOD POSITION
