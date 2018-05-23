@@ -108,8 +108,8 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 2177, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
 	App->collision->AddCollider({ 2192, 163, 18, 75 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2210, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
-	App->collision->AddCollider({ 2225, 153, 15, 85 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2240, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
+	App->collision->AddCollider({ 2225, 153, 20, 85 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2244, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
 
 	//BOTTOM FIXES
 	App->collision->AddCollider({ 224, 214, 15, 24 }, COLLIDER_WALL);
@@ -137,6 +137,13 @@ bool ModuleLevel5::Start()
 	//Diamonds
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL2, 1095, 100);
 	App->collision->AddCollider({1100, 120, 2, 40}, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1647, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2158, 40);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2192, 40);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2226, 40);
 
 	//Drops
 	App->collision->AddCollider({ 3534, 230, 13, 1 }, COLLIDER_NONE);
@@ -215,6 +222,52 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1380, 140);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1385, 150);
 	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1400, 170);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1400, 170);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1418  , 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1455, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1455, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1558, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1581, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1608, 97);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1608, 154);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1647, 117);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1647, 174);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1673, 146);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1682, 134);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1695, 116);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1718, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1837, 139);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1863, 20);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1869, 63);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1877, 86);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1869, 113);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1938, 34);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1964, 62);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1986, 120);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1986, 200);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1998, 62);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2100, 42);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2110, 32);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2152, 32);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2185, 46);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2201, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2222, 46);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2235, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2265, 30);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 2324, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 2355, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 2355, 202);
+
+
 
 
 	//HUD hitbox
