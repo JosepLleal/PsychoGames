@@ -35,8 +35,7 @@ void Enemy_Red_Ball3::OnCollision(Collider* collider_)
 		two.PushBack({ 56, 208, 27, 32 });
 		two.speed = 0.0f;
 
-		position.x += 1;
-		position.y += 1;
+		
 
 		collider->rect.h = 32;
 		collider->rect.w = 27;
@@ -48,9 +47,7 @@ void Enemy_Red_Ball3::OnCollision(Collider* collider_)
 		three.PushBack({ 93, 214, 22, 26 });
 		three.speed = 0.0f;
 
-		position.x += 3;
-		position.y += 4;
-
+		
 		collider->rect.h = 26;
 		collider->rect.w = 22;
 	}
@@ -60,8 +57,7 @@ void Enemy_Red_Ball3::OnCollision(Collider* collider_)
 		four.PushBack({ 126, 214, 19, 21 });
 		four.speed = 0.0f;
 
-		position.x += 3;
-		position.y += 3;
+		
 
 		collider->rect.h = 21;
 		collider->rect.w = 19;
@@ -72,8 +68,7 @@ void Enemy_Red_Ball3::OnCollision(Collider* collider_)
 		five.PushBack({ 160, 154, 15, 13 });
 		five.speed = 0.0f;
 
-		position.x += 3;
-		position.y += 3;
+		
 
 		collider->rect.h = 13;
 		collider->rect.w = 15;

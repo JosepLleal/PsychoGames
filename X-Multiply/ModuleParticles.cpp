@@ -66,9 +66,14 @@ ModuleParticles::ModuleParticles()
 	shot_impact.anim.PushBack({ 163, 34, 12, 12 });*/
 
 	shot.anim.PushBack({ 64, 38, 16, 5 });
-	shot.anim.speed = 0.1f;
+	shot.anim.speed = 0.0f;
 	shot.speed.x = 7;
 	shot.life = 950;
+
+	tent_shot.anim.PushBack({ 115, 38, 12, 5 });
+	tent_shot.anim.speed = 0.0f;
+	tent_shot.speed.x = 7;
+	tent_shot.life = 950;
 
 	bomb_explosion.anim.PushBack({ 47, 173, 30, 28 });
 	bomb_explosion.anim.PushBack({ 80, 173, 30, 28 });

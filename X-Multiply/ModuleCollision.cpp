@@ -19,6 +19,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_WALL][COLLIDER_HUD] = false; 
 	matrix[COLLIDER_WALL][COLLIDER_BOMB] = true;
 	matrix[COLLIDER_WALL][COLLIDER_DIAMOND] = true;
+	matrix[COLLIDER_WALL][COLLIDER_TENTACLES] = false;
 	
 
 	//COLLIDER_PLAYER CONDITIONS
@@ -32,6 +33,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER][COLLIDER_BOMB] = false;
 	matrix[COLLIDER_PLAYER][COLLIDER_DIAMOND] = true;
 	matrix[COLLIDER_PLAYER][COLLIDER_NONE] = false;
+	matrix[COLLIDER_PLAYER][COLLIDER_TENTACLES] = false;
 	
 
 
@@ -45,6 +47,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY][COLLIDER_HUD] = false; 
 	matrix[COLLIDER_ENEMY][COLLIDER_BOMB] = true;
 	matrix[COLLIDER_ENEMY][COLLIDER_DIAMOND] = false;
+	matrix[COLLIDER_ENEMY][COLLIDER_TENTACLES] = true;
 
 
 	//COLLIDER_PLAYER_SHOT CONDITIONS
@@ -57,6 +60,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_HUD] = true; 
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_BOMB] = false;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_DIAMOND] = true;
+	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_TENTACLES] = false;
 	
 
 	//ENEMY_SHOT COLLIDER CONDITIONS
@@ -69,6 +73,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_HUD] = true; 
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_BOMB] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_DIAMOND] = false;
+	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_TENTACLES] = true;
 
 
 	//COLLIDER_POWERUP CONDITIONS
@@ -81,6 +86,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_POWERUP][COLLIDER_HUD] = false; 
 	matrix[COLLIDER_POWERUP][COLLIDER_BOMB] = false;
 	matrix[COLLIDER_POWERUP][COLLIDER_DIAMOND] = false;
+	matrix[COLLIDER_POWERUP][COLLIDER_TENTACLES] = false;
 
 
 	//COLLIDER_HUD CONDITIONS 
@@ -93,6 +99,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_HUD][COLLIDER_HUD] = false; 
 	matrix[COLLIDER_HUD][COLLIDER_BOMB] = false;
 	matrix[COLLIDER_HUD][COLLIDER_DIAMOND] = false;
+	matrix[COLLIDER_HUD][COLLIDER_TENTACLES] = false;
 	
 
 	//COLLIDER_HUD CONDITIONS 
@@ -104,7 +111,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_BOMB][COLLIDER_POWERUP] = false;
 	matrix[COLLIDER_BOMB][COLLIDER_HUD] = true;
 	matrix[COLLIDER_BOMB][COLLIDER_DIAMOND] = true;
-
+	matrix[COLLIDER_BOMB][COLLIDER_TENTACLES] = false;
 
 	//COLLIDER_DIAMOND CONDITIONS 
 	matrix[COLLIDER_DIAMOND][COLLIDER_PLAYER_SHOT] = false;
@@ -116,8 +123,20 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_DIAMOND][COLLIDER_HUD] = false;
 	matrix[COLLIDER_DIAMOND][COLLIDER_BOMB] = true;
 	matrix[COLLIDER_DIAMOND][COLLIDER_DIAMOND] = false;
-	
 	matrix[COLLIDER_DIAMOND][COLLIDER_NONE] = true;
+	matrix[COLLIDER_DIAMOND][COLLIDER_TENTACLES] = false;
+
+	//COLLIDER_TENTACLES
+	matrix[COLLIDER_TENTACLES][COLLIDER_PLAYER_SHOT] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_ENEMY_SHOT] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_WALL] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_ENEMY] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_PLAYER] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_POWERUP] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_HUD] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_BOMB] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_DIAMOND] = false;
+	matrix[COLLIDER_TENTACLES][COLLIDER_NONE] = false;
 
 	
 }
@@ -227,6 +246,9 @@ void ModuleCollision::DebugDraw()
 			break;
 			case COLLIDER_DIAMOND: //grey
 			App->render->DrawQuad(colliders[i]->rect, 128, 128, 128, alpha);
+			break;
+			case COLLIDER_TENTACLES: //green
+				App->render->DrawQuad(colliders[i]->rect, 0, 255, 0, alpha);
 			break;
 			
 		}
