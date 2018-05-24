@@ -45,6 +45,16 @@ ModulePlayer::ModulePlayer()
 	speedboost.PushBack({ 102,168,42,14 });
 	speedboost.loop = true;
 	speedboost.speed = 0.2f;
+
+	//tentacles
+	tentacles.PushBack({ 90, 19, 19, 8 });
+	tentacles.PushBack({ 122, 19, 19, 7 });
+	tentacles.PushBack({ 154, 19, 19, 6 });
+	tentacles.PushBack({ 185, 20, 19, 7 });
+	tentacles.PushBack({ 10, 34, 19, 10 });
+	tentacles.loop = true;
+	tentacles.speed = 0.03f;
+
 }
 
 ModulePlayer::~ModulePlayer()
@@ -65,15 +75,23 @@ bool ModulePlayer::Start()
 	godmode = false;
 	speedup_anim = false;
 	Bomb = false;
+
+	idle_movement = true;
+	
 	
 	position.x = 100;
 	position.y = 120;
+
+	tent1_pos.y = position.y - 25;
+	tent2_pos.y = position.y + 25;
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 	
 
 	playerHitbox = App->collision->AddCollider({ position.x, position.y, 7, 6 }, COLLIDER_PLAYER, this);
+	t1 = App->collision->AddCollider({ tent1_pos.x, tent1_pos.y, 19, 7 }, COLLIDER_TENTACLES);
+	t2 = App->collision->AddCollider({ tent2_pos.x, tent2_pos.y, 19, 7 }, COLLIDER_TENTACLES);
 
 	// X-Multiply font
 	font_score = App->fonts->Load("image/fonts_xmultiply2.png", "0123456789ם.-=יט()ףעבת`´!?abcdefghijklmnopqrstuvwxyz", 2);
@@ -103,7 +121,41 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	//position.x += 1; // Automatic movement
+	//tentacles position
+	
+
+	t1->SetPos(tent1_pos.x, tent1_pos.y);
+	t2->SetPos(tent2_pos.x, tent2_pos.y);
+	if (forward == false && backward == false)
+	{
+		tent1_pos.y = position.y - 35;
+		tent2_pos.y = position.y + 45;
+		tent1_pos.x = position.x + 12;
+		tent2_pos.x = position.x + 12;
+	}
+	else if (forward == true)
+	{
+		tent1_pos.y = position.y - 15;
+		tent2_pos.y = position.y + 25;
+		tent1_pos.x = position.x - 25;
+		tent2_pos.x = position.x - 25;
+	}
+	else if (backward == true)
+	{
+		tent1_pos.y = position.y - 15;
+		tent2_pos.y = position.y + 25;
+		tent1_pos.x = position.x + 35;
+		tent2_pos.x = position.x + 35;
+	}
+	
+	if (destroyed == false)
+	{
+		App->render->Blit(graphics, tent1_pos.x, tent1_pos.y, &(tentacles.GetCurrentFrame()));
+		App->render->Blit(graphics, tent2_pos.x, tent2_pos.y, &(tentacles.GetCurrentFrame()));
+	}
+
+
+
 
 	if (speedup_anim == true) {
 		if (counter <70) {
@@ -155,14 +207,23 @@ update_status ModulePlayer::Update()
 		if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT || App->input->controller[LEFT] == KEY_STATE::KEY_REPEAT )
 		{
 			position.x -= speed;
-			
+			backward = true;
+		}
+		else
+		{
+			backward = false;
 		}
 		
 
 		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT || App->input->controller[RIGHT] == KEY_STATE::KEY_REPEAT )
 		{
 			position.x += speed;
+			forward = true;
 			
+		}
+		else 
+		{
+			forward = false; 
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT || App->input->controller[DOWN] == KEY_STATE::KEY_REPEAT )
@@ -191,6 +252,8 @@ update_status ModulePlayer::Update()
 		if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->controller[BUTTON_A] == KEY_STATE::KEY_DOWN) && destroyed == false)
 		{
 			App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
+			App->particles->AddParticle(App->particles->tent_shot, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_PLAYER_SHOT);
+			App->particles->AddParticle(App->particles->tent_shot, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_PLAYER_SHOT);
 			App->audio->ChunkPlay(shot);
 		}
 
