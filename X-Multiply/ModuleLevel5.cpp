@@ -81,12 +81,16 @@ bool ModuleLevel5::Start()
 	//TOP SQUARES 
 	App->collision->AddCollider({ 1977, 18, 80, 45 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2147, 18, 110, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2695, 18, 20, 20 }, COLLIDER_WALL); //bigBox1
+	App->collision->AddCollider({ 2715, 18, 110, 45 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2825, 18, 20, 20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2885, 18, 110, 45 }, COLLIDER_WALL); //bigBox2
+	App->collision->AddCollider({ 2995, 18, 20, 20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2865, 18, 20, 20 }, COLLIDER_WALL);
 
 	//BOTTOM ALL LEVEL 
-	App->collision->AddCollider({ 200, 238, 2201, 18 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 200, 238, 2199, 18 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2417, 238, 280, 18 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2721, 238, 112, 18 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2881, 238, 112, 18 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3080, 232, 1550, 24 }, COLLIDER_WALL);
 
 	//BOTTOM COLUMNS
@@ -103,13 +107,42 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 1920, 183, 15, 55 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2033, 146, 15, 92 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2081, 202, 15, 36 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2143, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
-	App->collision->AddCollider({ 2158, 183, 19, 55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2385, 202, 15, 36 }, COLLIDER_WALL); 
+	App->collision->AddCollider({ 2418, 202, 15, 36 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2498, 166, 15, 72 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2642, 146, 15, 92 }, COLLIDER_WALL);
+	
+	//First 4 Columns 
+	App->collision->AddCollider({ 2145, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
+	App->collision->AddCollider({ 2160, 183, 17, 55 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2177, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
 	App->collision->AddCollider({ 2192, 163, 18, 75 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2210, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
-	App->collision->AddCollider({ 2225, 153, 20, 85 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2244, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
+	App->collision->AddCollider({ 2225, 148, 18, 90 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2243, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
+
+	//Second 4 Columns  
+	App->collision->AddCollider({ 2721, 146, 15, 108 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2736, 203, 17, 51 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2753, 146, 15, 108 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2768, 183, 18, 71 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2786, 146, 14, 108 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2800, 168, 18, 90 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2818, 146, 15, 108 }, COLLIDER_WALL);
+
+	//Third 4 Columns  
+	App->collision->AddCollider({ 2881, 146, 15, 108 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2896, 203, 17, 51 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2913, 146, 15, 108 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2928, 183, 18, 71 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2946, 146, 14, 108 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2960, 168, 18, 90 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2978, 146, 15, 108 }, COLLIDER_WALL);
+
+	//TOP FIXES 
+	App->collision->AddCollider({ 272, 18, 15, 12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 368, 18, 15, 20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 560, 18, 15, 20 }, COLLIDER_WALL);
 
 	//BOTTOM FIXES
 	App->collision->AddCollider({ 224, 214, 15, 24 }, COLLIDER_WALL);
@@ -117,6 +150,7 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 384, 214, 15, 24 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 502, 228, 20, 10 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 1424, 214, 15, 24 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2003, 219, 30, 19 }, COLLIDER_WALL);
 
 	//BOTTOM BOXES 
 	App->collision->AddCollider({ 294, 228, 20, 10 }, COLLIDER_WALL);
@@ -138,28 +172,27 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL2, 1095, 100);
 	App->collision->AddCollider({1100, 120, 2, 40}, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1647, 140);
-	App->collision->AddCollider({ 1652, 160, 2, 40 }, COLLIDER_NONE);
+	App->collision->AddCollider({ 1652, 160, 2, 15 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
-	App->collision->AddCollider({ 1995, 160, 2, 40 }, COLLIDER_NONE);
+	App->collision->AddCollider({ 1995, 160, 2, 15 }, COLLIDER_NONE);
 	/*App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
 	App->collision->AddCollider({ 11, 120, 2, 40 }, COLLIDER_NONE);*/
-
-	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2158, 40);
+	//Three diamond together
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2160, 40);
 	App->collision->AddCollider({ 2163, 60, 2, 40 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2192, 40);
-	App->collision->AddCollider({ 2197, 60, 2, 40 }, COLLIDER_NONE);
-	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2226, 40);
-	App->collision->AddCollider({ 2231, 60, 2, 40 }, COLLIDER_NONE);
+	App->collision->AddCollider({ 2197, 60, 2, 25 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2225, 40);
+	App->collision->AddCollider({ 2231, 60, 2, 10 }, COLLIDER_NONE);
+	//Diamond that falls. 
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2400, 100);
+	App->collision->AddCollider({ 2406, 120, 2, 40 }, COLLIDER_NONE);
 
 	//Drops
 	App->collision->AddCollider({ 3534, 230, 13, 1 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3214, 67);
-
-
-
-
 	
 	//GOOD POSITION
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
@@ -278,7 +311,7 @@ bool ModuleLevel5::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 2355, 20);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 2355, 202);
 
-
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 2385, 80); 
 
 
 	//HUD hitbox
