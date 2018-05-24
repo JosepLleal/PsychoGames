@@ -192,13 +192,13 @@ update_status ModulePlayer::Update()
 			Bomb = true;
 		}
 		//PowerUp Bomb ---------------------------------------------------------------------------------------------------
-		if (App->render->camera.x % 250 == 0) cooldown = true;
+
 		if (Bomb == true)
 		{
-			if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && destroyed == false && cooldown == true)
+			if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && destroyed == false && cooldown == 3)
 			{
 				App->particles->AddParticle(App->particles->bomb, position.x + 28, position.y + 3, COLLIDER_BOMB);
-				cooldown = false;
+				cooldown = 0;
 				
 			}
 		}
@@ -255,6 +255,7 @@ update_status ModulePlayer::Update()
 			App->particles->AddParticle(App->particles->tent_shot, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_PLAYER_SHOT);
 			App->particles->AddParticle(App->particles->tent_shot, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_PLAYER_SHOT);
 			App->audio->ChunkPlay(shot);
+			cooldown++;
 		}
 
 

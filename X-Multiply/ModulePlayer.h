@@ -52,7 +52,8 @@ public:
 
 	bool godmode = false;
 	bool destroyed = false;
-	bool cooldown = true;
+
+	uint cooldown = 0;
 
 	//PowerUps---------
 	bool Speedup = false;
