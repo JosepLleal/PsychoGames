@@ -53,7 +53,7 @@ ModulePlayer::ModulePlayer()
 	tentacles.PushBack({ 185, 20, 19, 7 });
 	tentacles.PushBack({ 10, 34, 19, 10 });
 	tentacles.loop = true;
-	tentacles.speed = 0.03f;
+	tentacles.speed = 0.06f;
 
 }
 
@@ -87,6 +87,7 @@ bool ModulePlayer::Start()
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
+	frame = 0.0f;
 	
 
 	playerHitbox = App->collision->AddCollider({ position.x, position.y, 7, 6 }, COLLIDER_PLAYER, this);
@@ -126,28 +127,90 @@ update_status ModulePlayer::Update()
 
 	t1->SetPos(tent1_pos.x, tent1_pos.y);
 	t2->SetPos(tent2_pos.x, tent2_pos.y);
-	if (forward == false && backward == false)
+	if ( (forward == false && backward == false) || (forward == true && backward == true))
+	{
+		if (frame < 0.0f) { frame+=1.0f; }
+		else if (frame > 0.0f) { frame-=1.0f; }
+	
+	}
+	else if (forward == true)
+	{
+		frame+=2.0f;
+		if (frame > 32.0f) { frame = 32.0f; }
+
+	}
+	else if (backward == true)
+	{
+		frame-=2.0f;
+		if (frame < -32.0f) { frame = -32.0f; }
+		
+	}
+
+	// ---------- DIFFERENT TENTACLES POSITION ------------------------
+	if (frame == 0.0f)
 	{
 		tent1_pos.y = position.y - 35;
 		tent2_pos.y = position.y + 45;
 		tent1_pos.x = position.x + 12;
 		tent2_pos.x = position.x + 12;
 	}
-	else if (forward == true)
+	else if (frame == -8.0f)
 	{
-		tent1_pos.y = position.y - 15;
-		tent2_pos.y = position.y + 25;
-		tent1_pos.x = position.x - 25;
-		tent2_pos.x = position.x - 25;
+		tent1_pos.y = position.y - 25;
+		tent2_pos.y = position.y + 35;
+		tent1_pos.x = position.x + 24;
+		tent2_pos.x = position.x + 24;
 	}
-	else if (backward == true)
+	else if (frame == -16.0f)
 	{
 		tent1_pos.y = position.y - 15;
 		tent2_pos.y = position.y + 25;
 		tent1_pos.x = position.x + 35;
 		tent2_pos.x = position.x + 35;
 	}
-	
+	else if (frame == -24.0f)
+	{
+		tent1_pos.y = position.y - 5;
+		tent2_pos.y = position.y + 15;
+		tent1_pos.x = position.x + 40;
+		tent2_pos.x = position.x + 40;
+	}
+	else if (frame == -32.0f)
+	{
+		tent1_pos.y = position.y + 5;
+		tent2_pos.y = position.y + 5;
+		tent1_pos.x = position.x + 45;
+		tent2_pos.x = position.x + 45;
+	}
+	else if (frame == 8.0f)
+	{
+		tent1_pos.y = position.y - 25;
+		tent2_pos.y = position.y + 35;
+		tent1_pos.x = position.x + 0;
+		tent2_pos.x = position.x + 0;
+	}
+	else if (frame == 16.0f)
+	{
+		tent1_pos.y = position.y - 15;
+		tent2_pos.y = position.y + 25;
+		tent1_pos.x = position.x - 25;
+		tent2_pos.x = position.x - 25;
+	}
+	else if (frame == 24.0f)
+	{
+		tent1_pos.y = position.y - 5;
+		tent2_pos.y = position.y + 15;
+		tent1_pos.x = position.x - 30;
+		tent2_pos.x = position.x - 30;
+	}
+	else if (frame == 32.0f)
+	{
+		tent1_pos.y = position.y + 5;
+		tent2_pos.y = position.y + 5;
+		tent1_pos.x = position.x - 35;
+		tent2_pos.x = position.x - 35;
+	}
+	//------------------------------------------------------------------
 	if (destroyed == false)
 	{
 		App->render->Blit(graphics, tent1_pos.x, tent1_pos.y, &(tentacles.GetCurrentFrame()));

@@ -1,4 +1,5 @@
 #include "Application.h"
+
 #include "ModuleInput.h"
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
@@ -61,7 +62,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_BOMB] = false;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_DIAMOND] = true;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_TENTACLES] = false;
-	
+	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_NONE] = false;
 
 	//ENEMY_SHOT COLLIDER CONDITIONS
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_WALL] = true;

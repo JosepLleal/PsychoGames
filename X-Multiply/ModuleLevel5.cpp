@@ -196,19 +196,19 @@ bool ModuleLevel5::Start()
 	
 	//GOOD POSITION
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 450, 30);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 450, 30);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 510, 25);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 575, 202);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 575, 202);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 625, 25);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 673, 20);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 673, 20);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 735, 20);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 735, 202);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 735, 202);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 805, 20);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 893, 195);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 893, 195);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 970, 20);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1055, 202);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1055, 202);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1118, 202);
-	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1290, 25);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1290, 25);
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1340, 200);
 
 
