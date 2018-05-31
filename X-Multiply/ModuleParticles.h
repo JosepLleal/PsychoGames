@@ -71,7 +71,8 @@ public:
 	Particle anemona_shotud3;
 	Particle anemona_shotud4;
 	Particle anemona_shotud5;
-
+	Particle drop_shot;
+	Particle drop_shot2; 
 };
 
 #endif // __MODULEPARTICLES_H__

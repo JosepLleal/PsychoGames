@@ -46,7 +46,7 @@ bool ModuleLevel5::Start()
 	App->enemies->Enable();
 	App->powerup->Enable();
 
-	App->render->camera.x = 0; //3100
+	App->render->camera.x = 3100; //3100
 	App->render->camera.y = 0;
 
 	//-----------------------------------------//

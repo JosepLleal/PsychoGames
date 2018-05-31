@@ -5,6 +5,7 @@
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModuleAudio.h"
+#include "ModuleParticles.h"
 
 Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 {
@@ -78,6 +79,7 @@ void Enemy_Drop::Move()
 
 		counter = 0;
 		position.y += 0;
+	
 
 		if (splash.Finished() == true) 
 		{
@@ -89,20 +91,27 @@ void Enemy_Drop::Move()
 	else if (animation == &splash2)
 	{
 		counter = 0;
+		counter3++;
 		position.y += 0;
 
+		if (counter3 > 50)
+		{
+			if (counter3 == 51) {
+				App->particles->AddParticle(App->particles->drop_shot, original_position.x, original_position.y + 160, COLLIDER_ENEMY_SHOT);
+			}
+		}
 
 		if (splash2.Finished() == true)
 		{
 			counter2 = 0;
+			counter3 = 0; 
 			animation = &drop;
 			drop.Reset();
 			position.y = original_position.y;
 			position.x = original_position.x;
 		}
 	}
-	
-	
+
 }
 
 void Enemy_Drop::OnCollision(Collider* collider)
@@ -120,8 +129,6 @@ void Enemy_Drop::OnCollision(Collider* collider)
 			position.y -= 17;
 			position.x -= 17;
 		}
-		
-
 	}
 }
 

@@ -202,6 +202,18 @@ ModuleParticles::ModuleParticles()
 	anemona_shotud5.speed.y = 1;
 	anemona_shotud5.life = 4000;
 	
+	//drop explosion when touch the water
+	drop_shot.anim.PushBack({ 288, 12, 6, 5 });
+	drop_shot.anim.loop = true;
+	drop_shot.speed.x = 0;
+	drop_shot.speed.y = -2; 
+	drop_shot.life = 4000; 
+
+	drop_shot2.anim.PushBack({ 288, 12, 6, 5 });
+	drop_shot2.anim.loop = false;
+	drop_shot2.speed.x = 0;
+	drop_shot2.speed.y = 2;
+	drop_shot2.life = 4000;
 }
 
 ModuleParticles::~ModuleParticles()
