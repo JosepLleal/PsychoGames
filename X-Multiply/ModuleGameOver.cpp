@@ -30,7 +30,7 @@ bool  ModuleGameOver::Start()
 
 	font_score = App->fonts->Load("Image/fonts.png", "0123456789ם.-=יט()ףעבת`´!?abcdefghijklmnopqrstuvwxyz", 2);
 
-	score +=  + App->player->score;
+	score += App->player->score;
 	
 	return true;
 }

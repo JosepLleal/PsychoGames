@@ -70,7 +70,7 @@ ModuleParticles::ModuleParticles()
 	laser.anim.PushBack({ 234, 389, 191, 13});
 	laser.anim.speed = 0.3f; 
 	laser.speed.x = 7; 
-	laser.life = 950; 
+	laser.life = 950;  
 
 	shot_impact.anim.PushBack({ 82, 34, 12, 12 });
 	shot_impact.anim.PushBack({ 102, 37, 8, 9 });

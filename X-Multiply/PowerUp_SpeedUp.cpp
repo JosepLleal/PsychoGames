@@ -8,8 +8,6 @@
 
 PowerUp_SpeedUp::PowerUp_SpeedUp(int x, int y) : PowerUp(x, y)
 {
-
-
 	fly.PushBack({ 163, 133, 24, 15 });
 
 	fly.speed = 0.0f;

@@ -29,6 +29,7 @@ void PowerUp_Laser::OnCollision(Collider* collider)
 	if (collider->type == COLLIDER_PLAYER)
 	{
 		App->player->Laser = true;
+		App->player->shot1 = false; 
 		App->audio->ChunkPlay(App->powerup->Bomb);
 	}
 }
