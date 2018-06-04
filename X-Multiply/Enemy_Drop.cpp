@@ -79,13 +79,13 @@ void Enemy_Drop::Move()
 
 		counter = 0;
 		position.y += 0;
-	
 
 		if (splash.Finished() == true) 
 		{
 			animation = &drop;
 			drop.Reset();
 			position.y = original_position.y;
+			position.x = original_position.x; 
 		}
 	}
 	else if (animation == &splash2)
@@ -101,10 +101,9 @@ void Enemy_Drop::Move()
 			}
 		}
 
-		if (splash2.Finished() == true)
+		if (splash2.Finished() == true) 
 		{
-			counter2 = 0;
-			counter3 = 0; 
+			counter2 = 0; 
 			animation = &drop;
 			drop.Reset();
 			position.y = original_position.y;
@@ -126,8 +125,8 @@ void Enemy_Drop::OnCollision(Collider* collider)
 		animation = &splash2;
 		if (counter == 0)
 		{
-			position.y -= 17;
-			position.x -= 17;
+			position.y -= 12;
+			position.x -= 15;
 		}
 	}
 }

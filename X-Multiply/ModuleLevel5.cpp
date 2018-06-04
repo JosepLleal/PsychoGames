@@ -46,7 +46,7 @@ bool ModuleLevel5::Start()
 	App->enemies->Enable();
 	App->powerup->Enable();
 
-	App->render->camera.x = 3100; //3100
+	App->render->camera.x = 0;//3100
 	App->render->camera.y = 0;
 
 	//-----------------------------------------//
@@ -88,32 +88,31 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 3470, 24, 15, 40 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3534, 24, 15, 30 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3630, 24, 15, 49 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3662, 24, 15, 30 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3726, 24, 15, 30 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3790, 24, 15, 30 }, COLLIDER_WALL); 
-	App->collision->AddCollider({ 3855, 24, 15, 40 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3918, 24, 15, 30 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3983, 24, 15, 40 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 4045, 24, 15, 30 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 4110, 24, 15, 40 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 4174, 24, 15, 30 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 4238, 24, 15, 49 }, COLLIDER_WALL);//doble
+	App->collision->AddCollider({ 3662, 24, 15, 30 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 3726, 24, 15, 30 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 3790, 24, 15, 30 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 3855, 24, 15, 40 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 3918, 24, 15, 30 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 3983, 24, 15, 40 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 4045, 24, 15, 30 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 4110, 24, 15, 40 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 4174, 24, 15, 30 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 4238, 24, 15, 49 }, COLLIDER_WALL);//double
 	App->collision->AddCollider({ 4270, 24, 15, 49 }, COLLIDER_WALL);//double
-	App->collision->AddCollider({ 4302, 24, 15, 30 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 4366, 24, 15, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4302, 24, 15, 30 }, COLLIDER_WALL);//
+	App->collision->AddCollider({ 4366, 24, 15, 40 }, COLLIDER_WALL);//
 	App->collision->AddCollider({ 4430, 24, 15, 30 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 4526, 24, 15, 49 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 4558, 24, 15, 30 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 4598, 24, 15, 40 }, COLLIDER_WALL);
 
-
 	//TOP SQUARES 
 	App->collision->AddCollider({ 1977, 18, 80, 45 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2147, 18, 110, 18 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2695, 18, 20, 20 }, COLLIDER_WALL); //bigBox1
+	App->collision->AddCollider({ 2695, 18, 20, 20 }, COLLIDER_WALL);//bigBox1
 	App->collision->AddCollider({ 2715, 18, 110, 45 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2825, 18, 20, 20 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 2885, 18, 110, 45 }, COLLIDER_WALL); //bigBox2
+	App->collision->AddCollider({ 2885, 18, 110, 45 }, COLLIDER_WALL);//bigBox2
 	App->collision->AddCollider({ 2995, 18, 20, 20 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2865, 18, 20, 20 }, COLLIDER_WALL);
 
@@ -226,10 +225,45 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 2406, 120, 2, 40 }, COLLIDER_NONE);
 
 	//Drops
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3118, 76);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3151, 57);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3214, 67);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3278, 57);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3374, 76);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3406, 57);
+
 	App->collision->AddCollider({ 3534, 230, 13, 1 }, COLLIDER_NONE);
 	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3214, 67);
+	App->collision->AddCollider({ 3662, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3662, 57);
+	App->collision->AddCollider({ 3726, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3726, 57);
+	App->collision->AddCollider({ 3790, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3790, 57);
+	App->collision->AddCollider({ 3855, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3855, 67);
+	App->collision->AddCollider({ 3918, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3918, 57);
+	App->collision->AddCollider({ 3983, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3983, 67);
+	App->collision->AddCollider({ 4045, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4045, 57);
+	App->collision->AddCollider({ 4110, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4110, 67);
+	App->collision->AddCollider({ 4174, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4174, 57);
+	App->collision->AddCollider({ 4270, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4270, 77);
+	App->collision->AddCollider({ 4302, 229, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4302, 57);
+	App->collision->AddCollider({ 4366, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4366, 67);
+	App->collision->AddCollider({ 4430, 229, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4430, 57);
+	App->collision->AddCollider({ 4526, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4526, 77);
+	App->collision->AddCollider({ 4558, 229, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4558, 57);
 	
 	//GOOD POSITION
 	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
