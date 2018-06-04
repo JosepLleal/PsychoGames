@@ -78,6 +78,35 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 2577, 18, 15, 92 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2610, 18, 15, 55 }, COLLIDER_WALL);
 
+	//TOP SQUARES ON DROPS
+	App->collision->AddCollider({ 3117, 24, 15, 49 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3151, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3214, 24, 15, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3278, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3374, 24, 15, 49 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3406, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3470, 24, 15, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3534, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3630, 24, 15, 49 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3662, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3726, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3790, 24, 15, 30 }, COLLIDER_WALL); 
+	App->collision->AddCollider({ 3855, 24, 15, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3918, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3983, 24, 15, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4045, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4110, 24, 15, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4174, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4238, 24, 15, 49 }, COLLIDER_WALL);//doble
+	App->collision->AddCollider({ 4270, 24, 15, 49 }, COLLIDER_WALL);//double
+	App->collision->AddCollider({ 4302, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4366, 24, 15, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4430, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4526, 24, 15, 49 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4558, 24, 15, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4598, 24, 15, 40 }, COLLIDER_WALL);
+
+
 	//TOP SQUARES 
 	App->collision->AddCollider({ 1977, 18, 80, 45 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2147, 18, 110, 18 }, COLLIDER_WALL);
