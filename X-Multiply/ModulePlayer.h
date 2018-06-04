@@ -61,6 +61,7 @@ public:
 	bool speedup_anim = false;
 
 	bool Bomb = false;
+	bool Laser = false;
 
 	iPoint tent1_pos;
 	iPoint tent2_pos;

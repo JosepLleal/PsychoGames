@@ -320,7 +320,16 @@ update_status ModulePlayer::Update()
 			App->audio->ChunkPlay(shot);
 			cooldown++;
 		}
-
+		//PowerUp Laser 
+		if (Laser == true)
+		{
+			if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+			{
+				App->particles->AddParticle(App->particles->laser, position.x + 28, position.y + 6, COLLIDER_LASER);
+				App->particles->AddParticle(App->particles->tent_shot, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_LASER);
+				App->particles->AddParticle(App->particles->tent_shot, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_LASER);
+			}
+		}
 
 		if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_REPEAT || App->input->controller[BUTTON_A] == KEY_STATE::KEY_REPEAT) && destroyed == false)
 		{

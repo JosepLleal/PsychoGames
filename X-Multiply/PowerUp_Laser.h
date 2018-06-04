@@ -1,3 +1,4 @@
+
 #ifndef __POWERUPLASER_H__
 #define __POWERUPLASER_H__
 

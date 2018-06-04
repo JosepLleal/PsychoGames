@@ -110,6 +110,7 @@
     <ClInclude Include="PowerUp.h" />
     <ClInclude Include="PowerUp_Bomb.h" />
     <ClInclude Include="PowerUp_Enemy.h" />
+    <ClInclude Include="PowerUp_Laser.h" />
     <ClInclude Include="PowerUp_SpeedUp.h" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,7 @@
     <ClCompile Include="PowerUp.cpp" />
     <ClCompile Include="PowerUp_Bomb.cpp" />
     <ClCompile Include="PowerUp_Enemy.cpp" />
+    <ClCompile Include="PowerUp_Laser.cpp" />
     <ClCompile Include="PowerUp_SpeedUp.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
