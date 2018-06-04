@@ -74,6 +74,7 @@ public:
 	Particle anemona_shotud5;
 	Particle drop_shot;
 	Particle drop_shot2; 
+	Particle heartbeat;
 };
 
 #endif // __MODULEPARTICLES_H__

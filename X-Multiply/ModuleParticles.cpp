@@ -218,6 +218,13 @@ ModuleParticles::ModuleParticles()
 	anemona_shotud5.speed.x = 3;
 	anemona_shotud5.speed.y = 1;
 	anemona_shotud5.life = 4000;
+
+	//boss heartbeat
+	heartbeat.anim.PushBack({ 91, 37, 32, 29 });
+	heartbeat.anim.PushBack({ 123, 37, 32, 29 });
+	heartbeat.anim.PushBack({ 155, 37, 32, 31 });
+	heartbeat.anim.loop = true;
+	heartbeat.anim.speed = 0.3f;
 	
 	//drop explosion when touch the water
 	drop_shot.anim.PushBack({ 288, 12, 6, 5 });
