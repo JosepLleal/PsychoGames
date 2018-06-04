@@ -141,6 +141,14 @@ bool ModuleLevel5::Start()
 	App->collision->AddCollider({ 2498, 166, 15, 72 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2642, 146, 15, 92 }, COLLIDER_WALL);
 	
+	//BOTTOM COLUMNS ON DROPS
+	App->collision->AddCollider({ 3117, 166, 15, 66 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3151, 193, 15, 39 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3214, 183, 15, 49 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3278, 193, 15, 39 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3342, 183, 15, 49 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3406, 193, 15, 39 }, COLLIDER_WALL);
+
 	//First 4 Columns 
 	App->collision->AddCollider({ 2145, 126, 15, 112 }, COLLIDER_WALL);//4 Columns
 	App->collision->AddCollider({ 2160, 183, 17, 55 }, COLLIDER_WALL);
