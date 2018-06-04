@@ -57,6 +57,7 @@ public:
 	Particle bomb;
 	Particle bomb_explosion;
 	Particle tent_shot;
+	Particle laser; 
 
 	//enemy particles
 	Particle enemy_shot;

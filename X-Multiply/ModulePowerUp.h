@@ -12,6 +12,7 @@ enum POWERUP_TYPES
 	POWERUP_ENEMY,
 	SPEED_UP,
 	BOMB,
+	LASER
 };
 
 class PowerUp;
@@ -41,6 +42,7 @@ public:
 	uint powerup_killed;
 	uint SpeedUp;
 	uint Bomb;
+	uint Laser; 
 
 private:
 

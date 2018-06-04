@@ -11,6 +11,7 @@
 #include "PowerUp_Enemy.h"
 #include "PowerUp_SpeedUp.h"
 #include "PowerUp_Bomb.h"
+#include "PowerUp_Laser.h"
 #include "ModuleAudio.h"
 
 #define SPAWN_MARGIN 50
@@ -33,6 +34,7 @@ bool ModulePowerUp::Start()
 	powerup_killed = App->audio->LoadFX("sound/xmultipl-055.wav");
 	SpeedUp = App->audio->LoadFX("sound/xmultipl-050.wav");
 	Bomb = App->audio->LoadFX("sound/xmultipl-048.wav");
+	Laser = App->audio->LoadFX("sound/xmultipl-105.wav");
 
 	return true;
 }
@@ -94,6 +96,7 @@ bool ModulePowerUp::CleanUp()
 	App->audio->UnloadFX(powerup_killed);
 	App->audio->UnloadFX(SpeedUp);
 	App->audio->UnloadFX(Bomb);
+	App->audio->UnloadFX(Laser);
 
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
@@ -145,6 +148,10 @@ void ModulePowerUp::SpawnPowerUp(const PowerUpInfo& info)
 			break;
 		case POWERUP_TYPES::BOMB:
 			powerup[i] = new PowerUp_Bomb(info.x, info.y);
+			break;
+
+		case POWERUP_TYPES::LASER:
+			powerup[i] = new PowerUp_Laser(info.x, info.y);
 			break;
 		}
 	}

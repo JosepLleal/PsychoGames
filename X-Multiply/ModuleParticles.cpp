@@ -55,6 +55,23 @@ ModuleParticles::ModuleParticles()
 	player_death.anim.speed = 0.5f;
 	player_death.anim.loop = false;*/
 
+	laser.anim.PushBack({ 322, 199, 8, 10});
+	laser.anim.PushBack({ 234, 213, 24, 13});
+	laser.anim.PushBack({ 234, 228, 40, 15});
+	laser.anim.PushBack({ 236, 246, 54, 13});
+	laser.anim.PushBack({ 234, 260, 72, 15});
+	laser.anim.PushBack({ 236, 278, 86, 12});
+	laser.anim.PushBack({ 234, 292, 104, 15});
+	laser.anim.PushBack({ 236, 310, 118, 13});
+	laser.anim.PushBack({ 234, 324, 136, 15});
+	laser.anim.PushBack({ 236, 342, 150, 13});
+	laser.anim.PushBack({ 234, 356, 168, 15});
+	laser.anim.PushBack({ 236, 374, 182, 12});
+	laser.anim.PushBack({ 234, 389, 191, 13});
+	laser.anim.speed = 0.3f; 
+	laser.speed.x = 7; 
+	laser.life = 950; 
+
 	shot_impact.anim.PushBack({ 82, 34, 12, 12 });
 	shot_impact.anim.PushBack({ 102, 37, 8, 9 });
 	shot_impact.anim.speed = 0.3f;

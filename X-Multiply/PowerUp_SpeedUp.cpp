@@ -5,7 +5,6 @@
 #include "ModulePlayer.h"
 #include "ModuleAudio.h"
 #include "ModulePowerUp.h"
-#include "ModulePlayer.h"
 
 PowerUp_SpeedUp::PowerUp_SpeedUp(int x, int y) : PowerUp(x, y)
 {
