@@ -87,7 +87,7 @@ bool ModulePlayer::Start()
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
-	frame = 0.0f;
+	frame = 0;
 	
 
 	playerHitbox = App->collision->AddCollider({ position.x, position.y, 7, 6 }, COLLIDER_PLAYER, this);
@@ -129,81 +129,81 @@ update_status ModulePlayer::Update()
 	t2->SetPos(tent2_pos.x, tent2_pos.y);
 	if ( (forward == false && backward == false) || (forward == true && backward == true))
 	{
-		if (frame < 0.0f) { frame+=1.0f; }
-		else if (frame > 0.0f) { frame-=1.0f; }
+		if (frame < 0) { frame+=1; }
+		else if (frame > 0) { frame-=1; }
 	
 	}
 	else if (forward == true)
 	{
-		frame+=2.0f;
-		if (frame > 32.0f) { frame = 32.0f; }
+		frame+=2;
+		if (frame > 32) { frame = 32; }
 
 	}
 	else if (backward == true)
 	{
-		frame-=2.0f;
-		if (frame < -32.0f) { frame = -32.0f; }
+		frame-=2;
+		if (frame < -32) { frame = -32; }
 		
 	}
 
 	// ---------- DIFFERENT TENTACLES POSITION ------------------------
-	if (frame == 0.0f)
+	if (frame == 0)
 	{
 		tent1_pos.y = position.y - 35;
 		tent2_pos.y = position.y + 45;
 		tent1_pos.x = position.x + 12;
 		tent2_pos.x = position.x + 12;
 	}
-	else if (frame == -8.0f)
+	else if (frame >= -8 && frame < 0)
 	{
 		tent1_pos.y = position.y - 25;
 		tent2_pos.y = position.y + 35;
 		tent1_pos.x = position.x + 24;
 		tent2_pos.x = position.x + 24;
 	}
-	else if (frame == -16.0f)
+	else if (frame >= -16 && frame < -8)
 	{
 		tent1_pos.y = position.y - 15;
 		tent2_pos.y = position.y + 25;
 		tent1_pos.x = position.x + 35;
 		tent2_pos.x = position.x + 35;
 	}
-	else if (frame == -24.0f)
+	else if (frame >= -24 && frame < -16)
 	{
 		tent1_pos.y = position.y - 5;
 		tent2_pos.y = position.y + 15;
 		tent1_pos.x = position.x + 40;
 		tent2_pos.x = position.x + 40;
 	}
-	else if (frame == -32.0f)
+	else if (frame >= -32 && frame < -16)
 	{
 		tent1_pos.y = position.y + 5;
 		tent2_pos.y = position.y + 5;
 		tent1_pos.x = position.x + 45;
 		tent2_pos.x = position.x + 45;
 	}
-	else if (frame == 8.0f)
+	else if (frame <= 8 && frame > 0)
 	{
 		tent1_pos.y = position.y - 25;
 		tent2_pos.y = position.y + 35;
 		tent1_pos.x = position.x + 0;
 		tent2_pos.x = position.x + 0;
 	}
-	else if (frame == 16.0f)
+	else if (frame <= 16 && frame > 8)
 	{
 		tent1_pos.y = position.y - 15;
 		tent2_pos.y = position.y + 25;
 		tent1_pos.x = position.x - 25;
 		tent2_pos.x = position.x - 25;
 	}
-	else if (frame == 24.0f)
+	else if (frame <=24 && frame > 16)
 	{
 		tent1_pos.y = position.y - 5;
 		tent2_pos.y = position.y + 15;
 		tent1_pos.x = position.x - 30;
 		tent2_pos.x = position.x - 30;
 	}
-	else if (frame == 32.0f)
+	else if (frame <= 32 && frame > 24)
 	{
 		tent1_pos.y = position.y + 5;
 		tent2_pos.y = position.y + 5;

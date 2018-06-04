@@ -27,7 +27,7 @@ public:
 	char score_text[10];
 	uint score = 0;
 	int counter = 0;
-	float frame = 0.0f;
+	int frame = 0;
 
 	Animation* current_animation = nullptr;
 	Animation idle;
