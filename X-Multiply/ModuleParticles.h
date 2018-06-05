@@ -76,6 +76,18 @@ public:
 	Particle drop_shot;
 	Particle drop_shot2; 
 	Particle heartbeat;
+
+	Particle bossattack1;
+	Particle bossattack2;
+	Particle bossattack3;
+	Particle bossattack4;
+	Particle bossattack5;
+
+	Particle bossattack1_back;
+	Particle bossattack2_back;
+	Particle bossattack3_back;
+	Particle bossattack4_back;
+	Particle bossattack5_back;
 };
 
 #endif // __MODULEPARTICLES_H__
