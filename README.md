@@ -26,3 +26,4 @@ Víctor Chen
    - Role: QA
    - [Victor's GitHub Link](https://github.com/Scarzard)
    
+To download the release of the game click [here]()
