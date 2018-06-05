@@ -96,7 +96,17 @@ void Enemy_Boss::Move()
 		if(right_shoot.Finished() == true)
 		{ 
 			shooting_counter++;
-			if (shooting_counter <= 7) { right_shoot.Reset();}
+			if (shooting_counter <= 7) 
+			{ 
+				App->particles->AddParticle(App->particles->bossattack1_back, original_position.x + 10, original_position.y + 10, COLLIDER_ENEMY_SHOT);
+				App->particles->AddParticle(App->particles->bossattack1_back, original_position.x + 10, original_position.y - 10, COLLIDER_ENEMY_SHOT);
+				App->particles->AddParticle(App->particles->bossattack2, original_position.x + 10, original_position.y + 5, COLLIDER_ENEMY_SHOT);
+				App->particles->AddParticle(App->particles->bossattack3, original_position.x + 10, original_position.y + 6, COLLIDER_ENEMY_SHOT);
+				App->particles->AddParticle(App->particles->bossattack4, original_position.x + 10, original_position.y - 5, COLLIDER_ENEMY_SHOT);
+				App->particles->AddParticle(App->particles->bossattack5, original_position.x + 10, original_position.y - 5, COLLIDER_ENEMY_SHOT);
+
+				right_shoot.Reset();
+			}
 			else
 			{
 				shooting_counter = 0;
@@ -129,7 +139,13 @@ void Enemy_Boss::Move()
 		if (left_shoot.Finished() == true)
 		{
 			shooting_counter++;
-			if (shooting_counter <= 7) { left_shoot.Reset(); }
+			if (shooting_counter <= 7) 
+			{ 
+				App->particles->AddParticle(App->particles->bossattack1, original_position.x - 100, original_position.y +17, COLLIDER_ENEMY_SHOT);
+				App->particles->AddParticle(App->particles->bossattack1, original_position.x - 100, original_position.y + 27, COLLIDER_ENEMY_SHOT);
+
+				left_shoot.Reset(); 
+			}
 			else
 			{
 				shooting_counter = 0;
