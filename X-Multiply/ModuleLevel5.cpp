@@ -9,6 +9,7 @@
 #include "ModulePowerUp.h"
 #include "ModuleLevel5.h"
 #include "ModuleAudio.h"
+#include "SDL/include/SDL.h"
 
 ModuleLevel5::ModuleLevel5()
 {
@@ -37,6 +38,8 @@ bool ModuleLevel5::Start()
 	tilemap1 = App->textures->Load("image/Tilemap/LV5_Tilemap.png");
 	hud = App->textures->Load("image/xmultiply_hud.png");
 	diamond = App->textures->Load("image/LV5_diamond.png");
+	opacity = 255;
+	dark_counter = 0;
 
 	App->audio->MusicPlay("Sound/11_Bloody_Bloom_Stage_5_.ogg", 0.5f);
 
@@ -426,6 +429,27 @@ update_status ModuleLevel5::Update()
 		App->render->camera.x += 1 * SCREEN_SIZE;
 		App->player->position.x += 1; 
 	}
+
+	if (App->render->camera.x > 2500 && App->render->camera.x < 3400)
+	{
+		if(fading == false && opacity > 0){ opacity--; }
+		else if (fading == true) { opacity++; }
+
+		if (opacity == 0) 
+		{ 
+			dark_counter++;
+			if(dark_counter == 400)fading = true; 
+		}
+		
+
+		SDL_SetTextureAlphaMod(background, opacity);
+	}
+	else
+	{
+		SDL_SetTextureAlphaMod(background, 255);
+	}
+
+	
 
 	HUDhitbox->SetPos((App->render->camera.x)/1 , App->render->camera.y + 257);
 

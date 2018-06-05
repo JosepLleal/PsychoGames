@@ -22,6 +22,10 @@ public:
 	SDL_Texture* tilemap1 = nullptr;
 	SDL_Texture* diamond = nullptr;
 
+	float opacity;
+	bool fading = false;
+	int dark_counter;
+
 	SDL_Rect background_parallax;
 	SDL_Rect ground_parallax;
 
