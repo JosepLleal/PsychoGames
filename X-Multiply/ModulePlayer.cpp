@@ -265,7 +265,6 @@ update_status ModulePlayer::Update()
 			{
 				App->particles->AddParticle(App->particles->bomb, position.x + 28, position.y + 3, COLLIDER_BOMB);
 				cooldown = 0;
-				
 			}
 		}
 		//----------------------------------------------------------------------------------------------------------------
@@ -285,7 +284,6 @@ update_status ModulePlayer::Update()
 		{
 			position.x += speed;
 			forward = true;
-			
 		}
 		else 
 		{
@@ -318,7 +316,7 @@ update_status ModulePlayer::Update()
 	
 		if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->controller[BUTTON_A] == KEY_STATE::KEY_DOWN) && destroyed == false)
 		{
-			if (shot1 == true)
+			if (Laser == false)
 			{
 				App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
 				App->particles->AddParticle(App->particles->tent_shot, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_PLAYER_SHOT);
@@ -326,14 +324,14 @@ update_status ModulePlayer::Update()
 				App->audio->ChunkPlay(shot);
 				cooldown++;
 			}
-			else if (Laser == true)
+			else 
 			{
-				App->particles->AddParticle(App->particles->laser, position.x, position.y, COLLIDER_LASER);
-				App->particles->AddParticle(App->particles->laser, tent1_pos.x, tent1_pos.y, COLLIDER_LASER);
-				App->particles->AddParticle(App->particles->laser, tent2_pos.x, tent2_pos.y, COLLIDER_LASER);
+				App->particles->AddParticle(App->particles->laser, position.x, position.y + 6, COLLIDER_PLAYER_SHOT);
+				App->particles->AddParticle(App->particles->laser, tent1_pos.x, tent1_pos.y, COLLIDER_PLAYER_SHOT);
+				App->particles->AddParticle(App->particles->laser, tent2_pos.x, tent2_pos.y, COLLIDER_PLAYER_SHOT);
 				App->audio->ChunkPlay(laser);
+				cooldown++;
 			}
-				
 		}
 		
 		
@@ -343,18 +341,18 @@ update_status ModulePlayer::Update()
 		{
 			if (App->render->camera.x % 40 == 0)
 			{
-				if (shot1 == true)
+				if (Laser == false)
 				{
 					App->particles->AddParticle(App->particles->shot, position.x + 28, position.y + 6, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->tent_shot, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->tent_shot, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_PLAYER_SHOT);
 					App->audio->ChunkPlay(shot);
 				}
-				else if (Laser == true)
+				else
 				{
-					App->particles->AddParticle(App->particles->laser, position.x + 28, position.y + 6, COLLIDER_LASER);
-					App->particles->AddParticle(App->particles->laser, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_LASER);
-					App->particles->AddParticle(App->particles->laser, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_LASER);
+					App->particles->AddParticle(App->particles->laser, position.x, position.y, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser, tent1_pos.x, tent1_pos.y, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser, tent2_pos.x , tent2_pos.y, COLLIDER_PLAYER_SHOT);
 					App->audio->ChunkPlay(laser);
 				}
 					

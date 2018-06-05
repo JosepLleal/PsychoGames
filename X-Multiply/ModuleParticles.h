@@ -56,6 +56,7 @@ public:
 	Particle player_death;
 	Particle bomb;
 	Particle bomb_explosion;
+	Particle laser_explosion; 
 	Particle tent_shot;
 	Particle laser; 
 

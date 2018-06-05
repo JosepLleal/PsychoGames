@@ -61,7 +61,6 @@ public:
 	bool Speedup = false;
 	bool speedup_anim = false;
 
-	bool shot1 = true; 
 	bool Bomb = false;
 	bool Laser = false;
 
