@@ -23,14 +23,14 @@ bool  ModuleStageCleared::Start()
 {
 	LOG("Loading GameOver");
 
-	background = App->textures->Load("image/stage1_cleared.png");
+	background = App->textures->Load("image/stage5_cleared.png");
 	App->audio->MusicPlay("Sound/06_Stage_Clear.ogg", 1.5f);
 
 	App->render->camera.x = App->render->camera.y = 0;
 
 	fontscore = App->fonts->Load("Image/fonts.png", "0123456789ם.-=יט()ףעבת`´!?abcdefghijklmnopqrstuvwxyz", 2);
 
-	score1 += 10000 + App->player->score; 
+	score1 += 50000 + App->player->score; 
 
 	return true;
 }
