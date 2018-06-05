@@ -18,6 +18,7 @@
 #include "Enemy_Drop.h"
 #include "Enemy_YellowBall.h"
 #include "Enemy_YellowBall2.h"
+#include "Enemy_Boss.h"
 #include "Diamond_Wall.h"
 #include "Diamond_Wall2.h"
 
@@ -44,6 +45,7 @@ bool ModuleEnemies::Start()
 	//drop = App->audio->LoadFX("Sound/")
 	yellow_ball = App->audio->LoadFX("Sound/xmultipl-094.wav");
 	diamond_fall = App->audio->LoadFX("Sound/xmultipl-080.wav");
+	boss_attack = App->audio->LoadFX("Sound/xmultipl-067.wav");
 
 	return true;
 }

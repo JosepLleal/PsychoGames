@@ -35,6 +35,7 @@ public:
 	uint drop; 
 	uint yellow_ball;//FX
 	uint diamond_fall;
+	uint boss_attack;
 
 private:
 

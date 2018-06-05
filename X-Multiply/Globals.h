@@ -33,6 +33,7 @@ enum ENEMY_TYPES
 	YELLOWBALL2,
 	DIAMOND_WALL,
 	DIAMOND_WALL2,
+	BOSS,
 };
 
 // Useful typedefs ---------

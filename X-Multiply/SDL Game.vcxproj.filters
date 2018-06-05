@@ -143,6 +143,9 @@
     <ClInclude Include="PowerUp_Laser.h">
       <Filter>Modules\PowerUp</Filter>
     </ClInclude>
+    <ClInclude Include="Enemy_Boss.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -255,6 +258,9 @@
     </ClCompile>
     <ClCompile Include="PowerUp_Laser.cpp">
       <Filter>Modules\PowerUp</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy_Boss.cpp">
+      <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
