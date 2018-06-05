@@ -10,7 +10,7 @@
 PowerUp_Laser::PowerUp_Laser(int x, int y) : PowerUp(x, y)
 {
 	box_b.PushBack({ 5, 117, 18, 15 });
-	box_b.speed = 0.0f;
+	box_b.speed = 0.3f;
 	animation = &box_b;
 
 	collider = App->collision->AddCollider({ 0, 0, 18, 15 }, COLLIDER_TYPE::COLLIDER_POWERUP, (Module*)App->powerup);
