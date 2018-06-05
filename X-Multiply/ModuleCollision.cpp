@@ -154,6 +154,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_LASER][COLLIDER_HUD] = true;
 	matrix[COLLIDER_LASER][COLLIDER_BOMB] = false;
 	matrix[COLLIDER_LASER][COLLIDER_DIAMOND] = true;
+	matrix[COLLIDER_LASER][COLLIDER_TENTACLES] = false;
 	matrix[COLLIDER_LASER][COLLIDER_NONE] = false;
 	matrix[COLLIDER_LASER][COLLIDER_LASER] = false; 
 }

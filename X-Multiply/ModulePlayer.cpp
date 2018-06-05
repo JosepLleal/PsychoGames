@@ -69,6 +69,7 @@ bool ModulePlayer::Start()
 	live = App->textures->Load("Image/Lives.png"); 
 
 	shot = App->audio->LoadFX("Sound/xmultipl-122.wav"); //Loading FX of shot
+	laser = App->audio->LoadFX("Sound/xmultipl-121.wav"); //Loading FX of laser
 	death = App->audio->LoadFX("Sound/xmultipl-044.wav"); //Loading FX when player dies
 
 	destroyed = false;
@@ -115,6 +116,7 @@ bool ModulePlayer::CleanUp()
 
 	//Unloading FX
 	App->audio->UnloadFX(shot);
+	App->audio->UnloadFX(laser);
 	App->audio->UnloadFX(death);
 
 	return true;
@@ -329,6 +331,7 @@ update_status ModulePlayer::Update()
 				App->particles->AddParticle(App->particles->laser, position.x, position.y, COLLIDER_LASER);
 				App->particles->AddParticle(App->particles->laser, tent1_pos.x, tent1_pos.y, COLLIDER_LASER);
 				App->particles->AddParticle(App->particles->laser, tent2_pos.x, tent2_pos.y, COLLIDER_LASER);
+				App->audio->ChunkPlay(laser);
 			}
 				
 		}
@@ -352,6 +355,7 @@ update_status ModulePlayer::Update()
 					App->particles->AddParticle(App->particles->laser, position.x + 28, position.y + 6, COLLIDER_LASER);
 					App->particles->AddParticle(App->particles->laser, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_LASER);
 					App->particles->AddParticle(App->particles->laser, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_LASER);
+					App->audio->ChunkPlay(laser);
 				}
 					
 			}

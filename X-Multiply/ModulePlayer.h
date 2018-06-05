@@ -43,6 +43,7 @@ public:
 	Collider* t2;
 
 	uint shot; //fx shot sound
+	uint laser;
 	uint death; //fx when player dies
 
 	int lives = 2; //Lives of Player
