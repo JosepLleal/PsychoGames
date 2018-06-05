@@ -30,4 +30,4 @@ Víctor Chen
 ## Our Game:
 
    
-To download the release of the game click [here]().
+To download the release of the game click [here](https://github.com/JosepLleal/PsychoGames/releases/download/1.0/X-Multiply.v_1.0.zip).
