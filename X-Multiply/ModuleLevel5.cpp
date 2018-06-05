@@ -41,6 +41,8 @@ bool ModuleLevel5::Start()
 	opacity = 255;
 	dark_counter = 0;
 
+	boss = true;
+
 	App->audio->MusicPlay("Sound/11_Bloody_Bloom_Stage_5_.ogg", 0.5f);
 
 	App->player->Enable();
@@ -49,7 +51,7 @@ bool ModuleLevel5::Start()
 	App->enemies->Enable();
 	App->powerup->Enable();
 
-	App->render->camera.x = 0;//3100
+	App->render->camera.x = 3700;//3100
 	App->render->camera.y = 0;
 
 	//-----------------------------------------//
@@ -387,6 +389,8 @@ bool ModuleLevel5::Start()
 
 	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 2385, 80); 
 	
+	
+	
 
 	//HUD hitbox
 	HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
@@ -428,6 +432,19 @@ update_status ModuleLevel5::Update()
 	{
 		App->render->camera.x += 1 * SCREEN_SIZE;
 		App->player->position.x += 1; 
+	}
+	else
+	{
+		if (boss == true)
+		{
+			App->enemies->AddEnemy(ENEMY_TYPES::BOSS, 4400, 30);
+			boss = false;
+		}
+	}
+
+	if (App->render->camera.x == 3900)
+	{
+		App->audio->MusicPlay("Sound/05_Boss_Theme.ogg", 0.5f);
 	}
 
 	if (App->render->camera.x > 2500 && App->render->camera.x < 3400)

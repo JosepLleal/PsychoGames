@@ -196,6 +196,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::DIAMOND_WALL2:
 			enemies[i] = new Diamond_Wall2(info.x, info.y);
 			break;
+		case ENEMY_TYPES::BOSS:
+			enemies[i] = new Enemy_Boss(info.x, info.y);
+			break;
 
 		}
 	}

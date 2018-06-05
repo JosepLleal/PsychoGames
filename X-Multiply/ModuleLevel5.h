@@ -24,6 +24,7 @@ public:
 
 	float opacity;
 	bool fading = false;
+	bool boss = true;
 	int dark_counter;
 
 	SDL_Rect background_parallax;

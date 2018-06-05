@@ -16,6 +16,7 @@ Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 	original_position.x = x;
 
 	collider = App->collision->AddCollider({ 0, 0, 13, 7 }, COLLIDER_TYPE::COLLIDER_DIAMOND, (Module*)App->enemies);
+	
 
 	drop.PushBack({ 198, 127, 13, 7 }); 
 	drop.PushBack({ 214, 126, 13, 9 });
@@ -52,6 +53,8 @@ Enemy_Drop::Enemy_Drop(int x, int y) : Enemy(x, y)
 
 void Enemy_Drop::Move()
 {
+	
+
 	if (animation == &drop || animation == &drop2 || animation == &drop3)
 	{
 		counter++;
