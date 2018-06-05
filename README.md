@@ -6,7 +6,7 @@ In this game, microscopic aliens invade a colony planet in the year 2249, infest
 To combat the alien queen which is currently residing in a human female, a group of scientists 
 construct the X-002, a microscopic fighter ship, which is controlled by the player and its aim is to reach the final stage to end with the plague.
 
-# PsychoGames Members:
+## PsychoGames Members:
    
 ![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team photo")
 
@@ -26,4 +26,8 @@ Víctor Chen
    - Role: QA
    - [Victor's GitHub Link](https://github.com/Scarzard)
    
-To download the release of the game click [here]()
+
+## Our Game:
+
+   
+To download the release of the game click [here]().
