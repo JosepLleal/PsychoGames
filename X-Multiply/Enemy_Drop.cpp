@@ -94,15 +94,8 @@ void Enemy_Drop::Move()
 	else if (animation == &splash2)
 	{
 		counter = 0;
-		counter3++;
 		position.y += 0;
 
-		if (counter3 > 50)
-		{
-			if (counter3 == 51) {
-				App->particles->AddParticle(App->particles->drop_shot, original_position.x, original_position.y + 160, COLLIDER_ENEMY_SHOT);
-			}
-		}
 
 		if (splash2.Finished() == true) 
 		{
