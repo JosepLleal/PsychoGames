@@ -55,7 +55,8 @@ ModuleParticles::ModuleParticles()
 	player_death.anim.speed = 0.5f;
 	player_death.anim.loop = false;*/
 
-	laser.anim.PushBack({ 322, 199, 8, 10});
+	//LASER THAT DOES NOT WORK 
+   /* laser.anim.PushBack({ 322, 199, 8, 10});
 	laser.anim.PushBack({ 234, 213, 24, 13});
 	laser.anim.PushBack({ 234, 228, 40, 15});
 	laser.anim.PushBack({ 236, 246, 54, 13});
@@ -67,10 +68,15 @@ ModuleParticles::ModuleParticles()
 	laser.anim.PushBack({ 236, 342, 150, 13});
 	laser.anim.PushBack({ 234, 356, 168, 15});
 	laser.anim.PushBack({ 236, 374, 182, 12});
-	laser.anim.PushBack({ 234, 389, 191, 13});
+	laser.anim.PushBack({ 234, 389, 191, 13});*/
+
+	laser.anim.PushBack({ 233, 184, 23, 7 });
+	laser.anim.PushBack({ 234, 200, 63, 7 });
+	laser.anim.PushBack({ 265, 184, 91, 7 });
+	laser.anim.loop = false; 
 	laser.anim.speed = 0.3f; 
-	laser.speed.x = 7; 
-	laser.life = 950;  
+	laser.speed.x = 10; 
+	laser.life = 950;
 
 	shot_impact.anim.PushBack({ 82, 34, 12, 12 });
 	shot_impact.anim.PushBack({ 102, 37, 8, 9 });
@@ -97,6 +103,11 @@ ModuleParticles::ModuleParticles()
 	bomb_explosion.anim.PushBack({ 112, 173, 30, 28 });
 	bomb_explosion.anim.speed = 0.3f;
 	bomb_explosion.anim.loop = false;
+
+	laser_explosion.anim.PushBack({ 299, 200, 10, 8 });
+	laser_explosion.anim.PushBack({ 311, 200, 10, 8 }); 
+	laser_explosion.anim.speed = 0.5f; 
+	laser_explosion.anim.loop = true; 
 
 	bomb.anim.PushBack({ 235, 106, 15, 15 });
 	bomb.anim.PushBack({ 253, 106, 15, 15 });
@@ -249,8 +260,6 @@ bool ModuleParticles::Start()
 	LOG("Loading particles");
 	graphics = App->textures->Load("image/particles.png");
 
-	
-
 	return true;
 }
 
@@ -299,8 +308,8 @@ update_status ModuleParticles::Update()
 			}
 
 		}
-		
 	}
+
 
 	return UPDATE_CONTINUE;
 }

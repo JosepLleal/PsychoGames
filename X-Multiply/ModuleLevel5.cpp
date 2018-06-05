@@ -205,187 +205,187 @@ bool ModuleLevel5::Start()
 	
 
 	
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
 
-	////Diamonds
-	//App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL2, 1095, 100);
-	//App->collision->AddCollider({1100, 120, 2, 40}, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1647, 140);
-	//App->collision->AddCollider({ 1652, 160, 2, 15 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
-	//App->collision->AddCollider({ 1995, 160, 2, 15 }, COLLIDER_NONE);
-	///*App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
-	//App->collision->AddCollider({ 11, 120, 2, 40 }, COLLIDER_NONE);*/
-	////Three diamond together
-	//App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2160, 40);
-	//App->collision->AddCollider({ 2163, 60, 2, 40 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2192, 40);
-	//App->collision->AddCollider({ 2197, 60, 2, 25 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2225, 40);
-	//App->collision->AddCollider({ 2231, 60, 2, 10 }, COLLIDER_NONE);
-	////Diamond that falls. 
-	//App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2400, 100);
-	//App->collision->AddCollider({ 2406, 120, 2, 40 }, COLLIDER_NONE);
+	//Diamonds
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL2, 1095, 100);
+	App->collision->AddCollider({1100, 120, 2, 40}, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1647, 140);
+	App->collision->AddCollider({ 1652, 160, 2, 15 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
+	App->collision->AddCollider({ 1995, 160, 2, 15 }, COLLIDER_NONE);
+	/*App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 1990, 140);
+	App->collision->AddCollider({ 11, 120, 2, 40 }, COLLIDER_NONE);*/
+	//Three diamond together
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2160, 40);
+	App->collision->AddCollider({ 2163, 60, 2, 40 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2192, 40);
+	App->collision->AddCollider({ 2197, 60, 2, 25 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2225, 40);
+	App->collision->AddCollider({ 2231, 60, 2, 10 }, COLLIDER_NONE);
+	//Diamond that falls. 
+	App->enemies->AddEnemy(ENEMY_TYPES::DIAMOND_WALL, 2400, 100);
+	App->collision->AddCollider({ 2406, 120, 2, 40 }, COLLIDER_NONE);
 
-	////Drops
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3118, 76);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3151, 57);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3214, 67);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3278, 57);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3374, 76);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3406, 57);
+	//Drops
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3118, 76);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3151, 57);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3214, 67);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3278, 57);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3374, 76);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3406, 57);
 
-	//App->collision->AddCollider({ 3534, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
-	//App->collision->AddCollider({ 3662, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3662, 57);
-	//App->collision->AddCollider({ 3726, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3726, 57);
-	//App->collision->AddCollider({ 3790, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3790, 57);
-	//App->collision->AddCollider({ 3855, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3855, 67);
-	//App->collision->AddCollider({ 3918, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3918, 57);
-	//App->collision->AddCollider({ 3983, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3983, 67);
-	//App->collision->AddCollider({ 4045, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4045, 57);
-	//App->collision->AddCollider({ 4110, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4110, 67);
-	//App->collision->AddCollider({ 4174, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4174, 57);
-	//App->collision->AddCollider({ 4270, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4270, 77);
-	//App->collision->AddCollider({ 4302, 229, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4302, 57);
-	//App->collision->AddCollider({ 4366, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4366, 67);
-	//App->collision->AddCollider({ 4430, 229, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4430, 57);
-	//App->collision->AddCollider({ 4526, 230, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4526, 77);
-	//App->collision->AddCollider({ 4558, 229, 13, 1 }, COLLIDER_NONE);
-	//App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4558, 57);
-	//
-	////GOOD POSITION
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
-	////App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 450, 30);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 510, 25);
-	////App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 575, 202);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 625, 25);
-	////App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 673, 20);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 735, 20);
-	////App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 735, 202);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 805, 20);
-	////App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 893, 195);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 970, 20);
-	////App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1055, 202);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1118, 202);
-	////App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1290, 25);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1340, 200);
-
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 250, 68);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 235, 85);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 245, 103);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 270, 86);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 300, 130);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 273, 198);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 337, 179 );
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 334, 55);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 328, 85);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 345, 80);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 360, 70);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 420, 185);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 435, 179);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 515, 50);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 528, 70);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 530, 90);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 545, 80);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 550, 100);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 624, 160);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 590, 160);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 700, 50);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 725, 60);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 785, 180);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 815, 170);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 920, 160);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 930, 170);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 940, 180);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 990, 80);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1030, 180);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1045, 180);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1050, 110);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1065, 100);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1170, 110);
-
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1340, 70);
+	App->collision->AddCollider({ 3534, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3534, 57);
+	App->collision->AddCollider({ 3662, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3662, 57);
+	App->collision->AddCollider({ 3726, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3726, 57);
+	App->collision->AddCollider({ 3790, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3790, 57);
+	App->collision->AddCollider({ 3855, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3855, 67);
+	App->collision->AddCollider({ 3918, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3918, 57);
+	App->collision->AddCollider({ 3983, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 3983, 67);
+	App->collision->AddCollider({ 4045, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4045, 57);
+	App->collision->AddCollider({ 4110, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4110, 67);
+	App->collision->AddCollider({ 4174, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4174, 57);
+	App->collision->AddCollider({ 4270, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4270, 77);
+	App->collision->AddCollider({ 4302, 229, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4302, 57);
+	App->collision->AddCollider({ 4366, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4366, 67);
+	App->collision->AddCollider({ 4430, 229, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4430, 57);
+	App->collision->AddCollider({ 4526, 230, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4526, 77);
+	App->collision->AddCollider({ 4558, 229, 13, 1 }, COLLIDER_NONE);
+	App->enemies->AddEnemy(ENEMY_TYPES::DROP, 4558, 57);
+	
+	//GOOD POSITION
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 320, 202);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 450, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 510, 25);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 575, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 625, 25);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 673, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 735, 20);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 735, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 805, 20);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 893, 195);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 970, 20);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1055, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1118, 202);
+	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1290, 25);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1340, 200);
 
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1360, 110);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1350, 130);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1380, 140);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1385, 150);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1400, 170);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1400, 170);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1418  , 20);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1455, 20);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1455, 202);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1558, 202);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1581, 130);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1608, 97);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1608, 154);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 250, 68);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 235, 85);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 245, 103);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 270, 86);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1647, 117);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1647, 174);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 300, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 273, 198);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 337, 179 );
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1673, 146);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1682, 134);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1695, 116);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1718, 20);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1837, 139);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1863, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 334, 55);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 328, 85);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 345, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 360, 70);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1869, 63);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1877, 86);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1869, 113);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 420, 185);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 435, 179);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1938, 34);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1964, 62);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 515, 50);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 528, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 530, 90);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 545, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 550, 100);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1986, 120);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1986, 200);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 624, 160);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 590, 160);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1998, 62);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 700, 50);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 725, 60);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2100, 42);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2110, 32);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 785, 180);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 815, 170);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2152, 32);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2185, 46);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2201, 30);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2222, 46);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2235, 30);
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2265, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 920, 160);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 930, 170);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 940, 180);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 2324, 20);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 2355, 20);
-	//App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 2355, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 990, 80);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 2385, 80); 
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1030, 180);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1045, 180);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1050, 110);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1065, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1170, 110);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1340, 70);
+
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1360, 110);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1350, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1380, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1385, 150);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1400, 170);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1400, 170);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1418  , 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1455, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1455, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 1558, 202);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1581, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1608, 97);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1608, 154);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1647, 117);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1647, 174);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1673, 146);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1682, 134);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1695, 116);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1718, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1837, 139);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 1863, 20);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1869, 63);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1877, 86);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL3, 1869, 113);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL2, 1938, 34);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL5, 1964, 62);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL4, 1986, 120);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 1986, 200);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 1998, 62);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2100, 42);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2110, 32);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2152, 32);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2185, 46);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2201, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2222, 46);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2235, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL1, 2265, 30);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 2324, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL2, 2355, 20);
+	App->enemies->AddEnemy(ENEMY_TYPES::YELLOWBALL, 2355, 202);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::REDBALL, 2385, 80); 
 
 
 	//HUD hitbox
