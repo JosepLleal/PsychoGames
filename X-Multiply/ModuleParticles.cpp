@@ -265,8 +265,8 @@ ModuleParticles::ModuleParticles()
 	bossattack2.anim.PushBack({ 111, 424, 20, 12 });
 	bossattack2.anim.PushBack({ 135, 424, 21, 12 });
 	bossattack2.anim.loop = false;
-	bossattack2.speed.x = -2;
-	bossattack2.speed.y = -1;
+	bossattack2.speed.x = 2;
+	bossattack2.speed.y = 1;
 	bossattack2.life = 4000;
 
 	bossattack3.anim.PushBack({ 63, 421, 22, 8 }); //goes up 45 degrees
@@ -276,8 +276,8 @@ ModuleParticles::ModuleParticles()
 	bossattack3.anim.PushBack({ 63, 450, 17, 17 });
 	bossattack3.anim.PushBack({ 87, 450, 17, 17 });
 	bossattack3.anim.loop = false;
-	bossattack3.speed.x = -2;
-	bossattack3.speed.y = -2;
+	bossattack3.speed.x = 2;
+	bossattack3.speed.y = 2;
 	bossattack3.life = 4000;
 
 	bossattack4.anim.PushBack({ 63, 421, 22, 8 }); //goes down 30 degrees
@@ -285,8 +285,8 @@ ModuleParticles::ModuleParticles()
 	bossattack4.anim.PushBack({ 63, 471, 21, 12 });
 	bossattack4.anim.PushBack({ 87, 471, 22, 12 });
 	bossattack4.anim.loop = false;
-	bossattack4.speed.x = -2;
-	bossattack4.speed.y = 1;
+	bossattack4.speed.x = 2;
+	bossattack4.speed.y = -1;
 	bossattack4.life = 4000;
 
 	bossattack5.anim.PushBack({ 63, 421, 22, 8 }); //goes down 45 degrees
@@ -296,8 +296,8 @@ ModuleParticles::ModuleParticles()
 	bossattack5.anim.PushBack({ 112, 469, 17, 15 });
 	bossattack5.anim.PushBack({ 135, 474, 18, 18 });
 	bossattack5.anim.loop = false;
-	bossattack5.speed.x = -2;
-	bossattack5.speed.y = 2;
+	bossattack5.speed.x = 2;
+	bossattack5.speed.y = -2;
 	bossattack5.life = 4000;
 
 	//boss back shot
@@ -309,45 +309,45 @@ ModuleParticles::ModuleParticles()
 	bossattack1_back.speed.y = 0;
 	bossattack1_back.life = 4000;
 
-	bossattack2.anim.PushBack({ 265, 421, 22, 8 }); //goes up 30 degrees
-	bossattack2.anim.PushBack({ 289, 421, 22, 8 });
-	bossattack2.anim.PushBack({ 218, 424, 20, 12 });
-	bossattack2.anim.PushBack({ 244, 424, 21, 12 });
-	bossattack2.anim.loop = false;
-	bossattack2.speed.x = -2;
-	bossattack2.speed.y = 1;
-	bossattack2.life = 4000;
+	bossattack2_back.anim.PushBack({ 265, 421, 22, 8 }); //goes up 30 degrees
+	bossattack2_back.anim.PushBack({ 289, 421, 22, 8 });
+	bossattack2_back.anim.PushBack({ 218, 424, 20, 12 });
+	bossattack2_back.anim.PushBack({ 244, 424, 21, 12 });
+	bossattack2_back.anim.loop = false;
+	bossattack2_back.speed.x = -2;
+	bossattack2_back.speed.y = 1;
+	bossattack2_back.life = 4000;
 
-	bossattack3.anim.PushBack({ 265, 421, 22, 8 }); //goes up 45 degrees
-	bossattack3.anim.PushBack({ 289, 421, 22, 8 });
-	bossattack3.anim.PushBack({ 289, 421, 22, 8 });
-	bossattack3.anim.PushBack({ 244, 424, 21, 12 });
-	bossattack3.anim.PushBack({ 294, 450, 17, 17 });
-	bossattack3.anim.PushBack({ 270, 450, 17, 17 });
-	bossattack3.anim.loop = false;
-	bossattack3.speed.x = -2;
-	bossattack3.speed.y = 2;
-	bossattack3.life = 4000;
+	bossattack3_back.anim.PushBack({ 265, 421, 22, 8 }); //goes up 45 degrees
+	bossattack3_back.anim.PushBack({ 289, 421, 22, 8 });
+	bossattack3_back.anim.PushBack({ 289, 421, 22, 8 });
+	bossattack3_back.anim.PushBack({ 244, 424, 21, 12 });
+	bossattack3_back.anim.PushBack({ 294, 450, 17, 17 });
+	bossattack3_back.anim.PushBack({ 270, 450, 17, 17 });
+	bossattack3_back.anim.loop = false;
+	bossattack3_back.speed.x = -2;
+	bossattack3_back.speed.y = 2;
+	bossattack3_back.life = 4000;
 
-	bossattack4.anim.PushBack({ 265, 421, 22, 8 }); //goes down 30 degrees
-	bossattack4.anim.PushBack({ 289, 421, 22, 8 });
-	bossattack4.anim.PushBack({ 291, 474, 21, 10 });
-	bossattack4.anim.PushBack({ 266, 424, 22, 12 });
-	bossattack4.anim.loop = false;
-	bossattack4.speed.x = -2;
-	bossattack4.speed.y = -1;
-	bossattack4.life = 4000;
+	bossattack4_back.anim.PushBack({ 265, 421, 22, 8 }); //goes down 30 degrees
+	bossattack4_back.anim.PushBack({ 289, 421, 22, 8 });
+	bossattack4_back.anim.PushBack({ 291, 474, 21, 10 });
+	bossattack4_back.anim.PushBack({ 266, 424, 22, 12 });
+	bossattack4_back.anim.loop = false;
+	bossattack4_back.speed.x = -2;
+	bossattack4_back.speed.y = -1;
+	bossattack4_back.life = 4000;
 
-	bossattack5.anim.PushBack({ 265, 421, 22, 8 }); //goes down 45 degrees
-	bossattack5.anim.PushBack({ 289, 421, 22, 8 });
-	bossattack5.anim.PushBack({ 291, 474, 21, 10 });
-	bossattack5.anim.PushBack({ 266, 424, 22, 12 });
-	bossattack5.anim.PushBack({ 221, 473, 18, 18 });
-	bossattack5.anim.PushBack({ 245, 469, 17, 15 });
-	bossattack5.anim.loop = false;
-	bossattack5.speed.x = -2;
-	bossattack5.speed.y = -2;
-	bossattack5.life = 4000;
+	bossattack5_back.anim.PushBack({ 265, 421, 22, 8 }); //goes down 45 degrees
+	bossattack5_back.anim.PushBack({ 289, 421, 22, 8 });
+	bossattack5_back.anim.PushBack({ 291, 474, 21, 10 });
+	bossattack5_back.anim.PushBack({ 266, 424, 22, 12 });
+	bossattack5_back.anim.PushBack({ 221, 473, 18, 18 });
+	bossattack5_back.anim.PushBack({ 245, 469, 17, 15 });
+	bossattack5_back.anim.loop = false;
+	bossattack5_back.speed.x = -2;
+	bossattack5_back.speed.y = -2;
+	bossattack5_back.life = 4000;
 }
 
 ModuleParticles::~ModuleParticles()
