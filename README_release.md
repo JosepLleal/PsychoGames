@@ -11,9 +11,9 @@ construct the X-002, a microscopic fighter ship.
 
 #### Main functionalities:
 
-Arrows: Move Player (Up, Down, Right or Left)
+Left Joystick/Arrow keys: Move Player.
 
-Space: Shoot. Can be held down to shoot without spamming the key.
+A/Space: Shoot. Can be held down to shoot without spamming the key.
 
 ESC: Close Game (Finish the execution of the program, similar to Alt+F4)
 
@@ -87,6 +87,22 @@ Map scroll and colliders
 Camera limits
 
 Debug functionalities
+
+- v0.6
+
+Level 5 fully implemented. Level 1 has been deleted.
+
+- v0.7
+
+All enemies added (Redballs, yellowballs, diamonds, drops)
+
+- v1.0
+
+Tentacle power up
+
+Laser power up
+
+Boss (animations and shootinh mechanics)
 
 # PsychoGames Members:
 
