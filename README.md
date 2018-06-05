@@ -1,4 +1,4 @@
-﻿# X-Multiply
+# X-Multiply
 It is a side-scrolling shooter game, similar in style to R-Type, developed by Irem and released in 1989 and later in 1998 for Sega Saturn and Playstation. X-Multiply has 7 stages each one with a different boss.
 
 ## Plot:
