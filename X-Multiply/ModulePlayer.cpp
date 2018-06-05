@@ -323,14 +323,17 @@ update_status ModulePlayer::Update()
 				App->particles->AddParticle(App->particles->tent_shot, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_PLAYER_SHOT);
 				App->audio->ChunkPlay(shot);
 				cooldown++;
+				
 			}
 			else 
 			{
-				App->particles->AddParticle(App->particles->laser, position.x, position.y + 6, COLLIDER_PLAYER_SHOT);
+				App->particles->AddParticle(App->particles->laser, position.x , position.y, COLLIDER_PLAYER_SHOT);
 				App->particles->AddParticle(App->particles->laser, tent1_pos.x, tent1_pos.y, COLLIDER_PLAYER_SHOT);
 				App->particles->AddParticle(App->particles->laser, tent2_pos.x, tent2_pos.y, COLLIDER_PLAYER_SHOT);
 				App->audio->ChunkPlay(laser);
+ 
 				cooldown++;
+				
 			}
 		}
 		

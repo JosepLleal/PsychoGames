@@ -6,6 +6,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleInput.h"
+#include "ModulePlayer.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -70,8 +71,8 @@ ModuleParticles::ModuleParticles()
 	laser.anim.PushBack({ 236, 374, 182, 12});
 	laser.anim.PushBack({ 234, 389, 191, 13});*/
 
-	laser.anim.PushBack({ 233, 184, 23, 7 });
-	laser.anim.PushBack({ 234, 200, 63, 7 });
+	//laser.anim.PushBack({ 233, 184, 23, 7 });
+	//laser.anim.PushBack({ 234, 200, 63, 7 });
 	laser.anim.PushBack({ 265, 184, 91, 7 });
 	laser.anim.loop = false; 
 	laser.anim.speed = 0.3f; 
@@ -341,8 +342,10 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		if(active[i] != nullptr && active[i]->collider == c1)
 		{
 			if (c1->type == COLLIDER_PLAYER_SHOT)
-				AddParticle(shot_impact, active[i]->position.x, active[i]->position.y, COLLIDER_NONE);
-
+			{
+				if (App->player->Laser == false) { AddParticle(shot_impact, active[i]->position.x, active[i]->position.y, COLLIDER_NONE); }
+				else { AddParticle(laser_explosion, active[i]->position.x + 85, active[i]->position.y + 4, COLLIDER_NONE); }
+			}
 			if (c1->type == COLLIDER_BOMB)
 				AddParticle(bomb_explosion, active[i]->position.x, active[i]->position.y, COLLIDER_NONE);
 
