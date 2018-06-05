@@ -6,6 +6,8 @@
 #include "ModuleAudio.h"
 #include "ModuleEnemies.h"
 #include "SDL/include/SDL_timer.h"
+#include "ModuleFadeToBlack.h"
+#include "ModulePlayer.h"
 
 Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 {
@@ -13,8 +15,7 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 50, 200 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
-	collider->rect.x = 100;
-	collider->rect.y = 100;
+
 
 	animation = &right_goup;
 
@@ -74,9 +75,6 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 	right_godown.speed = 0.1f;
 	right_godown.loop = false;
 
-	
-	
-
 
 	original_position.x = x;
 	original_position.y = y;
@@ -84,11 +82,6 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 
 void Enemy_Boss::Move()
 {
-
-	collider->rect.x += 100;
-	collider->rect.y += 20;
-
-
 	if (animation == &right_goup)
 	{
 		if (right_goup.Finished() == true) 
@@ -157,6 +150,10 @@ void Enemy_Boss::Move()
 }
 void Enemy_Boss::OnCollision(Collider* collider)
 {
-	
+	if (life == 1)
+	{
+		App->player->score += 500000;
+		App->fade->FadeToBlack((Module*)App->lvl5, (Module*)App->stage_cleared, 1.0f);
+	}
 
 }

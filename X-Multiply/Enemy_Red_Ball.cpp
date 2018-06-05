@@ -13,7 +13,7 @@ Enemy_Red_Ball::Enemy_Red_Ball(int x, int y) : Enemy(x, y)
 	animation = &one; 
 	one.speed = 0.0f;
 
-	life = 78;
+	life = 5;
 
 	original_position.y = y;
 
