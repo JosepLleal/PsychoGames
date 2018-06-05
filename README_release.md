@@ -104,6 +104,10 @@ Laser power up
 
 Boss (animations and shootinh mechanics)
 
+## Link to X-Multiply repository:
+
+https://github.com/JosepLleal/PsychoGames
+
 # PsychoGames Members:
 
 Josep Lleal
