@@ -326,9 +326,9 @@ update_status ModulePlayer::Update()
 			}
 			else if (Laser == true)
 			{
-				App->particles->AddParticle(App->particles->laser, position.x + 28, position.y + 6, COLLIDER_LASER);
-				App->particles->AddParticle(App->particles->laser, tent1_pos.x + 19, tent1_pos.y + 3, COLLIDER_LASER);
-				App->particles->AddParticle(App->particles->laser, tent2_pos.x + 19, tent2_pos.y + 3, COLLIDER_LASER);
+				App->particles->AddParticle(App->particles->laser, position.x, position.y, COLLIDER_LASER);
+				App->particles->AddParticle(App->particles->laser, tent1_pos.x, tent1_pos.y, COLLIDER_LASER);
+				App->particles->AddParticle(App->particles->laser, tent2_pos.x, tent2_pos.y, COLLIDER_LASER);
 			}
 				
 		}
