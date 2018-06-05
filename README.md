@@ -7,6 +7,8 @@ To combat the alien queen which is currently residing in a human female, a group
 construct the X-002, a microscopic fighter ship, which is controlled by the player and its aim is to reach the final stage to end with the plague.
 
 # PsychoGames Members:
+   
+![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team photo")
 
 Josep Lleal
    - Role: Management
@@ -24,5 +26,3 @@ Víctor Chen
    - Role: QA
    - [Victor's GitHub Link](https://github.com/Scarzard)
    
-   
-![alt text](https://i.gyazo.com/236d95cb0994d9f54e56128f57ca4d8c.jpg "Team photo")
