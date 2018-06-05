@@ -432,15 +432,15 @@ bool ModuleLevel5::Start()
 	////HUD hitbox
 	//HUDhitbox = App->collision->AddCollider({ 0, 0, SCREEN_WIDTH, 3 }, COLLIDER_HUD, this);
 
-	////PowerUps
-	////App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 750, 100);
-	////App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 750, 87);
-	//App->powerup->AddPowerUp(POWERUP_TYPES::LASER, 3200, 100);
-	//App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 3200, 87);
-	////Bomb
-	///*App->powerup->AddPowerUp(POWERUP_TYPES::BOMB, 750, 123);
-	//App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 750, 110);*/
-	//
+	//PowerUps
+	//App->powerup->AddPowerUp(POWERUP_TYPES::SPEED_UP, 750, 100);
+	//App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 750, 87);
+	//App->powerup->AddPowerUp(POWERUP_TYPES::LASER, 3300, 123);
+	//App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 3200, 110);
+	//Bomb
+	//App->powerup->AddPowerUp(POWERUP_TYPES::BOMB, 450, 123);
+	//App->powerup->AddPowerUp(POWERUP_TYPES::POWERUP_ENEMY, 450, 110);
+
 
 	return true;
 }
